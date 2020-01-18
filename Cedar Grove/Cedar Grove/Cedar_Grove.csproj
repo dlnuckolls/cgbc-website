@@ -143,11 +143,9 @@
     <Content Include="App_Data\RadCaptcha\Y.wav" />
     <Content Include="App_Data\RadCaptcha\Z.wav" />
     <Content Include="MasterPage.Master" />
-    <Content Include="MasterPageSingleMenu.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
-    <Content Include="Grid.aspx" />
     <Content Include="images\Chrysanthemum.jpg" />
     <Content Include="images\Desert.jpg" />
     <Content Include="images\Hydrangeas.jpg" />
@@ -165,7 +163,6 @@
     <Content Include="images\Thumbnails\Penguins.jpg" />
     <Content Include="images\Thumbnails\Tulips.jpg" />
     <Content Include="images\Tulips.jpg" />
-    <Content Include="ListView.aspx" />
     <Content Include="scripts\scripts.js" />
     <Content Include="styles\base.css" />
     <Content Include="styles\default.css" />
@@ -181,34 +178,24 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Grid.aspx.cs">
-      <DependentUpon>Grid.aspx</DependentUpon>
+    <Compile Include="helpers\BaseMasterPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Grid.aspx.designer.cs">
-      <DependentUpon>Grid.aspx</DependentUpon>
+    <Compile Include="helpers\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="helpers\EncryptionHelper.cs" />
+    <Compile Include="helpers\SessionManager.cs" />
+    <Compile Include="helpers\SqlHelpers.cs" />
+    <Compile Include="helpers\SqlStatements.cs" />
+    <Compile Include="helpers\StringHelpers.cs" />
     <Compile Include="Image.cs" />
-    <Compile Include="ListView.aspx.cs">
-      <DependentUpon>ListView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListView.aspx.designer.cs">
-      <DependentUpon>ListView.aspx</DependentUpon>
-    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPageSingleMenu.Master.cs">
-      <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPageSingleMenu.Master.designer.cs">
-      <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -229,6 +216,9 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
