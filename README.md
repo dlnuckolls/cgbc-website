@@ -1,1 +1,1 @@
-# cgbc-website
+# Cedar Grove Baptist Church
