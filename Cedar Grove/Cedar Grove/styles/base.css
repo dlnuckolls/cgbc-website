@@ -83,7 +83,11 @@ h6 {
 
 /*template*/
 #wrapper .t-container-fluid {
-    max-width: 100%;
+  max-width: 100%;
+  min-height: 900px;
+  background-image: url('/images/cgbc-banner.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #wrapper .RadButton {

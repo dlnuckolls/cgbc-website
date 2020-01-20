@@ -52,31 +52,11 @@
               </telerik:LayoutColumn>
             </Columns>
           </telerik:LayoutRow>
-
           <%--Main--%>
           <telerik:LayoutRow>
             <Columns>
-              <%--Sidebar--%>
-              <telerik:LayoutColumn Span="2" HiddenMd="true" HiddenSm="true" HiddenXs="true">
-                <telerik:RadMenu ID="RadMenu2" CssClass="sidebar" Flow="Vertical" runat="server">
-                  <Items>
-                    <telerik:RadMenuItem Text="Menu item 1" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Menu item 2" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Menu item 3" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Menu item 4" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Menu item 5" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Menu item 6" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Menu item 7" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Menu item 8" />
-                  </Items>
-                </telerik:RadMenu>
+              <%--Sidebar Left--%>
+              <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
               </telerik:LayoutColumn>
 
               <%--Content--%>
@@ -88,14 +68,21 @@
                   </asp:ContentPlaceHolder>
                 </Content>
               </telerik:CompositeLayoutColumn>
+              <%--Sidebar Right--%>
+              <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
+              </telerik:LayoutColumn>
             </Columns>
           </telerik:LayoutRow>
-
+        </Rows>
+      </telerik:RadPageLayout>
+    </div>
+    <div id="wrapper2">
+      <telerik:RadPageLayout runat="server" ID="RadPageLayout1" GridType="Fluid">
+        <Rows>
           <%--Footer--%>
           <telerik:LayoutRow>
             <Columns>
-              <telerik:LayoutColumn CssClass="footer">
-                <hr />
+              <telerik:LayoutColumn Span="12" SpanMd="12" SpanSm="12" SpanXs="12" CssClass="footer">
                 Footer: © 2002-2015 Company Inc, 201 Jones Rd, Waltham, MA 03451
               </telerik:LayoutColumn>
             </Columns>
