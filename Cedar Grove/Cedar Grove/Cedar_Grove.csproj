@@ -11,7 +11,6 @@
     <UseGlobalApplicationHostFile />
     <UpgradeBackupLocation />
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -167,8 +166,6 @@
     <Content Include="scripts\scripts.js" />
     <Content Include="styles\base.css" />
     <Content Include="styles\default.css" />
-    <Content Include="styles\grid.css" />
-    <Content Include="styles\listView.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
@@ -191,6 +188,8 @@
     <Compile Include="helpers\SqlHelpers.cs" />
     <Compile Include="helpers\SqlStatements.cs" />
     <Compile Include="helpers\StringHelpers.cs" />
+    <Compile Include="helpers\SystemSettings.cs" />
+    <Compile Include="helpers\SystemUser.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="DefaultMasterPage.Master.cs">
       <DependentUpon>DefaultMasterPage.Master</DependentUpon>
