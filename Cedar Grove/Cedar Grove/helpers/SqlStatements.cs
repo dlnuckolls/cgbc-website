@@ -28,5 +28,8 @@ namespace Cedar_Grove {
     // Exceptions
     public const string SQL_LOG_EXCEPTION = "INSERT INTO dbo.SystemExceptions (ExceptionTimeStamp, Module, Exception, StackTrace) VALUES ({0}, '{1}', '{2}', '{3}');";
     public const string SQL_READ_EXCEPTIONS = "SELECT * FROM dbo.SystemExceptions ORDER BY ExceptionTimeStamp DESC;";
+
+    public const string SQL_READ_EVENTS = "SELECT [Id], [Title], [Description], CONVERT(VARCHAR, [EventDate], 107) [EventDate] FROM dbo.UpcomingEvents ORDER BY [EventDate] DESC;";
+
   }
 }

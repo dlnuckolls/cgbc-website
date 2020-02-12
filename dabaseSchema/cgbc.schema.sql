@@ -166,12 +166,23 @@ BEGIN
   COMMIT TRANSACTION Version1_1
 END
 
---SELECT @majorVersion = 1, @minorVersion = 2;
---IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
---BEGIN
---  BEGIN TRANSACTION Version1_2
+SELECT @majorVersion = 1, @minorVersion = 2;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_2
+    CREATE TABLE dbo.UpcomingEvents (
+	    [Id]           UNIQUEIDENTIFIER NOT NULL,
+	    [Title]        VARCHAR(75)          NULL,
+	    [Description]  VARCHAR(500)         NULL,
+      [EventDate]    DATETIME         NOT NULL,
+	  CONSTRAINT [PK_UpcomingEvents] PRIMARY KEY CLUSTERED (
+			  [Id] ASC
+		  ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
 
---    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
---  COMMIT TRANSACTION Version1_2
---END
+	  ALTER TABLE [dbo].[UpcomingEvents] ADD  CONSTRAINT [DF_UpcomingEvents_Id]  DEFAULT (newid()) FOR [Id];
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_2
+END
 

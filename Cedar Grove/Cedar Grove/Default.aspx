@@ -32,7 +32,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
-  <telerik:RadPageLayout runat="server" ID="Content1">
+<%--  <telerik:RadPageLayout runat="server" ID="Content1">
     <Rows>
       <telerik:LayoutRow>
         <Columns>
@@ -61,5 +61,24 @@
         </Columns>
       </telerik:LayoutRow>
     </Rows>
-  </telerik:RadPageLayout>
+  </telerik:RadPageLayout>--%>
+  <telerik:RadListView runat="server" OnNeedDataSource="UpcomingEvents_NeedDataSource" ID="UpcomingEvents" AllowPaging="true" PageSize="3">
+    <LayoutTemplate>
+      <div class="listView1">
+        <asp:Panel ID="itemPlaceholder" runat="server">
+        </asp:Panel>
+      </div>
+    </LayoutTemplate>
+    <ItemTemplate>
+      <div class="listViewItem">
+        <h4>
+          <img src="/images/megaphone.png" />
+          <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Title") %>' />&nbsp;&nbsp;<telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("EventDate") %>' />
+        </h4>
+        <p>
+          <asp:Literal runat="server" ID="Literal1" Text='<%# Bind("Description") %>' />
+        </p>
+      </div>
+    </ItemTemplate>
+  </telerik:RadListView>
 </asp:Content>

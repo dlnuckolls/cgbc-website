@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="images\alarm.png" />
     <Content Include="images\cgbc-banner.JPG" />
     <Content Include="images\Chrysanthemum.jpg" />
     <Content Include="images\Desert.jpg" />
@@ -153,6 +154,7 @@
     <Content Include="images\Koala.jpg" />
     <Content Include="images\Lighthouse.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\megaphone.png" />
     <Content Include="images\Penguins.jpg" />
     <Content Include="images\Thumbnails\Chrysanthemum.jpg" />
     <Content Include="images\Thumbnails\Desert.jpg" />
@@ -241,7 +243,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
