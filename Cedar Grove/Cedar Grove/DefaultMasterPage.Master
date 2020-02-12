@@ -14,76 +14,86 @@
   <form id="form1" runat="server">
     <telerik:RadScriptManager runat="server"></telerik:RadScriptManager>
     <div id="wrapper">
-      <telerik:RadPageLayout runat="server" ID="MasterLayout" GridType="Fluid">
-        <Rows>
-          <%--Header--%>
-          <telerik:LayoutRow CssClass="header">
-            <Columns>
-              <%--Logo--%>
-              <telerik:LayoutColumn Span="2" SpanMd="3" SpanSm="12" SpanXs="12">
-                <a href="#" class="logo">
+      <div class="largeheader">
+        <telerik:RadPageLayout runat="server" ID="MasterLayout" GridType="Fluid">
+          <Rows>
+            <%--Header--%>
+            <telerik:LayoutRow CssClass="header">
+              <Columns>
+                <%--Logo--%>
+                <telerik:LayoutColumn Span="2" SpanMd="1" SpanSm="12" SpanXs="12">
+                  <%--<a href="#" class="logo">
                   <img src="images/logo.png" alt="site logo" />
-                </a>
-              </telerik:LayoutColumn>
+                </a>--%>
+                </telerik:LayoutColumn>
 
-              <%--Main Nav--%>
-              <telerik:LayoutColumn Span="10" SpanMd="9" SpanSm="12" SpanXs="12">
-                <telerik:RadMenu ID="RadMenu1" runat="server" RenderMode="Auto">
-                  <Items>
-                    <telerik:RadMenuItem Text="Home" NavigateUrl="Default.aspx" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Grid Page" NavigateUrl="Grid.aspx" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="ListView Page" NavigateUrl="ListView.aspx" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="About" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Projects" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Dashboard" />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="..." />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="..." />
-                    <telerik:RadMenuItem IsSeparator="true" />
-                    <telerik:RadMenuItem Text="Contacts" />
-                  </Items>
-                </telerik:RadMenu>
-              </telerik:LayoutColumn>
-            </Columns>
-          </telerik:LayoutRow>
-          <%--Main--%>
-          <telerik:LayoutRow>
-            <Columns>
-              <%--Sidebar Left--%>
-              <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
-              </telerik:LayoutColumn>
+                <%--Main Nav--%>
+                <telerik:LayoutColumn Span="10" SpanMd="11" SpanSm="12" SpanXs="12">
+                  <telerik:RadMenu ID="RadMenu1" runat="server" RenderMode="Auto">
+                    <Items>
+                      <telerik:RadMenuItem Text="Home" NavigateUrl="/" />
+                      <telerik:RadMenuItem IsSeparator="true" />
+                      <telerik:RadMenuItem Text="Ministries">
+                      <Items>
+                        <telerik:RadMenuItem Text="Men On Mission" />
+                        <telerik:RadMenuItem Text="Womens" />
+                        <telerik:RadMenuItem Text="Youth" />
+                        <telerik:RadMenuItem Text="Children" />
+                        <telerik:RadMenuItem Text="Outreach" />
+                      </Items>
+                      </telerik:RadMenuItem>
+                      <telerik:RadMenuItem IsSeparator="true" />
+                      <telerik:RadMenuItem Text="Calendar" />
+                      <telerik:RadMenuItem IsSeparator="true" />
+                      <telerik:RadMenuItem Text="Sermons" />
+                      <telerik:RadMenuItem IsSeparator="true" />
+                      <telerik:RadMenuItem Text="Galary" />
+                      <telerik:RadMenuItem IsSeparator="true" />
+                      <telerik:RadMenuItem Text="About Us" />
+                      <telerik:RadMenuItem IsSeparator="true" />
+                      <telerik:RadMenuItem Text="Contact Us" />
+                    </Items>
+                  </telerik:RadMenu>
+                </telerik:LayoutColumn>
+              </Columns>
+            </telerik:LayoutRow>
+          </Rows>
+        </telerik:RadPageLayout>
+      </div>
+      <div class="contentBlock">
+        <telerik:RadPageLayout runat="server" ID="RadPageLayout2" GridType="Fluid">
+          <Rows>
+            <%--Main--%>
+            <telerik:LayoutRow>
+              <Columns>
+                <%--Sidebar Left--%>
+                <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
+                </telerik:LayoutColumn>
 
-              <%--Content--%>
-              <telerik:CompositeLayoutColumn Span="10" SpanMd="12" SpanSm="12" SpanXs="12">
-                <Content>
-                  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                  </asp:ContentPlaceHolder>
-                  <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                  </asp:ContentPlaceHolder>
-                </Content>
-              </telerik:CompositeLayoutColumn>
-              <%--Sidebar Right--%>
-              <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
-              </telerik:LayoutColumn>
-            </Columns>
-          </telerik:LayoutRow>
-        </Rows>
-      </telerik:RadPageLayout>
-    </div>
-    <div id="wrapper2">
+                <%--Content--%>
+                <telerik:CompositeLayoutColumn Span="10" SpanMd="12" SpanSm="12" SpanXs="12">
+                  <Content>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                  </Content>
+                </telerik:CompositeLayoutColumn>
+                <%--Sidebar Right--%>
+                <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
+                </telerik:LayoutColumn>
+              </Columns>
+            </telerik:LayoutRow>
+          </Rows>
+        </telerik:RadPageLayout>
+      </div>
       <telerik:RadPageLayout runat="server" ID="RadPageLayout1" GridType="Fluid">
         <Rows>
           <%--Footer--%>
           <telerik:LayoutRow>
             <Columns>
               <telerik:LayoutColumn Span="12" SpanMd="12" SpanSm="12" SpanXs="12" CssClass="footer">
-                Footer: © 2002-2015 Company Inc, 201 Jones Rd, Waltham, MA 03451
+                Cedar Grove Baptist Church © 2020 | 4900 CEDAR GROVE ROAD, SHEPHERDSVILLE, KY. 40165
               </telerik:LayoutColumn>
             </Columns>
           </telerik:LayoutRow>

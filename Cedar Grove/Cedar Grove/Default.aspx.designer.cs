@@ -13,6 +13,15 @@ namespace Cedar_Grove {
   public partial class Default {
 
     /// <summary>
+    /// TitleTag control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Literal TitleTag;
+
+    /// <summary>
     /// RadPageLayout1 control.
     /// </summary>
     /// <remarks>
@@ -20,15 +29,6 @@ namespace Cedar_Grove {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadPageLayout RadPageLayout1;
-
-    /// <summary>
-    /// RadButton0 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::Telerik.Web.UI.RadButton RadButton0;
 
     /// <summary>
     /// Content1 control.

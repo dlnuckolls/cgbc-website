@@ -1,28 +1,29 @@
 ﻿/*normalize*/
-html, 
-body, 
+html,
+body,
 form {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font: normal 16px "Segoe UI", Arial, sans-serif;
-    color: #555555;
+  font: normal 16px "Segoe UI", Arial, sans-serif;
+  color: #555555;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 720px) {
-    body {
-        font-size: 18px;
-    }
+  body {
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
-    body {
-        font-size: 20px;
-    }
+  body {
+    font-size: 20px;
+  }
 }
+
 a {
   background: transparent;
 }
@@ -33,69 +34,162 @@ img {
 
 button,
 input {
-  -webkit-appearance: none; 
-  cursor: pointer; 
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
 hr {
-    border-width: 1px 0 0 0;
-    border-color: #767676;
-    border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: #767676;
+  border-style: solid;
 }
 
 /*typography*/
 h1, h2, h3, h4, h5, h6 {
-    line-height: normal;
+  line-height: normal;
 }
 
 h1, h2, h3 {
-    font-weight: normal;
-    margin: .5em 0;
+  font-weight: normal;
+  margin: .5em 0;
 }
 
 h4, h5, h6 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 h1 {
-    font-size: 2.25em;
+  font-size: 2.25em;
 }
 
 h2 {
-    font-size: 1.875em;
+  font-size: 1.875em;
 }
 
 h3 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 h4 {
-    font-size: 1.125em
+  font-size: 1.125em
 }
 
 h5 {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 h6 {
-    font-size: .875em;
+  font-size: .875em;
 }
 
 /*template*/
 #wrapper .t-container-fluid {
   max-width: 100%;
-  min-height: 900px;
-  background-image: url('/images/cgbc-banner.JPG');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #wrapper .RadButton {
-    font-size: 1em;
+  font-size: 1em;
 }
 
-#wrapper .RadMenu,
-div.RadMenuPopup,
-#wrapper .RadMenu_Default, #wrapper .RadMenu_Default a.rmLink  {
-    font-size: 1em;
+#wrapper .RadMenu, div.RadMenuPopup,
+#wrapper .RadMenu_Default, #wrapper .RadMenu_Default a.rmLink {
+  font-size: 1em;
+  background-color: transparent;
+}
+
+#wrapper .largeheader {
+  position: relative;
+  /*padding: 1.875em;
+  padding-top: 1em;*/
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url('/images/cgbc-banner.JPG');
+  min-height: 600px;
+}
+
+#wrapper .header {
+  background-color: transparent !important;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+  #wrapper .header .RadMenu {
+    margin: 10px 0;
+    float: right !important;
+  }
+
+    #wrapper .header .RadMenu .rmRootGroup {
+      border-width: 0 !important;
+      border-color: transparent !important;
+      background-color: transparent !important;
+    }
+
+      #wrapper .header .RadMenu .rmRootGroup :hover {
+        /* background-color: lightblue !important; */
+        border-radius: 10px;
+      }
+
+    #wrapper .header .RadMenu .rmRootGroup .rmLink {
+      border-width: 0 !important;
+      border-color: transparent !important;
+      background-color: transparent !important;
+    }
+
+      #wrapper .header .RadMenu .rmRootGroup .rmLink:hover {
+        background-color: lightblue !important;
+        border-radius: 10px;
+      }
+
+
+
+#top-bar-social {
+  float: left;
+  font-size: 11px;
+  line-height: 30px;
+  text-align: right;
+}
+
+  #top-bar-social > ul {
+    float: right;
+    margin-top: 3px;
+    margin-bottom: 0;
+    -moz-opacity: 0.5;
+    filter: alpha(opacity= 50);
+    opacity: 0.5;
+  }
+
+  #top-bar-social ul li {
+    margin-bottom: 0;
+  }
+
+#wrapper .footer {
+  width: 100%;
+  padding: 30px 15px !important;
+  line-height: 30px;
+  background-color: lightgray;
+  border-top-color: lightgray;
+  padding: 15px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  overflow: hidden;
+  font-size: 12px;
+  border-top: 0 solid transparent;
+  text-align: center;
+}
+
+  #wrapper .footer .copyright-divider {
+    border-top-width: 1px;
+  }
+
+    #wrapper .footer .copyright-divider p {
+      padding: 50px !important;
+      color: white;
+    }
+
+#wrapper .contentBlock {
+  margin: 20px auto;
 }

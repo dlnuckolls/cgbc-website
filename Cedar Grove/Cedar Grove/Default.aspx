@@ -4,6 +4,7 @@
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="Server">
   <link href="styles/default.css" rel="stylesheet" />
+  <asp:Literal ID="TitleTag" runat="server"></asp:Literal>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -12,19 +13,16 @@
       <telerik:LayoutRow>
         <Columns>
           <telerik:LayoutColumn CssClass="jumbotron">
-            <h1>H1 title, font size 36px</h1>
-            <h2>H2 Title, font size 30 px. Duis nibh dolor, rhoncus in euismod at, feugiat id magna.
-                            <telerik:RadButton runat="server" ID="RadButton0" Text="Button" ButtonType="SkinnedButton"></telerik:RadButton>
-            </h2>
-
+            <h3>Welcome to Cedar Grove Baptist Church, join us for Sunday School and Worship starting at 9:30 AM</h3>
+            <h1>Every Sunday</h1>
+            <h3>We would love to see you there!</h3>
           </telerik:LayoutColumn>
         </Columns>
       </telerik:LayoutRow>
       <telerik:LayoutRow>
         <Columns>
           <telerik:LayoutColumn HiddenMd="true" HiddenSm="true" HiddenXs="true">
-            <h3>H3 text, font size 24 px </h3>
-            Ut aliquam elit eget quam tincidunt, et aliquam libero congue. Phasellus aliquet sed quam vitae dictum. Aliquam erat volutpat. Morbi accumsan a mi quis pretium. 
+            <h3>Upcoming events you don't want to miss!</h3>
           </telerik:LayoutColumn>
         </Columns>
       </telerik:LayoutRow>

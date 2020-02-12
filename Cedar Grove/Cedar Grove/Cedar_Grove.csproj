@@ -186,6 +186,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="helpers\EncryptionHelper.cs" />
+    <Compile Include="helpers\Enumerations.cs" />
     <Compile Include="helpers\SessionManager.cs" />
     <Compile Include="helpers\SqlHelpers.cs" />
     <Compile Include="helpers\SqlStatements.cs" />
@@ -241,7 +242,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

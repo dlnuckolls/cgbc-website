@@ -256,16 +256,16 @@ namespace Cedar_Grove {
     /// </summary>
     /// <param name="myEnum">Enum to read</param>
     /// <returns>TextValue or Enum to string</returns>
-    //public static string TextValue(this Enum myEnum) {
-    //  string value;
-    //  try {
-    //    var customEnumAttribute = (CustomEnumAttribute)myEnum.GetType().GetCustomAttributes(typeof(CustomEnumAttribute), false).FirstOrDefault();
-    //    if(customEnumAttribute == null || customEnumAttribute.IsCustomEnum == false) { throw new Exception(); }
-    //    var textValueAttribute = (TextValueAttribute)myEnum.GetType().GetMember(myEnum.ToString()).Single().GetCustomAttributes(typeof(TextValueAttribute), false).FirstOrDefault();
-    //    value = textValueAttribute != null ? textValueAttribute.Value : myEnum.ToString();
-    //  } catch { value = myEnum.ToString(); }
-    //  return value;
-    //}
+    public static string TextValue(this Enum myEnum) {
+      string value;
+      try {
+        var customEnumAttribute = (CustomEnumAttribute)myEnum.GetType().GetCustomAttributes(typeof(CustomEnumAttribute), false).FirstOrDefault();
+        if (customEnumAttribute == null || customEnumAttribute.IsCustomEnum == false) { throw new Exception(); }
+        var textValueAttribute = (TextValueAttribute)myEnum.GetType().GetMember(myEnum.ToString()).Single().GetCustomAttributes(typeof(TextValueAttribute), false).FirstOrDefault();
+        value = textValueAttribute != null ? textValueAttribute.Value : myEnum.ToString();
+      } catch { value = myEnum.ToString(); }
+      return value;
+    }
     /// <summary>
     /// Encrypt Strings like passwords
     /// </summary>
