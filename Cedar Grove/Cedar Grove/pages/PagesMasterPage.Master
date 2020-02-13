@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMasterPage.Master.cs" Inherits="Cedar_Grove.AdminMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PagesMasterPage.Master.cs" Inherits="Cedar_Grove.PagesMasterPage" %>
 
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <!DOCTYPE html>

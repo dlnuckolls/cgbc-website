@@ -7,81 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Cedar_Grove {
+namespace Cedar_Grove.admin {
 
 
-  public partial class DefaultMasterPage {
+  public partial class AdminPages {
 
     /// <summary>
-    /// head control.
+    /// TitleTag control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+    protected global::System.Web.UI.WebControls.Literal TitleTag;
 
     /// <summary>
-    /// form1 control.
+    /// ObjectDataSource1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
 
     /// <summary>
-    /// MasterLayout control.
+    /// PageAdminHeader control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadPageLayout MasterLayout;
+    protected global::System.Web.UI.WebControls.Literal PageAdminHeader;
 
     /// <summary>
-    /// mainnavigation control.
+    /// MessageDisplay control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Cedar_Grove.MainNavigation mainnavigation;
+    protected global::Telerik.Web.UI.RadLabel MessageDisplay;
 
     /// <summary>
-    /// RadPageLayout2 control.
+    /// PageLocations control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadPageLayout RadPageLayout2;
+    protected global::Telerik.Web.UI.RadAutoCompleteBox PageLocations;
 
     /// <summary>
-    /// ContentPlaceHolder1 control.
+    /// SavePage control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+    protected global::Telerik.Web.UI.RadButton SavePage;
 
     /// <summary>
-    /// ContentPlaceHolder2 control.
+    /// PageDescription control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
-
-    /// <summary>
-    /// RadPageLayout1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::Telerik.Web.UI.RadPageLayout RadPageLayout1;
+    protected global::Telerik.Web.UI.RadEditor PageDescription;
   }
 }

@@ -23,13 +23,14 @@ namespace Cedar_Grove {
     [TextValue("Contact Us")] Contact,
     [TextValue("Find Events")] Search,
     [TextValue("Questions")] FAQ,
-    [TextValue("Helpful Links")] Resources,
-    [TextValue("Podcasts")] Communications,
-    [TextValue("News")] News,
+    [TextValue("Mens Ministry")] Mens,
+    [TextValue("Womens Ministry")] Womens,
+    [TextValue("Youth Ministry")] Youth,
+    [TextValue("Childrens Ministry")] Childrens,
     [TextValue("Admin Dashboard")] Admin,
     [TextValue("Page Management")] PageAdmin,
     [TextValue("My Dashboard")] Dashboard,
-    [TextValue("Link Management")] ResourceLinks
+    [TextValue("Outreach Ministry")] Outreach
   }
   [CustomEnum(true)]
   public enum PageContentBlocks {
@@ -37,10 +38,10 @@ namespace Cedar_Grove {
     [TextValue("06688FA2-EBCB-4F42-9F63-091524C9B839")] AdminHomeToolHeader,
     [TextValue("61175E8D-6131-4789-8989-DC4C4695E711")] PageAdminHeader,
     [TextValue("D42ABA67-51F4-4416-AFA4-A4015551B07C")] DashboardHeader,
-    [TextValue("8F9B4D10-6294-45AC-9692-9A29335F1661")] HomePageBottom,
-    [TextValue("D9E75614-BEA8-472D-9A42-E37CAEAA7506")] AboutUsHomeContent,
-    [TextValue("329D0E46-3C1E-4B53-9C6C-4CA7BAAE6536")] ResourceLinksContent,
-    [TextValue("BB0F852F-2C0E-4C2E-8CE0-59319318BC38")] ResourceLinksManagement,
-    [TextValue("A1E9F1FF-9D7C-45A2-94A4-E9BDBFC13CF3")] ContactUsHomeContent,
+    [TextValue("8F9B4D10-6294-45AC-9692-9A29335F1661")] MensPage,
+    [TextValue("D9E75614-BEA8-472D-9A42-E37CAEAA7506")] WomensPage,
+    [TextValue("329D0E46-3C1E-4B53-9C6C-4CA7BAAE6536")] YouthPage,
+    [TextValue("BB0F852F-2C0E-4C2E-8CE0-59319318BC38")] ChildrensPage,
+    [TextValue("A1E9F1FF-9D7C-45A2-94A4-E9BDBFC13CF3")] OutreachPage,
   }
 }

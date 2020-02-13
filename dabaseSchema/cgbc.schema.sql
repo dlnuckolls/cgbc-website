@@ -286,6 +286,28 @@ BEGIN
   COMMIT TRANSACTION Version1_4
 END
 
+SELECT @majorVersion = 1, @minorVersion = 5;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_5
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('8F9B4D10-6294-45AC-9692-9A29335F1661', 'Mens Page Content'),
+           ('D9E75614-BEA8-472D-9A42-E37CAEAA7506', 'Womens Page Content'),
+           ('329D0E46-3C1E-4B53-9C6C-4CA7BAAE6536', 'Youth Page Content'),
+           ('BB0F852F-2C0E-4C2E-8CE0-59319318BC38', 'Childrens Page Content'),
+           ('A1E9F1FF-9D7C-45A2-94A4-E9BDBFC13CF3', 'Outreach Page Content');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('8F9B4D10-6294-45AC-9692-9A29335F1661', 'Mens Page Content'),
+           ('D9E75614-BEA8-472D-9A42-E37CAEAA7506', 'Womens Page Content'),
+           ('329D0E46-3C1E-4B53-9C6C-4CA7BAAE6536', 'Youth Page Content'),
+           ('BB0F852F-2C0E-4C2E-8CE0-59319318BC38', 'Childrens Page Content'),
+           ('A1E9F1FF-9D7C-45A2-94A4-E9BDBFC13CF3', 'Outreach Page Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_5
+END
+
 /* 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence

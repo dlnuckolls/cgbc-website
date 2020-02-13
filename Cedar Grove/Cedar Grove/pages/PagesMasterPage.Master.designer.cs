@@ -10,7 +10,7 @@
 namespace Cedar_Grove {
 
 
-  public partial class DefaultMasterPage {
+  public partial class PagesMasterPage {
 
     /// <summary>
     /// head control.
@@ -40,13 +40,13 @@ namespace Cedar_Grove {
     protected global::Telerik.Web.UI.RadPageLayout MasterLayout;
 
     /// <summary>
-    /// mainnavigation control.
+    /// RadMenu1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Cedar_Grove.MainNavigation mainnavigation;
+    protected global::Telerik.Web.UI.RadMenu RadMenu1;
 
     /// <summary>
     /// RadPageLayout2 control.
@@ -65,15 +65,6 @@ namespace Cedar_Grove {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-
-    /// <summary>
-    /// ContentPlaceHolder2 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
 
     /// <summary>
     /// RadPageLayout1 control.

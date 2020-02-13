@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\AdminPages.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="App_Data\RadCaptcha\0.wav" />
     <Content Include="App_Data\RadCaptcha\1.wav" />
@@ -142,6 +143,7 @@
     <Content Include="App_Data\RadCaptcha\X.wav" />
     <Content Include="App_Data\RadCaptcha\Y.wav" />
     <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="controls\mainnavigation.ascx" />
     <Content Include="DefaultMasterPage.Master" />
   </ItemGroup>
   <ItemGroup>
@@ -166,11 +168,23 @@
     <Content Include="images\Thumbnails\Penguins.jpg" />
     <Content Include="images\Thumbnails\Tulips.jpg" />
     <Content Include="images\Tulips.jpg" />
+    <Content Include="pages\ChildrensMinistry.aspx" />
+    <Content Include="pages\MensMinistry.aspx" />
+    <Content Include="pages\OutreachMinistry.aspx" />
+    <Content Include="pages\WomensMinistry.aspx" />
+    <Content Include="pages\YouthMinistry.aspx" />
     <Content Include="scripts\scripts.js" />
     <Content Include="styles\base.css" />
     <Content Include="styles\default.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\AdminPages.aspx.cs">
+      <DependentUpon>AdminPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminPages.aspx.designer.cs">
+      <DependentUpon>AdminPages.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,12 +199,22 @@
     <Compile Include="admin\AdminMasterPage.Master.designer.cs">
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="controls\mainnavigation.ascx.cs">
+      <DependentUpon>mainnavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\mainnavigation.ascx.designer.cs">
+      <DependentUpon>mainnavigation.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="helpers\BaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="helpers\BaseMasterPage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -201,6 +225,7 @@
     <Compile Include="helpers\EncryptionHelper.cs" />
     <Compile Include="helpers\Enumerations.cs" />
     <Compile Include="helpers\SessionManager.cs" />
+    <Compile Include="helpers\SqlDatasets.cs" />
     <Compile Include="helpers\SqlHelpers.cs" />
     <Compile Include="helpers\SqlStatements.cs" />
     <Compile Include="helpers\StringHelpers.cs" />
@@ -213,6 +238,48 @@
     </Compile>
     <Compile Include="DefaultMasterPage.Master.designer.cs">
       <DependentUpon>DefaultMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ChildrensMinistry.aspx.cs">
+      <DependentUpon>ChildrensMinistry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ChildrensMinistry.aspx.designer.cs">
+      <DependentUpon>ChildrensMinistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\MensMinistry.aspx.cs">
+      <DependentUpon>MensMinistry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\MensMinistry.aspx.designer.cs">
+      <DependentUpon>MensMinistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\OutreachMinistry.aspx.cs">
+      <DependentUpon>OutreachMinistry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\OutreachMinistry.aspx.designer.cs">
+      <DependentUpon>OutreachMinistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\PagesMasterPage.Master.cs">
+      <DependentUpon>PagesMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\PagesMasterPage.Master.designer.cs">
+      <DependentUpon>PagesMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="pages\WomensMinistry.aspx.cs">
+      <DependentUpon>WomensMinistry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\WomensMinistry.aspx.designer.cs">
+      <DependentUpon>WomensMinistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\YouthMinistry.aspx.cs">
+      <DependentUpon>YouthMinistry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\YouthMinistry.aspx.designer.cs">
+      <DependentUpon>YouthMinistry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -228,6 +295,7 @@
   <ItemGroup>
     <Content Include="web.config" />
     <Content Include="admin\AdminMasterPage.Master" />
+    <Content Include="pages\PagesMasterPage.Master" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
