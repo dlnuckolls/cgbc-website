@@ -186,3 +186,116 @@ BEGIN
   COMMIT TRANSACTION Version1_2
 END
 
+SELECT @majorVersion = 1, @minorVersion = 3;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_3
+    -- States with Abbreviations
+	  CREATE TABLE [dbo].[States] (
+      [Id]           INT         NOT NULL IDENTITY(1,1),
+	    [State]        VARCHAR(50) NOT NULL,
+      [Abbreviation] VARCHAR(2)  NOT NULL,
+      CONSTRAINT PK_States PRIMARY KEY CLUSTERED (
+        [Id] ASC
+      ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY]
+
+    INSERT INTO dbo.States (Abbreviation,State) 
+	  VALUES ('AL', 'Alabama'),('AK', 'Alaska'),('AZ', 'Arizona'),('AR', 'Arkansas'),('CA', 'California'),('CO', 'Colorado'),('CT', 'Connecticut'),
+		       ('DE', 'Delaware'),('DC', 'District of Columbia'),('FL', 'Florida'),('GA', 'Georgia'),('HI', 'Hawaii'),('ID', 'Idaho'),('IL', 'Illinois'),
+		       ('IN', 'Indiana'),('IA', 'Iowa'),('KS', 'Kansas'),('KY', 'Kentucky'),('LA', 'Louisiana'),('ME', 'Maine'),('MD', 'Maryland'),('MA', 'Massachusetts'),
+		       ('MI', 'Michigan'),('MN', 'Minnesota'),('MS', 'Mississippi'),('MO', 'Missouri'),('MT', 'Montana'),('NE', 'Nebraska'),('NV', 'Nevada'),
+           ('NH', 'New Hampshire'),('NJ', 'New Jersey'),('NM', 'New Mexico'),('NY', 'New York'),('NC', 'North Carolina'),('ND', 'North Dakota'),
+		       ('OH', 'Ohio'),('OK', 'Oklahoma'),('OR', 'Oregon'),('PA', 'Pennsylvania'),('PR', 'Puerto Rico'),('RI', 'Rhode Island'),('SC', 'South Carolina'),
+		       ('SD', 'South Dakota'),('TN', 'Tennessee'),('TX', 'Texas'),('UT', 'Utah'),('VT', 'Vermont'),('VA', 'Virginia'),('WA', 'Washington'),
+		       ('WV', 'West Virginia'),('WI', 'Wisconsin'),('WY', 'Wyoming'),('AS', 'American Samoa'),('FM', 'Micronesia'),('VI', 'U.S. Virgin Islands'),
+           ('PW', 'Palau'),('AA', 'U.S. Armed Forces America'),('GU', 'Guam'),('MP', 'Northern Mariana Islands'),('AE', 'U.S. Armed Forces Europe'),
+           ('MH', 'Marshall Islands'),('AP', 'U.S. Armed Forces Pacific');    
+
+    DELETE [dbo].[AdminRoles];
+
+    INSERT INTO [dbo].[AdminRoles] (Id, RoleName, Notes) 
+    VALUES ('7ec7d607-18b1-452d-8d78-3d065959d358','Registered', 'New Registration'),
+           ('a7107c8f-ff15-4d5a-bba1-6db286fcef0a','User','User level access'),
+           ('b6522703-8844-4cff-8fc1-916ba90f515b','System User','System Administrator');
+    
+    -- Create default user
+    INSERT INTO [dbo].[AdminUsers] ([Id], [RoleId], [DisplayName], [UserName], [UserPass], [Notes], 
+           [Deleted], [SuperAdmin], [PasswordReset])
+    VALUES (newid(),'b6522703-8844-4cff-8fc1-916ba90f515b','David Nuckolls','dlnuckolls@gmail.com','5zO9V86nJwv4G04yfZ/V++IhIqOytb8ot3XcpsxjfPw=','System Created',0,1,0);
+
+    INSERT INTO [dbo].[SystemConfigs] ([Id],[MailServer],[ServerPort],[SmtpUser],[SmtpPassword],[FromEmail],[FromUsername],[RequireSsl],[RequireAuth])
+    VALUES (NEWID(),'glorykidd.com',465,'social@usfarmexchange.com','ZC6L0WZ5liUtx/9a8eNzlRApzF/ftLg2h4CyvctmkzM=','postmaster@glorykidd.com','GloryKidd Postmaster',1,1)
+
+    -- Add tables for dynamic page content
+    CREATE TABLE [dbo].[PageLocations] (
+	    [Id]          UNIQUEIDENTIFIER NOT NULL,
+	    [Description] VARCHAR(255)         NULL,
+      CONSTRAINT [PK_PageLocations] PRIMARY KEY CLUSTERED ( 
+	      [Id] ASC
+      ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].[PageLocations] ADD  CONSTRAINT [DF_PageLocations_Id]  DEFAULT (NEWID()) FOR [Id];
+
+    CREATE TABLE [dbo].[PageContent](
+	    [Id]           UNIQUEIDENTIFIER NOT NULL,
+	    [PageLocation] UNIQUEIDENTIFIER NOT NULL,
+	    [Description]  VARCHAR(max)         NULL,
+      CONSTRAINT [PK_PageContent] PRIMARY KEY CLUSTERED (
+	      [Id] ASC
+      ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY];
+
+    ALTER TABLE [dbo].[PageContent] ADD  CONSTRAINT [DF_PageContent_Id]  DEFAULT (NEWID()) FOR [Id];
+
+    ALTER TABLE [dbo].[PageContent] WITH CHECK ADD FOREIGN KEY([PageLocation]) REFERENCES [dbo].[PageLocations] ([Id]);
+
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('4667B33D-BE48-4B7D-816E-D705F1F732C5', 'Home Page Content'),
+           ('06688FA2-EBCB-4F42-9F63-091524C9B839', 'Admin Home Content'),
+           ('61175E8D-6131-4789-8989-DC4C4695E711', 'Page Management Header'),
+           ('D42ABA67-51F4-4416-AFA4-A4015551B07C', 'Dashboard Header');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_3
+END
+
+SELECT @majorVersion = 1, @minorVersion = 4;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_4
+
+    CREATE TABLE dbo.NewsArticles (
+      [Id]           INT              NOT NULL IDENTITY(1,1),
+	    [PageLocation] UNIQUEIDENTIFIER NOT NULL,
+      [Title]        VARCHAR(100)     NOT NULL, 
+      [Intro]        VARCHAR(500)         NULL,      
+      [Description]  VARCHAR(MAX)         NULL,      
+      [ByLine]       VARCHAR(75)          NULL,
+      [UserId]       UNIQUEIDENTIFIER NOT NULL,
+      [Created]      DATETIME         NOT NULL DEFAULT GETDATE(),
+	    CONSTRAINT [PK_NewsArticles] PRIMARY KEY CLUSTERED (
+	        [Id] ASC
+        ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].NewsArticles WITH CHECK ADD FOREIGN KEY([PageLocation]) REFERENCES [dbo].[PageLocations] ([Id]);
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_4
+END
+
+/* 
+  Use this model to create database changes
+  Just change NEWVERSION to the next number in the sequence
+
+SELECT @majorVersion = 1, @minorVersion = NEWVERSION;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_NEWVERSION
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_NEWVERSION
+END
+*/

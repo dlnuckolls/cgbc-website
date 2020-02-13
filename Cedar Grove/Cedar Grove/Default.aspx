@@ -32,36 +32,6 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
-<%--  <telerik:RadPageLayout runat="server" ID="Content1">
-    <Rows>
-      <telerik:LayoutRow>
-        <Columns>
-          <telerik:LayoutColumn Span="4" SpanMd="12" SpanSm="12" HiddenXs="true">
-            <h4>H4 text font size 18 px.</h4>
-            <p><strong>Main content text font size 16px</strong>, aliquam turpis sed nisl mattis sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae sapien metus. In hac habitasse platea dictumst. Aenean velit mauris, lobortis eu lacinia sed</p>
-            <p>Nullam facilisis neque ut aliquet imperdiet. Mauris ut odio augue. Curabitur in mi ac odio vestibulum lobortis. </p>
-            <telerik:RadButton runat="server" ID="RadButton1" Text="Button" ButtonType="SkinnedButton"></telerik:RadButton>
-          </telerik:LayoutColumn>
-
-          <telerik:LayoutColumn Span="4" SpanMd="12" SpanSm="12" HiddenXs="true">
-            <h4>H4 text font size 18 px.</h4>
-            <p><strong>Main content text font size 16px</strong>, aliquam turpis sed nisl mattis sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae sapien metus. In hac habitasse platea dictumst. Aenean velit mauris, lobortis eu lacinia sed</p>
-
-            <p>Nullam facilisis neque ut aliquet imperdiet. Mauris ut odio augue. Curabitur in mi ac odio vestibulum lobortis. </p>
-            <telerik:RadButton runat="server" ID="RadButton2" Text="Button" ButtonType="SkinnedButton"></telerik:RadButton>
-          </telerik:LayoutColumn>
-
-          <telerik:LayoutColumn Span="4" SpanMd="12" SpanSm="12" HiddenXs="true">
-            <h4>H4 text font size 18 px.</h4>
-            <p><strong>Main content text font size 16px</strong>, aliquam turpis sed nisl mattis sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae sapien metus. In hac habitasse platea dictumst. Aenean velit mauris, lobortis eu lacinia sed</p>
-
-            <p>Nullam facilisis neque ut aliquet imperdiet. Mauris ut odio augue. Curabitur in mi ac odio vestibulum lobortis. </p>
-            <telerik:RadButton runat="server" ID="RadButton3" Text="Button" ButtonType="SkinnedButton"></telerik:RadButton>
-          </telerik:LayoutColumn>
-        </Columns>
-      </telerik:LayoutRow>
-    </Rows>
-  </telerik:RadPageLayout>--%>
   <telerik:RadListView runat="server" OnNeedDataSource="UpcomingEvents_NeedDataSource" ID="UpcomingEvents" AllowPaging="true" PageSize="3">
     <LayoutTemplate>
       <div class="listView1">

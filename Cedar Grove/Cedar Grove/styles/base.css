@@ -108,6 +108,45 @@ h6 {
   min-height: 600px;
 }
 
+#wrapper .adminheader {
+  position: relative;
+  /*padding: 1.875em;
+  padding-top: 1em;*/
+  overflow: hidden;
+  background-color: lightskyblue;
+  /*background-size: cover;
+  background-position: center;
+  background-image: url('/images/cgbc-banner.JPG');*/
+  padding: 10px 0;
+}
+
+  #wrapper .adminheader .RadMenu {
+    margin: 10px 0;
+    float: right !important;
+  }
+
+    #wrapper .adminheader .RadMenu .rmRootGroup {
+      border-width: 0 !important;
+      border-color: transparent !important;
+      background-color: transparent !important;
+    }
+
+      #wrapper .adminheader .RadMenu .rmRootGroup :hover {
+        /* background-color: lightblue !important; */
+        border-radius: 10px;
+      }
+
+      #wrapper .adminheader .RadMenu .rmRootGroup .rmLink {
+        border-width: 0 !important;
+        border-color: transparent !important;
+        background-color: transparent !important;
+      }
+
+        #wrapper .adminheader .RadMenu .rmRootGroup .rmLink:hover {
+          background-color: lightblue !important;
+          border-radius: 10px;
+        }
+
 #wrapper .header {
   background-color: transparent !important;
   padding: 10px 0;
