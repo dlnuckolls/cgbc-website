@@ -110,13 +110,7 @@ h6 {
 
 #wrapper .adminheader {
   position: relative;
-  /*padding: 1.875em;
-  padding-top: 1em;*/
-  overflow: hidden;
   background-color: lightskyblue;
-  /*background-size: cover;
-  background-position: center;
-  background-image: url('/images/cgbc-banner.JPG');*/
   padding: 10px 0;
 }
 

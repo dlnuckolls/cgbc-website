@@ -15,11 +15,11 @@
               <asp:Literal ID="AdminHomeToolHeader" runat="server" />
             </div>
             <div class="adminTiles">
-              <telerik:RadIconTile ID="AdminResourceLinks" runat="server" ImageUrl="~/images/menutiles/internet.png" AutoPostBack="true" OnClick="AdminResourceLinks_Click">
-                <Title Text="Resource Links"></Title>
-              </telerik:RadIconTile>
               <telerik:RadIconTile ID="EditPageAdmin" runat="server" ImageUrl="~/images/menutiles/pages.png" AutoPostBack="true" OnClick="EditPageAdmin_Click">
                 <Title Text="Page Contents"></Title>
+              </telerik:RadIconTile>
+              <telerik:RadIconTile ID="AdminResourceLinks" runat="server" ImageUrl="~/images/menutiles/internet.png" AutoPostBack="true" OnClick="AdminResourceLinks_Click">
+                <Title Text="Resource Links"></Title>
               </telerik:RadIconTile>
               <telerik:RadIconTile ID="QuoteAdmin" runat="server" ImageUrl="~/images/menutiles/quotes.png" AutoPostBack="true" OnClick="QuoteAdmin_Click">
                 <Title Text="Sentimental"></Title>

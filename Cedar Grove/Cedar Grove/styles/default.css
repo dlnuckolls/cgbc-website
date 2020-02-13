@@ -33,3 +33,160 @@
     font-size: .5em;
 }
 
+.MyLabel {
+  display: block;
+  width: 150px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.MyLabel2 {
+  display: block;
+  width: 170px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.MyLabel3 {
+  display: block;
+  width: 200px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.MyLabel4 {
+  display: block;
+  width: 210px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.RadButton.rbRounded.css3Simple {
+  height: 40px;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.RadButton.rbRounded.css3SimpleAction {
+  height: 37px;
+  width: 200px;
+  border-radius: 5px;
+  font-size: .75em;
+  padding: 5px;
+}
+
+.RadButton.rbRounded.css3Simple2 {
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+  .RadButton.rbRounded.css3Simple2 .rbText {
+    margin-top: 0 !important;
+  }
+
+html body form .RadInput .MyEmptyTextBox,
+html body form .RadInput .MyEnabledTextBox,
+html body form .RadInput .MyFocusedTextBox {
+  height: 38px;
+  border-width: 1px;
+  border-color: #a9c9a9;
+  background: beige;
+  font: 14px/18px arial,sans-serif;
+}
+
+html body form .RadInput .MyHoveredTextBox {
+  background: #bceff8 !important;
+}
+
+html body form .RadInput .MyFocusedTextBox {
+  background: white !important;
+}
+
+.RadInput textarea.riTextBox {
+  height: auto !important;
+}
+
+.RadComboBox .MyEnabledTextBox {
+  height: 38px;
+  border-width: 1px;
+  border-color: #a9c9a9;
+  background: beige !important;
+  font: 14px/18px arial,sans-serif;
+}
+
+html body form .RadInput .MyEmptyTextBox2,
+html body form .RadInput .MyEnabledTextBox2,
+html body form .RadInput .MyHoveredTextBox2,
+html body form .RadInput .MyFocusedTextBox2 {
+  border-width: 1px;
+  border-color: #a9c9a9;
+  background: beige;
+  font: 14px/18px arial,sans-serif;
+}
+
+html body form .RadInput .MyDisabledTextBox {
+  height: 38px;
+  border-width: 0;
+  border-color: #fff;
+  font: 1em arial,sans-serif;
+}
+
+html body .RadInput .MyEmptyTextBox {
+  color: #999;
+}
+
+html body form .RadInput .MyEnabledTextBox {
+}
+
+html body form .RadInput .MyHoveredTextBox {
+  border-color: #6c6;
+  background: #c9fdc9;
+}
+
+html body form .RadInput .MyFocusedTextBox {
+  border-color: #3a3;
+  background: #c9fdc9;
+}
+
+#messageDisplayArea {
+  width: 100%;
+  text-align: center;
+}
+
+.errorMessageDisplay {
+  padding-left: 10px;
+  padding-right: 10px !important;
+  line-height: 1em;
+  background-color: darkred;
+  font-weight: bold;
+  color: white !important;
+}
+
+.successMessageDisplay {
+  padding-left: 10px;
+  padding-right: 10px !important;
+  line-height: 1em;
+  min-width: 186px;
+  background-color: greenyellow;
+  font-weight: bold;
+  color: black;
+}
+
+.adminTiles {
+  width: 100%;
+  margin: auto !important;
+  padding: 5px;
+  min-height: 500px;
+}
+

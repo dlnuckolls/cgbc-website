@@ -10,18 +10,14 @@ namespace Cedar_Grove.admin {
     protected void Page_Load(object sender, EventArgs e) {
       SessionInfo.CurrentPage = PageNames.Admin;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
+      if (!SessionInfo.IsAuthenticated) Response.Redirect("~/admin/Login.aspx");
+      if (!SessionInfo.IsAdmin) Response.Redirect("~/");
     }
 
-    protected void AdminResourceLinks_Click(object sender, EventArgs e) {
+    protected void AdminResourceLinks_Click(object sender, EventArgs e) { }
 
-    }
+    protected void EditPageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminPages.aspx"); }
 
-    protected void EditPageAdmin_Click(object sender, EventArgs e) {
-
-    }
-
-    protected void QuoteAdmin_Click(object sender, EventArgs e) {
-
-    }
+    protected void QuoteAdmin_Click(object sender, EventArgs e) { }
   }
 }

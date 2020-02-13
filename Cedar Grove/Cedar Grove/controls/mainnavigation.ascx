@@ -24,6 +24,6 @@
     <telerik:RadMenuItem IsSeparator="true" />
     <telerik:RadMenuItem Text="Contact Us" />
     <telerik:RadMenuItem IsSeparator="true" />
-    <telerik:RadMenuItem Text="Admin" />
+    <telerik:RadMenuItem Text="Admin" NavigateUrl="~/admin/Login.aspx" />
   </Items>
 </telerik:RadMenu>

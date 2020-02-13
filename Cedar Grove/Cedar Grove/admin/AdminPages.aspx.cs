@@ -12,8 +12,8 @@ namespace Cedar_Grove.admin {
       // Set page name in the title section
       SessionInfo.CurrentPage = PageNames.PageAdmin;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
-      //if(!SessionInfo.IsAuthenticated) Response.Redirect("/");
-      //if(!SessionInfo.IsAdmin) Response.Redirect("~/admin/default.aspx");
+      if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
+      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/default.aspx");
       PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
     }
 

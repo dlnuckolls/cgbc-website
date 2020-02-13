@@ -30,7 +30,9 @@ namespace Cedar_Grove {
     [TextValue("Admin Dashboard")] Admin,
     [TextValue("Page Management")] PageAdmin,
     [TextValue("My Dashboard")] Dashboard,
-    [TextValue("Outreach Ministry")] Outreach
+    [TextValue("Outreach Ministry")] Outreach,
+    [TextValue("Forgot Password")] ForgotPassword,
+    [TextValue("Reset Password")] ResetPassword,
   }
   [CustomEnum(true)]
   public enum PageContentBlocks {

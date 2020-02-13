@@ -49,15 +49,6 @@ namespace Cedar_Grove.admin {
     protected global::System.Web.UI.WebControls.Literal AdminHomeToolHeader;
 
     /// <summary>
-    /// AdminResourceLinks control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::Telerik.Web.UI.RadIconTile AdminResourceLinks;
-
-    /// <summary>
     /// EditPageAdmin control.
     /// </summary>
     /// <remarks>
@@ -65,6 +56,15 @@ namespace Cedar_Grove.admin {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadIconTile EditPageAdmin;
+
+    /// <summary>
+    /// AdminResourceLinks control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadIconTile AdminResourceLinks;
 
     /// <summary>
     /// QuoteAdmin control.
