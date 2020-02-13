@@ -11,5 +11,17 @@ namespace Cedar_Grove.admin {
       SessionInfo.CurrentPage = PageNames.Admin;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
     }
+
+    protected void AdminResourceLinks_Click(object sender, EventArgs e) {
+
+    }
+
+    protected void EditPageAdmin_Click(object sender, EventArgs e) {
+
+    }
+
+    protected void QuoteAdmin_Click(object sender, EventArgs e) {
+
+    }
   }
 }

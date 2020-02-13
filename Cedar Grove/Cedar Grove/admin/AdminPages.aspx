@@ -21,13 +21,13 @@
       <div id="messageDisplayArea">
         <telerik:RadLabel runat="server" ID="MessageDisplay"></telerik:RadLabel>
       </div>
-      <div style="height: 40px; width: 98%; clear: both; margin:auto;">
+      <div style="height: 40px; width: 95%; clear: both; margin: auto;">
         <div style="float: left; width: 60%;">
           <telerik:RadAutoCompleteBox runat="server" ID="PageLocations" RenderMode="Auto" Width="100%" EmptyMessage="Select a Location" AllowCustomEntry="false"
             DataTextField="Description" DataValueField="Id" Skin="Silk" DataSourceID="ObjectDataSource1" ZIndex="10000" IsCaseSensitive="False" HighlightFirstMatch="True" MinFilterLength="1"
             OnTextChanged="PageLocations_TextChanged" Label="Select Page Block to Edit" TextSettings-SelectionMode="Single" InputType="Text" AutoPostBack="true" />
         </div>
-        <div style="float: right; text-align:right; width: 20%;">
+        <div style="float: right; text-align: right;">
           <telerik:RadButton ID="SavePage" runat="server" Skin="Silk" RenderMode="Auto" Text="Save Changes" OnClick="SavePage_Click" CssClass="css3Simple" />
         </div>
       </div>
@@ -58,6 +58,9 @@
               <telerik:EditorDropDown Name="RealFontSize"></telerik:EditorDropDown>
               <telerik:EditorSeparator></telerik:EditorSeparator>
               <telerik:EditorTool Name="ImageManager" Text="Image Manager"></telerik:EditorTool>
+              <telerik:EditorTool Name="StripAll" />
+              <telerik:EditorTool Name="StripSpan" />
+              <telerik:EditorTool Name="StripWord" />
             </telerik:EditorToolGroup>
             <telerik:EditorToolGroup>
               <telerik:EditorTool Name="InsertLink" Text="Links"></telerik:EditorTool>

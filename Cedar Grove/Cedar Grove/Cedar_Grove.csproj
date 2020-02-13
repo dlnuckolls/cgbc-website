@@ -158,6 +158,9 @@
     <Content Include="images\Lighthouse.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\megaphone.png" />
+    <Content Include="images\menutiles\internet.png" />
+    <Content Include="images\menutiles\pages.png" />
+    <Content Include="images\menutiles\quotes.png" />
     <Content Include="images\Penguins.jpg" />
     <Content Include="images\Thumbnails\Chrysanthemum.jpg" />
     <Content Include="images\Thumbnails\Desert.jpg" />
