@@ -14,7 +14,7 @@ namespace Cedar_Grove.admin {
       if (!SessionInfo.IsAdmin) Response.Redirect("~/");
     }
 
-    protected void AdminResourceLinks_Click(object sender, EventArgs e) { }
+    protected void AdminResourceLinks_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminGallery.aspx"); }
 
     protected void EditPageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminPages.aspx"); }
 

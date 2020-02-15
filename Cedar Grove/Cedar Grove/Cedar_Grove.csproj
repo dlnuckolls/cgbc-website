@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\AdminGallery.aspx" />
     <Content Include="admin\AdminPages.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\ForgotPassword.aspx" />
@@ -151,10 +152,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="images\alarm.png" />
     <Content Include="images\cgbc-banner.JPG" />
     <Content Include="images\Chrysanthemum.jpg" />
     <Content Include="images\Desert.jpg" />
+    <Content Include="images\gallery\10552649_894989603869133_7924941354887018607_n.jpg" />
+    <Content Include="images\gallery\10906051_894989503869143_7005374842670952177_n.jpg" />
+    <Content Include="images\gallery\10915257_894989517202475_4105918270974505690_n.jpg" />
+    <Content Include="images\gallery\1977048_894989987202428_2789674105290934717_n.jpg" />
+    <Content Include="images\gallery\IMG_4049.jpeg" />
+    <Content Include="images\gallery\IMG_4072.jpeg" />
     <Content Include="images\Hydrangeas.jpg" />
     <Content Include="images\Jellyfish.jpg" />
     <Content Include="images\Koala.jpg" />
@@ -184,6 +192,13 @@
     <Content Include="styles\default.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\AdminGallery.aspx.cs">
+      <DependentUpon>AdminGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminGallery.aspx.designer.cs">
+      <DependentUpon>AdminGallery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\AdminPages.aspx.cs">
       <DependentUpon>AdminPages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -266,6 +281,7 @@
     <Compile Include="DefaultMasterPage.Master.designer.cs">
       <DependentUpon>DefaultMasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="objectclass\GalleryImage.cs" />
     <Compile Include="pages\ChildrensMinistry.aspx.cs">
       <DependentUpon>ChildrensMinistry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -353,7 +369,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

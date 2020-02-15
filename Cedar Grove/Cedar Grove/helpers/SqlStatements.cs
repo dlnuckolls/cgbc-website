@@ -38,5 +38,9 @@ namespace Cedar_Grove {
     public const string SQL_GET_PAGE_CONTENT_FOR_DISPLAY = "SELECT ISNULL(a.[Description],'') [Description] FROM [dbo].[PageContent] a WHERE a.[PageLocation] = '{0}';";
     public const string SQL_SAVE_PAGE_CONTENTS = "UPDATE [dbo].[PageContent] SET [Description] = '{0}' WHERE [PageLocation] = '{1}';";
 
+    public const string SQL_GET_PAGE_GALLERY_BY_LOCATION = "SELECT [ImageUrl], [Description], [Title] FROM GalleryImages WHERE [PageLocation] = '{0}';";
+    public const string SQL_GET_PAGE_LOCATION_FOR_IMAGES = "SELECT [Id] PageLocation,[Description] FROM [dbo].[PageLocations];";
+    public const string SQL_GET_PAGE_GALLERY_IMAGES = "SELECT [Id], [PageLocation], [ImageUrl], [Description], [Title], [Active], [Created] FROM GalleryImages;";
+    public const string SQL_GET_PAGE_GALLERY_BY_ID = "SELECT [Id], [PageLocation], [ImageUrl], [Description], [Title], [Active], [Created] FROM GalleryImages WHERE [Id] = '{0}';";
   }
 }

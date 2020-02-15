@@ -308,6 +308,31 @@ BEGIN
   COMMIT TRANSACTION Version1_5
 END
 
+SELECT @majorVersion = 1, @minorVersion = 6;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_6
+    CREATE TABLE dbo.GalleryImages (
+	    [Id]           UNIQUEIDENTIFIER NOT NULL,
+	    [PageLocation] UNIQUEIDENTIFIER NOT NULL,
+      [ImageUrl]     VARCHAR(250)         NULL, 
+      [Description]  VARCHAR(MAX)         NULL, 
+      [Title]        VARCHAR(100)         NULL,
+	    [Active]       BIT              NOT NULL DEFAULT 1,
+      [Created]      DATETIME         NOT NULL DEFAULT GETDATE(),
+	    CONSTRAINT [PK_GalleryImages] PRIMARY KEY CLUSTERED (
+	        [Id] ASC
+        ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].[GalleryImages] ADD  CONSTRAINT [DF_GalleryImages_Id]  DEFAULT (NEWID()) FOR [Id];
+    
+    ALTER TABLE dbo.NewsArticles ADD Active BIT NOT NULL DEFAULT 1;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_6
+END
+
 /* 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence

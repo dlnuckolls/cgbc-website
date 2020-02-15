@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PagesMasterPage.Master.cs" Inherits="Cedar_Grove.PagesMasterPage" %>
 
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register Src="~/controls/mainnavigation.ascx" TagPrefix="uc1" TagName="mainnavigation" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,31 +31,7 @@
 
                 <%--Main Nav--%>
                 <telerik:LayoutColumn Span="10" SpanMd="11" SpanSm="12" SpanXs="12">
-                  <telerik:RadMenu ID="RadMenu1" runat="server" RenderMode="Auto">
-                    <Items>
-                      <telerik:RadMenuItem Text="Home" NavigateUrl="/" />
-                      <telerik:RadMenuItem IsSeparator="true" />
-                      <telerik:RadMenuItem Text="Ministries">
-                      <Items>
-                        <telerik:RadMenuItem Text="Men On Mission" />
-                        <telerik:RadMenuItem Text="Womens" />
-                        <telerik:RadMenuItem Text="Youth" />
-                        <telerik:RadMenuItem Text="Children" />
-                        <telerik:RadMenuItem Text="Outreach" />
-                      </Items>
-                      </telerik:RadMenuItem>
-                      <telerik:RadMenuItem IsSeparator="true" />
-                      <telerik:RadMenuItem Text="Calendar" />
-                      <telerik:RadMenuItem IsSeparator="true" />
-                      <telerik:RadMenuItem Text="Sermons" />
-                      <telerik:RadMenuItem IsSeparator="true" />
-                      <telerik:RadMenuItem Text="Galary" />
-                      <telerik:RadMenuItem IsSeparator="true" />
-                      <telerik:RadMenuItem Text="About Us" />
-                      <telerik:RadMenuItem IsSeparator="true" />
-                      <telerik:RadMenuItem Text="Contact Us" />
-                    </Items>
-                  </telerik:RadMenu>
+                  <uc1:mainnavigation runat="server" ID="mainnavigation" />
                 </telerik:LayoutColumn>
               </Columns>
             </telerik:LayoutRow>

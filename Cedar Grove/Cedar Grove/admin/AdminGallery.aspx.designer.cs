@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Cedar_Grove.pages {
+namespace Cedar_Grove.admin {
 
 
-  public partial class WomensMinistry {
+  public partial class AdminGallery {
 
     /// <summary>
     /// TitleTag control.
@@ -22,30 +22,39 @@ namespace Cedar_Grove.pages {
     protected global::System.Web.UI.WebControls.Literal TitleTag;
 
     /// <summary>
-    /// JumbotronLayout control.
+    /// PageAdminHeader control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadPageLayout JumbotronLayout;
+    protected global::System.Web.UI.WebControls.Literal PageAdminHeader;
 
     /// <summary>
-    /// PageContentBlock control.
+    /// MessageDisplay control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal PageContentBlock;
+    protected global::Telerik.Web.UI.RadLabel MessageDisplay;
 
     /// <summary>
-    /// RadImageGallery1 control.
+    /// gImageGallery control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadImageGallery RadImageGallery1;
+    protected global::Telerik.Web.UI.RadGrid gImageGallery;
+
+    /// <summary>
+    /// ObjectDataSource1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
   }
 }

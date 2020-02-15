@@ -40,13 +40,13 @@ namespace Cedar_Grove {
     protected global::Telerik.Web.UI.RadPageLayout MasterLayout;
 
     /// <summary>
-    /// RadMenu1 control.
+    /// mainnavigation control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadMenu RadMenu1;
+    protected global::Cedar_Grove.MainNavigation mainnavigation;
 
     /// <summary>
     /// RadPageLayout2 control.
