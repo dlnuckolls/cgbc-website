@@ -21,11 +21,11 @@ namespace Cedar_Grove.admin {
       ((RadGrid)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_GET_PAGE_GALLERY_IMAGES);
     }
 
-    protected void gImageGallery_UpdateCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) {    }
+    protected void gImageGallery_UpdateCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) { }
 
-    protected void gImageGallery_InsertCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) {    }
+    protected void gImageGallery_InsertCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) { }
 
-    protected void gImageGallery_DeleteCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) {    }
+    protected void gImageGallery_DeleteCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) { }
 
     protected void AsyncUpload1_FileUploaded(object sender, FileUploadedEventArgs e) {
       var fileUpload = (RadAsyncUpload)sender;
@@ -37,14 +37,24 @@ namespace Cedar_Grove.admin {
     }
 
     protected void gImageGallery_ItemDataBound(object sender, GridItemEventArgs e) {
+      GridDataItem item = e.Item as GridDataItem;
       if (e.Item.IsInEditMode) {
-
-      } else {
-        GridDataItem item = e.Item as GridDataItem;
         if (item != null) {
-          ((RadLabel)item.FindControl("RadLabel3")).Text = "";
-          //int categoryID = (int)item.GetDataKeyValue("CategoryID");
-
+          var p = (Guid)item.GetDataKeyValue("Id");
+          SessionInfo.CurrentGalleryImage.LoadGalleryImage(p.ToString());
+          var ddlBox = ((RadComboBox)item.FindControl("ddlPageLocation"));
+          ddlBox.DataSourceID = "ObjectDataSource1";
+          ddlBox.DataTextField = "Description";
+          ddlBox.DataValueField = "PageLocation";
+          ddlBox.DataBind();
+          ddlBox.FindItemByValue(SessionInfo.CurrentGalleryImage.PageLocation.TextValue().ToLower()).Selected = true; ;
+        }
+      } else {
+        if (item != null) {
+          var p = (Guid)item.GetDataKeyValue("Id");
+          SessionInfo.CurrentGalleryImage.LoadGalleryImage(p.ToString());
+          ((RadLabel)item.FindControl("RadLabel3")).Text = SqlHelpers.SelectScalar(
+            SqlStatements.SQL_GET_PAGE_LOCATION_NAME_FOR_IMAGES.FormatWith(SessionInfo.CurrentGalleryImage.PageLocation.TextValue())).ToString();
         }
       }
     }

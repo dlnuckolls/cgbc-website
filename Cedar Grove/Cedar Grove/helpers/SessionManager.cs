@@ -15,7 +15,10 @@ namespace Cedar_Grove {
     public PageNames CurrentPage { get; set; }
     public string DisplayCurrentPage => "<title>{0}</title>".FormatWith(CurrentPage.TextValue());
     public string PageContent(PageContentBlocks pageLocation) => SqlHelpers.SelectScalar(SqlStatements.SQL_GET_PAGE_CONTENT_FOR_DISPLAY.FormatWith(pageLocation.TextValue())).ToString();
+    #endregion
 
+    #region GalleryImage Management
+    public GalleryImage CurrentGalleryImage => GalleryImage.StaticInstance;
     #endregion
 
     #region Current User Details

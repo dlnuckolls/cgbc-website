@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Cedar_Grove.objectclass {
+namespace Cedar_Grove {
   public class GalleryImage {
     private static GalleryImage _instance;
     public string Id;
@@ -19,13 +19,18 @@ namespace Cedar_Grove.objectclass {
     public GalleryImage(string id) {
       var dataRow = SqlHelpers.Select(SqlStatements.SQL_GET_PAGE_GALLERY_BY_ID.FormatWith(id)).Rows[0];
       Id = dataRow["Id"].ToString();
-      //PageLocation = ;
+      foreach (var pl in Enum.GetValues(typeof(PageContentBlocks))) {
+        if (dataRow["PageLocation"].ToString().ToUpper() == ((PageContentBlocks)pl).TextValue()) 
+          PageLocation = (PageContentBlocks)pl;
+      }
       Title = dataRow["Title"].ToString();
       Description = dataRow["Description"].ToString();
       ImageUrl = dataRow["ImageUrl"].ToString();
       Created = dataRow["Created"].ToString().GetAsDate();
       Active = dataRow["Active"].ToString().GetAsBool();
     }
+
+    public void LoadGalleryImage(string id) { _instance = new GalleryImage(id); }
 
     public void SaveResourceLink() {
       if (Id.IsNullOrEmpty()) {

@@ -34,6 +34,7 @@ namespace Cedar_Grove {
     [TextValue("Forgot Password")] ForgotPassword,
     [TextValue("Reset Password")] ResetPassword,
   }
+
   [CustomEnum(true)]
   public enum PageContentBlocks {
     [TextValue("4667B33D-BE48-4B7D-816E-D705F1F732C5")] AdminHomeTop,
@@ -46,4 +47,5 @@ namespace Cedar_Grove {
     [TextValue("BB0F852F-2C0E-4C2E-8CE0-59319318BC38")] ChildrensPage,
     [TextValue("A1E9F1FF-9D7C-45A2-94A4-E9BDBFC13CF3")] OutreachPage,
   }
+
 }
