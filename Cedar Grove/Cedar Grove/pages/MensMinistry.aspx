@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/PagesMasterPage.Master" AutoEventWireup="true" CodeBehind="MensMinistry.aspx.cs" Inherits="Cedar_Grove.pages.MensMinistry" %>
 
+<%@ Register Src="~/controls/imagegallery.ascx" TagPrefix="uc1" TagName="ImageGallery" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <asp:Literal ID="TitleTag" runat="server"></asp:Literal>
 </asp:Content>
@@ -12,28 +15,10 @@
             <asp:Literal ID="PageContentBlock" runat="server" />
           </telerik:LayoutColumn>
           <telerik:LayoutColumn Span="6" SpanMd="5" SpanSm="12" SpanXs="12">
-            <telerik:RadImageGallery RenderMode="Auto" ID="RadImageGallery1" runat="server" OnNeedDataSource="RadImageGallery1_NeedDataSource"
-              DataDescriptionField="Description" DataImageField="ImageUrl" DataTitleField="Title" Width="600px" Height="480px" LoopItems="true" DisplayAreaMode="Image"
-              ShowLoadingPanel="true">
-              <ThumbnailsAreaSettings ThumbnailWidth="120px" ThumbnailHeight="80px" Height="80px" Mode="ImageSliderPreview" ShowScrollButtons="False" />
-              <ClientSettings>
-                <AnimationSettings SlideshowSlideDuration="5000">
-                  <NextImagesAnimation Type="DiagonalResize" Easing="EaseInExpo" Speed="1000" />
-                  <PrevImagesAnimation Type="VerticalStripes" Easing="EaseOutBack" Speed="1000" />
-                </AnimationSettings>
-              </ClientSettings>
-              <ImageAreaSettings Height="400px" NavigationMode="Zone" ShowNextPrevImageButtons="False" />
-              <ToolbarSettings ShowItemsCounter="False"></ToolbarSettings>
-              <PagerStyle ShowPagerText="False"></PagerStyle>
-            </telerik:RadImageGallery>
+            <uc1:ImageGallery runat="server" id="ImageGallery1" />
           </telerik:LayoutColumn>
         </Columns>
       </telerik:LayoutRow>
     </Rows>
   </telerik:RadPageLayout>
-  <script>
-    function pageLoad() {
-      $find("<%= RadImageGallery1.ClientID %>").playSlideshow();
-    }
-  </script>
 </asp:Content>

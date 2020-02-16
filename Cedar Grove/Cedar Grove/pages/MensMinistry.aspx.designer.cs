@@ -40,12 +40,12 @@ namespace Cedar_Grove.pages {
     protected global::System.Web.UI.WebControls.Literal PageContentBlock;
 
     /// <summary>
-    /// RadImageGallery1 control.
+    /// ImageGallery1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadImageGallery RadImageGallery1;
+    protected global::Cedar_Grove.controls.imagegallery ImageGallery1;
   }
 }

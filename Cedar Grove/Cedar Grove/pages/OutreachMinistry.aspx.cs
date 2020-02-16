@@ -11,6 +11,7 @@ namespace Cedar_Grove.pages {
       SessionInfo.CurrentPage = PageNames.Outreach;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.OutreachPage);
+      ImageGallery1.CurrentPage = PageContentBlocks.OutreachPage;
     }
   }
 }

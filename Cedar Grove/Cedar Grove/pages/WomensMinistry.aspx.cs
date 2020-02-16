@@ -12,9 +12,7 @@ namespace Cedar_Grove.pages {
       SessionInfo.CurrentPage = PageNames.Womens;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.WomensPage);
-    }
-    protected void RadImageGallery1_NeedDataSource(object sender, Telerik.Web.UI.ImageGalleryNeedDataSourceEventArgs e) {
-      ((RadImageGallery)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_GET_PAGE_GALLERY_BY_LOCATION.FormatWith(PageContentBlocks.WomensPage.TextValue()));
+      ImageGallery1.CurrentPage = PageContentBlocks.WomensPage;
     }
   }
 }

@@ -147,6 +147,7 @@
     <Content Include="App_Data\RadCaptcha\X.wav" />
     <Content Include="App_Data\RadCaptcha\Y.wav" />
     <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="controls\imagegallery.ascx" />
     <Content Include="controls\mainnavigation.ascx" />
     <Content Include="DefaultMasterPage.Master" />
   </ItemGroup>
@@ -240,6 +241,13 @@
     </Compile>
     <Compile Include="admin\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\imagegallery.ascx.cs">
+      <DependentUpon>imagegallery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\imagegallery.ascx.designer.cs">
+      <DependentUpon>imagegallery.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\mainnavigation.ascx.cs">
       <DependentUpon>mainnavigation.ascx</DependentUpon>
@@ -369,7 +377,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
