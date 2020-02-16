@@ -108,6 +108,13 @@ h6 {
   min-height: 600px;
 }
 
+  .pageHeaderTitle {
+    font-size: 1.5em !important;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: midnightblue !important;
+  }
+
 #wrapper .adminheader {
   position: relative;
   background-color: lightskyblue;
@@ -163,16 +170,16 @@ h6 {
         border-radius: 10px;
       }
 
-    #wrapper .header .RadMenu .rmRootGroup .rmLink {
-      border-width: 0 !important;
-      border-color: transparent !important;
-      background-color: transparent !important;
-    }
-
-      #wrapper .header .RadMenu .rmRootGroup .rmLink:hover {
-        background-color: lightblue !important;
-        border-radius: 10px;
+      #wrapper .header .RadMenu .rmRootGroup .rmLink {
+        border-width: 0 !important;
+        border-color: transparent !important;
+        background-color: transparent !important;
       }
+
+        #wrapper .header .RadMenu .rmRootGroup .rmLink:hover {
+          background-color: lightblue !important;
+          border-radius: 10px;
+        }
 
 
 

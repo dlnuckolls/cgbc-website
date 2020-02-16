@@ -19,10 +19,7 @@ namespace Cedar_Grove {
     public GalleryImage(string id) {
       var dataRow = SqlHelpers.Select(SqlStatements.SQL_GET_PAGE_GALLERY_BY_ID.FormatWith(id)).Rows[0];
       Id = dataRow["Id"].ToString();
-      foreach (var pl in Enum.GetValues(typeof(PageContentBlocks))) {
-        if (dataRow["PageLocation"].ToString().ToUpper() == ((PageContentBlocks)pl).TextValue()) 
-          PageLocation = (PageContentBlocks)pl;
-      }
+      SetPageLocationById(dataRow["PageLocation"].ToString());
       Title = dataRow["Title"].ToString();
       Description = dataRow["Description"].ToString();
       ImageUrl = dataRow["ImageUrl"].ToString();
@@ -30,16 +27,27 @@ namespace Cedar_Grove {
       Active = dataRow["Active"].ToString().GetAsBool();
     }
 
+    public void ClearGalleryImage() => _instance = new GalleryImage();
+
     public void LoadGalleryImage(string id) { _instance = new GalleryImage(id); }
 
-    public void SaveResourceLink() {
+    public void SaveGalleryImage() {
       if (Id.IsNullOrEmpty()) {
-        //SqlHelpers.Insert(SqlStatements.SQL_CREATE_RESOURCE_LINK.FormatWith(
-        //  Title.FixSqlString(), URL.FixSqlString(), (Active) ? "1" : "0", ThumbNail.FixSqlNull(), Description.FixSqlString()));
+        _ = SqlHelpers.Insert(SqlStatements.SQL_INSERT_PAGE_GALLERY_IMAGE.FormatWith(PageLocation.TextValue(), ImageUrl.FixSqlString(),
+          Description.FixSqlString(), Title.FixSqlString()));
       } else {
-        //SqlHelpers.Update(SqlStatements.SQL_UPDATE_RESOURCE_LINK_BY_ID.FormatWith(
-        //  Title.FixSqlString(), URL.FixSqlString(), (Active) ? "1" : "0", ThumbNail.FixSqlNull(), Description.FixSqlString(), Id));
+        _ = SqlHelpers.Update(SqlStatements.SQL_UPDATE_PAGE_GALLERY_IMAGE.FormatWith(PageLocation.TextValue(), ImageUrl.FixSqlString(),
+          Description.FixSqlString(), Title.FixSqlString(), Id));
       }
+    }
+
+    public void SetPageLocationById(string id) {
+      try {
+        foreach (var pl in Enum.GetValues(typeof(PageContentBlocks))) {
+          if (id.ToUpper() == ((PageContentBlocks)pl).TextValue().ToUpper())
+            PageLocation = (PageContentBlocks)pl;
+        }
+      } catch { }
     }
   }
 }
