@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <asp:Literal ID="TitleTag" runat="server"></asp:Literal>
+  <link href="/styles/calendar.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <telerik:RadPageLayout runat="server" ID="JumbotronLayout" CssClass="jumbotron" GridType="Fluid">
@@ -21,24 +22,21 @@
           <telerik:LayoutColumn Span="10" SpanMd="12" SpanSm="12" SpanXs="12">
             <telerik:RadScheduler RenderMode="Auto" runat="server" ID="ChurchCalendar" DataSourceID="ChurchScheduleSource" Skin="WebBlue" SelectedView="MonthView" EnableExactTimeRendering="True"
               DataKeyField="Id" DataStartField="Start" DataEndField="End" DataSubjectField="Subject" DataDescriptionField="Description" DataReminderField="Reminder" OnAppointmentDataBound="ChurchCalendar_AppointmentDataBound"
-              HoursPanelTimeFormat="H:mm" EditFormTimeFormat="H:mm" AdvancedForm-TimeFormat="H:mm"
-              ExportSettings-FileName="CedarGroveBaptist_Calendar" Height="800px" Localization-AdvancedDescription="Notes" Localization-AdvancedSubject="Ministry"
+              HoursPanelTimeFormat="H:mm" EditFormTimeFormat="H:mm" AdvancedForm-TimeFormat="H:mm" OnAppointmentInsert="ChurchCalendar_AppointmentInsert" OnAppointmentUpdate="ChurchCalendar_AppointmentUpdate"
+              ExportSettings-FileName="CedarGroveBaptist_Calendar" Height="800px" Localization-AdvancedDescription="Description" Localization-AdvancedSubject="Title" OnAppointmentDelete="ChurchCalendar_AppointmentDelete"
               EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" ShowAllDayRow="False" TimeZonesEnabled="False" TimeZoneID="UTC" RowHeight="32px" DisplayRecurrenceActionDialogOnMove="True">
               <ResourceTypes>
                 <telerik:ResourceType KeyField="Id" Name="ministry" TextField="Title" ForeignKeyField="MinistryId" DataSourceID="MinistryDataSource"></telerik:ResourceType>
               </ResourceTypes>
               <TimelineView UserSelectable="False"></TimelineView>
               <AgendaView UserSelectable="True"></AgendaView>
+              <AppointmentContextMenuSettings EnableDefault="True"></AppointmentContextMenuSettings>
+              <TimeSlotContextMenuSettings EnableDefault="True"></TimeSlotContextMenuSettings>
             </telerik:RadScheduler>
             <asp:SqlDataSource ID="ChurchScheduleSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>'
-              SelectCommand="
-SELECT [Id], [Subject], [Description], [Start], [End], [MinistryId], [RecurrenceRule], 
-       [RecurrenceParentId], [Reminder], [Annotations]
-  FROM dbo.[Appointments];" />
+              SelectCommand="SELECT [Id], [Subject], [Description], [Start], [End], [MinistryId], [RecurrenceRule], [RecurrenceParentId], [Reminder], [Annotations] FROM dbo.[Appointments];" />
             <asp:SqlDataSource ID="MinistryDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>'
-              SelectCommand="
-SELECT [Id], [Title]
-  FROM dbo.[Ministry];" />
+              SelectCommand="SELECT [Id], [Title] FROM dbo.[Ministry];" />
           </telerik:LayoutColumn>
           <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true" />
         </Columns>

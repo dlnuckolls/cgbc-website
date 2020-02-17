@@ -192,6 +192,7 @@
     <Content Include="pages\YouthMinistry.aspx" />
     <Content Include="scripts\scripts.js" />
     <Content Include="styles\base.css" />
+    <Content Include="styles\calendar.css" />
     <Content Include="styles\default.css" />
   </ItemGroup>
   <ItemGroup>
