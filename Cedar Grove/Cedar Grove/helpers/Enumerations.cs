@@ -33,6 +33,7 @@ namespace Cedar_Grove {
     [TextValue("Outreach Ministry")] Outreach,
     [TextValue("Forgot Password")] ForgotPassword,
     [TextValue("Reset Password")] ResetPassword,
+    [TextValue("Chruch Calendar")] Calendar,
   }
 
   [CustomEnum(true)]
@@ -46,6 +47,16 @@ namespace Cedar_Grove {
     [TextValue("329D0E46-3C1E-4B53-9C6C-4CA7BAAE6536")] YouthPage,
     [TextValue("BB0F852F-2C0E-4C2E-8CE0-59319318BC38")] ChildrensPage,
     [TextValue("A1E9F1FF-9D7C-45A2-94A4-E9BDBFC13CF3")] OutreachPage,
+    [TextValue("8508EBC6-6582-4C3F-B85E-CA10F7E25619")] CalendarPage,
   }
 
+  [CustomEnum(true)]
+  public enum MinistryArea {
+    Mens = 1,
+    Womens = 2,
+    Youth = 3,
+    Childrens = 4,
+    Outreach = 5,
+    General = 6,
+  }
 }

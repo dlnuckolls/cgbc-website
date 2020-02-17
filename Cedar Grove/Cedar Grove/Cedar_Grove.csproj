@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\AdminCalendar.aspx" />
     <Content Include="admin\AdminGallery.aspx" />
     <Content Include="admin\AdminPages.aspx" />
     <Content Include="admin\default.aspx" />
@@ -183,6 +184,7 @@
     <Content Include="images\Thumbnails\Penguins.jpg" />
     <Content Include="images\Thumbnails\Tulips.jpg" />
     <Content Include="images\Tulips.jpg" />
+    <Content Include="pages\Calendar.aspx" />
     <Content Include="pages\ChildrensMinistry.aspx" />
     <Content Include="pages\MensMinistry.aspx" />
     <Content Include="pages\OutreachMinistry.aspx" />
@@ -193,6 +195,13 @@
     <Content Include="styles\default.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\AdminCalendar.aspx.cs">
+      <DependentUpon>AdminCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminCalendar.aspx.designer.cs">
+      <DependentUpon>AdminCalendar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\AdminGallery.aspx.cs">
       <DependentUpon>AdminGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,6 +299,13 @@
       <DependentUpon>DefaultMasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="objectclass\GalleryImage.cs" />
+    <Compile Include="pages\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\ChildrensMinistry.aspx.cs">
       <DependentUpon>ChildrensMinistry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -377,7 +393,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -333,6 +333,37 @@ BEGIN
   COMMIT TRANSACTION Version1_6
 END
 
+SELECT @majorVersion = 1, @minorVersion = 7;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_7
+    CREATE TABLE dbo.Ministry (
+      [Id]        INT          IDENTITY(1,1) NOT NULL,  
+      [Title]     VARCHAR(255)               NOT NULL,  
+      CONSTRAINT [PK_Ministry] PRIMARY KEY CLUSTERED ([Id]),  
+    ) ON [PRIMARY];
+    
+    CREATE TABLE [dbo].[Appointments] (  
+      [Id]                    INT           IDENTITY(1,1) NOT NULL,  
+      [Subject]               VARCHAR(255)                NOT NULL,  
+      [Description]           VARCHAR(1024)                   NULL,  
+      [Start]                 DATETIME                    NOT NULL,  
+      [End]                   DATETIME                    NOT NULL,
+      [MinistryId]            INT                             NULL,
+      [RecurrenceRule]        VARCHAR(1024)                   NULL,  
+      [RecurrenceParentId]    INT                             NULL,  
+      [Reminder]              VARCHAR(255)                    NULL,  
+      [Annotations]           VARCHAR(50)                     NULL,  
+      CONSTRAINT [PK_Appointments] PRIMARY KEY CLUSTERED ([Id]),  
+      CONSTRAINT [FK_Appointments_ParentAppointments] FOREIGN KEY ([RecurrenceParentId]) REFERENCES [Appointments] ([Id]), 
+      CONSTRAINT [FK_Appointments_Ministries] FOREIGN KEY ([MinistryId]) REFERENCES [Ministry] ([Id]), 
+    ) ON [PRIMARY];
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_7
+END
+
+
 /* 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence
