@@ -1,9 +1,21 @@
-﻿.RadScheduler_WebBlue .rsMonthView .rsTodayCell {
+﻿
+.RadScheduler_WebBlue .rsMonthView .rsTodayCell {
   background-color: lightblue !important;
   color: #000;
   border: 1px solid #000;
 }
 
 .RadScheduler_WebBlue .rsMonthView .rsRow a {
+  text-decoration: none !important;
+}
+
+
+.RadScheduler_Silk .rsMonthView .rsTodayCell {
+  background-color: lightblue !important;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.RadScheduler_Silk .rsMonthView .rsRow a {
   text-decoration: none !important;
 }

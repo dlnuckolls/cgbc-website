@@ -18,16 +18,17 @@ namespace Cedar_Grove.admin {
 
     }
 
-    protected void ChurchCalendar_AppointmentUpdate(object sender, Telerik.Web.UI.AppointmentUpdateEventArgs e) {
+    //protected void ChurchCalendar_AppointmentUpdate(object sender, Telerik.Web.UI.AppointmentUpdateEventArgs e) {
 
-    }
+    //}
 
-    protected void ChurchCalendar_AppointmentInsert(object sender, Telerik.Web.UI.AppointmentInsertEventArgs e) {
+    //protected void ChurchCalendar_AppointmentInsert(object sender, Telerik.Web.UI.AppointmentInsertEventArgs e) {
+    //  _ = SqlHelpers.Insert(SqlStatements.SQL_CREATE_APPOINTMENT.FormatWith(e.Appointment.Subject.FixSqlString(), e.Appointment.Description.FixSqlString(),
+    //    e.Appointment.Start.ConvertSqlDateTime(), e.Appointment.End.ConvertSqlDateTime(), "0", e.Appointment.RecurrenceRule.FixSqlString(), e.Appointment.RecurrenceParentID.ToString()));
+    //}
 
-    }
+    //protected void ChurchCalendar_AppointmentDelete(object sender, Telerik.Web.UI.AppointmentDeleteEventArgs e) {
 
-    protected void ChurchCalendar_AppointmentDelete(object sender, Telerik.Web.UI.AppointmentDeleteEventArgs e) {
-
-    }
+    //}
   }
 }

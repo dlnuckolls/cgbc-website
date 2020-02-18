@@ -34,7 +34,7 @@ img {
 
 button,
 input {
-  -webkit-appearance: none;
+ /* -webkit-appearance: none; */
   cursor: pointer;
 }
 
