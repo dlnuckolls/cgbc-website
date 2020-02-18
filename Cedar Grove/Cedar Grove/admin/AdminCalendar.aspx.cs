@@ -8,8 +8,11 @@ using System.Web.UI.WebControls;
 namespace Cedar_Grove.admin {
   public partial class AdminCalendar : BasePage {
     protected void Page_Load(object sender, EventArgs e) {
+      // Set page name in the title section
       SessionInfo.CurrentPage = PageNames.Calendar;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
+      if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
+      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/default.aspx");
       PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.CalendarPage);
       ChurchCalendar.SelectedDate = DateTime.Now;
     }

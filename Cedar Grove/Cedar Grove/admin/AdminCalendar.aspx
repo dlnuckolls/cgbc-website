@@ -23,11 +23,19 @@
             <telerik:RadScheduler RenderMode="Auto" runat="server" ID="ChurchCalendar" DataSourceID="ChurchScheduleSource" Skin="WebBlue" SelectedView="MonthView" EnableExactTimeRendering="True"
               DataKeyField="Id" DataStartField="Start" DataEndField="End" DataSubjectField="Subject" DataDescriptionField="Description" OnAppointmentDataBound="ChurchCalendar_AppointmentDataBound"
               HoursPanelTimeFormat="H:mm" EditFormTimeFormat="H:mm" AdvancedForm-TimeFormat="H:mm" ExportSettings-FileName="CedarGroveBaptist_Calendar" Height="800px" Localization-AdvancedDescription="Description" Localization-AdvancedSubject="Title"
-              EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" ShowAllDayRow="False" TimeZonesEnabled="False" TimeZoneID="UTC" RowHeight="32px" DisplayRecurrenceActionDialogOnMove="True"
-              DataRecurrenceField="RecurrenceRule" DataRecurrenceParentKeyField="RecurrenceParentID" StartEditingInAdvancedForm="true" StartInsertingInAdvancedForm="true">
+              EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" TimeZonesEnabled="False" TimeZoneID="UTC" RowHeight="32px" DisplayRecurrenceActionDialogOnMove="True"
+              DataRecurrenceField="RecurrenceRule" DataRecurrenceParentKeyField="RecurrenceParentID" StartInsertingInAdvancedForm="true" DayStartTime="07:00:00" ShowFooter="False">
               <ResourceTypes>
-                <telerik:ResourceType KeyField="Id" Name="ministry" TextField="Title" ForeignKeyField="MinistryId" DataSourceID="MinistryDataSource"></telerik:ResourceType>
+                <telerik:ResourceType KeyField="Id" Name="Ministry" TextField="Title" ForeignKeyField="MinistryId" DataSourceID="MinistryDataSource"></telerik:ResourceType>
               </ResourceTypes>
+              <ResourceStyles>
+                <telerik:ResourceStyleMapping Type="Ministry" Key="1" ApplyCssClass="mensMinistry" />
+                <telerik:ResourceStyleMapping Type="Ministry" Key="2" ApplyCssClass="womensMinistry" />
+                <telerik:ResourceStyleMapping Type="Ministry" Key="3" ApplyCssClass="youthMinistry" />
+                <telerik:ResourceStyleMapping Type="Ministry" Key="4" ApplyCssClass="childrensMinistry" />
+                <telerik:ResourceStyleMapping Type="Ministry" Key="5" ApplyCssClass="outreachMinistry" />
+                <telerik:ResourceStyleMapping Type="Ministry" Key="6" ApplyCssClass="generalMinistry" />
+              </ResourceStyles>
               <TimelineView UserSelectable="False"></TimelineView>
               <AgendaView UserSelectable="True"></AgendaView>
               <AppointmentContextMenuSettings EnableDefault="True"></AppointmentContextMenuSettings>
