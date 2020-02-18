@@ -74,5 +74,14 @@ namespace Cedar_Grove.admin {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadIconTile QuoteAdmin;
+
+    /// <summary>
+    /// CalendarAdmin control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadIconTile CalendarAdmin;
   }
 }

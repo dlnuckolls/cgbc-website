@@ -13,6 +13,13 @@
     text-decoration: none !important;
   }
 
+  .RadScheduler_WebBlue .rsDialog .rsAdvancedEdit .rsAdvancedModal {
+  border-radius: 10px;
+  }
+
+  .RadScheduler_WebBlue .rsAdvancedModal {
+    border-radius: 10px;
+  }
 
 .RadScheduler_Silk .rsMonthView .rsTodayCell {
   background-color: aliceblue !important;

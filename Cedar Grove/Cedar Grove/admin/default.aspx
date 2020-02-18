@@ -24,6 +24,9 @@
               <telerik:RadIconTile ID="QuoteAdmin" runat="server" ImageUrl="~/images/menutiles/quotes.png" AutoPostBack="true" OnClick="QuoteAdmin_Click">
                 <Title Text="Sentimental"></Title>
               </telerik:RadIconTile>
+              <telerik:RadIconTile ID="CalendarAdmin" runat="server" ImageUrl="~/images/menutiles/calendar.png" AutoPostBack="true" OnClick="CalendarAdmin_Click">
+                <Title Text="Calendar"></Title>
+              </telerik:RadIconTile>
             </div>
           </telerik:LayoutColumn>
           <telerik:LayoutColumn Span="1" HiddenMd="true" />
