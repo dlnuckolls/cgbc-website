@@ -46,12 +46,8 @@ namespace Cedar_Grove {
     public const string SQL_GET_PAGE_GALLERY_BY_ID = "SELECT [Id], [PageLocation], [ImageUrl], [Description], [Title], [Active], [Created] FROM GalleryImages WHERE [Id] = '{0}';";
     public const string SQL_INSERT_PAGE_GALLERY_IMAGE = "INSERT INTO dbo.GalleryImages ([PageLocation], [ImageUrl], [Description], [Title], [Active], [Created]) VALUES ('{0}', '{1}', '{2}', '{3}', 1, GETDATE());";
     public const string SQL_UPDATE_PAGE_GALLERY_IMAGE = "UPDATE dbo.GalleryImages SET [PageLocation] = '{0}', [ImageUrl] = '{1}', [Description] = '{2}', [Title] = '{3}' WHERE [Id] = '{4}';";
-    public const string SQL_DELETE_PAGE_GALLERY_IMAGE = "UPDATE dbo.GalleryImages SET [Active] = 0 WHERE [Id] = '{0}';";
+    public const string SQL_DELETE_PAGE_GALLERY_IMAGE = "DELETE dbo.GalleryImages WHERE [Id] = '{0}';";
 
-    // Appointment Management
-    //public const string SQL_CREATE_APPOINTMENT = @"INSERT INTO [dbo].[Appointments] ([Subject],[Description],[Start],[End],[MinistryId],[RecurrenceRule],[RecurrenceParentId]) VALUES ('{0}','{1}',{2},{3},{4},'{5}',{6})";
-    //public const string SQL_UPDATE_APPOINTMENT = @"UPDATE [dbo].[Appointments] SET [Subject] = '{0}',[Description] = '{1}',[Start] = {2},[End] = {3},[MinistryId] = {4},[RecurrenceRule] = '{5}',[RecurrenceParentId] = {6} WHERE [Id] = {7};";
-    //public const string SQL_DELETE_APPOINTMENT = "DELETE [dbo].[Appointments] WHERE [Id] = {0};";
 
   }
 }
