@@ -47,6 +47,7 @@
                 }
               </script>
             </telerik:RadCodeBlock>
+            <div id="ToggleButtons" runat="server" style="width:100%; text-align:right;"></div>
             <telerik:RadScheduler RenderMode="Auto" runat="server" ID="ChurchCalendar" DataSourceID="ChurchScheduleSource" Skin="WebBlue" SelectedView="MonthView" EnableExactTimeRendering="True"
               DataKeyField="Id" DataStartField="Start" DataEndField="End" DataSubjectField="Subject" DataDescriptionField="Description" DataReminderField="Reminder"
               OnAppointmentDataBound="ChurchCalendar_AppointmentDataBound" OnClientAppointmentDoubleClick="hideTooltip" OnClientAppointmentContextMenu="hideTooltip"

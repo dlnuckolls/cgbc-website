@@ -8,7 +8,7 @@ using System.Web;
 namespace Cedar_Grove {
   public class SessionManager {
     #region Sitewide Details
-    public SystemSettings Settings => SystemSettings.StaticInstance; 
+    public SystemSettings Settings => SystemSettings.StaticInstance;
     #endregion
 
     #region Page Management
@@ -53,8 +53,16 @@ namespace Cedar_Grove {
       mail.To.Add(new MailAddress(user.UserName));
       SmtpClient smtp = SetMailServerSettings();
       smtp.Send(mail);
-    } 
+    }
     #endregion
 
+    public List<MinistryBackground> MinistryColours = new List<MinistryBackground>() {
+      new MinistryBackground() { Id=1, MinistryName="MensMinistry", DisplayColour="lightblue", FontColour="blue" },
+      new MinistryBackground() { Id=2, MinistryName="WomensMinistry", DisplayColour="lightcoral", FontColour="brown" },
+      new MinistryBackground() { Id=3, MinistryName="YouthMinistry", DisplayColour="burlywood", FontColour="darkgreen" },
+      new MinistryBackground() { Id=4, MinistryName="ChildrensMinistry", DisplayColour="khaki", FontColour="darkslateblue" },
+      new MinistryBackground() { Id=5, MinistryName="OutreachMinistry", DisplayColour="lightcyan", FontColour="orangered" },
+      new MinistryBackground() { Id=6, MinistryName="GeneralMinistry", DisplayColour="lightslategray", FontColour="black" }
+    };
   }
 }

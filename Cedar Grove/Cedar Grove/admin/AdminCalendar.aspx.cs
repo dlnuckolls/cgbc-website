@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Telerik.Web.UI;
 
 namespace Cedar_Grove.admin {
   public partial class AdminCalendar : BasePage {
+    private static List<RadButton> SelectionButtons;
+
     protected void Page_Load(object sender, EventArgs e) {
       // Set page name in the title section
       SessionInfo.CurrentPage = PageNames.Calendar;
@@ -15,23 +18,50 @@ namespace Cedar_Grove.admin {
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/default.aspx");
       PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.CalendarPage);
       ChurchCalendar.SelectedDate = DateTime.Now;
+      SelectionButtons = SelectionButtons ?? new List<RadButton>();
+      LoadMinistryButtons();
     }
+
+    private void LoadMinistryButtons() {
+      ToggleButtons.Controls.Clear();
+      SessionInfo.MinistryColours.ForEach(mc => {
+        var button = new RadButton {
+          ButtonType = RadButtonType.LinkButton,
+          ID = mc.MinistryName,
+          RenderMode = RenderMode.Lightweight,
+          ToggleType = ButtonToggleType.CheckBox,
+          Checked = true
+        };
+        button.Click += new EventHandler(btnToggle_Click);
+        //button.CssClass = mc.CssClass;
+        button.Style.Add("color", "{0};".FormatWith(mc.FontColour));
+        button.Style.Add("border", "solid 1px {0};".FormatWith(mc.DisplayColour));
+        button.Style.Add("background", "{0} !important;".FormatWith(mc.DisplayColour));
+        button.Style.Add("padding", "2px 5px");
+        button.Style.Add("margin-bottom", "5px");
+        button.Style.Add("margin-right", "5px");
+        button.ToggleStates.Add(new RadButtonToggleState() { Text = mc.MinistryName, Selected = true, PrimaryIconCssClass = "rbToggleCheckboxChecked p-i-checkbox-checked" });
+        button.ToggleStates.Add(new RadButtonToggleState() { Text = mc.MinistryName, PrimaryIconCssClass = "rbToggleCheckbox p-i-checkbox" });
+        ToggleButtons.Controls.Add(button);
+        SelectionButtons.Add(button);
+      });
+    }
+
+    private static void FilterAppointment(Appointment appointment, ICheckBoxControl checkBox, int resourceId) {
+      if (appointment.Resources.GetResource("Ministry", resourceId) != null && checkBox.Checked) {
+        appointment.Visible = true;
+      }
+    }
+
+    protected void btnToggle_Click(object sender, EventArgs e) { ChurchCalendar.Rebind(); }
 
     protected void ChurchCalendar_AppointmentDataBound(object sender, Telerik.Web.UI.SchedulerEventArgs e) {
-
+      e.Appointment.Visible = false;
+      var ctr = 1;
+      foreach (RadButton b in ToggleButtons.Controls) {
+        FilterAppointment(e.Appointment, b, ctr);
+        ctr++;
+      }
     }
-
-    //protected void ChurchCalendar_AppointmentUpdate(object sender, Telerik.Web.UI.AppointmentUpdateEventArgs e) {
-
-    //}
-
-    //protected void ChurchCalendar_AppointmentInsert(object sender, Telerik.Web.UI.AppointmentInsertEventArgs e) {
-    //  _ = SqlHelpers.Insert(SqlStatements.SQL_CREATE_APPOINTMENT.FormatWith(e.Appointment.Subject.FixSqlString(), e.Appointment.Description.FixSqlString(),
-    //    e.Appointment.Start.ConvertSqlDateTime(), e.Appointment.End.ConvertSqlDateTime(), "0", e.Appointment.RecurrenceRule.FixSqlString(), e.Appointment.RecurrenceParentID.ToString()));
-    //}
-
-    //protected void ChurchCalendar_AppointmentDelete(object sender, Telerik.Web.UI.AppointmentDeleteEventArgs e) {
-
-    //}
   }
 }

@@ -329,6 +329,7 @@
     </Compile>
     <Compile Include="objectclass\EventItem.cs" />
     <Compile Include="objectclass\GalleryImage.cs" />
+    <Compile Include="objectclass\MinistryBackground.cs" />
     <Compile Include="pages\Calendar.aspx.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
