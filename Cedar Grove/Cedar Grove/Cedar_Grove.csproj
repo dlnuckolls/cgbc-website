@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\AdminCalendar.aspx" />
+    <Content Include="admin\AdminEvents.aspx" />
     <Content Include="admin\AdminGallery.aspx" />
     <Content Include="admin\AdminPages.aspx" />
     <Content Include="admin\AdminUsers.aspx" />
@@ -205,6 +206,13 @@
     </Compile>
     <Compile Include="admin\AdminCalendar.aspx.designer.cs">
       <DependentUpon>AdminCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminEvents.aspx.cs">
+      <DependentUpon>AdminEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminEvents.aspx.designer.cs">
+      <DependentUpon>AdminEvents.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\AdminGallery.aspx.cs">
       <DependentUpon>AdminGallery.aspx</DependentUpon>
@@ -404,7 +412,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

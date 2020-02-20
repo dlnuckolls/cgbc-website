@@ -12,10 +12,12 @@
       <telerik:LayoutRow>
         <Columns>
           <telerik:LayoutColumn Span="6" SpanMd="7" SpanSm="12" SpanXs="12">
-            <asp:Literal ID="PageContentBlock" runat="server" />
+            <div class="pageContentBlocks">
+              <asp:Literal ID="PageContentBlock" runat="server" />
+            </div>
           </telerik:LayoutColumn>
           <telerik:LayoutColumn Span="6" SpanMd="5" SpanSm="12" SpanXs="12">
-            <uc1:ImageGallery runat="server" id="ImageGallery1" />
+            <uc1:ImageGallery runat="server" ID="ImageGallery1" />
           </telerik:LayoutColumn>
         </Columns>
       </telerik:LayoutRow>

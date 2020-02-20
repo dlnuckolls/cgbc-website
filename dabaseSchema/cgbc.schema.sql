@@ -363,6 +363,27 @@ BEGIN
   COMMIT TRANSACTION Version1_7
 END
 
+SELECT @majorVersion = 1, @minorVersion = 8;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_8
+
+    TRUNCATE TABLE [dbo].[SystemExceptions];
+
+    ALTER TABLE [dbo].[SystemExceptions]
+      ALTER COLUMN [ExceptionTimeStamp] [datetime] NOT NULL;
+    
+    ALTER TABLE [dbo].[SystemExceptions]
+      DROP CONSTRAINT [PK_SystemExceptions];
+
+    ALTER TABLE [dbo].[SystemExceptions]
+     ADD CONSTRAINT [PK_SystemExceptions] PRIMARY KEY CLUSTERED (
+			  [ExceptionTimeStamp] DESC
+		  ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY];
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_8
+END
 
 /* 
   Use this model to create database changes

@@ -24,12 +24,15 @@
             <telerik:LayoutRow CssClass="adminheader">
               <Columns>
                 <%--Logo--%>
-                <telerik:LayoutColumn Span="3" SpanMd="4" SpanSm="12" SpanXs="12">
-                  <h1 class="pageHeaderTitle">Cedar Grove Baptist Church</h1>
+                <telerik:LayoutColumn Span="4" SpanMd="4" SpanSm="12" SpanXs="12">
+                  <div class="pageHeaderTitle">
+                    <img src="/images/cgbc-banner.JPG" alt="site logo" />
+                    <h1>Cedar Grove Baptist Church</h1>
+                  </div>
                 </telerik:LayoutColumn>
 
                 <%--Main Nav--%>
-                <telerik:LayoutColumn Span="9" SpanMd="8" SpanSm="12" SpanXs="12">
+                <telerik:LayoutColumn Span="8" SpanMd="8" SpanSm="12" SpanXs="12">
                   <uc1:mainnavigation runat="server" ID="mainnavigation" />
                 </telerik:LayoutColumn>
               </Columns>
