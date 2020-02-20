@@ -18,7 +18,7 @@ namespace Cedar_Grove.admin {
 
     protected void EditPageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminPages.aspx"); }
 
-    protected void QuoteAdmin_Click(object sender, EventArgs e) { }
+    protected void QuoteAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminEvents.aspx"); }
 
     protected void CalendarAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminCalendar.aspx"); }
 

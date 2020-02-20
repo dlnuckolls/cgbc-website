@@ -2,6 +2,7 @@
 
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <%@ Register Src="~/controls/mainnavigation.ascx" TagPrefix="uc1" TagName="mainnavigation" %>
+<%@ Register Src="~/controls/mainfooter.ascx" TagPrefix="uc1" TagName="mainfooter" %>
 
 <!DOCTYPE html>
 
@@ -64,18 +65,7 @@
           </Rows>
         </telerik:RadPageLayout>
       </div>
-      <telerik:RadPageLayout runat="server" ID="RadPageLayout1" GridType="Fluid">
-        <Rows>
-          <%--Footer--%>
-          <telerik:LayoutRow>
-            <Columns>
-              <telerik:LayoutColumn Span="12" SpanMd="12" SpanSm="12" SpanXs="12" CssClass="footer">
-                Cedar Grove Baptist Church © 2020 | 4900 CEDAR GROVE ROAD, SHEPHERDSVILLE, KY. 40165
-              </telerik:LayoutColumn>
-            </Columns>
-          </telerik:LayoutRow>
-        </Rows>
-      </telerik:RadPageLayout>
+            <uc1:mainfooter runat="server" id="mainfooter" />
     </div>
   </form>
 </body>

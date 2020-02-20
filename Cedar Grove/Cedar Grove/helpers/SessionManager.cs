@@ -17,8 +17,9 @@ namespace Cedar_Grove {
     public string PageContent(PageContentBlocks pageLocation) => SqlHelpers.SelectScalar(SqlStatements.SQL_GET_PAGE_CONTENT_FOR_DISPLAY.FormatWith(pageLocation.TextValue())).ToString();
     #endregion
 
-    #region GalleryImage Management
+    #region GalleryImage/Events Management
     public GalleryImage CurrentGalleryImage => GalleryImage.StaticInstance;
+    public EventItem CurrentEvent => EventItem.StaticInstance;
     #endregion
 
     #region Current User Details

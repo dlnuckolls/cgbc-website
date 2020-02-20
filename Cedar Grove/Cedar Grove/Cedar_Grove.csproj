@@ -151,6 +151,7 @@
     <Content Include="App_Data\RadCaptcha\Y.wav" />
     <Content Include="App_Data\RadCaptcha\Z.wav" />
     <Content Include="controls\imagegallery.ascx" />
+    <Content Include="controls\mainfooter.ascx" />
     <Content Include="controls\mainnavigation.ascx" />
     <Content Include="DefaultMasterPage.Master" />
   </ItemGroup>
@@ -161,6 +162,7 @@
     <Content Include="images\cgbc-banner.JPG" />
     <Content Include="images\Chrysanthemum.jpg" />
     <Content Include="images\Desert.jpg" />
+    <Content Include="images\facebook.png" />
     <Content Include="images\gallery\10552649_894989603869133_7924941354887018607_n.jpg" />
     <Content Include="images\gallery\10906051_894989503869143_7005374842670952177_n.jpg" />
     <Content Include="images\gallery\10915257_894989517202475_4105918270974505690_n.jpg" />
@@ -173,6 +175,7 @@
     <Content Include="images\Lighthouse.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\megaphone.png" />
+    <Content Include="images\menutiles\alarm.png" />
     <Content Include="images\menutiles\calendar.png" />
     <Content Include="images\menutiles\internet.png" />
     <Content Include="images\menutiles\pages.png" />
@@ -277,6 +280,13 @@
     <Compile Include="controls\imagegallery.ascx.designer.cs">
       <DependentUpon>imagegallery.ascx</DependentUpon>
     </Compile>
+    <Compile Include="controls\mainfooter.ascx.cs">
+      <DependentUpon>mainfooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\mainfooter.ascx.designer.cs">
+      <DependentUpon>mainfooter.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\mainnavigation.ascx.cs">
       <DependentUpon>mainnavigation.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -317,6 +327,7 @@
     <Compile Include="DefaultMasterPage.Master.designer.cs">
       <DependentUpon>DefaultMasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="objectclass\EventItem.cs" />
     <Compile Include="objectclass\GalleryImage.cs" />
     <Compile Include="pages\Calendar.aspx.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>

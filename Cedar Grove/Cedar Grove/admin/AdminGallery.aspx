@@ -20,7 +20,7 @@
   </div>
   <telerik:RadGrid RenderMode="Auto" runat="server" ID="gImageGallery" AllowPaging="true" GridLines="Horizontal"
     CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0" MasterTableView-GridLines="Horizontal"
-    Skin="Silk" OnNeedDataSource="gImageGallery_NeedDataSource" OnUpdateCommand="gImageGallery_UpdateCommand" OnItemDataBound="gImageGallery_ItemDataBound"
+    Skin="WebBlue" OnNeedDataSource="gImageGallery_NeedDataSource" OnUpdateCommand="gImageGallery_UpdateCommand" OnItemDataBound="gImageGallery_ItemDataBound"
     OnInsertCommand="gImageGallery_InsertCommand" Width="100%" OnDeleteCommand="gImageGallery_DeleteCommand" AutoGenerateColumns="False">
     <MasterTableView EditMode="InPlace" DataKeyNames="Id" GridLines="None"
       ClientDataKeyNames="Id" CommandItemDisplay="TopAndBottom" InsertItemPageIndexAction="ShowItemOnFirstPage">

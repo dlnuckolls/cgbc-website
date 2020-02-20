@@ -8,7 +8,7 @@
   <div id="messageDisplayArea">
     <telerik:RadLabel runat="server" ID="MessageDisplay"></telerik:RadLabel>
   </div>
-  <telerik:RadGrid Skin="Silk" RenderMode="Auto" runat="server" ID="UserAccountsList" AllowPaging="true" Width="100%" PagerStyle-AlwaysVisible="True" AllowSorting="true"
+  <telerik:RadGrid Skin="WebBlue" RenderMode="Auto" runat="server" ID="UserAccountsList" AllowPaging="true" Width="100%" PagerStyle-AlwaysVisible="True" AllowSorting="true"
     HorizontalAlign="Left" AutoGenerateColumns="False" CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0"
     MasterTableView-GridLines="Horizontal" DataSourceID="UserListSource" GroupingSettings-CaseSensitive="false" OnDeleteCommand="UserAccountsList_DeleteCommand"
     OnUpdateCommand="UserAccountsList_UpdateCommand" OnInsertCommand="UserAccountsList_InsertCommand" OnItemCommand="UserAccountsList_ItemCommand">

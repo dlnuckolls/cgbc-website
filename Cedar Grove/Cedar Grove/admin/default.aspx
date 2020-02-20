@@ -21,9 +21,9 @@
               <telerik:RadIconTile ID="AdminResourceLinks" runat="server" ImageUrl="~/images/menutiles/internet.png" AutoPostBack="true" OnClick="AdminResourceLinks_Click">
                 <Title Text="Gallery Images"></Title>
               </telerik:RadIconTile>
-              <%--<telerik:RadIconTile ID="QuoteAdmin" runat="server" ImageUrl="~/images/menutiles/quotes.png" AutoPostBack="true" OnClick="QuoteAdmin_Click">
-                <Title Text="Sentimental"></Title>
-              </telerik:RadIconTile>--%>
+              <telerik:RadIconTile ID="QuoteAdmin" runat="server" ImageUrl="~/images/menutiles/quotes.png" AutoPostBack="true" OnClick="QuoteAdmin_Click">
+                <Title Text="Events"></Title>
+              </telerik:RadIconTile>
               <telerik:RadIconTile ID="CalendarAdmin" runat="server" ImageUrl="~/images/menutiles/calendar.png" AutoPostBack="true" OnClick="CalendarAdmin_Click">
                 <Title Text="Calendar"></Title>
               </telerik:RadIconTile>

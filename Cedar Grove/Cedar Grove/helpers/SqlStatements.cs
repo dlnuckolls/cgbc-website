@@ -48,6 +48,10 @@ namespace Cedar_Grove {
     public const string SQL_UPDATE_PAGE_GALLERY_IMAGE = "UPDATE dbo.GalleryImages SET [PageLocation] = '{0}', [ImageUrl] = '{1}', [Description] = '{2}', [Title] = '{3}' WHERE [Id] = '{4}';";
     public const string SQL_DELETE_PAGE_GALLERY_IMAGE = "DELETE dbo.GalleryImages WHERE [Id] = '{0}';";
 
+    public const string SQL_GET_EVENT_BY_ID = "SELECT [Id],[Title],[Description],[EventDate] FROM [dbo].[UpcomingEvents] WHERE [Id] = '{0}';";
+    public const string SQL_INSERT_EVENT = "INSERT INTO [dbo].[UpcomingEvents] ([Title],[Description],[EventDate]) VALUES ('{0}', '{1}', {2});";
+    public const string SQL_UPDATE_EVENT = "UPDATE [dbo].[UpcomingEvents] SET [Title] = '{0}', [Description] = '{1}', [EventDate] = {2} WHERE [Id] = '{3}';";
+    public const string SQL_DELETE_EVENT = "DELETE [dbo].[UpcomingEvents] WHERE [Id] = '{0}';";
 
   }
 }

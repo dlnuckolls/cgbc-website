@@ -17,8 +17,8 @@
     <telerik:RadMenuItem Text="Calendar" NavigateUrl="~/pages/Calendar.aspx" />
     <telerik:RadMenuItem IsSeparator="true" />
     <telerik:RadMenuItem Text="Sermons" />
-    <telerik:RadMenuItem IsSeparator="true" />
-    <telerik:RadMenuItem Text="Galary" />
+<%--    <telerik:RadMenuItem IsSeparator="true" />
+    <telerik:RadMenuItem Text="Galary" />--%>
     <telerik:RadMenuItem IsSeparator="true" />
     <telerik:RadMenuItem Text="About Us" />
     <telerik:RadMenuItem IsSeparator="true" />

@@ -76,12 +76,12 @@ namespace Cedar_Grove {
     protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
 
     /// <summary>
-    /// RadPageLayout1 control.
+    /// mainfooter control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadPageLayout RadPageLayout1;
+    protected global::Cedar_Grove.controls.mainfooter mainfooter;
   }
 }
