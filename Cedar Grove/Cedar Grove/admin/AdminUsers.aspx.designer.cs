@@ -10,7 +10,7 @@
 namespace Cedar_Grove.admin {
 
 
-  public partial class AdminDefault {
+  public partial class AdminUsers {
 
     /// <summary>
     /// TitleTag control.
@@ -22,66 +22,39 @@ namespace Cedar_Grove.admin {
     protected global::System.Web.UI.WebControls.Literal TitleTag;
 
     /// <summary>
-    /// AdminHomeTop control.
+    /// PageAdminHeader control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal AdminHomeTop;
+    protected global::System.Web.UI.WebControls.Literal PageAdminHeader;
 
     /// <summary>
-    /// RadPageLayout1 control.
+    /// MessageDisplay control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadPageLayout RadPageLayout1;
+    protected global::Telerik.Web.UI.RadLabel MessageDisplay;
 
     /// <summary>
-    /// AdminHomeToolHeader control.
+    /// UserAccountsList control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal AdminHomeToolHeader;
+    protected global::Telerik.Web.UI.RadGrid UserAccountsList;
 
     /// <summary>
-    /// EditPageAdmin control.
+    /// UserListSource control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadIconTile EditPageAdmin;
-
-    /// <summary>
-    /// AdminResourceLinks control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::Telerik.Web.UI.RadIconTile AdminResourceLinks;
-
-    /// <summary>
-    /// CalendarAdmin control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::Telerik.Web.UI.RadIconTile CalendarAdmin;
-
-    /// <summary>
-    /// UserAdmin control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::Telerik.Web.UI.RadIconTile UserAdmin;
+    protected global::System.Web.UI.WebControls.SqlDataSource UserListSource;
   }
 }

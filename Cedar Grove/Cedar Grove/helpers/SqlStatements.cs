@@ -22,7 +22,7 @@ namespace Cedar_Grove {
     public const string SQL_CREATE_USER_DETAILS = "INSERT INTO dbo.AdminUsers (RoleId, DisplayName, UserName, Notes) OUTPUT inserted.Id  VALUES ('e544d9f4-c6f6-4c25-b828-de13141f37e2', '{0}', '{1}', '{2}');";
     public const string SQL_CREATE_ADMIN_USER_DETAILS = "INSERT INTO dbo.AdminUsers (RoleId, DisplayName, UserName, Notes, SuperAdmin) OUTPUT inserted.Id  VALUES ('1af14abd-5937-4475-8de7-3da0536613c8', '{0}', '{1}', '{2}', {3});";
     public const string SQL_UPDATE_ADMIN_USER_DETAILS = "UPDATE dbo.AdminUsers SET DisplayName = '{0}', UserName = '{1}', Notes = '{2}', SuperAdmin = {3} WHERE Id = '{4}';";
-    public const string SQL_DELETE_USER = "UPDATE dbo.AdminUsers SET Deleted = 1 WHERE Id = '{0}';";
+    public const string SQL_DELETE_USER = "DELETE dbo.AdminUsers WHERE Id = '{0}';";
     public const string SQL_VALIDATE_USER = "SELECT Id FROM dbo.AdminUsers WHERE UserName = '{0}' AND Deleted = 0;";
 
     // Exceptions

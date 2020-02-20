@@ -108,6 +108,7 @@
     <Content Include="admin\AdminCalendar.aspx" />
     <Content Include="admin\AdminGallery.aspx" />
     <Content Include="admin\AdminPages.aspx" />
+    <Content Include="admin\AdminUsers.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\ForgotPassword.aspx" />
     <Content Include="admin\Login.aspx" />
@@ -175,6 +176,7 @@
     <Content Include="images\menutiles\internet.png" />
     <Content Include="images\menutiles\pages.png" />
     <Content Include="images\menutiles\quotes.png" />
+    <Content Include="images\menutiles\users.png" />
     <Content Include="images\Penguins.jpg" />
     <Content Include="images\Thumbnails\Chrysanthemum.jpg" />
     <Content Include="images\Thumbnails\Desert.jpg" />
@@ -217,6 +219,13 @@
     </Compile>
     <Compile Include="admin\AdminPages.aspx.designer.cs">
       <DependentUpon>AdminPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -395,7 +404,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

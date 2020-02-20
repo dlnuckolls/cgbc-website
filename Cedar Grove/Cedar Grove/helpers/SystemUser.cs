@@ -35,7 +35,7 @@ namespace Cedar_Grove {
         Id = dataRow["Id"].ToString();
         DisplayName = dataRow["DisplayName"].ToString();
         UserName = dataRow["UserName"].ToString();
-        Notes = "Last Visit: {0}".FormatWith(dataRow["LastVisit"].ToString().GetAsDate().ToShortDateString());
+        Notes = dataRow["Notes"].ToString();
       } catch(Exception ex) {
         LogError("SystemUser: Load User method", ex);
         throw new ApplicationException("Record not found");
