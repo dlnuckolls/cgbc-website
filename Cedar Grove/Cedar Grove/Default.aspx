@@ -3,7 +3,7 @@
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 
 <asp:Content ID="Content0" ContentPlaceHolderID="head" runat="Server">
-  <link href="styles/default.css" rel="stylesheet" />
+  <link href="/styles/default.css" rel="stylesheet" />
   <asp:Literal ID="TitleTag" runat="server"></asp:Literal>
 </asp:Content>
 
@@ -36,52 +36,53 @@
     <Rows>
       <telerik:LayoutRow>
         <Columns>
-          <telerik:LayoutColumn Span="3" SpanMd="4" SpanSm="12" SpanXs="12">
-          <telerik:RadGrid Skin="WebBlue" RenderMode="Auto" runat="server" ID="EventsList" Width="100%" PagerStyle-AlwaysVisible="false"
-            HorizontalAlign="Left" AutoGenerateColumns="False" CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0"
-            MasterTableView-GridLines="None" OnNeedDataSource="EventsList_NeedDataSource" GroupingSettings-CaseSensitive="false" ShowHeader="true">
-            <MasterTableView AutoGenerateColumns="False" DataKeyNames="Id" GridLines="None"
-              ClientDataKeyNames="Id" CommandItemDisplay="None" InsertItemPageIndexAction="ShowItemOnFirstPage" AllowNaturalSort="False" ShowHeadersWhenNoRecords="true">
-              <CommandItemSettings ShowAddNewRecordButton="False" ShowRefreshButton="False"></CommandItemSettings>
-              <Columns>
-                <telerik:GridTemplateColumn ShowFilterIcon="False" AllowFiltering="False" HeaderText="This Week at CGBC" AllowSorting="true" UniqueName="ComingEvents">
-                  <ItemTemplate>
-                    <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Subject") %>'></telerik:RadLabel>
-                    <hr />
-                    <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Eval("Start", "{0:d}") %>' />
-                    <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Eval("Start", "{0:h:mm tt}") %>' />
-                    -
+          <telerik:LayoutColumn Span="4" SpanMd="4" SpanSm="12" SpanXs="12" CssClass="messageTextAreas">
+              <telerik:RadGrid Skin="WebBlue" RenderMode="Auto" runat="server" ID="EventsList" Width="100%" PagerStyle-AlwaysVisible="false"
+                HorizontalAlign="Left" AutoGenerateColumns="False" CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0"
+                MasterTableView-GridLines="None" OnNeedDataSource="EventsList_NeedDataSource" GroupingSettings-CaseSensitive="false" ShowHeader="true">
+                <MasterTableView AutoGenerateColumns="False" DataKeyNames="Id" GridLines="None"
+                  ClientDataKeyNames="Id" CommandItemDisplay="None" InsertItemPageIndexAction="ShowItemOnFirstPage" AllowNaturalSort="False" ShowHeadersWhenNoRecords="true">
+                  <CommandItemSettings ShowAddNewRecordButton="False" ShowRefreshButton="False"></CommandItemSettings>
+                  <Columns>
+                    <telerik:GridTemplateColumn ShowFilterIcon="False" AllowFiltering="False" HeaderText="This Week at CGBC" AllowSorting="true" UniqueName="ComingEvents">
+                      <ItemTemplate>
+                        <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Subject") %>'></telerik:RadLabel>
+                        <hr />
+                        <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Eval("Start", "{0:d}") %>' />
+                        <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Eval("Start", "{0:h:mm tt}") %>' />
+                        -
                     <telerik:RadLabel ID="RadLabel4" runat="server" Text='<%# Eval("End", "{0:h:mm tt}") %>' />
-                    <hr />
-                    Description:
+                        <hr />
+                        Description:
                     <asp:Literal ID="EventLiteral1" runat="server" Text='<%# Bind("Description") %>' />
-                  </ItemTemplate>
-                </telerik:GridTemplateColumn>
-              </Columns>
-            </MasterTableView>
-          </telerik:RadGrid>
+                      </ItemTemplate>
+                    </telerik:GridTemplateColumn>
+                  </Columns>
+                </MasterTableView>
+              </telerik:RadGrid>
           </telerik:LayoutColumn>
-          <telerik:LayoutColumn Span="9" SpanMd="8" SpanSm="12" SpanXs="12">
-            <telerik:RadListView runat="server" OnNeedDataSource="UpcomingEvents_NeedDataSource" ID="UpcomingEvents" AllowPaging="true" PageSize="3">
-              <LayoutTemplate>
-                <div class="listView1">
-                  <asp:Panel ID="itemPlaceholder" runat="server">
-                  </asp:Panel>
-                </div>
-              </LayoutTemplate>
-              <ItemTemplate>
-                <div class="listViewItem">
-                  <h4>
-                    <img src="/images/megaphone.png" />
-                    <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Title") %>' />
-                    &nbsp;&nbsp;<telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("EventDate") %>' />
-                  </h4>
-                  <p>
-                    <asp:Literal runat="server" ID="Literal1" Text='<%# Bind("Description") %>' />
-                  </p>
-                </div>
-              </ItemTemplate>
-            </telerik:RadListView>
+          <telerik:LayoutColumn Span="8" SpanMd="8" SpanSm="12" SpanXs="12" CssClass="messageTextAreas">
+             <div class="messageEventHeader">Upcoming Events</div>
+              <telerik:RadListView runat="server" OnNeedDataSource="UpcomingEvents_NeedDataSource" ID="UpcomingEvents" AllowPaging="true" PageSize="3">
+                <LayoutTemplate>
+                  <div class="listView1">
+                    <asp:Panel ID="itemPlaceholder" runat="server">
+                    </asp:Panel>
+                  </div>
+                </LayoutTemplate>
+                <ItemTemplate>
+                  <div class="listViewItem">
+                    <h4>
+                      <img src="/images/megaphone.png" />
+                      <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Title") %>' />
+                      &nbsp;&nbsp;<telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("EventDate") %>' />
+                    </h4>
+                    <p>
+                      <asp:Literal runat="server" ID="Literal1" Text='<%# Bind("Description") %>' />
+                    </p>
+                  </div>
+                </ItemTemplate>
+              </telerik:RadListView>
           </telerik:LayoutColumn>
         </Columns>
       </telerik:LayoutRow>
