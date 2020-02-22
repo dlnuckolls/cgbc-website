@@ -48,6 +48,7 @@ namespace Cedar_Grove.pages {
     private static void FilterAppointment(Appointment appointment, ICheckBoxControl checkBox, int resourceId) {
       if (appointment.Resources.GetResource("Ministry", resourceId) != null && checkBox.Checked) {
         appointment.Visible = true;
+        
       }
     }
 

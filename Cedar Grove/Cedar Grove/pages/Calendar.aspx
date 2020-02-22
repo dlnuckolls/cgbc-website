@@ -29,8 +29,8 @@
                 function showTooltip(apt) {
                   var tooltip = $find('<%=RadToolTip1.ClientID %>');
                   tooltip.set_targetControl(apt.get_element());
-                  $get("startTime").innerHTML = apt.get_start().format("MM/dd/yyyy HH:mm");
-                  $get("endTime").innerHTML = apt.get_end().format("MM/dd/yyyy HH:mm");
+                  $get("startTime").innerHTML = apt.get_start().format("MM/dd/yyyy h:mm tt");
+                  $get("endTime").innerHTML = apt.get_end().format("h:mm tt");
                   $get("descriptionDiv").innerHTML = apt.get_description();
                   $get("subject").innerHTML = apt.get_subject();
                   tooltip.set_text($get("contentContainer").innerHTML);
@@ -49,11 +49,11 @@
             </telerik:RadCodeBlock>
             <div id="ToggleButtons" runat="server" style="width:100%; text-align:right;"></div>
             <telerik:RadScheduler RenderMode="Auto" runat="server" ID="ChurchCalendar" DataSourceID="ChurchScheduleSource" Skin="WebBlue" SelectedView="MonthView" EnableExactTimeRendering="True"
-              DataKeyField="Id" DataStartField="Start" DataEndField="End" DataSubjectField="Subject" DataDescriptionField="Description" DataReminderField="Reminder"
+              DataKeyField="Id" DataStartField="Start" DataEndField="End" DataSubjectField="Subject" DataDescriptionField="Description" DataReminderField="Reminder" 
               OnAppointmentDataBound="ChurchCalendar_AppointmentDataBound" OnClientAppointmentDoubleClick="hideTooltip" OnClientAppointmentContextMenu="hideTooltip"
-            OnClientAppointmentClick="OnClientAppointmentClick" HoursPanelTimeFormat="H:mm" EditFormTimeFormat="H:mm" AdvancedForm-TimeFormat="H:mm" AllowDelete="false" AllowEdit="false" AllowInsert="false"
-              ExportSettings-FileName="CedarGroveBaptist_Calendar" Height="800px" Localization-AdvancedDescription="Notes" Localization-AdvancedSubject="Ministry"
-              EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" TimeZonesEnabled="False" TimeZoneID="UTC" RowHeight="32px" ShowFooter="False">
+              OnClientAppointmentClick="OnClientAppointmentClick" HoursPanelTimeFormat="hh:mm" EditFormTimeFormat="hh:mm" AdvancedForm-TimeFormat="hh:mm" AllowDelete="false" AllowEdit="false" AllowInsert="false"
+              ExportSettings-FileName="CedarGroveBaptist_Calendar" Height="800px" Localization-AdvancedDescription="Notes" Localization-AdvancedSubject="Ministry" MonthView-VisibleAppointmentsPerDay="4"
+              EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" TimeZonesEnabled="False" TimeZoneID="UTC" RowHeight="28px" ShowFooter="False" OverflowBehavior="Expand">
               <ResourceTypes>
                 <telerik:ResourceType KeyField="Id" Name="Ministry" TextField="Title" ForeignKeyField="MinistryId" DataSourceID="MinistryDataSource"></telerik:ResourceType>
               </ResourceTypes>
@@ -78,9 +78,7 @@
               <div id="contentContainer">
                 <span id="subject"></span>
                 <hr />
-                Starts on: <span id="startTime"></span>
-                <br />
-                Ends on: <span id="endTime"></span>
+                <span id="startTime"></span> - <span id="endTime"></span>
                 <hr />
                 Description:
                 <div id="descriptionDiv">
@@ -88,7 +86,13 @@
               </div>
             </telerik:RadToolTip>
             <asp:SqlDataSource ID="ChurchScheduleSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>'
-              SelectCommand="SELECT [Id], [Subject], [Description], [Start], [End], [MinistryId], [RecurrenceRule], [RecurrenceParentId], [Reminder], [Annotations] FROM dbo.[Appointments];" />
+              SelectCommand="
+                SELECT a.[Id],a.[Subject],a.[Description],a.[Start],a.[End],a.[MinistryId],a.[RecurrenceRule],a.[RecurrenceParentId],a.[Reminder],a.[Annotations]
+                  FROM Appointments a
+                 WHERE a.[RecurrenceRule] IS NULL
+                 UNION
+                SELECT a.[Id],a.[Subject],a.[Description],o.[StartDate] [Start],o.[EndDate] [End],a.[MinistryId],a.[RecurrenceRule],a.[RecurrenceParentId],a.[Reminder],a.[Annotations]
+                  FROM Appointments a CROSS APPLY dbo.ExpandRecurrence(a.RecurrenceRule, CAST(GETDATE()-14 AS DATETIME), CAST(GETDATE()+90 AS DATETIME)) o;" />
             <asp:SqlDataSource ID="MinistryDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>'
               SelectCommand="SELECT [Id], [Title] FROM dbo.[Ministry];" />
           </telerik:LayoutColumn>

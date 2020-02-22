@@ -19,3 +19,4 @@
       $find("<%= RadImageGallery1.ClientID %>").playSlideshow();
     }
   </script>
+

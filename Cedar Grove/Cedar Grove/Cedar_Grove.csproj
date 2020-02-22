@@ -191,8 +191,10 @@
     <Content Include="images\Thumbnails\Penguins.jpg" />
     <Content Include="images\Thumbnails\Tulips.jpg" />
     <Content Include="images\Tulips.jpg" />
+    <Content Include="pages\AboutUs.aspx" />
     <Content Include="pages\Calendar.aspx" />
     <Content Include="pages\ChildrensMinistry.aspx" />
+    <Content Include="pages\ContactUs.aspx" />
     <Content Include="pages\MensMinistry.aspx" />
     <Content Include="pages\OutreachMinistry.aspx" />
     <Content Include="pages\WomensMinistry.aspx" />
@@ -330,6 +332,13 @@
     <Compile Include="objectclass\EventItem.cs" />
     <Compile Include="objectclass\GalleryImage.cs" />
     <Compile Include="objectclass\MinistryBackground.cs" />
+    <Compile Include="pages\AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Calendar.aspx.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -343,6 +352,13 @@
     </Compile>
     <Compile Include="pages\ChildrensMinistry.aspx.designer.cs">
       <DependentUpon>ChildrensMinistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\MensMinistry.aspx.cs">
       <DependentUpon>MensMinistry.aspx</DependentUpon>
