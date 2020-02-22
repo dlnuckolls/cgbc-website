@@ -87,12 +87,10 @@
             </telerik:RadToolTip>
             <asp:SqlDataSource ID="ChurchScheduleSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>'
               SelectCommand="
-                SELECT a.[Id],a.[Subject],a.[Description],a.[Start],a.[End],a.[MinistryId],a.[RecurrenceRule],a.[RecurrenceParentId],a.[Reminder],a.[Annotations]
-                  FROM Appointments a
-                 WHERE a.[RecurrenceRule] IS NULL
-                 UNION
-                SELECT a.[Id],a.[Subject],a.[Description],o.[StartDate] [Start],o.[EndDate] [End],a.[MinistryId],a.[RecurrenceRule],a.[RecurrenceParentId],a.[Reminder],a.[Annotations]
-                  FROM Appointments a CROSS APPLY dbo.ExpandRecurrence(a.RecurrenceRule, CAST(GETDATE()-14 AS DATETIME), CAST(GETDATE()+90 AS DATETIME)) o;" />
+                SELECT a.[Id],a.[Subject],a.[Description],ISNULL(o.[StartDate],a.[Start]) [Start],ISNULL(o.[EndDate],a.[End]) [End],
+                       a.[MinistryId],a.[RecurrenceRule],a.[RecurrenceParentId],a.[Reminder],a.[Annotations]
+                  FROM Appointments a 
+                 OUTER APPLY dbo.ExpandRecurrence(a.RecurrenceRule, CAST(GETDATE() - 30 AS DATETIME), CAST(GETDATE() + 90 AS DATETIME)) o;" />
             <asp:SqlDataSource ID="MinistryDataSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>'
               SelectCommand="SELECT [Id], [Title] FROM dbo.[Ministry];" />
           </telerik:LayoutColumn>

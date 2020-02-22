@@ -13,6 +13,15 @@ namespace Cedar_Grove.controls {
   public partial class imagegallery {
 
     /// <summary>
+    /// JumbotronLayout control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadPageLayout JumbotronLayout;
+
+    /// <summary>
     /// RadImageGallery1 control.
     /// </summary>
     /// <remarks>
@@ -20,5 +29,14 @@ namespace Cedar_Grove.controls {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadImageGallery RadImageGallery1;
+
+    /// <summary>
+    /// EventsList control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadGrid EventsList;
   }
 }

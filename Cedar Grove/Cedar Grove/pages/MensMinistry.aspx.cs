@@ -13,6 +13,7 @@ namespace Cedar_Grove.pages {
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.MensPage);
       ImageGallery1.CurrentPage = PageContentBlocks.MensPage;
+      ImageGallery1.CurrentMinistry = MinistryArea.Mens;
     }
   }
 }

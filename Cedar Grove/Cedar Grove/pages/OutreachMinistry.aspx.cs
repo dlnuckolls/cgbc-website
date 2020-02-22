@@ -12,6 +12,7 @@ namespace Cedar_Grove.pages {
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.OutreachPage);
       ImageGallery1.CurrentPage = PageContentBlocks.OutreachPage;
+      ImageGallery1.CurrentMinistry = MinistryArea.Outreach;
     }
   }
 }
