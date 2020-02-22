@@ -14,5 +14,7 @@ namespace Cedar_Grove {
     }
 
     protected void UpcomingEvents_NeedDataSource(object sender, Telerik.Web.UI.RadListViewNeedDataSourceEventArgs e) { ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_READ_EVENTS); }
+    protected void EventsList_NeedDataSource(object sender, GridNeedDataSourceEventArgs e) { ((RadGrid)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_GET_MINISTRY_EVENTS.FormatWith((int)MinistryArea.General)); }
+
   }
 }

@@ -31,6 +31,24 @@ namespace Cedar_Grove {
     protected global::Telerik.Web.UI.RadPageLayout RadPageLayout1;
 
     /// <summary>
+    /// RadPageLayout2 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadPageLayout RadPageLayout2;
+
+    /// <summary>
+    /// EventsList control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadGrid EventsList;
+
+    /// <summary>
     /// UpcomingEvents control.
     /// </summary>
     /// <remarks>

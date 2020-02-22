@@ -34,6 +34,7 @@ namespace Cedar_Grove {
     [TextValue("Forgot Password")] ForgotPassword,
     [TextValue("Reset Password")] ResetPassword,
     [TextValue("Chruch Calendar")] Calendar,
+    [TextValue("What we Believe")] Believe,
   }
 
   [CustomEnum(true)]
