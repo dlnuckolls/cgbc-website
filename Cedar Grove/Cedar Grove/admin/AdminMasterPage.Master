@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMasterPage.Master.cs" Inherits="Cedar_Grove.AdminMasterPage" %>
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register Src="~/controls/mainnavigation.ascx" TagPrefix="uc1" TagName="mainnavigation" %>
+<%@ Register Src="~/controls/mainfooter.ascx" TagPrefix="uc1" TagName="mainfooter" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+  <link href="/styles/base.css" rel="stylesheet" />
+  <link href="/styles/default.css" rel="stylesheet" />
+  <asp:ContentPlaceHolder ID="head" runat="server">
+  </asp:ContentPlaceHolder>
+</head>
+<body>
+  <form id="form1" runat="server">
+    <telerik:RadScriptManager runat="server"></telerik:RadScriptManager>
+    <div id="wrapper">
+      <div class="adminheader">
+        <telerik:RadPageLayout runat="server" ID="MasterLayout" GridType="Fluid">
+          <Rows>
+            <%--Header--%>
+            <telerik:LayoutRow CssClass="adminheader">
+              <Columns>
+                <%--Logo--%>
+                <telerik:LayoutColumn Span="4" SpanMd="4" SpanSm="12" SpanXs="12">
+                  <div class="pageHeaderTitle">
+                    <img src="/images/cgbc-banner.JPG" alt="site logo" />
+                    <h1>Cedar Grove Baptist Church</h1>
+                  </div>
+                </telerik:LayoutColumn>
+
+                <%--Main Nav--%>
+                <telerik:LayoutColumn Span="8" SpanMd="8" SpanSm="12" SpanXs="12">
+                  <uc1:mainnavigation runat="server" ID="mainnavigation" />
+                </telerik:LayoutColumn>
+              </Columns>
+            </telerik:LayoutRow>
+          </Rows>
+        </telerik:RadPageLayout>
+      </div>
+      <div class="contentBlock">
+        <telerik:RadPageLayout runat="server" ID="RadPageLayout2" GridType="Fluid">
+          <Rows>
+            <%--Main--%>
+            <telerik:LayoutRow>
+              <Columns>
+                <%--Sidebar Left--%>
+                <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
+                </telerik:LayoutColumn>
+
+                <%--Content--%>
+                <telerik:CompositeLayoutColumn Span="10" SpanMd="12" SpanSm="12" SpanXs="12">
+                  <Content>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                  </Content>
+                </telerik:CompositeLayoutColumn>
+                <%--Sidebar Right--%>
+                <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
+                </telerik:LayoutColumn>
+              </Columns>
+            </telerik:LayoutRow>
+          </Rows>
+        </telerik:RadPageLayout>
+      </div>
+      <uc1:mainfooter runat="server" id="mainfooter" />
+    </div>
+  </form>
+</body>
+</html>

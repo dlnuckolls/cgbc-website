@@ -1,0 +1,68 @@
+﻿
+.RadScheduler_WebBlue {
+  border-radius: 10px;
+}
+
+  .RadScheduler_WebBlue .rsMonthView .rsTodayCell {
+    background-color: aliceblue !important;
+    color: #000;
+    border: 1px solid #000;
+  }
+
+  .RadScheduler_WebBlue .rsMonthView .rsRow a {
+    text-decoration: none !important;
+  }
+
+  .RadScheduler_WebBlue .rsDialog .rsAdvancedEdit .rsAdvancedModal {
+    border-radius: 10px;
+  }
+
+  .RadScheduler_WebBlue .rsAdvancedModal {
+    border-radius: 10px;
+  }
+
+.RadScheduler_Silk .rsMonthView .rsTodayCell {
+  background-color: aliceblue !important;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.RadScheduler_Silk .rsMonthView .rsRow a {
+  text-decoration: none !important;
+}
+
+.mensMinistry .rsAptContent {
+  color: blue !important;
+  background-color: lightblue !important;
+  border-radius: 5px;
+}
+
+.womensMinistry .rsAptContent {
+  color: brown !important;
+  background-color: lightcoral !important;
+  border-radius: 5px;
+}
+
+.youthMinistry .rsAptContent {
+  color: darkgreen !important;
+  background-color: burlywood !important;
+  border-radius: 5px;
+}
+
+.childrensMinistry .rsAptContent {
+  color: darkslateblue !important;
+  background-color: khaki !important;
+  border-radius: 5px;
+}
+
+.outreachMinistry .rsAptContent {
+  color: orangered !important;
+  background-color: lightcyan !important;
+  border-radius: 5px;
+}
+
+.generalMinistry .rsAptContent {
+  color: black !important;
+  background-color: lightslategray !important;
+  border-radius: 5px;
+}
