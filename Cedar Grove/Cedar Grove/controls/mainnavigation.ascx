@@ -17,16 +17,14 @@
     <telerik:RadMenuItem Text="Calendar" NavigateUrl="~/pages/Calendar.aspx" />
     <telerik:RadMenuItem IsSeparator="true" />
     <telerik:RadMenuItem Text="Sermons" />
-<%--    <telerik:RadMenuItem IsSeparator="true" />
-    <telerik:RadMenuItem Text="Galary" />--%>
     <telerik:RadMenuItem IsSeparator="true" />
-    <telerik:RadMenuItem Text="About Us" >
+    <telerik:RadMenuItem Text="About Us">
       <Items>
         <telerik:RadMenuItem Text="What We Believe" NavigateUrl="~/pages/WhatWeBelieve.aspx" />
+        <telerik:RadMenuItem IsSeparator="true" />
+        <telerik:RadMenuItem Text="Contact Us" />
       </Items>
     </telerik:RadMenuItem>
-    <telerik:RadMenuItem IsSeparator="true" />
-    <telerik:RadMenuItem Text="Contact Us" />
     <telerik:RadMenuItem IsSeparator="true" />
     <telerik:RadMenuItem Text="Admin" NavigateUrl="~/admin/Login.aspx" />
   </Items>

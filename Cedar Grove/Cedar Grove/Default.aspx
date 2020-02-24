@@ -36,7 +36,7 @@
     <Rows>
       <telerik:LayoutRow>
         <Columns>
-          <telerik:LayoutColumn Span="4" SpanMd="4" SpanSm="12" SpanXs="12" CssClass="messageTextAreas">
+          <telerik:LayoutColumn Span="4" SpanMd="4" SpanSm="12" SpanXs="12" >
               <telerik:RadGrid Skin="WebBlue" RenderMode="Auto" runat="server" ID="EventsList" Width="100%" PagerStyle-AlwaysVisible="false"
                 HorizontalAlign="Left" AutoGenerateColumns="False" CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0"
                 MasterTableView-GridLines="None" OnNeedDataSource="EventsList_NeedDataSource" GroupingSettings-CaseSensitive="false" ShowHeader="true">
@@ -61,7 +61,7 @@
                 </MasterTableView>
               </telerik:RadGrid>
           </telerik:LayoutColumn>
-          <telerik:LayoutColumn Span="8" SpanMd="8" SpanSm="12" SpanXs="12" CssClass="messageTextAreas">
+          <telerik:LayoutColumn Span="8" SpanMd="8" SpanSm="12" SpanXs="12" >
              <div class="messageEventHeader">Upcoming Events</div>
               <telerik:RadListView runat="server" OnNeedDataSource="UpcomingEvents_NeedDataSource" ID="UpcomingEvents" AllowPaging="true" PageSize="3">
                 <LayoutTemplate>

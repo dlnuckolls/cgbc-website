@@ -53,7 +53,7 @@ namespace Cedar_Grove {
     public const string SQL_UPDATE_EVENT = "UPDATE [dbo].[UpcomingEvents] SET [Title] = '{0}', [Description] = '{1}', [EventDate] = {2} WHERE [Id] = '{3}';";
     public const string SQL_DELETE_EVENT = "DELETE [dbo].[UpcomingEvents] WHERE [Id] = '{0}';";
 
-    public const string SQL_GET_MINISTRY_EVENTS = "SELECT a.[Id],a.[Subject],a.[Description],ISNULL(o.[StartDate],a.[Start]) [Start],ISNULL(o.[EndDate],a.[End]) [End] FROM Appointments a OUTER APPLY dbo.ExpandRecurrence(a.RecurrenceRule, CAST(GETDATE() AS DATETIME), CAST(GETDATE() + 7 AS DATETIME)) o WHERE a.[MinistryId] = {0};";
+    public const string SQL_GET_MINISTRY_EVENTS = "SELECT a.[Id],a.[Subject],a.[Description],ISNULL(o.[StartDate],a.[Start]) [Start],ISNULL(o.[EndDate],a.[End]) [End] FROM Appointments a OUTER APPLY dbo.ExpandRecurrence(a.RecurrenceRule, CAST(GETDATE() AS DATETIME), CAST(GETDATE() + 7 AS DATETIME)) o WHERE a.[MinistryId] = {0} ORDER BY ISNULL(o.[StartDate],a.[Start]) ASC;";
 
   }
 }
