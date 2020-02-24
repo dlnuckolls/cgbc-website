@@ -22,6 +22,8 @@
       <Items>
         <telerik:RadMenuItem Text="What We Believe" NavigateUrl="~/pages/WhatWeBelieve.aspx" />
         <telerik:RadMenuItem IsSeparator="true" />
+        <telerik:RadMenuItem Text="Church Constitution" NavigateUrl="~/pages/ByLaws.aspx" />
+        <telerik:RadMenuItem IsSeparator="true" />
         <telerik:RadMenuItem Text="Contact Us" />
       </Items>
     </telerik:RadMenuItem>
