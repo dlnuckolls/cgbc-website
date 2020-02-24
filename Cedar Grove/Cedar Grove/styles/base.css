@@ -256,3 +256,24 @@ h6 {
 .pageContentBlocks {
   text-align: justify;
 }
+
+.pageContentBlocks2 {
+  text-align: justify;
+  border: 25px solid;
+  border-image: url(/images/border.jpg) 25 25 25 25 repeat;
+  padding: 20px;
+  background-color: mintcream;
+}
+
+.pageContentBlocks2 a {
+  text-decoration: none !important;
+}
+
+
+.sideBorder {
+  background-image: url('/images/border.jpg');
+  background-repeat: repeat-y;
+  height: 100%;
+  width: 10%;
+  float: left;
+}

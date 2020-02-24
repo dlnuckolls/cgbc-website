@@ -159,6 +159,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="images\alarm.png" />
+    <Content Include="images\border.jpg" />
     <Content Include="images\cgbc-banner.JPG" />
     <Content Include="images\Chrysanthemum.jpg" />
     <Content Include="images\Desert.jpg" />
@@ -448,7 +449,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
