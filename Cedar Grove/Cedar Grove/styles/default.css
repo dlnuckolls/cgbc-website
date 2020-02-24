@@ -201,11 +201,13 @@ html body form .RadInput .MyFocusedTextBox {
 
 .messageEventHeader {
   width: 99%;
-  padding: 8px 2px 8px 5px;
+  padding: 8px 13px 7px 13px;
   margin-right: 10px;
+  line-height: 1.42857143;
   border: 1px solid;
   color: whitesmoke;
   border-color: #98acbf #728ba1 #3d556c #455f77;
   border-top-width: 0;
   background: linear-gradient(#748ea3,#6b849d 50%,#597791 50%,#748ea3);
+  border-radius: 5px;
 }

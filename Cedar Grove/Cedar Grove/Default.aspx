@@ -44,7 +44,7 @@
                   ClientDataKeyNames="Id" CommandItemDisplay="None" InsertItemPageIndexAction="ShowItemOnFirstPage" AllowNaturalSort="False" ShowHeadersWhenNoRecords="true">
                   <CommandItemSettings ShowAddNewRecordButton="False" ShowRefreshButton="False"></CommandItemSettings>
                   <Columns>
-                    <telerik:GridTemplateColumn ShowFilterIcon="False" AllowFiltering="False" HeaderText="This Week at CGBC" AllowSorting="true" UniqueName="ComingEvents">
+                    <telerik:GridTemplateColumn ShowFilterIcon="False" AllowFiltering="False" HeaderText="This Week at CGBC" AllowSorting="true" UniqueName="ComingEvents" HeaderStyle-CssClass="messageEventHeader">
                       <ItemTemplate>
                         <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Subject") %>'></telerik:RadLabel>
                         <hr />

@@ -269,11 +269,3 @@ h6 {
   text-decoration: none !important;
 }
 
-
-.sideBorder {
-  background-image: url('/images/border.jpg');
-  background-repeat: repeat-y;
-  height: 100%;
-  width: 10%;
-  float: left;
-}
