@@ -385,6 +385,26 @@ BEGIN
   COMMIT TRANSACTION Version1_8
 END
 
+SELECT @majorVersion = 1, @minorVersion = 9;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_9
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('3219C52F-0056-4818-9831-F81B0AC023E6', 'Believe Page'),
+           ('715A4FC2-41CB-4499-B4FD-358186F1937F', 'Believe Page Statement'),
+           ('F89AB4CA-D663-4731-A67D-3526FEC8A9AB', 'Constitution Page'),
+           ('EF9B3A69-C04B-43FD-93B4-C7B8DA4C7916', 'Constitution Page Statement');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('3219C52F-0056-4818-9831-F81B0AC023E6', 'Believe Page Content'),
+           ('715A4FC2-41CB-4499-B4FD-358186F1937F', ''),
+           ('F89AB4CA-D663-4731-A67D-3526FEC8A9AB', 'Constitution Page Content'),
+           ('EF9B3A69-C04B-43FD-93B4-C7B8DA4C7916', '');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_9
+END
+
 /* 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence

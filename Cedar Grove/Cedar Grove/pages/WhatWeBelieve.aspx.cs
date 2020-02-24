@@ -10,6 +10,8 @@ namespace Cedar_Grove.pages {
     protected void Page_Load(object sender, EventArgs e) {
       SessionInfo.CurrentPage = PageNames.Believe;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
+      PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.BelievePageHeader);
+      PageContentStatement.Text = SessionInfo.PageContent(PageContentBlocks.BelievePageBody);
     }
   }
 }
