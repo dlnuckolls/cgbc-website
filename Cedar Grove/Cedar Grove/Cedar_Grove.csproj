@@ -193,6 +193,7 @@
     <Content Include="images\Thumbnails\Tulips.jpg" />
     <Content Include="images\Tulips.jpg" />
     <Content Include="pages\AboutUs.aspx" />
+    <Content Include="pages\ByLaws.aspx" />
     <Content Include="pages\Calendar.aspx" />
     <Content Include="pages\ChildrensMinistry.aspx" />
     <Content Include="pages\ContactUs.aspx" />
@@ -341,6 +342,13 @@
     <Compile Include="pages\AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\ByLaws.aspx.cs">
+      <DependentUpon>ByLaws.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ByLaws.aspx.designer.cs">
+      <DependentUpon>ByLaws.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Calendar.aspx.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -449,7 +457,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
