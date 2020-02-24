@@ -69,6 +69,14 @@
   font-weight: bold;
 }
 
+.MyContactLabel {
+  display: block;
+  width: 90px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: right;
+}
+
 .RadButton.rbRounded.css3Simple {
   height: 40px;
   width: 200px;
@@ -162,6 +170,21 @@ html body form .RadInput .MyFocusedTextBox {
 #messageDisplayArea {
   width: 100%;
   text-align: center;
+}
+
+.rcRefreshImage {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.MyCaptchaTextBox {
+  height: 38px;
+  border-width: 1px;
+  border-color: #a9c9a9;
+  background: beige;
+  font: 14px/18px arial,sans-serif;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .errorMessageDisplay {

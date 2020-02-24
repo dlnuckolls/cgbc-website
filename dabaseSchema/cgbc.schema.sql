@@ -405,6 +405,22 @@ BEGIN
   COMMIT TRANSACTION Version1_9
 END
 
+SELECT @majorVersion = 1, @minorVersion = 10;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_10
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('AD344A0E-8151-4846-A503-985D1F284D8D', 'Contact Page'),
+           ('BE5DF028-0EEA-4118-8431-0A31F347AA0C', 'About Page');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('AD344A0E-8151-4846-A503-985D1F284D8D', 'Contact Page Content'),
+           ('BE5DF028-0EEA-4118-8431-0A31F347AA0C', 'About Page Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_10
+END
+
 /* 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence

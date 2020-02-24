@@ -54,6 +54,8 @@ namespace Cedar_Grove {
     [TextValue("715A4FC2-41CB-4499-B4FD-358186F1937F")] BelievePageBody,
     [TextValue("F89AB4CA-D663-4731-A67D-3526FEC8A9AB")] ConstitutionPageHeader,
     [TextValue("EF9B3A69-C04B-43FD-93B4-C7B8DA4C7916")] ConstitutionPageBody,
+    [TextValue("AD344A0E-8151-4846-A503-985D1F284D8D")] ContactUsPageBody,
+    [TextValue("BE5DF028-0EEA-4118-8431-0A31F347AA0C")] AboutUsPageBody,
   }
 
   [CustomEnum(true)]

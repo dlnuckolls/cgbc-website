@@ -54,6 +54,11 @@ namespace Cedar_Grove {
       SmtpClient smtp = SetMailServerSettings();
       smtp.Send(mail);
     }
+
+    public void SendContactEmail(ref MailMessage msg) {
+      SmtpClient smtp = SetMailServerSettings();
+      smtp.Send(msg);
+    }
     #endregion
 
     public List<MinistryBackground> MinistryColours = new List<MinistryBackground>() {
