@@ -421,6 +421,28 @@ BEGIN
   COMMIT TRANSACTION Version1_10
 END
 
+SELECT @majorVersion = 1, @minorVersion = 11;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_11
+    CREATE TABLE dbo.StaffMembers (
+	    [Id]           UNIQUEIDENTIFIER NOT NULL,
+      [Name]         VARCHAR(100)     NOT NULL, 
+      [Title]        VARCHAR(100)         NULL,
+      [Bio]          VARCHAR(200)         NULL,
+      [ImageUrl]     VARCHAR(256)         NULL,
+      [DisplayOrder] INT              NOT NULL DEFAULT 0,
+	    CONSTRAINT [PK_StaffMembers] PRIMARY KEY CLUSTERED (
+	        [Id] ASC
+        ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].[StaffMembers] ADD  CONSTRAINT [DF_StaffMembers_Id]  DEFAULT (NEWID()) FOR [Id];
+    
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_11
+END
+
 /* 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence

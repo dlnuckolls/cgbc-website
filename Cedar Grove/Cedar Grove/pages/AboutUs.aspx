@@ -13,6 +13,53 @@
             <div class="pageContentBlocks">
               <asp:Literal ID="AboutPageContentBlock" runat="server" />
             </div>
+            <div id="staffContactBoxHolder">
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Larry Sowders Jr.</strong><br />
+                <em>Senior Pastor</em><br />Pastor@cedargrovebaptist.church</p>
+              </div>
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Jordan Bennett</strong><br />
+                <em>Secretary</em><br />Office@cedargrovebaptist.church</p>
+              </div>
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Joe Vaughn</strong><br />
+                <em>Elder</em></p>
+              </div>
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Mike Montgomery</strong><br />
+                <em>Elder, Men on Mission Leader</em></p>
+              </div>
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Sandra Marcum</strong><br />
+                <em>Children's Ministry Leader</em></p>
+              </div>
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Alice Shropa</strong><br />
+                <em>Women's Ministry Leader</em></p>
+              </div>
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Keith Hurt</strong><br />
+                <em>Music Ministry Leader</em></p>
+              </div>
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Terry Nichols</strong><br />
+                <em>Chairman of the Deacons</em></p>
+              </div>
+              <div class="staffContactBox">
+                <img src="https://via.placeholder.com/150" alt="Unavailable" />
+                <p><strong>Brian Marcum</strong><br />
+                <em>Youth Ministry Leader</em></p>
+              </div>
+            </div>
           </telerik:LayoutColumn>
           <telerik:LayoutColumn Span="6" SpanMd="12" SpanSm="12" SpanXs="12">
             <div class="pageContentBlocks">

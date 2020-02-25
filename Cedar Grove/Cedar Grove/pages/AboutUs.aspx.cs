@@ -38,5 +38,9 @@ namespace Cedar_Grove.pages {
       //msg.To.Add(new MailAddress("contactus@usfarmexchange.com", "USFarmExchange Contact Service"));
       //SessionInfo.SendContactEmail(ref msg);
     }
+
+    protected void StaffCards_NeedDataSource(object sender, RadListViewNeedDataSourceEventArgs e) {
+
+    }
   }
 }
