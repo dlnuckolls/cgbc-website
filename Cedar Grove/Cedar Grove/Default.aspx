@@ -38,6 +38,7 @@
         <Columns>
           <telerik:LayoutColumn Span="4" SpanMd="4" SpanSm="12" SpanXs="12" >
               <telerik:RadGrid Skin="WebBlue" RenderMode="Auto" runat="server" ID="EventsList" Width="100%" PagerStyle-AlwaysVisible="false"
+                OnItemDataBound="EventsList_ItemDataBound"
                 HorizontalAlign="Left" AutoGenerateColumns="False" CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0"
                 MasterTableView-GridLines="None" OnNeedDataSource="EventsList_NeedDataSource" GroupingSettings-CaseSensitive="false" ShowHeader="true">
                 <MasterTableView AutoGenerateColumns="False" DataKeyNames="Id" GridLines="None"
