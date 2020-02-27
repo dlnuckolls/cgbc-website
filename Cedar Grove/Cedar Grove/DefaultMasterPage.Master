@@ -18,7 +18,7 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'UA-18831849-22');
+    gtag('config', 'UA-18831849-22', { 'optimize_id': 'GTM-KKDFM7M' });
   </script>
   <asp:ContentPlaceHolder ID="head" runat="server">
   </asp:ContentPlaceHolder>
