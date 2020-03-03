@@ -94,7 +94,7 @@ h6 {
 #wrapper .RadMenu, div.RadMenuPopup,
 #wrapper .RadMenu_Default, #wrapper .RadMenu_Default a.rmLink {
   font-size: 1em;
-  background-color: transparent;
+  /*background-color: transparent;*/
 }
 
 #wrapper .largeheader {

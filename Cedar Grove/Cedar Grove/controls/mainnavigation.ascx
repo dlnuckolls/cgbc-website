@@ -24,7 +24,7 @@
         <telerik:RadMenuItem IsSeparator="true" />
         <telerik:RadMenuItem Text="Church Constitution" NavigateUrl="~/pages/ByLaws.aspx" />
         <telerik:RadMenuItem IsSeparator="true" />
-        <telerik:RadMenuItem Text="Contact Us" NavigateUrl="~/pages/AboutUs.aspx" />
+        <telerik:RadMenuItem Text="About Us" NavigateUrl="~/pages/AboutUs.aspx" />
       </Items>
     </telerik:RadMenuItem>
     <telerik:RadMenuItem IsSeparator="true" />

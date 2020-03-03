@@ -10,6 +10,7 @@
     <Use64BitIISExpress />
     <UseGlobalApplicationHostFile />
     <UpgradeBackupLocation />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -158,6 +162,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="feeds\SermonService.svc" />
     <Content Include="images\alarm.png" />
     <Content Include="images\border.jpg" />
     <Content Include="images\cgbc-banner.JPG" />
@@ -306,6 +311,10 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="feeds\ISermonService.cs" />
+    <Compile Include="feeds\SermonService.svc.cs">
+      <DependentUpon>SermonService.svc</DependentUpon>
+    </Compile>
     <Compile Include="helpers\BaseControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -322,6 +331,7 @@
     <Compile Include="helpers\SqlHelpers.cs" />
     <Compile Include="helpers\SqlStatements.cs" />
     <Compile Include="helpers\StringHelpers.cs" />
+    <Compile Include="helpers\SystemErrorHandler.cs" />
     <Compile Include="helpers\SystemSettings.cs" />
     <Compile Include="helpers\SystemUser.cs" />
     <Compile Include="Image.cs" />
@@ -437,6 +447,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
@@ -457,7 +468,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
