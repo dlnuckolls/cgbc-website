@@ -43,6 +43,17 @@ namespace Cedar_Grove {
     /// Fix string values for sql insertion and set to a
     /// maximum length based on the parameter passed.
     /// </summary>
+    /// <param name="l"></param>
+    /// <returns>Sql ready string of proper length.</returns>
+    public static string FixListToSqlString(this List<string> l) {
+      var rtn = string.Empty;
+      l.ForEach(s => { rtn += "{0},".FormatWith(s.FixSqlString()); });
+      return rtn.Substring(0, rtn.Length - 1);
+    }
+    /// <summary>
+    /// Fix string values for sql insertion and set to a
+    /// maximum length based on the parameter passed.
+    /// </summary>
     /// <param name="p">String value.</param>
     /// <param name="len">Max length.</param>
     /// <returns>Sql ready string of proper length.</returns>
@@ -52,6 +63,13 @@ namespace Cedar_Grove {
       if(p.Length > len) p = p.Substring(0, len);
       return p;
     }
+    /// <summary>
+    /// Fix string values for sql insertion and set to a
+    /// maximum length based on the parameter passed.
+    /// </summary>
+    /// <param name="p"></param>
+    /// <param name="len"></param>
+    /// <returns></returns>
     public static string FixShortSqlString(this string p, int len) {
       if (p.IsNullOrEmpty()) return string.Empty;
       p = p.Replace("'", "''");

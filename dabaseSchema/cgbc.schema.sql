@@ -443,6 +443,47 @@ BEGIN
   COMMIT TRANSACTION Version1_11
 END
 
+SELECT @majorVersion = 1, @minorVersion = 12;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_12
+    CREATE TABLE dbo.SermonSyndicationFeed (
+	    [Id]           UNIQUEIDENTIFIER NOT NULL,
+      [Published]    SMALLDATETIME    NOT NULL, 
+      [Title]        VARCHAR(100)     NOT NULL,
+      [Description]  VARCHAR(200)         NULL,
+      [SourceUrl]    VARCHAR(256)         NULL,
+	    CONSTRAINT [PK_SermonSyndicationFeed] PRIMARY KEY CLUSTERED (
+	        [Id] ASC
+        ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].[SermonSyndicationFeed] ADD  CONSTRAINT [DF_SermonSyndicationFeed_Id]  DEFAULT (NEWID()) FOR [Id];
+    
+    ALTER TABLE [dbo].[SystemConfigs] ADD
+      [FeedTitle]       VARCHAR(100)  NULL,
+      [FeedDescription] VARCHAR(255)  NULL,
+      [FeedUri]         VARCHAR(255)  NULL,
+      [FeedAuthor]      VARCHAR(255)  NULL,
+      [FeedCategory]    VARCHAR(255)  NULL;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_12
+END
+
+SELECT @majorVersion = 1, @minorVersion = 13;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_13
+    UPDATE [dbo].[SystemConfigs] 
+       SET [FeedTitle] = 'Cedar Grove Baptist Church', [FeedDescription] = 'Cedar Grove Baptist Church Recent Sermons', 
+           [FeedUri] = 'https://cgbc.glorykidd.com/feeds/SermonService.svc/GetRssSermonsFeed', [FeedAuthor] = 'office@cedargrovebaptist.church', 
+           [FeedCategory] = 'Religious,Sermons';
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_13
+END
+
 /* 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence

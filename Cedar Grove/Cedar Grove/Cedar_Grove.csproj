@@ -162,7 +162,6 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="feeds\SermonService.svc" />
     <Content Include="images\alarm.png" />
     <Content Include="images\border.jpg" />
     <Content Include="images\cgbc-banner.JPG" />
@@ -311,10 +310,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="feeds\ISermonService.cs" />
-    <Compile Include="feeds\SermonService.svc.cs">
-      <DependentUpon>SermonService.svc</DependentUpon>
-    </Compile>
     <Compile Include="helpers\BaseControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -326,7 +321,9 @@
     </Compile>
     <Compile Include="helpers\EncryptionHelper.cs" />
     <Compile Include="helpers\Enumerations.cs" />
+    <Compile Include="helpers\SermonSyndicationService.cs" />
     <Compile Include="helpers\SessionManager.cs" />
+    <Compile Include="helpers\SiteFeedSettings.cs" />
     <Compile Include="helpers\SqlDatasets.cs" />
     <Compile Include="helpers\SqlHelpers.cs" />
     <Compile Include="helpers\SqlStatements.cs" />
@@ -345,6 +342,7 @@
     <Compile Include="objectclass\EventItem.cs" />
     <Compile Include="objectclass\GalleryImage.cs" />
     <Compile Include="objectclass\MinistryBackground.cs" />
+    <Compile Include="objectclass\SermonItem.cs" />
     <Compile Include="pages\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -447,7 +445,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="feeds\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
@@ -468,7 +468,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

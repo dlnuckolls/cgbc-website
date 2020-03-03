@@ -11,6 +11,8 @@ namespace Cedar_Grove {
     // System Settings
     public const string SQL_GET_MAIL_SETTINGS = "SELECT Id, MailServer, ServerPort, SmtpUser, SmtpPassword, FromEmail, FromUsername, RequireAuth, RequireSsl FROM dbo.SystemConfigs;";
     public const string SQL_UPDATE_MAIL_SETTINGS = "UPDATE dbo.SystemConfigs SET MailServer = '{0}', ServerPort = {1}, SmtpUser = '{2}', SmtpPassword = '{3}', FromEmail = '{4}', FromUsername = '{5}', RequireAuth = {6}, RequireSsl = {7} WHERE Id = '{8}';";
+    public const string SQL_GET_FEED_SETTINGS = "SELECT Id, FeedTitle, FeedDescription, FeedUri, FeedAuthor, FeedCategory FROM dbo.SystemConfigs;";
+    public const string SQL_UPDATE_FEED_SETTINGS = "UPDATE dbo.SystemConfigs SET FeedTitle = '{0}', FeedDescription = '{1}', FeedUri = '{2}', FeedAuthor = '{3}', FeedCategory = '{4}' WHERE Id = '{5}';";
 
     // User and authentication
     public const string SQL_AUTHENTICATE_USER = "SELECT * FROM dbo.AdminUsers WHERE UserName = '{0}' AND UserPass = '{1}' AND Deleted = 0;";
@@ -28,10 +30,7 @@ namespace Cedar_Grove {
     // Exceptions
     public const string SQL_LOG_EXCEPTION = "INSERT INTO dbo.SystemExceptions (ExceptionTimeStamp, Module, Exception, StackTrace) VALUES ({0}, '{1}', '{2}', '{3}');";
     public const string SQL_READ_EXCEPTIONS = "SELECT * FROM dbo.SystemExceptions ORDER BY ExceptionTimeStamp DESC;";
-    
-    // Upcoming Events
-    public const string SQL_READ_EVENTS = "SELECT [Id], [Title], [Description], CONVERT(VARCHAR, [EventDate], 107) [EventDate] FROM dbo.UpcomingEvents ORDER BY [EventDate] DESC;";
-    
+
     // Page Content Blocks
     public const string SQL_GET_PAGE_LOCATIONS = "SELECT [Id],[Description] FROM [dbo].[PageLocations];";
     public const string SQL_GET_PAGE_CONTENTS = "SELECT ISNULL([Description],'') [Description] FROM [dbo].[PageContent] WHERE [PageLocation] = '{0}';";
@@ -48,11 +47,12 @@ namespace Cedar_Grove {
     public const string SQL_UPDATE_PAGE_GALLERY_IMAGE = "UPDATE dbo.GalleryImages SET [PageLocation] = '{0}', [ImageUrl] = '{1}', [Description] = '{2}', [Title] = '{3}' WHERE [Id] = '{4}';";
     public const string SQL_DELETE_PAGE_GALLERY_IMAGE = "DELETE dbo.GalleryImages WHERE [Id] = '{0}';";
 
+    // Events Management
+    public const string SQL_READ_EVENTS = "SELECT [Id], [Title], [Description], CONVERT(VARCHAR, [EventDate], 107) [EventDate] FROM dbo.UpcomingEvents ORDER BY [EventDate] DESC;";
     public const string SQL_GET_EVENT_BY_ID = "SELECT [Id],[Title],[Description],[EventDate] FROM [dbo].[UpcomingEvents] WHERE [Id] = '{0}';";
     public const string SQL_INSERT_EVENT = "INSERT INTO [dbo].[UpcomingEvents] ([Title],[Description],[EventDate]) VALUES ('{0}', '{1}', {2});";
     public const string SQL_UPDATE_EVENT = "UPDATE [dbo].[UpcomingEvents] SET [Title] = '{0}', [Description] = '{1}', [EventDate] = {2} WHERE [Id] = '{3}';";
     public const string SQL_DELETE_EVENT = "DELETE [dbo].[UpcomingEvents] WHERE [Id] = '{0}';";
-
     public const string SQL_GET_MINISTRY_EVENTS = @"
 SELECT a.[Id],a.[Subject],a.[Description],ISNULL(o.[StartDate],a.[Start]) [Start],ISNULL(o.[EndDate],a.[End]) [End], [MinistryId] 
   FROM Appointments a 
@@ -66,6 +66,14 @@ SELECT a.[Id],a.[Subject],a.[Description],ISNULL(o.[StartDate],a.[Start]) [Start
  OUTER APPLY dbo.ExpandRecurrence(a.RecurrenceRule, CAST(GETDATE() AS DATETIME), CAST(GETDATE() + 7 AS DATETIME)) o 
  WHERE ISNULL(o.[StartDate],a.[Start]) >= GETDATE() AND ISNULL(o.[EndDate],a.[End]) <= CAST(GETDATE() + 7 AS DATETIME)
  ORDER BY ISNULL(o.[StartDate],a.[Start]) ASC;";
+
+    // Sermon Podcast Feed Management
+    public const string SQL_GET_ALL_SERMONS = "SELECT [Id], [Published], [Title], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] ORDER BY [Published] DESC;";
+    public const string SQL_GET_TOP_SERMONS = "SELECT TOP 15 [Id], [Published], [Title], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] ORDER BY [Published] DESC;";
+    public const string SQL_GET_SERMON_BY_ID = "SELECT [Id], [Published], [Title], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] WHERE [Id] = '{0}';";
+    public const string SQL_INSERT_SERMON = "INSERT INTO [dbo].[SermonSyndicationFeed] ([Published], [Title], [Description], [SourceUrl]) VALUES ({0}, '{1}', '{2}', '{3}');";
+    public const string SQL_UPDATE_SERMON = "UPDATE [dbo].[SermonSyndicationFeed] SET [Published] = {0}, [Title] = '{1}', [Description] = '{2}', [SourceUrl] = '{3}' WHERE [Id] = '{4}';";
+    public const string SQL_DELETE_SERMON = "DELETE [dbo].[SermonSyndicationFeed] WHERE [Id] = '{0}';";
 
   }
 }
