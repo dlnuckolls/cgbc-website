@@ -484,6 +484,17 @@ BEGIN
   COMMIT TRANSACTION Version1_13
 END
 
+SELECT @majorVersion = 1, @minorVersion = 14;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_14
+    ALTER TABLE [dbo].[SermonSyndicationFeed] ADD
+      [Author] VARCHAR(100) NULL;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_14
+END
+
 /* 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence

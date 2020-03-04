@@ -30,7 +30,14 @@ namespace Cedar_Grove.helpers {
     private static void AddFeedItems(ref SyndicationFeed inFeed) {
       SiteFeedSettings.StaticInstance.LoadSermonsForFeed();
       List<SyndicationItem> items = new List<SyndicationItem>();
-      SiteFeedSettings.StaticInstance.Sermons.ForEach(sermon => { items.Add(new SyndicationItem(sermon.Title, sermon.Description, new Uri(sermon.SourceUrl), sermon.Id, sermon.Published)); });
+      SyndicationItem item = null;
+      SiteFeedSettings.StaticInstance.Sermons.ForEach(sermon => {
+        item = new SyndicationItem(sermon.Title, sermon.Description, new Uri(sermon.SourceUrl), sermon.Id, sermon.Published);
+        item.PublishDate = sermon.Published;
+        item.Authors.Add(new SyndicationPerson() { Name = sermon.Author });
+        item.BaseUri = new Uri(sermon.SourceUrl);
+        items.Add(item);
+      });
       inFeed.Items = items;
     }
 

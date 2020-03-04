@@ -10,6 +10,7 @@ namespace Cedar_Grove.objectclass {
     public string Id { get; set; }
     public DateTime Published { get; set; }
     public string Title { get; set; }
+    public string Author { get; set; }
     public string Description { get; set; }
     public string SourceUrl { get; set; }
 
@@ -27,6 +28,7 @@ namespace Cedar_Grove.objectclass {
       Id = dataRow["Id"].ToString();
       Published = dataRow["Published"].ToString().GetAsDate();
       Title = dataRow["Title"].ToString();
+      Author = dataRow["Author"].ToString();
       Description = dataRow["Description"].ToString();
       SourceUrl = dataRow["SourceUrl"].ToString();
     }
@@ -39,9 +41,17 @@ namespace Cedar_Grove.objectclass {
       Id = dataRow["Id"].ToString();
       Published = dataRow["Published"].ToString().GetAsDate();
       Title = dataRow["Title"].ToString();
+      Author = dataRow["Author"].ToString();
       Description = dataRow["Description"].ToString();
       SourceUrl = dataRow["SourceUrl"].ToString();
     }
 
+    public void SaveSermonItem() {
+      if (Id.IsNullOrEmpty()) {
+        _ = SqlHelpers.Insert(SqlStatements.SQL_INSERT_SERMON.FormatWith(Published.ConvertSqlDate(), Title.FixSqlString(), Author.FixSqlString(), Description.FixSqlString(), SourceUrl.FixSqlString()));
+      } else {
+        _ = SqlHelpers.Update(SqlStatements.SQL_UPDATE_SERMON.FormatWith(Published.ConvertSqlDate(), Title.FixSqlString(), Author.FixSqlString(), Description.FixSqlString(), SourceUrl.FixSqlString(), Id));
+      }
+    }
   }
 }

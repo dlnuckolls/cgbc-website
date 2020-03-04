@@ -113,6 +113,7 @@
     <Content Include="admin\AdminEvents.aspx" />
     <Content Include="admin\AdminGallery.aspx" />
     <Content Include="admin\AdminPages.aspx" />
+    <Content Include="admin\AdminSermons.aspx" />
     <Content Include="admin\AdminUsers.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\ForgotPassword.aspx" />
@@ -154,6 +155,7 @@
     <Content Include="App_Data\RadCaptcha\X.wav" />
     <Content Include="App_Data\RadCaptcha\Y.wav" />
     <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="controls\editupdatesermon.ascx" />
     <Content Include="controls\imagegallery.ascx" />
     <Content Include="controls\mainfooter.ascx" />
     <Content Include="controls\mainnavigation.ascx" />
@@ -162,6 +164,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="feeds\rss.aspx" />
     <Content Include="images\alarm.png" />
     <Content Include="images\border.jpg" />
     <Content Include="images\cgbc-banner.JPG" />
@@ -203,6 +206,7 @@
     <Content Include="pages\ContactUs.aspx" />
     <Content Include="pages\MensMinistry.aspx" />
     <Content Include="pages\OutreachMinistry.aspx" />
+    <Content Include="pages\Sermons.aspx" />
     <Content Include="pages\WhatWeBelieve.aspx" />
     <Content Include="pages\WomensMinistry.aspx" />
     <Content Include="pages\YouthMinistry.aspx" />
@@ -239,6 +243,13 @@
     </Compile>
     <Compile Include="admin\AdminPages.aspx.designer.cs">
       <DependentUpon>AdminPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminSermons.aspx.cs">
+      <DependentUpon>AdminSermons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminSermons.aspx.designer.cs">
+      <DependentUpon>AdminSermons.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\AdminUsers.aspx.cs">
       <DependentUpon>AdminUsers.aspx</DependentUpon>
@@ -282,6 +293,13 @@
     <Compile Include="admin\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="controls\editupdatesermon.ascx.cs">
+      <DependentUpon>editupdatesermon.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\editupdatesermon.ascx.designer.cs">
+      <DependentUpon>editupdatesermon.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\imagegallery.ascx.cs">
       <DependentUpon>imagegallery.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -309,6 +327,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="feeds\rss.aspx.cs">
+      <DependentUpon>rss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="feeds\rss.aspx.designer.cs">
+      <DependentUpon>rss.aspx</DependentUpon>
     </Compile>
     <Compile Include="helpers\BaseControl.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -399,6 +424,13 @@
     <Compile Include="pages\PagesMasterPage.Master.designer.cs">
       <DependentUpon>PagesMasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="pages\Sermons.aspx.cs">
+      <DependentUpon>Sermons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Sermons.aspx.designer.cs">
+      <DependentUpon>Sermons.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\WhatWeBelieve.aspx.cs">
       <DependentUpon>WhatWeBelieve.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,6 +467,7 @@
     <Content Include="web.config" />
     <Content Include="admin\AdminMasterPage.Master" />
     <Content Include="pages\PagesMasterPage.Master" />
+    <Content Include="podcast\uploads\.gitignore" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -445,9 +478,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="feeds\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />

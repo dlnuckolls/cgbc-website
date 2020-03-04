@@ -234,3 +234,36 @@ html body form .RadInput .MyFocusedTextBox {
   background: linear-gradient(#748ea3,#6b849d 50%,#597791 50%,#748ea3);
   border-radius: 5px;
 }
+
+.pageCenter {
+  width: 100%;
+  text-align: center;
+}
+
+.podcastListViewItem {
+  width: 350px;
+  border: solid 1px darkgray;
+  border-radius: 10px;
+  padding: 5px;
+  height: 350px;
+}
+
+  .podcastListViewItem .mediaPlayerFeed {
+    height: 260px;
+  }
+
+  .podcastListViewItem h4 {
+    font-weight: bold;
+    font-size: .9em;
+    margin-bottom: 5px;
+  }
+
+  .podcastListViewItem p {
+    font-size: .8em;
+  }
+
+  .podcastListViewItem audio {
+    width: 100%;
+    margin-top: 20px;
+  }
+

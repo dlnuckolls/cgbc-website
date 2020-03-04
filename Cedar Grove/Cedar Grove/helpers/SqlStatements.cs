@@ -68,11 +68,11 @@ SELECT a.[Id],a.[Subject],a.[Description],ISNULL(o.[StartDate],a.[Start]) [Start
  ORDER BY ISNULL(o.[StartDate],a.[Start]) ASC;";
 
     // Sermon Podcast Feed Management
-    public const string SQL_GET_ALL_SERMONS = "SELECT [Id], [Published], [Title], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] ORDER BY [Published] DESC;";
-    public const string SQL_GET_TOP_SERMONS = "SELECT TOP 15 [Id], [Published], [Title], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] ORDER BY [Published] DESC;";
-    public const string SQL_GET_SERMON_BY_ID = "SELECT [Id], [Published], [Title], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] WHERE [Id] = '{0}';";
-    public const string SQL_INSERT_SERMON = "INSERT INTO [dbo].[SermonSyndicationFeed] ([Published], [Title], [Description], [SourceUrl]) VALUES ({0}, '{1}', '{2}', '{3}');";
-    public const string SQL_UPDATE_SERMON = "UPDATE [dbo].[SermonSyndicationFeed] SET [Published] = {0}, [Title] = '{1}', [Description] = '{2}', [SourceUrl] = '{3}' WHERE [Id] = '{4}';";
+    public const string SQL_GET_ALL_SERMONS = "SELECT [Id], [Published], [Title], [Author], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] ORDER BY [Published] DESC;";
+    public const string SQL_GET_TOP_SERMONS = "SELECT TOP 15 [Id], [Published], [Title], [Author], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] WHERE [Published] <= GETDATE() ORDER BY [Published] DESC;";
+    public const string SQL_GET_SERMON_BY_ID = "SELECT [Id], [Published], [Title], [Author], [Description], [SourceUrl] FROM [dbo].[SermonSyndicationFeed] WHERE [Id] = '{0}';";
+    public const string SQL_INSERT_SERMON = "INSERT INTO [dbo].[SermonSyndicationFeed] ([Published], [Title], [Author], [Description], [SourceUrl]) VALUES ({0}, '{1}', '{2}', '{3}', '{4}');";
+    public const string SQL_UPDATE_SERMON = "UPDATE [dbo].[SermonSyndicationFeed] SET [Published] = {0}, [Title] = '{1}', [Author] = '{2}', [Description] = '{3}', [SourceUrl] = '{4}' WHERE [Id] = '{5}';";
     public const string SQL_DELETE_SERMON = "DELETE [dbo].[SermonSyndicationFeed] WHERE [Id] = '{0}';";
 
   }
