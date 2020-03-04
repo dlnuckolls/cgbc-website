@@ -59,8 +59,10 @@ namespace Cedar_Grove {
       }
 
     }
-  }
+
+        protected void btnReadMore_Click(object sender, EventArgs e) {
+
+        }
+    }
 }
 
-/*
- */

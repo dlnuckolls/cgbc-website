@@ -18,6 +18,7 @@
                     <div id="itemPlaceholder" runat="server">
                     </div>
                   </div>
+                </div>
               </LayoutTemplate>
               <ItemTemplate>
                 <div class="podcastListViewItem">
