@@ -98,19 +98,19 @@
       </telerik:LayoutRow>
     </Rows>
   </telerik:RadPageLayout>
-  <telerik:RadWindow RenderMode="Lightweight" ID="modalPopup" runat="server" Width="360px" Height="365px" Modal="true" OffsetElementID="main" OnClientShow="setCustomPosition" Style="z-index: 100001;">
+  <telerik:RadWindow RenderMode="Lightweight" ID="modalPopup" runat="server" Width="500px" Height="450px" CenterIfModal="true" AutoSize="false" Title="Event Details"
+    Modal="true" OffsetElementID="main" Skin="Outlook" Style="z-index: 100001;" VisibleOnPageLoad="false" IconUrl="/images/megaphone.png">
     <ContentTemplate>
-                <div class="listViewItemPopup">
-                  <h4>
-                    <img src="/images/megaphone.png" />
-                    <telerik:RadLabel ID="EventTitle" runat="server" Text='<%# Bind("Title") %>' />
-                    <br />
-                    <telerik:RadLabel ID="EventDate" runat="server" Text='<%# Bind("EventDate") %>' />
-                  </h4>
-                  <p>
-                    <asp:Literal runat="server" ID="EventDescription" Text='<%# Bind("Description") %>' />
-                  </p>
-                </div>
+      <div class="listViewItemPopup">
+        <h4>
+          <telerik:RadLabel ID="EventTitle" runat="server"  />
+          <br />
+          <telerik:RadLabel ID="EventDate" runat="server"  />
+        </h4>
+        <p>
+          <asp:Literal runat="server" ID="EventDescription"  />
+        </p>
+      </div>
     </ContentTemplate>
   </telerik:RadWindow>
 </asp:Content>

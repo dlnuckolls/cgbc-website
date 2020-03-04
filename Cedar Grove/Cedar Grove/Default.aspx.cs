@@ -64,6 +64,13 @@ namespace Cedar_Grove {
     protected void UpcomingEvents_NeedDataSource(object sender, Telerik.Web.UI.RadListViewNeedDataSourceEventArgs e) { ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_READ_EVENTS); }
     protected void btnReadMore_Click(object sender, EventArgs e) {
 
+      EventTitle.Text = "Some Title";
+      EventDate.Text = "Sometime";
+      EventDescription.Text = ((RadButton)sender).CommandArgument;
+
+      // Open popup window
+      string script = "function f(){$find(\"" + modalPopup.ClientID + "\").show(); Sys.Application.remove_load(f);}Sys.Application.add_load(f);";
+      ScriptManager.RegisterStartupScript(Page, Page.GetType(), "key", script, true);
     }
   }
 }
