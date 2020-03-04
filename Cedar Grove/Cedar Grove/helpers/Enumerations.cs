@@ -37,19 +37,25 @@ namespace Cedar_Grove {
     [TextValue("Chruch Calendar")] Calendar,
     [TextValue("What we Believe")] Believe,
     [TextValue("Church By-Laws")] Constitution,
+    [TextValue("Child Protection")] ChildProtection,
+    [TextValue("Missions")] Missions,
   }
 
   [CustomEnum(true)]
   public enum PageContentBlocks {
+    //Admin
     [TextValue("4667B33D-BE48-4B7D-816E-D705F1F732C5")] AdminHomeTop,
     [TextValue("06688FA2-EBCB-4F42-9F63-091524C9B839")] AdminHomeToolHeader,
     [TextValue("61175E8D-6131-4789-8989-DC4C4695E711")] PageAdminHeader,
     [TextValue("D42ABA67-51F4-4416-AFA4-A4015551B07C")] DashboardHeader,
+    //Ministries
     [TextValue("8F9B4D10-6294-45AC-9692-9A29335F1661")] MensPage,
     [TextValue("D9E75614-BEA8-472D-9A42-E37CAEAA7506")] WomensPage,
     [TextValue("329D0E46-3C1E-4B53-9C6C-4CA7BAAE6536")] YouthPage,
     [TextValue("BB0F852F-2C0E-4C2E-8CE0-59319318BC38")] ChildrensPage,
     [TextValue("A1E9F1FF-9D7C-45A2-94A4-E9BDBFC13CF3")] OutreachPage,
+    [TextValue("8D18BCE8-8473-4763-9209-F6095DA03DA5")] MissionsPage,
+    //General Pages
     [TextValue("8508EBC6-6582-4C3F-B85E-CA10F7E25619")] CalendarPage,
     [TextValue("3219C52F-0056-4818-9831-F81B0AC023E6")] BelievePageHeader,
     [TextValue("715A4FC2-41CB-4499-B4FD-358186F1937F")] BelievePageBody,
@@ -57,6 +63,11 @@ namespace Cedar_Grove {
     [TextValue("EF9B3A69-C04B-43FD-93B4-C7B8DA4C7916")] ConstitutionPageBody,
     [TextValue("AD344A0E-8151-4846-A503-985D1F284D8D")] ContactUsPageBody,
     [TextValue("BE5DF028-0EEA-4118-8431-0A31F347AA0C")] AboutUsPageBody,
+    [TextValue("A2444FC2-F610-4B19-B566-39A3A4ACD82D")] SermonFeedPageBody,
+    [TextValue("E2439935-28F4-49F0-95E9-D323F4CA09AB")] HomeJumbotronPageBody,
+    [TextValue("CBB3ED8F-F5BF-4661-9693-7AD387050793")] HomeEventTitlePageBody,
+    [TextValue("D378CB45-7391-44FA-9603-1428AED3208D")] ChildProtectionPageHeader,
+    [TextValue("8CCA9FAE-E135-4DA4-8268-F53C53D967BC")] ChildProtectionPageBody,
   }
 
   [CustomEnum(true)]
@@ -67,5 +78,6 @@ namespace Cedar_Grove {
     Childrens = 4,
     Outreach = 5,
     General = 6,
+    Missions = 6,
   }
 }

@@ -52,6 +52,11 @@ namespace Cedar_Grove {
               item.Style.Add(HtmlTextWriterStyle.Color, "black !important");
               item.Style.Add("border-radius", "5px");
               break;
+            case 7:
+              item.Style.Add(HtmlTextWriterStyle.BackgroundColor, "lightgreen !important");
+              item.Style.Add(HtmlTextWriterStyle.Color, "black !important");
+              item.Style.Add("border-radius", "5px");
+              break;
             default:
               break;
           }
@@ -63,10 +68,11 @@ namespace Cedar_Grove {
 
     protected void UpcomingEvents_NeedDataSource(object sender, Telerik.Web.UI.RadListViewNeedDataSourceEventArgs e) { ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_READ_EVENTS); }
     protected void btnReadMore_Click(object sender, EventArgs e) {
-
-      EventTitle.Text = "Some Title";
-      EventDate.Text = "Sometime";
-      EventDescription.Text = ((RadButton)sender).CommandArgument;
+      // Populate Event Details
+      var eventItemDetails = new EventItem(((RadButton)sender).CommandArgument);
+      EventTitle.Text = eventItemDetails.Title;
+      EventDate.Text = eventItemDetails.EventDate.ToString("MM/dd/yyyy hh:mm tt");
+      EventDescription.Text = eventItemDetails.Description;
 
       // Open popup window
       string script = "function f(){$find(\"" + modalPopup.ClientID + "\").show(); Sys.Application.remove_load(f);}Sys.Application.add_load(f);";

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/PagesMasterPage.Master" AutoEventWireup="true" CodeBehind="ByLaws.aspx.cs" Inherits="Cedar_Grove.pages.ByLaws" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/PagesMasterPage.Master" AutoEventWireup="true" CodeBehind="ChildProtection.aspx.cs" Inherits="Cedar_Grove.pages.ChildProtection" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <asp:Literal ID="TitleTag" runat="server"></asp:Literal>

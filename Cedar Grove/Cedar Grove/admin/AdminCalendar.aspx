@@ -67,6 +67,7 @@
                   <telerik:ResourceStyleMapping Type="Ministry" Key="4" ApplyCssClass="childrensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="5" ApplyCssClass="outreachMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="6" ApplyCssClass="generalMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="7" ApplyCssClass="missionsMinistry" />
                 </ResourceStyles>
                 <TimelineView UserSelectable="False"></TimelineView>
                 <AgendaView UserSelectable="True"></AgendaView>

@@ -495,7 +495,54 @@ BEGIN
   COMMIT TRANSACTION Version1_14
 END
 
+SELECT @majorVersion = 1, @minorVersion = 15;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_15
+    ALTER TABLE dbo.UpcomingEvents ADD
+      [EventEnd] DATETIME NULL;
+    
+    ALTER TABLE [dbo].[StaffMembers] ADD
+      [EmailAddress] VARCHAR(50) NULL;
+
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('8D18BCE8-8473-4763-9209-F6095DA03DA5', 'Missions Page Content'),
+           ('A2444FC2-F610-4B19-B566-39A3A4ACD82D', 'Sermons Page Content'),
+           ('E2439935-28F4-49F0-95E9-D323F4CA09AB', 'Home Page Banner Content'),
+           ('CBB3ED8F-F5BF-4661-9693-7AD387050793', 'Home Page Event Title Content');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('8D18BCE8-8473-4763-9209-F6095DA03DA5', 'Missions Page Content'),
+           ('A2444FC2-F610-4B19-B566-39A3A4ACD82D', 'Sermons Page Content'),
+           ('E2439935-28F4-49F0-95E9-D323F4CA09AB', 'Home Page Banner Content'),
+           ('CBB3ED8F-F5BF-4661-9693-7AD387050793', 'Home Page Event Title Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_15
+END
+
+SELECT @majorVersion = 1, @minorVersion = 16;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_16
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('D378CB45-7391-44FA-9603-1428AED3208D', 'Child Protection Page Header'),
+           ('8CCA9FAE-E135-4DA4-8268-F53C53D967BC', 'Child Protection Page Content');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('D378CB45-7391-44FA-9603-1428AED3208D', 'Child Protection Page Header'),
+           ('8CCA9FAE-E135-4DA4-8268-F53C53D967BC', 'Child Protection Page Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_16
+END
+
+
 /* 
+
+D378CB45-7391-44FA-9603-1428AED3208D
+8CCA9FAE-E135-4DA4-8268-F53C53D967BC
+
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence
 

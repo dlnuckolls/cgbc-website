@@ -22,7 +22,7 @@
         <telerik:GridDateTimeColumn ShowFilterIcon="false" DataField="EventDate" AllowFiltering="False" HeaderText="EventDate" AllowSorting="true" PickerType="DateTimePicker" ItemStyle-Width="250px" ColumnEditorID="DatePicker" />
         <telerik:GridHTMLEditorColumn ShowFilterIcon="false" DataField="Description" AllowFiltering="False" HeaderText="Description" />
       </Columns>
-      <CommandItemSettings AddNewRecordText="Add New User" ShowRefreshButton="true"></CommandItemSettings>
+      <CommandItemSettings AddNewRecordText="Add New Event" ShowRefreshButton="true"></CommandItemSettings>
     </MasterTableView>
     <ClientSettings EnableRowHoverStyle="true">
       <Selecting AllowRowSelect="True" />

@@ -75,5 +75,8 @@ SELECT a.[Id],a.[Subject],a.[Description],ISNULL(o.[StartDate],a.[Start]) [Start
     public const string SQL_UPDATE_SERMON = "UPDATE [dbo].[SermonSyndicationFeed] SET [Published] = {0}, [Title] = '{1}', [Author] = '{2}', [Description] = '{3}', [SourceUrl] = '{4}' WHERE [Id] = '{5}';";
     public const string SQL_DELETE_SERMON = "DELETE [dbo].[SermonSyndicationFeed] WHERE [Id] = '{0}';";
 
+    // Staff Management
+    public const string SQL_GET_ALL_STAFF_MEMBERS = "SELECT [Id],[Name],[Title],[Bio],[ImageUrl],[DisplayOrder],[EmailAddress] FROM [dbo].[StaffMembers] ORDER BY [DisplayOrder] ASC;";
+
   }
 }

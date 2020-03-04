@@ -39,8 +39,6 @@ namespace Cedar_Grove.pages {
       //SessionInfo.SendContactEmail(ref msg);
     }
 
-    protected void StaffCards_NeedDataSource(object sender, RadListViewNeedDataSourceEventArgs e) {
-
-    }
+    protected void StaffCards_NeedDataSource(object sender, RadListViewNeedDataSourceEventArgs e) { ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_GET_ALL_STAFF_MEMBERS); }
   }
 }

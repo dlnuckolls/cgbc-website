@@ -203,9 +203,11 @@
     <Content Include="pages\AboutUs.aspx" />
     <Content Include="pages\ByLaws.aspx" />
     <Content Include="pages\Calendar.aspx" />
+    <Content Include="pages\ChildProtection.aspx" />
     <Content Include="pages\ChildrensMinistry.aspx" />
     <Content Include="pages\ContactUs.aspx" />
     <Content Include="pages\MensMinistry.aspx" />
+    <Content Include="pages\Missions.aspx" />
     <Content Include="pages\OutreachMinistry.aspx" />
     <Content Include="pages\Sermons.aspx" />
     <Content Include="pages\WhatWeBelieve.aspx" />
@@ -390,6 +392,13 @@
     <Compile Include="pages\Calendar.aspx.designer.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\ChildProtection.aspx.cs">
+      <DependentUpon>ChildProtection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ChildProtection.aspx.designer.cs">
+      <DependentUpon>ChildProtection.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\ChildrensMinistry.aspx.cs">
       <DependentUpon>ChildrensMinistry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -410,6 +419,13 @@
     </Compile>
     <Compile Include="pages\MensMinistry.aspx.designer.cs">
       <DependentUpon>MensMinistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Missions.aspx.cs">
+      <DependentUpon>Missions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Missions.aspx.designer.cs">
+      <DependentUpon>Missions.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\OutreachMinistry.aspx.cs">
       <DependentUpon>OutreachMinistry.aspx</DependentUpon>
@@ -500,7 +516,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

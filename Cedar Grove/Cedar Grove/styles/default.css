@@ -243,8 +243,9 @@ html body form .RadInput .MyFocusedTextBox {
 .listViewItemPopup {
   width: 98%;
   padding: 5px;
-  /*height: 95%;*/
   margin: 5px;
+  position: relative;
+  height: 95%;
 }
 
   .listViewItemPopup h4 {
@@ -252,12 +253,15 @@ html body form .RadInput .MyFocusedTextBox {
     font-size: 1.2em;
     line-height: 1.25em;
   }
-
-    .listViewItemPopup h4 > img {
-      width: 40px;
-      float: left;
-      padding-right: 5px;
-    }
+  .listViewItemPopup .listViewItemReadmore {
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
 
 .listViewItem {
   width: 350px;
