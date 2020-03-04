@@ -5,9 +5,12 @@ using System.Web.UI;
 using Telerik.Web.UI;
 
 namespace Cedar_Grove.admin {
-  public partial class AdminSermons : System.Web.UI.Page {
+  public partial class AdminSermons : BasePage {
     protected void Page_Load(object sender, EventArgs e) {
-
+      SessionInfo.CurrentPage = PageNames.Sermons;
+      TitleTag.Text = SessionInfo.DisplayCurrentPage;
+      if (!SessionInfo.IsAuthenticated) Response.Redirect("~/admin/Login.aspx");
+      if (!SessionInfo.IsAdmin) Response.Redirect("~/");
     }
 
     protected void SermonFeedList_DeleteCommand(object sender, GridCommandEventArgs e) {

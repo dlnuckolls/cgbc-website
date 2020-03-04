@@ -11,10 +11,13 @@
         <Columns>
           <telerik:LayoutColumn Span="1" HiddenMd="true" />
           <telerik:LayoutColumn Span="10" SpanMd="12" SpanSm="12" SpanXs="12">
-            <telerik:RadListView runat="server" OnNeedDataSource="SermonPodcasts_NeedDataSource" ID="SermonPodcasts" AllowPaging="true" PageSize="12">
+            <telerik:RadListView runat="server" Skin="Silk" OnNeedDataSource="SermonPodcasts_NeedDataSource" ID="SermonPodcasts" AllowPaging="true" PageSize="9">
               <LayoutTemplate>
-                <asp:Panel ID="itemPlaceholder" runat="server">
-                </asp:Panel>
+                <div class="RadListView RadListViewFloated RadListView_<%# Container.Skin %>">
+                  <div class="rlvFloated rlvAutoScroll">
+                    <div id="itemPlaceholder" runat="server">
+                    </div>
+                  </div>
               </LayoutTemplate>
               <ItemTemplate>
                 <div class="podcastListViewItem">

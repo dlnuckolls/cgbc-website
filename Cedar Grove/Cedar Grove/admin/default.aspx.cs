@@ -23,5 +23,7 @@ namespace Cedar_Grove.admin {
     protected void CalendarAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminCalendar.aspx"); }
 
     protected void UserAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminUsers.aspx"); }
+
+    protected void SermonAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminSermons.aspx"); }
   }
 }

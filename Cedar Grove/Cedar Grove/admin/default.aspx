@@ -30,6 +30,9 @@
               <telerik:RadIconTile ID="UserAdmin" runat="server" ImageUrl="~/images/menutiles/users.png" AutoPostBack="true" OnClick="UserAdmin_Click">
                 <Title Text="Users"></Title>
               </telerik:RadIconTile>
+              <telerik:RadIconTile ID="SermonAdmin" runat="server" ImageUrl="~/images/menutiles/audio.png" AutoPostBack="true" OnClick="SermonAdmin_Click">
+                <Title Text="Sermons"></Title>
+              </telerik:RadIconTile>
             </div>
           </telerik:LayoutColumn>
           <telerik:LayoutColumn Span="1" HiddenMd="true" />

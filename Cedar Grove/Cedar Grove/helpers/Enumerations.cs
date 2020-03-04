@@ -23,6 +23,7 @@ namespace Cedar_Grove {
     [TextValue("Contact Us")] Contact,
     [TextValue("Find Events")] Search,
     [TextValue("Questions")] FAQ,
+    [TextValue("Sermon Podcasts")] Sermons,
     [TextValue("Mens Ministry")] Mens,
     [TextValue("Womens Ministry")] Womens,
     [TextValue("Youth Ministry")] Youth,
