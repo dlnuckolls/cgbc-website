@@ -114,6 +114,7 @@
     <Content Include="admin\AdminGallery.aspx" />
     <Content Include="admin\AdminPages.aspx" />
     <Content Include="admin\AdminSermons.aspx" />
+    <Content Include="admin\AdminStaff.aspx" />
     <Content Include="admin\AdminUsers.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\ForgotPassword.aspx" />
@@ -253,6 +254,13 @@
     </Compile>
     <Compile Include="admin\AdminSermons.aspx.designer.cs">
       <DependentUpon>AdminSermons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminStaff.aspx.cs">
+      <DependentUpon>AdminStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminStaff.aspx.designer.cs">
+      <DependentUpon>AdminStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\AdminUsers.aspx.cs">
       <DependentUpon>AdminUsers.aspx</DependentUpon>

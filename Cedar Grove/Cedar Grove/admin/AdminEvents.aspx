@@ -19,7 +19,8 @@
         <telerik:GridButtonColumn ConfirmText="Delete this entry?" ConfirmDialogType="RadWindow" ConfirmTitle="Delete" ButtonType="FontIconButton" HeaderText="Delete"
           CommandName="Delete" ItemStyle-Width="30px" />
         <telerik:GridBoundColumn ShowFilterIcon="False" DataField="Title" AllowFiltering="False" HeaderText="Title" AllowSorting="true" ItemStyle-Width="350px" ColumnEditorID="TitleEditor" />
-        <telerik:GridDateTimeColumn ShowFilterIcon="false" DataField="EventDate" AllowFiltering="False" HeaderText="EventDate" AllowSorting="true" PickerType="DateTimePicker" ItemStyle-Width="250px" ColumnEditorID="DatePicker" />
+        <telerik:GridDateTimeColumn ShowFilterIcon="false" DataField="EventDate" AllowFiltering="False" HeaderText="Event Date" AllowSorting="true" PickerType="DateTimePicker" ItemStyle-Width="250px" ColumnEditorID="DatePicker" />
+        <telerik:GridDateTimeColumn ShowFilterIcon="false" DataField="EventEnd" AllowFiltering="False" HeaderText="Event End" AllowSorting="true" PickerType="DateTimePicker" ItemStyle-Width="250px" ColumnEditorID="DatePicker" />
         <telerik:GridHTMLEditorColumn ShowFilterIcon="false" DataField="Description" AllowFiltering="False" HeaderText="Description" />
       </Columns>
       <CommandItemSettings AddNewRecordText="Add New Event" ShowRefreshButton="true"></CommandItemSettings>
@@ -35,5 +36,5 @@
   <telerik:GridDateTimeColumnEditor runat="server" ID="DatePicker">
     <TextBoxStyle Width="100%" />
   </telerik:GridDateTimeColumnEditor>
-  <asp:SqlDataSource ID="UserListSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>' SelectCommand="SELECT [Id],[Title],[Description],[EventDate] FROM [dbo].[UpcomingEvents] ORDER BY [EventDate] DESC;" />
+  <asp:SqlDataSource ID="UserListSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>' SelectCommand="SELECT [Id],[Title],[Description],[EventDate],[EventEnd] FROM [dbo].[UpcomingEvents] ORDER BY [EventDate] DESC;" />
 </asp:Content>
