@@ -78,7 +78,8 @@
                   <h4>
                     <img src="/images/megaphone.png" />
                     <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Title") %>' />
-                    <br /><telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("EventDate") %>' />
+                    <br />
+                    <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("EventDate") %>' />
                   </h4>
                   <p>
                     <asp:Literal runat="server" ID="Literal1" Text='<%# Bind("Description") %>' />
@@ -97,4 +98,19 @@
       </telerik:LayoutRow>
     </Rows>
   </telerik:RadPageLayout>
+  <telerik:RadWindow RenderMode="Lightweight" ID="modalPopup" runat="server" Width="360px" Height="365px" Modal="true" OffsetElementID="main" OnClientShow="setCustomPosition" Style="z-index: 100001;">
+    <ContentTemplate>
+                <div class="listViewItemPopup">
+                  <h4>
+                    <img src="/images/megaphone.png" />
+                    <telerik:RadLabel ID="EventTitle" runat="server" Text='<%# Bind("Title") %>' />
+                    <br />
+                    <telerik:RadLabel ID="EventDate" runat="server" Text='<%# Bind("EventDate") %>' />
+                  </h4>
+                  <p>
+                    <asp:Literal runat="server" ID="EventDescription" Text='<%# Bind("Description") %>' />
+                  </p>
+                </div>
+    </ContentTemplate>
+  </telerik:RadWindow>
 </asp:Content>

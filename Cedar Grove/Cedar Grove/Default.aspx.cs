@@ -14,7 +14,7 @@ namespace Cedar_Grove {
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
     }
 
-    protected void UpcomingEvents_NeedDataSource(object sender, Telerik.Web.UI.RadListViewNeedDataSourceEventArgs e) { ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_READ_EVENTS); }
+    #region Calendar Feed colors
     protected void EventsList_NeedDataSource(object sender, GridNeedDataSourceEventArgs e) { ((RadGrid)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_GET_ALL_MINISTRY_EVENTS); }
 
     protected void EventsList_ItemDataBound(object sender, GridItemEventArgs e) {
@@ -58,11 +58,13 @@ namespace Cedar_Grove {
         }
       }
 
-    }
+    } 
+    #endregion
 
-        protected void btnReadMore_Click(object sender, EventArgs e) {
+    protected void UpcomingEvents_NeedDataSource(object sender, Telerik.Web.UI.RadListViewNeedDataSourceEventArgs e) { ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_READ_EVENTS); }
+    protected void btnReadMore_Click(object sender, EventArgs e) {
 
-        }
     }
+  }
 }
 
