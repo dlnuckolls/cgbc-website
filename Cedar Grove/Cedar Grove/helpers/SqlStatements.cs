@@ -77,6 +77,10 @@ SELECT a.[Id],a.[Subject],a.[Description],ISNULL(o.[StartDate],a.[Start]) [Start
 
     // Staff Management
     public const string SQL_GET_ALL_STAFF_MEMBERS = "SELECT [Id],[Name],[Title],[Bio],[ImageUrl],[DisplayOrder],[EmailAddress] FROM [dbo].[StaffMembers] ORDER BY [DisplayOrder] ASC;";
+    public const string SQL_GET_STAFF_MEMBER_BY_ID = "SELECT [Id],[Name],[Title],[Bio],[ImageUrl],[DisplayOrder],[EmailAddress] FROM [dbo].[StaffMembers] WHERE [Id] = '{0}';";
+    public const string SQL_DELETE_STAFF_MEMBERS = "DELETE [dbo].[StaffMembers] WHERE [Id] = '{0}';";
+    public const string SQL_UPDATE_STAFF_MEMBERS = "UPDATE [dbo].[StaffMembers] SET [Name] = '{0}',[Title] = '{1}',[Bio] = '{2}',[ImageUrl] = '{3}',[DisplayOrder] = {4},[EmailAddress] = '{5}' WHERE [Id] = '{6}';";
+    public const string SQL_INSERT_STAFF_MEMBERS = "INSERT INTO [dbo].[StaffMembers] ([Name],[Title],[Bio],[ImageUrl],[DisplayOrder],[EmailAddress]) VALUES ('{0}','{1}','{2}','{3}',{4},'{5}');";
 
   }
 }

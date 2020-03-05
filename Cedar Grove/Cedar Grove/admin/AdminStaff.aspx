@@ -11,7 +11,7 @@
   <telerik:RadGrid Skin="WebBlue" RenderMode="Auto" runat="server" ID="StaffList" AllowPaging="true" Width="100%" PagerStyle-AlwaysVisible="True" AllowSorting="true"
     HorizontalAlign="Left" AutoGenerateColumns="False" CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0"
     MasterTableView-GridLines="Horizontal" DataSourceID="StaffSource" GroupingSettings-CaseSensitive="false" OnDeleteCommand="StaffList_DeleteCommand"
-    OnUpdateCommand="StaffList_UpdateCommand" OnInsertCommand="StaffList_InsertCommand" OnItemCommand="StaffList_ItemCommand">
+    OnUpdateCommand="StaffList_UpdateCommand" OnInsertCommand="StaffList_InsertCommand">
     <MasterTableView AutoGenerateColumns="False" EditMode="InPlace" DataKeyNames="Id" GridLines="None"
       ClientDataKeyNames="Id" CommandItemDisplay="Bottom" InsertItemPageIndexAction="ShowItemOnFirstPage">
       <Columns>

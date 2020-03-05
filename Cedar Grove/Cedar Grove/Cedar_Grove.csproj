@@ -379,6 +379,7 @@
     <Compile Include="objectclass\GalleryImage.cs" />
     <Compile Include="objectclass\MinistryBackground.cs" />
     <Compile Include="objectclass\SermonItem.cs" />
+    <Compile Include="objectclass\StaffMember.cs" />
     <Compile Include="pages\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
