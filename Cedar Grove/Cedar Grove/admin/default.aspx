@@ -15,23 +15,26 @@
               <asp:Literal ID="AdminHomeToolHeader" runat="server" />
             </div>
             <div class="adminTiles">
-              <telerik:RadIconTile ID="EditPageAdmin" runat="server" ImageUrl="~/images/menutiles/pages.png" AutoPostBack="true" OnClick="EditPageAdmin_Click">
+              <telerik:RadIconTile ID="PageAdmin" runat="server" ImageUrl="~/images/menutiles/pages.png" AutoPostBack="true" OnClick="PageAdmin_Click">
                 <Title Text="Page Contents"></Title>
               </telerik:RadIconTile>
-              <telerik:RadIconTile ID="AdminResourceLinks" runat="server" ImageUrl="~/images/menutiles/internet.png" AutoPostBack="true" OnClick="AdminResourceLinks_Click">
-                <Title Text="Gallery Images"></Title>
-              </telerik:RadIconTile>
-              <telerik:RadIconTile ID="QuoteAdmin" runat="server" ImageUrl="~/images/menutiles/quotes.png" AutoPostBack="true" OnClick="QuoteAdmin_Click">
+              <telerik:RadIconTile ID="EventAdmin" runat="server" ImageUrl="~/images/menutiles/quotes.png" AutoPostBack="true" OnClick="EventAdmin_Click">
                 <Title Text="Events"></Title>
               </telerik:RadIconTile>
               <telerik:RadIconTile ID="CalendarAdmin" runat="server" ImageUrl="~/images/menutiles/calendar.png" AutoPostBack="true" OnClick="CalendarAdmin_Click">
                 <Title Text="Calendar"></Title>
+              </telerik:RadIconTile>
+              <telerik:RadIconTile ID="ImageAdmin" runat="server" ImageUrl="~/images/menutiles/internet.png" AutoPostBack="true" OnClick="ImageAdmin_Click">
+                <Title Text="Gallery Images"></Title>
               </telerik:RadIconTile>
               <telerik:RadIconTile ID="UserAdmin" runat="server" ImageUrl="~/images/menutiles/users.png" AutoPostBack="true" OnClick="UserAdmin_Click">
                 <Title Text="Users"></Title>
               </telerik:RadIconTile>
               <telerik:RadIconTile ID="SermonAdmin" runat="server" ImageUrl="~/images/menutiles/audio.png" AutoPostBack="true" OnClick="SermonAdmin_Click">
                 <Title Text="Sermons"></Title>
+              </telerik:RadIconTile>
+              <telerik:RadIconTile ID="StaffAdmin" runat="server" ImageUrl="~/images/menutiles/name_tag.png" AutoPostBack="true" OnClick="StaffAdmin_Click">
+                <Title Text="Staff"></Title>
               </telerik:RadIconTile>
             </div>
           </telerik:LayoutColumn>

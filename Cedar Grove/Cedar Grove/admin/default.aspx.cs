@@ -14,16 +14,18 @@ namespace Cedar_Grove.admin {
       if (!SessionInfo.IsAdmin) Response.Redirect("~/");
     }
 
-    protected void AdminResourceLinks_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminGallery.aspx"); }
+    protected void ImageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminGallery.aspx"); }
 
-    protected void EditPageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminPages.aspx"); }
+    protected void PageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminPages.aspx"); }
 
-    protected void QuoteAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminEvents.aspx"); }
+    protected void EventAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminEvents.aspx"); }
 
     protected void CalendarAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminCalendar.aspx"); }
 
     protected void UserAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminUsers.aspx"); }
 
     protected void SermonAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminSermons.aspx"); }
+
+    protected void StaffAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminStaff.aspx"); }
   }
 }

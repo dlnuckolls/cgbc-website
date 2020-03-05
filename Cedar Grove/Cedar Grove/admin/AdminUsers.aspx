@@ -2,6 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <asp:Literal ID="TitleTag" runat="server"></asp:Literal>
+  <style>
+    .RadGrid {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <asp:Literal ID="PageAdminHeader" runat="server" />
@@ -13,7 +19,7 @@
     MasterTableView-GridLines="Horizontal" DataSourceID="UserListSource" GroupingSettings-CaseSensitive="false" OnDeleteCommand="UserAccountsList_DeleteCommand"
     OnUpdateCommand="UserAccountsList_UpdateCommand" OnInsertCommand="UserAccountsList_InsertCommand" OnItemCommand="UserAccountsList_ItemCommand">
     <MasterTableView AutoGenerateColumns="False" EditMode="InPlace" DataKeyNames="Id" GridLines="None"
-      ClientDataKeyNames="Id" CommandItemDisplay="Bottom" InsertItemPageIndexAction="ShowItemOnFirstPage">
+      ClientDataKeyNames="Id" CommandItemDisplay="TopAndBottom" InsertItemPageIndexAction="ShowItemOnFirstPage">
       <Columns>
         <telerik:GridBoundColumn ShowFilterIcon="False" DataField="DisplayName" AllowFiltering="False" HeaderText="Display Name" ItemStyle-Width="175px" />
         <telerik:GridBoundColumn ShowFilterIcon="false" DataField="UserName" AllowFiltering="False" HeaderText="Email Address" ItemStyle-Width="175px" />
@@ -28,7 +34,7 @@
     <ClientSettings EnableRowHoverStyle="true">
       <Selecting AllowRowSelect="True" />
     </ClientSettings>
-    <PagerStyle Mode="NextPrev" />
+    <PagerStyle Mode="NextPrevAndNumeric" />
   </telerik:RadGrid>
   <asp:SqlDataSource ID="UserListSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>' SelectCommand="SELECT [Id],[DisplayName],[UserName],[Notes] FROM [dbo].[AdminUsers];" />
 </asp:Content>

@@ -188,6 +188,7 @@
     <Content Include="images\menutiles\audio.png" />
     <Content Include="images\menutiles\calendar.png" />
     <Content Include="images\menutiles\internet.png" />
+    <Content Include="images\menutiles\name_tag.png" />
     <Content Include="images\menutiles\pages.png" />
     <Content Include="images\menutiles\quotes.png" />
     <Content Include="images\menutiles\users.png" />

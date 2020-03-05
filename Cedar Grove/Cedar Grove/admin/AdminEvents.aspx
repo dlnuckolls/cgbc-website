@@ -2,6 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <asp:Literal ID="TitleTag" runat="server"></asp:Literal>
+  <style>
+    .RadGrid {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <asp:Literal ID="PageAdminHeader" runat="server" />
@@ -13,7 +19,7 @@
     MasterTableView-GridLines="Horizontal" DataSourceID="UserListSource" GroupingSettings-CaseSensitive="false" OnDeleteCommand="EventsList_DeleteCommand"
     OnUpdateCommand="EventsList_UpdateCommand" OnInsertCommand="EventsList_InsertCommand">
     <MasterTableView AutoGenerateColumns="False" EditMode="InPlace" DataKeyNames="Id" GridLines="None"
-      ClientDataKeyNames="Id" CommandItemDisplay="Bottom" InsertItemPageIndexAction="ShowItemOnFirstPage">
+      ClientDataKeyNames="Id" CommandItemDisplay="TopAndBottom" InsertItemPageIndexAction="ShowItemOnFirstPage">
       <Columns>
         <telerik:GridEditCommandColumn UniqueName="EditCommandColumn" ItemStyle-Width="32px" EditText="Edit" HeaderText="Edit" />
         <telerik:GridButtonColumn ConfirmText="Delete this entry?" ConfirmDialogType="RadWindow" ConfirmTitle="Delete" ButtonType="FontIconButton" HeaderText="Delete"
@@ -28,7 +34,7 @@
     <ClientSettings EnableRowHoverStyle="true">
       <Selecting AllowRowSelect="True" />
     </ClientSettings>
-    <PagerStyle Mode="NextPrev" />
+    <PagerStyle Mode="NextPrevAndNumeric" />
   </telerik:RadGrid>
   <telerik:GridTextBoxColumnEditor runat="server" ID="TitleEditor">
     <TextBoxStyle Width="100%" />
