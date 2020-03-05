@@ -13,16 +13,14 @@
       <telerik:LayoutRow>
         <Columns>
           <telerik:LayoutColumn CssClass="jumbotron">
-            <h3>Welcome to Cedar Grove Baptist Church, join us for Sunday School and Worship starting at 9:30 AM</h3>
-            <h1>Every Sunday</h1>
-            <h3>We would love to see you there!</h3>
+            <asp:Literal ID="HomeJumbotron" runat="server"></asp:Literal>
           </telerik:LayoutColumn>
         </Columns>
       </telerik:LayoutRow>
       <telerik:LayoutRow>
         <Columns>
           <telerik:LayoutColumn HiddenMd="true" HiddenSm="true" HiddenXs="true">
-            <h3>Upcoming events you don't want to miss!</h3>
+            <asp:Literal ID="EventHeader" runat="server"></asp:Literal>
           </telerik:LayoutColumn>
         </Columns>
       </telerik:LayoutRow>
@@ -38,6 +36,12 @@
         <telerik:LayoutRow>
           <Columns>
             <telerik:LayoutColumn Span="4" SpanMd="4" SpanSm="12" SpanXs="12">
+              <style>
+                .RadGrid {
+                  border-radius: 10px;
+                  overflow: hidden;
+                }
+              </style>
               <telerik:RadGrid Skin="WebBlue" RenderMode="Auto" runat="server" ID="EventsList" Width="100%" PagerStyle-AlwaysVisible="false"
                 OnItemDataBound="EventsList_ItemDataBound"
                 HorizontalAlign="Left" AutoGenerateColumns="False" CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0"
@@ -119,15 +123,15 @@
     </telerik:RadWindow>
   </telerik:RadAjaxPanel>
   <script type="text/javascript">
-        function GetRadWindow() {
-            var oWindow = null;
-            if (window.radWindow) oWindow = window.radWindow;
-            else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
-            return oWindow;
-        }
- 
-        function Close() {
-            GetRadWindow().close();
-        }
-    </script>
+    function GetRadWindow() {
+      var oWindow = null;
+      if (window.radWindow) oWindow = window.radWindow;
+      else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
+      return oWindow;
+    }
+
+    function Close() {
+      GetRadWindow().close();
+    }
+  </script>
 </asp:Content>

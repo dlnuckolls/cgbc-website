@@ -11,6 +11,7 @@
         <telerik:RadMenuItem Text="Youth" NavigateUrl="~/pages/YouthMinistry.aspx" />
         <telerik:RadMenuItem Text="Children" NavigateUrl="~/pages/ChildrensMinistry.aspx" />
         <telerik:RadMenuItem Text="Outreach" NavigateUrl="~/pages/OutreachMinistry.aspx" />
+        <telerik:RadMenuItem Text="Missions" NavigateUrl="~/pages/Missions.aspx" />
       </Items>
     </telerik:RadMenuItem>
     <telerik:RadMenuItem IsSeparator="true" />
@@ -20,9 +21,13 @@
     <telerik:RadMenuItem IsSeparator="true" />
     <telerik:RadMenuItem Text="About Us">
       <Items>
+        <telerik:RadMenuItem Text="Service Times" NavigateUrl="~/pages/AboutUs.aspx" />
+        <telerik:RadMenuItem IsSeparator="true" />
         <telerik:RadMenuItem Text="What We Believe" NavigateUrl="~/pages/WhatWeBelieve.aspx" />
         <telerik:RadMenuItem IsSeparator="true" />
         <telerik:RadMenuItem Text="Church Constitution" NavigateUrl="~/pages/ByLaws.aspx" />
+        <telerik:RadMenuItem IsSeparator="true" />
+        <telerik:RadMenuItem Text="Child Protection" NavigateUrl="~/pages/ChildProtection.aspx" />
         <telerik:RadMenuItem IsSeparator="true" />
         <telerik:RadMenuItem Text="About Us" NavigateUrl="~/pages/AboutUs.aspx" />
       </Items>

@@ -12,6 +12,8 @@ namespace Cedar_Grove {
     protected void Page_Load(object sender, EventArgs e) {
       SessionInfo.CurrentPage = PageNames.Home;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
+      HomeJumbotron.Text = SessionInfo.PageContent(PageContentBlocks.HomeJumbotronPageBody);
+      EventHeader.Text = SessionInfo.PageContent(PageContentBlocks.HomeEventTitlePageBody);
     }
 
     #region Calendar Feed colors
