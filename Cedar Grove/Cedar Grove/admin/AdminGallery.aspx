@@ -44,7 +44,7 @@
                     </telerik:LayoutColumn>
                     <telerik:LayoutColumn Span="8" SpanMd="8" SpanSm="12">
                       <div class="adminTiles">
-                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("ImageUrl") %>' Width="600" Height="400" />
+                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("ImageUrl") %>' Width="300" Height="200" />
                       </div>
                     </telerik:LayoutColumn>
                   </Columns>
@@ -69,7 +69,7 @@
                       <div class="adminTiles">
                         <telerik:RadAsyncUpload RenderMode="Lightweight" runat="server" Skin="Silk" ID="AsyncUpload1" HideFileInput="true" AllowedFileExtensions=".jpeg,.jpg,.png,.gif"
                           OnFileUploaded="AsyncUpload1_FileUploaded" />
-                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("ImageUrl") %>' Width="600" Height="400" />
+                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("ImageUrl") %>' Width="300" Height="200" />
                       </div>
                     </telerik:LayoutColumn>
                   </Columns>
