@@ -213,6 +213,12 @@ html body form .RadInput .MyFocusedTextBox {
   min-height: 500px;
 }
 
+.adminGalleryTiles {
+  width: 100%;
+  margin: auto !important;
+  padding: 5px;
+}
+
 .messageTextAreas {
   width: 100%;
   border: solid 1px darkgray;

@@ -9,8 +9,8 @@ namespace Cedar_Grove.admin {
     protected void Page_Load(object sender, EventArgs e) {
       SessionInfo.CurrentPage = PageNames.Sermons;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
-      if (!SessionInfo.IsAuthenticated) Response.Redirect("~/admin/Login.aspx");
-      if (!SessionInfo.IsAdmin) Response.Redirect("~/");
+      if (!SessionInfo.IsAuthenticated) Response.Redirect("~/");
+      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
     }
 
     protected void SermonFeedList_DeleteCommand(object sender, GridCommandEventArgs e) {

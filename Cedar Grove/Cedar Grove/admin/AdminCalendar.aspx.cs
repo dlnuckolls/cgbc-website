@@ -15,7 +15,7 @@ namespace Cedar_Grove.admin {
       SessionInfo.CurrentPage = PageNames.Calendar;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
-      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/default.aspx");
+      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
       PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.CalendarPage);
       ChurchCalendar.SelectedDate = DateTime.Now;
       SelectionButtons = SelectionButtons ?? new List<RadButton>();

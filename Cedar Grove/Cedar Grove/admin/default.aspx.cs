@@ -10,22 +10,22 @@ namespace Cedar_Grove.admin {
     protected void Page_Load(object sender, EventArgs e) {
       SessionInfo.CurrentPage = PageNames.Admin;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
-      if (!SessionInfo.IsAuthenticated) Response.Redirect("~/admin/Login.aspx");
+      if (!SessionInfo.IsAuthenticated) Response.Redirect("~/login");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/");
     }
 
-    protected void ImageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminGallery.aspx"); }
+    protected void ImageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/photos"); }
 
-    protected void PageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminPages.aspx"); }
+    protected void PageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/pages"); }
 
-    protected void EventAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminEvents.aspx"); }
+    protected void EventAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/events"); }
 
-    protected void CalendarAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminCalendar.aspx"); }
+    protected void CalendarAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/calendar"); }
 
-    protected void UserAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminUsers.aspx"); }
+    protected void UserAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/users"); }
 
-    protected void SermonAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminSermons.aspx"); }
+    protected void SermonAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/sermons"); }
 
-    protected void StaffAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/AdminStaff.aspx"); }
+    protected void StaffAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/staff"); }
   }
 }

@@ -166,6 +166,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="feeds\rss.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="images\alarm.png" />
     <Content Include="images\border.jpg" />
     <Content Include="images\cgbc-banner.JPG" />
@@ -347,6 +348,9 @@
     <Compile Include="feeds\rss.aspx.designer.cs">
       <DependentUpon>rss.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="helpers\BaseControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -368,7 +372,6 @@
     <Compile Include="helpers\SystemErrorHandler.cs" />
     <Compile Include="helpers\SystemSettings.cs" />
     <Compile Include="helpers\SystemUser.cs" />
-    <Compile Include="Image.cs" />
     <Compile Include="DefaultMasterPage.Master.cs">
       <DependentUpon>DefaultMasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -526,7 +529,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

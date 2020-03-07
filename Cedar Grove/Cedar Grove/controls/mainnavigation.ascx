@@ -6,33 +6,33 @@
     <telerik:RadMenuItem IsSeparator="true" />
     <telerik:RadMenuItem Text="Ministries">
       <Items>
-        <telerik:RadMenuItem Text="Men On Mission" NavigateUrl="~/pages/MensMinistry.aspx" />
-        <telerik:RadMenuItem Text="Womens" NavigateUrl="~/pages/WomensMinistry.aspx" />
-        <telerik:RadMenuItem Text="Youth" NavigateUrl="~/pages/YouthMinistry.aspx" />
-        <telerik:RadMenuItem Text="Children" NavigateUrl="~/pages/ChildrensMinistry.aspx" />
-        <telerik:RadMenuItem Text="Outreach" NavigateUrl="~/pages/OutreachMinistry.aspx" />
-        <telerik:RadMenuItem Text="Missions" NavigateUrl="~/pages/Missions.aspx" />
+        <telerik:RadMenuItem Text="Men On Mission" NavigateUrl="~/mens" />
+        <telerik:RadMenuItem Text="Womens" NavigateUrl="~/womens" />
+        <telerik:RadMenuItem Text="Youth" NavigateUrl="~/youth" />
+        <telerik:RadMenuItem Text="Children" NavigateUrl="~/childrens" />
+        <telerik:RadMenuItem Text="Outreach" NavigateUrl="~/outreach" />
+        <telerik:RadMenuItem Text="Missions" NavigateUrl="~/missions" />
       </Items>
     </telerik:RadMenuItem>
     <telerik:RadMenuItem IsSeparator="true" />
-    <telerik:RadMenuItem Text="Calendar" NavigateUrl="~/pages/Calendar.aspx" />
+    <telerik:RadMenuItem Text="Calendar" NavigateUrl="~/calendar" />
     <telerik:RadMenuItem IsSeparator="true" />
-    <telerik:RadMenuItem Text="Sermons" NavigateUrl="~/pages/Sermons.aspx" />
+    <telerik:RadMenuItem Text="Sermons" NavigateUrl="~/sermons" />
     <telerik:RadMenuItem IsSeparator="true" />
     <telerik:RadMenuItem Text="About Us">
       <Items>
-        <telerik:RadMenuItem Text="Service Times" NavigateUrl="~/pages/AboutUs.aspx" />
+        <telerik:RadMenuItem Text="Service Times" NavigateUrl="~/aboutus" />
         <telerik:RadMenuItem IsSeparator="true" />
-        <telerik:RadMenuItem Text="What We Believe" NavigateUrl="~/pages/WhatWeBelieve.aspx" />
+        <telerik:RadMenuItem Text="What We Believe" NavigateUrl="~/whatwebelieve" />
         <telerik:RadMenuItem IsSeparator="true" />
-        <telerik:RadMenuItem Text="Church Constitution" NavigateUrl="~/pages/ByLaws.aspx" />
+        <telerik:RadMenuItem Text="Church Constitution" NavigateUrl="~/bylaws" />
         <telerik:RadMenuItem IsSeparator="true" />
-        <telerik:RadMenuItem Text="Child Protection" NavigateUrl="~/pages/ChildProtection.aspx" />
+        <telerik:RadMenuItem Text="Child Protection" NavigateUrl="~/childprotection" />
         <telerik:RadMenuItem IsSeparator="true" />
-        <telerik:RadMenuItem Text="About Us" NavigateUrl="~/pages/AboutUs.aspx" />
+        <telerik:RadMenuItem Text="About Us" NavigateUrl="~/aboutus" />
       </Items>
     </telerik:RadMenuItem>
     <telerik:RadMenuItem IsSeparator="true" />
-    <telerik:RadMenuItem Text="Admin" NavigateUrl="~/admin/Login.aspx" />
+    <telerik:RadMenuItem Text="Admin" NavigateUrl="~/admin/dashboard" />
   </Items>
 </telerik:RadMenu>
