@@ -16,6 +16,7 @@ namespace Cedar_Grove.admin {
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
       PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
+      ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Image Galleries Admin", NavigateUrl = "~/admin/photos" });
     }
 
     protected void gImageGallery_NeedDataSource(object sender, Telerik.Web.UI.GridNeedDataSourceEventArgs e) {

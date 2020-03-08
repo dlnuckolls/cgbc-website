@@ -15,6 +15,7 @@ namespace Cedar_Grove.admin {
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
       PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
+      ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "User Admin", NavigateUrl = "~/admin/users" });
     }
 
     protected void UserAccountsList_UpdateCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) {

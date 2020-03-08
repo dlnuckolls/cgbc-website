@@ -16,6 +16,7 @@ namespace Cedar_Grove.admin {
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
       PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
+      ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Staff Admin", NavigateUrl = "~/admin/staff" });
     }
 
     protected void StaffList_DeleteCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) {

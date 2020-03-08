@@ -14,7 +14,7 @@ namespace Cedar_Grove {
       } else
         mainnavigation.CurrentPageMenu.Items[0].HighlightPath();
     }
-    private void DataBindBreadCrumbSiteMap(RadMenuItem currentItem) {
+    public void DataBindBreadCrumbSiteMap(RadMenuItem currentItem) {
       List<RadMenuItem> breadCrumbPath = new List<RadMenuItem>();
       while (currentItem != null) {
         if (!currentItem.NavigateUrl.IsNullOrEmpty())

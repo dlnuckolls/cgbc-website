@@ -20,6 +20,7 @@ namespace Cedar_Grove.admin {
       ChurchCalendar.SelectedDate = DateTime.Now;
       SelectionButtons = SelectionButtons ?? new List<RadButton>();
       LoadMinistryButtons();
+      ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Calendar Admin", NavigateUrl = "~/admin/calendar" });
     }
 
     private void LoadMinistryButtons() {

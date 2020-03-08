@@ -99,7 +99,7 @@
               <asp:SqlDataSource ID="ChurchScheduleSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>'
                 SelectCommand="SELECT [Id], [Subject], [Description], [Start], [End], [MinistryId], [RecurrenceRule], [RecurrenceParentId], [Annotations] FROM dbo.[Appointments];"
                 UpdateCommand="UPDATE [dbo].[Appointments] SET [Subject] = @Subject, [Start] = @Start, [End] = @End, [MinistryId] = @MinistryId, [RecurrenceRule] = @RecurrenceRule, [RecurrenceParentID] = @RecurrenceParentID, [Annotations] = @Annotations, [Description] = @Description WHERE [Id] = @Id;"
-                InsertCommand="INSERT INTO [Appointments] ([Subject], [Start], [End], [MinistryId], [RecurrenceRule], [RecurrenceParentId], [Annotations], [Description]) VALUES (@Subject, @Start, @End, @MinistryId, @RecurrenceRule, @RecurrenceParentID, @Annotations, @Description)"
+                InsertCommand="INSERT INTO [Appointments] ([Subject], [Start], [End], [MinistryId], [RecurrenceRule], [RecurrenceParentId], [Annotations], [Description]) VALUES (@Subject, @Start, @End, ISNULL(@MinistryId,6), @RecurrenceRule, @RecurrenceParentID, @Annotations, @Description)"
                 DeleteCommand="DELETE FROM [Appointments] WHERE [Id] = @Id">
                 <DeleteParameters>
                   <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
