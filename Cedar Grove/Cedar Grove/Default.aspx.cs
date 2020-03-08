@@ -29,6 +29,8 @@ namespace Cedar_Grove {
               item.Style.Add(HtmlTextWriterStyle.Color, " blue !important");
               item.Style.Add("border-radius", "5px");
               break;
+            case 8:
+            case 9:
             case 2:
               item.Style.Add(HtmlTextWriterStyle.BackgroundColor, "lightcoral !important");
               item.Style.Add(HtmlTextWriterStyle.Color, "brown !important");
