@@ -537,6 +537,38 @@ BEGIN
   COMMIT TRANSACTION Version1_16
 END
 
+SELECT @majorVersion = 1, @minorVersion = 17;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_17
+    CREATE TABLE dbo.AdminPermissions (
+	    [UserId]       UNIQUEIDENTIFIER NOT NULL,
+	    [PageId]       UNIQUEIDENTIFIER NOT NULL
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].[PageLocations] ADD
+      [CanAdmin]   BIT NOT NULL DEFAULT 0,
+      [HasGallery] BIT NOT NULL DEFAULT 1;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_17
+END
+
+SELECT @majorVersion = 1, @minorVersion = 18;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_18
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('5F70F0DA-229A-47C3-9A6A-20369BA22C15', 'Embrace Grace Page'),
+           ('81DF6CEB-5CC8-4055-AE6E-C199FBD03A5B', 'Embrace Life Page');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('5F70F0DA-229A-47C3-9A6A-20369BA22C15', 'Embrace Grace Page Content'),
+           ('81DF6CEB-5CC8-4055-AE6E-C199FBD03A5B', 'Embrace Life Page Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_18
+END
 
 /* 
 

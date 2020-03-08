@@ -63,6 +63,8 @@
                 <ResourceStyles>
                   <telerik:ResourceStyleMapping Type="Ministry" Key="1" ApplyCssClass="mensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="2" ApplyCssClass="womensMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="8" ApplyCssClass="womensMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="9" ApplyCssClass="womensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="3" ApplyCssClass="youthMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="4" ApplyCssClass="childrensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="5" ApplyCssClass="outreachMinistry" />

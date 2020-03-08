@@ -209,6 +209,8 @@
     <Content Include="pages\ChildProtection.aspx" />
     <Content Include="pages\ChildrensMinistry.aspx" />
     <Content Include="pages\ContactUs.aspx" />
+    <Content Include="pages\EmbraceGrace.aspx" />
+    <Content Include="pages\EmbraceLife.aspx" />
     <Content Include="pages\MensMinistry.aspx" />
     <Content Include="pages\Missions.aspx" />
     <Content Include="pages\OutreachMinistry.aspx" />
@@ -426,6 +428,20 @@
     <Compile Include="pages\ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\EmbraceGrace.aspx.cs">
+      <DependentUpon>EmbraceGrace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\EmbraceGrace.aspx.designer.cs">
+      <DependentUpon>EmbraceGrace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\EmbraceLife.aspx.cs">
+      <DependentUpon>EmbraceLife.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\EmbraceLife.aspx.designer.cs">
+      <DependentUpon>EmbraceLife.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\MensMinistry.aspx.cs">
       <DependentUpon>MensMinistry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -529,7 +545,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -348,3 +348,36 @@ html body form .RadInput .MyFocusedTextBox {
     width: 100%;
     margin-top: 20px;
   }
+
+#wrapper  .breadcrumb {
+  height: 40px;
+  background: transparent url(Images/bg.png) repeat-x 0 0;
+  clear: both;
+}
+
+  #wrapper  .breadcrumb h3 {
+    font: 24px Georgia, Arial, "sans-serif";
+    clear: left;
+    margin: 20px 0 0 148px;
+    color: #000;
+  }
+
+/** Customize the site map (bread crumb) */
+#wrapper  .breadcrumb .RadSiteMap {
+  border-left: 140px solid #ffa800;
+}
+
+#wrapper  .breadcrumb ul.rsmFlow {
+  padding-bottom: 0;
+}
+
+#wrapper  .breadcrumb .rsmOneLevel li.rsmItem,
+#wrapper  .breadcrumb .rsmOneLevel .rsmItem a.rsmLink {
+  color: #333;
+}
+
+  #wrapper  .breadcrumb .rsmOneLevel .rsmItem a.rsmLink:hover {
+    color: #555;
+    text-decoration: underline;
+    background: none;
+  }

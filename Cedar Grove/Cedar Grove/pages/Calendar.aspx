@@ -5,7 +5,7 @@
   <link href="/styles/calendar.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <telerik:RadPageLayout runat="server" ID="JumbotronLayout" CssClass="jumbotron" GridType="Fluid">
+  <telerik:RadPageLayout runat="server" ID="JumbotronLayout" GridType="Fluid">
     <Rows>
       <telerik:LayoutRow>
         <Columns>
@@ -61,10 +61,13 @@
                 <ResourceStyles>
                   <telerik:ResourceStyleMapping Type="Ministry" Key="1" ApplyCssClass="mensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="2" ApplyCssClass="womensMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="8" ApplyCssClass="womensMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="9" ApplyCssClass="womensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="3" ApplyCssClass="youthMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="4" ApplyCssClass="childrensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="5" ApplyCssClass="outreachMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="6" ApplyCssClass="generalMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="7" ApplyCssClass="missionsMinistry" />
                 </ResourceStyles>
                 <TimelineView UserSelectable="False"></TimelineView>
                 <AgendaView UserSelectable="True"></AgendaView>

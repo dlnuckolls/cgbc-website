@@ -25,6 +25,8 @@ namespace Cedar_Grove {
       routes.MapPageRoute("SermonsPage", "sermons", "~/pages/Sermons.aspx");
       routes.MapPageRoute("WhatWeBelievePage", "whatwebelieve", "~/pages/WhatWeBelieve.aspx");
       routes.MapPageRoute("WomensMinistryPage", "womens", "~/pages/WomensMinistry.aspx");
+      routes.MapPageRoute("EmbraceGracePage", "embracegrace", "~/pages/EmbraceGrace.aspx");
+      routes.MapPageRoute("EmbraceLifePage", "embracelife", "~/pages/EmbraceLife.aspx");
       routes.MapPageRoute("YouthMinistryPage", "youth", "~/pages/YouthMinistry.aspx");
       // Feeds
       routes.MapPageRoute("SermonRssFeed", "rssfeed", "~/feeds/Rss.aspx");

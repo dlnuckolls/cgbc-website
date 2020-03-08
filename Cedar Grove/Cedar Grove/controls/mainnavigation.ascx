@@ -7,11 +7,16 @@
     <telerik:RadMenuItem Text="Ministries">
       <Items>
         <telerik:RadMenuItem Text="Men On Mission" NavigateUrl="~/mens" />
-        <telerik:RadMenuItem Text="Womens" NavigateUrl="~/womens" />
-        <telerik:RadMenuItem Text="Youth" NavigateUrl="~/youth" />
-        <telerik:RadMenuItem Text="Children" NavigateUrl="~/childrens" />
-        <telerik:RadMenuItem Text="Outreach" NavigateUrl="~/outreach" />
-        <telerik:RadMenuItem Text="Missions" NavigateUrl="~/missions" />
+        <telerik:RadMenuItem Text="Women's Ministry" NavigateUrl="~/womens">
+        <Items>
+          <telerik:RadMenuItem Text="Embrace Grace" NavigateUrl="~/embracegrace" />
+          <telerik:RadMenuItem Text="Embrace Life" NavigateUrl="~/embracelife" />
+        </Items>
+        </telerik:RadMenuItem>
+        <telerik:RadMenuItem Text="Youth Ministry" NavigateUrl="~/youth" />
+        <telerik:RadMenuItem Text="Childrens Ministry" NavigateUrl="~/childrens" />
+        <telerik:RadMenuItem Text="Outreach Ministry" NavigateUrl="~/outreach" />
+        <telerik:RadMenuItem Text="Missions Ministry" NavigateUrl="~/missions" />
       </Items>
     </telerik:RadMenuItem>
     <telerik:RadMenuItem IsSeparator="true" />

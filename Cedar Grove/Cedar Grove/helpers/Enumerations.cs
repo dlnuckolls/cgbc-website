@@ -24,8 +24,10 @@ namespace Cedar_Grove {
     [TextValue("Find Events")] Search,
     [TextValue("Questions")] FAQ,
     [TextValue("Sermon Podcasts")] Sermons,
-    [TextValue("Mens Ministry")] Mens,
-    [TextValue("Womens Ministry")] Womens,
+    [TextValue("Men on Mission")] Mens,
+    [TextValue("Women's Ministry")] Womens,
+    [TextValue("Embrace Grace")] EmbraceGrace,
+    [TextValue("Embrace Life")] EmbraceLife,
     [TextValue("Youth Ministry")] Youth,
     [TextValue("Childrens Ministry")] Childrens,
     [TextValue("Admin Dashboard")] Admin,
@@ -51,6 +53,8 @@ namespace Cedar_Grove {
     //Ministries
     [TextValue("8F9B4D10-6294-45AC-9692-9A29335F1661")] MensPage,
     [TextValue("D9E75614-BEA8-472D-9A42-E37CAEAA7506")] WomensPage,
+    [TextValue("5F70F0DA-229A-47C3-9A6A-20369BA22C15")] EmbraceGracePage,
+    [TextValue("81DF6CEB-5CC8-4055-AE6E-C199FBD03A5B")] EmbraceLifePage,
     [TextValue("329D0E46-3C1E-4B53-9C6C-4CA7BAAE6536")] YouthPage,
     [TextValue("BB0F852F-2C0E-4C2E-8CE0-59319318BC38")] ChildrensPage,
     [TextValue("A1E9F1FF-9D7C-45A2-94A4-E9BDBFC13CF3")] OutreachPage,
@@ -78,6 +82,8 @@ namespace Cedar_Grove {
     Childrens = 4,
     Outreach = 5,
     General = 6,
-    Missions = 6,
+    Missions = 7,
+    EmbraceGrace = 8,
+    EmbraceLife = 9,
   }
 }

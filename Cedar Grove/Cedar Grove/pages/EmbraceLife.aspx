@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/PagesMasterPage.Master" AutoEventWireup="true" CodeBehind="Missions.aspx.cs" Inherits="Cedar_Grove.pages.Missions" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/PagesMasterPage.Master" AutoEventWireup="true" CodeBehind="EmbraceLife.aspx.cs" Inherits="Cedar_Grove.pages.EmbraceLife" %>
 
 <%@ Register Src="~/controls/imagegallery.ascx" TagPrefix="uc1" TagName="ImageGallery" %>
 
@@ -23,3 +23,4 @@
     </Rows>
   </telerik:RadPageLayout>
 </asp:Content>
+
