@@ -103,7 +103,7 @@
         </telerik:LayoutRow>
       </Rows>
     </telerik:RadPageLayout>
-    <telerik:RadWindow RenderMode="Lightweight" ID="modalPopup" runat="server" Width="500px" Height="450px" CenterIfModal="true" AutoSize="false" Title="Event Details"
+    <telerik:RadWindow RenderMode="Lightweight" ID="modalPopup" runat="server" Width="620px" Height="500px" CenterIfModal="true" AutoSize="false" Title="Event Details"
       Modal="true" OffsetElementID="main" Skin="Outlook" Style="z-index: 100001;" VisibleOnPageLoad="false" IconUrl="/images/megaphone.png" VisibleStatusbar="false" Behaviors="Close">
       <ContentTemplate>
         <div class="listViewItemPopup">
@@ -121,17 +121,17 @@
         </div>
       </ContentTemplate>
     </telerik:RadWindow>
-    <script type="text/javascript">
-      function GetRadWindow() {
-        var oWindow = null;
-        if (window.radWindow) oWindow = window.radWindow;
-        else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
-        return oWindow;
-      }
-
-      function Close() {
-        GetRadWindow().close();
-      }
-    </script>
   </telerik:RadAjaxPanel>
+  <script type="text/javascript">
+    function GetRadWindow() {
+      var oWindow = null;
+      if (window.radWindow) oWindow = window.radWindow;
+      else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
+      return oWindow;
+    }
+
+    function Close() {
+      GetRadWindow().close();
+    }
+  </script>
 </asp:Content>
