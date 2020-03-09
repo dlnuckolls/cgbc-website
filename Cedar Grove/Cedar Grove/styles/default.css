@@ -69,6 +69,14 @@
   font-weight: bold;
 }
 
+.MyContactLabel {
+  display: block;
+  width: 90px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: right;
+}
+
 .RadButton.rbRounded.css3Simple {
   height: 40px;
   width: 200px;
@@ -164,6 +172,21 @@ html body form .RadInput .MyFocusedTextBox {
   text-align: center;
 }
 
+.rcRefreshImage {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.MyCaptchaTextBox {
+  height: 38px;
+  border-width: 1px;
+  border-color: #a9c9a9;
+  background: beige;
+  font: 14px/18px arial,sans-serif;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
 .errorMessageDisplay {
   padding-left: 10px;
   padding-right: 10px !important;
@@ -190,6 +213,12 @@ html body form .RadInput .MyFocusedTextBox {
   min-height: 500px;
 }
 
+.adminGalleryTiles {
+  width: 100%;
+  margin: auto !important;
+  padding: 5px;
+}
+
 .messageTextAreas {
   width: 100%;
   border: solid 1px darkgray;
@@ -201,11 +230,154 @@ html body form .RadInput .MyFocusedTextBox {
 
 .messageEventHeader {
   width: 99%;
-  padding: 8px 2px 8px 5px;
+  padding: 8px 13px 7px 13px;
   margin-right: 10px;
+  line-height: 1.42857143;
   border: 1px solid;
   color: whitesmoke;
   border-color: #98acbf #728ba1 #3d556c #455f77;
   border-top-width: 0;
   background: linear-gradient(#748ea3,#6b849d 50%,#597791 50%,#748ea3);
+  border-radius: 5px;
 }
+
+.pageCenter {
+  width: 100%;
+  text-align: center;
+}
+
+.listViewItemPopup {
+  width: 98%;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+  height: 95%;
+}
+
+  .listViewItemPopup h4 {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.25em;
+  }
+  .listViewItemPopup .listViewItemReadmore {
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+.listViewItem {
+  width: 49%;
+  border: solid 1px darkgray;
+  border-radius: 10px;
+  padding: 5px;
+  height: 400px;
+  float: left;
+  margin: 5px;
+  overflow-y: hidden;
+  position: relative;
+}
+
+  .listViewItem h4 {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.25em;
+  }
+
+  .listViewItem h4 > img {
+    width: 40px;
+    float: left;
+    padding-right: 5px;
+  }
+
+  .listViewItem .listViewItemReadmore {
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+  .listViewItem .listViewItemFade {
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    width: 100%;
+    height: 90px;
+    /*-webkit-border-radius: 10px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(white));*/
+    background: -moz-linear-gradient(top, rgba(137,255,241,0) 0%, white 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(137,255,241,0)), color-stop(100%,white)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(137,255,241,0) 0%,white 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(137,255,241,0) 0%,white 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(137,255,241,0) 0%,white 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(137,255,241,0) 0%,white 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089fff1', endColorstr='#FFFFFF',GradientType=0 ); /* IE6-9 */
+  }
+
+.podcastListViewItem {
+  width: 350px;
+  border: solid 1px darkgray;
+  border-radius: 10px;
+  padding: 5px;
+  height: 350px;
+  float: left;
+  margin: 5px;
+}
+
+  .podcastListViewItem .mediaPlayerFeed {
+    height: 255px;
+  }
+
+  .podcastListViewItem h4 {
+    font-weight: bold;
+    font-size: .9em;
+    margin-bottom: 5px;
+  }
+
+  .podcastListViewItem p {
+    font-size: .8em;
+  }
+
+  .podcastListViewItem audio {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+#wrapper  .breadcrumb {
+  height: 40px;
+  background: transparent url(Images/bg.png) repeat-x 0 0;
+  clear: both;
+}
+
+  #wrapper  .breadcrumb h3 {
+    font: 24px Georgia, Arial, "sans-serif";
+    clear: left;
+    margin: 20px 0 0 148px;
+    color: #000;
+  }
+
+/** Customize the site map (bread crumb) */
+#wrapper  .breadcrumb .RadSiteMap {
+  border-left: 140px solid #ffa800;
+}
+
+#wrapper  .breadcrumb ul.rsmFlow {
+  padding-bottom: 0;
+}
+
+#wrapper  .breadcrumb .rsmOneLevel li.rsmItem,
+#wrapper  .breadcrumb .rsmOneLevel .rsmItem a.rsmLink {
+  color: #333;
+}
+
+  #wrapper  .breadcrumb .rsmOneLevel .rsmItem a.rsmLink:hover {
+    color: #555;
+    text-decoration: underline;
+    background: none;
+  }

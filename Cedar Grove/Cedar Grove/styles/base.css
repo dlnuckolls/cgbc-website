@@ -94,7 +94,7 @@ h6 {
 #wrapper .RadMenu, div.RadMenuPopup,
 #wrapper .RadMenu_Default, #wrapper .RadMenu_Default a.rmLink {
   font-size: 1em;
-  background-color: transparent;
+  /*background-color: transparent;*/
 }
 
 #wrapper .largeheader {
@@ -256,3 +256,66 @@ h6 {
 .pageContentBlocks {
   text-align: justify;
 }
+
+.pageContentBlocks2 {
+  text-align: justify;
+  border: 25px solid;
+  border-image: url(/images/border.jpg) 25 25 25 25 repeat;
+  padding: 20px;
+  background-color: mintcream;
+}
+
+  .pageContentBlocks2 a {
+    text-decoration: none !important;
+  }
+
+  .pageContentBlocks2 h1 {
+    text-decoration: none !important;
+    width: 100%;
+    text-align: center;
+    font-size: 1.35em;
+  }
+
+.staffContactBox {
+  float: left;
+  width: 290px;
+  height: 80px;
+}
+
+  .staffContactBox p {
+    font-size: .8em;
+  }
+
+  .staffContactBox img {
+    border: 0;
+    width: 75px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+  }
+
+/*#staffContactBoxHolder {
+  width: 100%;
+}
+
+  #staffContactBoxHolder .staffContactBox {
+    float: left;
+    width: 290px;
+    height: 80px;
+  }
+
+    #staffContactBoxHolder .staffContactBox p {
+      font-size: .8em;
+    }
+
+    #staffContactBoxHolder .staffContactBox img {
+      border: 0;
+      width: 75px;
+      float: left;
+      margin-right: 10px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      border-radius: 5px;
+    }*/

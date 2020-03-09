@@ -49,31 +49,22 @@ namespace Cedar_Grove.admin {
     protected global::System.Web.UI.WebControls.Literal AdminHomeToolHeader;
 
     /// <summary>
-    /// EditPageAdmin control.
+    /// PageAdmin control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadIconTile EditPageAdmin;
+    protected global::Telerik.Web.UI.RadIconTile PageAdmin;
 
     /// <summary>
-    /// AdminResourceLinks control.
+    /// EventAdmin control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadIconTile AdminResourceLinks;
-
-    /// <summary>
-    /// QuoteAdmin control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::Telerik.Web.UI.RadIconTile QuoteAdmin;
+    protected global::Telerik.Web.UI.RadIconTile EventAdmin;
 
     /// <summary>
     /// CalendarAdmin control.
@@ -85,6 +76,15 @@ namespace Cedar_Grove.admin {
     protected global::Telerik.Web.UI.RadIconTile CalendarAdmin;
 
     /// <summary>
+    /// ImageAdmin control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadIconTile ImageAdmin;
+
+    /// <summary>
     /// UserAdmin control.
     /// </summary>
     /// <remarks>
@@ -92,5 +92,23 @@ namespace Cedar_Grove.admin {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadIconTile UserAdmin;
+
+    /// <summary>
+    /// SermonAdmin control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadIconTile SermonAdmin;
+
+    /// <summary>
+    /// StaffAdmin control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadIconTile StaffAdmin;
   }
 }

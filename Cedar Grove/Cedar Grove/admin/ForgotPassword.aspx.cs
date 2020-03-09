@@ -30,6 +30,6 @@ namespace Cedar_Grove {
         SessionInfo.Settings.LogError("User: Forgot Password", ex);
       }
     }
-    protected void ReturnToLogin_OnClick(object sender, EventArgs e) { Response.Redirect("Login.aspx"); }
+    protected void ReturnToLogin_OnClick(object sender, EventArgs e) { Response.Redirect("~/login"); }
   }
 }

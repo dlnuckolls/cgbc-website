@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="imagegallery.ascx.cs" Inherits="Cedar_Grove.controls.imagegallery" %>
 
-<telerik:RadPageLayout runat="server" ID="JumbotronLayout" CssClass="jumbotron" GridType="Fluid">
+<telerik:RadPageLayout runat="server" ID="JumbotronLayout" GridType="Fluid">
   <Rows>
     <telerik:LayoutRow>
       <Columns>

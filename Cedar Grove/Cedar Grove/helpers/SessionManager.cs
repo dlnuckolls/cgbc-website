@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
+using Telerik.Web.UI;
 
 namespace Cedar_Grove {
   public class SessionManager {
@@ -54,15 +55,23 @@ namespace Cedar_Grove {
       SmtpClient smtp = SetMailServerSettings();
       smtp.Send(mail);
     }
+
+    public void SendContactEmail(ref MailMessage msg) {
+      SmtpClient smtp = SetMailServerSettings();
+      smtp.Send(msg);
+    }
     #endregion
 
     public List<MinistryBackground> MinistryColours = new List<MinistryBackground>() {
-      new MinistryBackground() { Id=1, MinistryName="MensMinistry", DisplayColour="lightblue", FontColour="blue" },
-      new MinistryBackground() { Id=2, MinistryName="WomensMinistry", DisplayColour="lightcoral", FontColour="brown" },
-      new MinistryBackground() { Id=3, MinistryName="YouthMinistry", DisplayColour="burlywood", FontColour="darkgreen" },
-      new MinistryBackground() { Id=4, MinistryName="ChildrensMinistry", DisplayColour="khaki", FontColour="darkslateblue" },
-      new MinistryBackground() { Id=5, MinistryName="OutreachMinistry", DisplayColour="lightcyan", FontColour="orangered" },
-      new MinistryBackground() { Id=6, MinistryName="GeneralMinistry", DisplayColour="lightslategray", FontColour="black" }
+      new MinistryBackground() { Id=1, MinistryName="Mens", DisplayColour="lightblue", FontColour="blue" },
+      new MinistryBackground() { Id=2, MinistryName="Women's", DisplayColour="lightcoral", FontColour="brown" },
+      new MinistryBackground() { Id=8, MinistryName="Embrace Grace", DisplayColour="lightcoral", FontColour="brown" },
+      new MinistryBackground() { Id=9, MinistryName="Embrace Life", DisplayColour="lightcoral", FontColour="brown" },
+      new MinistryBackground() { Id=3, MinistryName="Youth", DisplayColour="burlywood", FontColour="darkgreen" },
+      new MinistryBackground() { Id=4, MinistryName="Childrens", DisplayColour="khaki", FontColour="darkslateblue" },
+      new MinistryBackground() { Id=5, MinistryName="Outreach", DisplayColour="lightcyan", FontColour="orangered" },
+      new MinistryBackground() { Id=7, MinistryName="Missions", DisplayColour="lightgreen", FontColour="black" },
+      new MinistryBackground() { Id=6, MinistryName="General", DisplayColour="lightslategray", FontColour="black" },
     };
   }
 }

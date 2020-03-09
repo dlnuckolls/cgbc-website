@@ -33,7 +33,7 @@
                     <asp:LinkButton ID="ForgotPassword" runat="server" CssClass="forgotText" Text="Forgot&nbsp;Password" OnClick="ForgotPassword_OnClick" />
                   </div>
                   <div style="width: 100%; padding: 5px; margin-left: 153px;">
-                    <asp:LinkButton ID="RegisterNewUser" runat="server" CssClass="forgotText" Text="Register&nbsp;New&nbsp;User" OnClick="RegisterNewUser_Click" />
+                    <%--<asp:LinkButton ID="RegisterNewUser" runat="server" CssClass="forgotText" Text="Register&nbsp;New&nbsp;User" OnClick="RegisterNewUser_Click" />--%>
                   </div>
                 </div>
               </div>

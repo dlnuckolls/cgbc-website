@@ -42,6 +42,11 @@
           </Rows>
         </telerik:RadPageLayout>
       </div>
+      <div class="breadcrumb">
+        <telerik:RadSiteMap ID="BreadCrumbSiteMap" runat="server" DataTextField="Text" DataNavigateUrlField="NavigateUrl" Skin="Silk">
+          <DefaultLevelSettings ListLayout-RepeatDirection="Horizontal" SeparatorText=">" Layout="Flow" />
+        </telerik:RadSiteMap>
+      </div>
       <div class="contentBlock">
         <telerik:RadPageLayout runat="server" ID="RadPageLayout2" GridType="Fluid">
           <Rows>
@@ -67,7 +72,7 @@
           </Rows>
         </telerik:RadPageLayout>
       </div>
-      <uc1:mainfooter runat="server" id="mainfooter" />
+      <uc1:mainfooter runat="server" ID="mainfooter" />
     </div>
   </form>
 </body>

@@ -385,7 +385,196 @@ BEGIN
   COMMIT TRANSACTION Version1_8
 END
 
+SELECT @majorVersion = 1, @minorVersion = 9;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_9
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('3219C52F-0056-4818-9831-F81B0AC023E6', 'Believe Page'),
+           ('715A4FC2-41CB-4499-B4FD-358186F1937F', 'Believe Page Statement'),
+           ('F89AB4CA-D663-4731-A67D-3526FEC8A9AB', 'Constitution Page'),
+           ('EF9B3A69-C04B-43FD-93B4-C7B8DA4C7916', 'Constitution Page Statement');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('3219C52F-0056-4818-9831-F81B0AC023E6', 'Believe Page Content'),
+           ('715A4FC2-41CB-4499-B4FD-358186F1937F', ''),
+           ('F89AB4CA-D663-4731-A67D-3526FEC8A9AB', 'Constitution Page Content'),
+           ('EF9B3A69-C04B-43FD-93B4-C7B8DA4C7916', '');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_9
+END
+
+SELECT @majorVersion = 1, @minorVersion = 10;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_10
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('AD344A0E-8151-4846-A503-985D1F284D8D', 'Contact Page'),
+           ('BE5DF028-0EEA-4118-8431-0A31F347AA0C', 'About Page');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('AD344A0E-8151-4846-A503-985D1F284D8D', 'Contact Page Content'),
+           ('BE5DF028-0EEA-4118-8431-0A31F347AA0C', 'About Page Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_10
+END
+
+SELECT @majorVersion = 1, @minorVersion = 11;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_11
+    CREATE TABLE dbo.StaffMembers (
+	    [Id]           UNIQUEIDENTIFIER NOT NULL,
+      [Name]         VARCHAR(100)     NOT NULL, 
+      [Title]        VARCHAR(100)         NULL,
+      [Bio]          VARCHAR(200)         NULL,
+      [ImageUrl]     VARCHAR(256)         NULL,
+      [DisplayOrder] INT              NOT NULL DEFAULT 0,
+	    CONSTRAINT [PK_StaffMembers] PRIMARY KEY CLUSTERED (
+	        [Id] ASC
+        ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].[StaffMembers] ADD  CONSTRAINT [DF_StaffMembers_Id]  DEFAULT (NEWID()) FOR [Id];
+    
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_11
+END
+
+SELECT @majorVersion = 1, @minorVersion = 12;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_12
+    CREATE TABLE dbo.SermonSyndicationFeed (
+	    [Id]           UNIQUEIDENTIFIER NOT NULL,
+      [Published]    SMALLDATETIME    NOT NULL, 
+      [Title]        VARCHAR(100)     NOT NULL,
+      [Description]  VARCHAR(200)         NULL,
+      [SourceUrl]    VARCHAR(256)         NULL,
+	    CONSTRAINT [PK_SermonSyndicationFeed] PRIMARY KEY CLUSTERED (
+	        [Id] ASC
+        ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].[SermonSyndicationFeed] ADD  CONSTRAINT [DF_SermonSyndicationFeed_Id]  DEFAULT (NEWID()) FOR [Id];
+    
+    ALTER TABLE [dbo].[SystemConfigs] ADD
+      [FeedTitle]       VARCHAR(100)  NULL,
+      [FeedDescription] VARCHAR(255)  NULL,
+      [FeedUri]         VARCHAR(255)  NULL,
+      [FeedAuthor]      VARCHAR(255)  NULL,
+      [FeedCategory]    VARCHAR(255)  NULL;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_12
+END
+
+SELECT @majorVersion = 1, @minorVersion = 13;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_13
+    UPDATE [dbo].[SystemConfigs] 
+       SET [FeedTitle] = 'Cedar Grove Baptist Church', [FeedDescription] = 'Cedar Grove Baptist Church Recent Sermons', 
+           [FeedUri] = 'https://cgbc.glorykidd.com/feeds/SermonService.svc/GetRssSermonsFeed', [FeedAuthor] = 'office@cedargrovebaptist.church', 
+           [FeedCategory] = 'Religious,Sermons';
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_13
+END
+
+SELECT @majorVersion = 1, @minorVersion = 14;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_14
+    ALTER TABLE [dbo].[SermonSyndicationFeed] ADD
+      [Author] VARCHAR(100) NULL;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_14
+END
+
+SELECT @majorVersion = 1, @minorVersion = 15;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_15
+    ALTER TABLE dbo.UpcomingEvents ADD
+      [EventEnd] DATETIME NULL;
+    
+    ALTER TABLE [dbo].[StaffMembers] ADD
+      [EmailAddress] VARCHAR(50) NULL;
+
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('8D18BCE8-8473-4763-9209-F6095DA03DA5', 'Missions Page Content'),
+           ('A2444FC2-F610-4B19-B566-39A3A4ACD82D', 'Sermons Page Content'),
+           ('E2439935-28F4-49F0-95E9-D323F4CA09AB', 'Home Page Banner Content'),
+           ('CBB3ED8F-F5BF-4661-9693-7AD387050793', 'Home Page Event Title Content');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('8D18BCE8-8473-4763-9209-F6095DA03DA5', 'Missions Page Content'),
+           ('A2444FC2-F610-4B19-B566-39A3A4ACD82D', 'Sermons Page Content'),
+           ('E2439935-28F4-49F0-95E9-D323F4CA09AB', 'Home Page Banner Content'),
+           ('CBB3ED8F-F5BF-4661-9693-7AD387050793', 'Home Page Event Title Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_15
+END
+
+SELECT @majorVersion = 1, @minorVersion = 16;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_16
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('D378CB45-7391-44FA-9603-1428AED3208D', 'Child Protection Page Header'),
+           ('8CCA9FAE-E135-4DA4-8268-F53C53D967BC', 'Child Protection Page Content');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('D378CB45-7391-44FA-9603-1428AED3208D', 'Child Protection Page Header'),
+           ('8CCA9FAE-E135-4DA4-8268-F53C53D967BC', 'Child Protection Page Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_16
+END
+
+SELECT @majorVersion = 1, @minorVersion = 17;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_17
+    CREATE TABLE dbo.AdminPermissions (
+	    [UserId]       UNIQUEIDENTIFIER NOT NULL,
+	    [PageId]       UNIQUEIDENTIFIER NOT NULL
+    ) ON [PRIMARY];
+
+    ALTER TABLE [dbo].[PageLocations] ADD
+      [CanAdmin]   BIT NOT NULL DEFAULT 0,
+      [HasGallery] BIT NOT NULL DEFAULT 1;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_17
+END
+
+SELECT @majorVersion = 1, @minorVersion = 18;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_18
+    INSERT INTO [dbo].[PageLocations] (Id, [Description])
+    VALUES ('5F70F0DA-229A-47C3-9A6A-20369BA22C15', 'Embrace Grace Page'),
+           ('81DF6CEB-5CC8-4055-AE6E-C199FBD03A5B', 'Embrace Life Page');
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('5F70F0DA-229A-47C3-9A6A-20369BA22C15', 'Embrace Grace Page Content'),
+           ('81DF6CEB-5CC8-4055-AE6E-C199FBD03A5B', 'Embrace Life Page Content');
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_18
+END
+
 /* 
+
+D378CB45-7391-44FA-9603-1428AED3208D
+8CCA9FAE-E135-4DA4-8268-F53C53D967BC
+
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence
 

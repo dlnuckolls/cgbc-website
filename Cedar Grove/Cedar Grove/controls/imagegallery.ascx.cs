@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 
 namespace Cedar_Grove.controls {
-  public partial class imagegallery : System.Web.UI.UserControl {
+  public partial class imagegallery : BaseControl {
     public PageContentBlocks CurrentPage;
     public MinistryArea CurrentMinistry;
 

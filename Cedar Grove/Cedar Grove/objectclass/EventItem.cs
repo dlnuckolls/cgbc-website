@@ -10,6 +10,8 @@ namespace Cedar_Grove {
     public string Title;
     public string Description;
     public DateTime EventDate;
+    public DateTime EventEnd;
+
     public static EventItem StaticInstance => _instance.IsNullOrEmpty() ? _instance = new EventItem() : _instance;
 
     public EventItem() { }
@@ -19,6 +21,7 @@ namespace Cedar_Grove {
       Title = dataRow["Title"].ToString();
       Description = dataRow["Description"].ToString();
       EventDate = dataRow["EventDate"].ToString().GetAsDate();
+      EventEnd = dataRow["EventEnd"].ToString().GetAsDate();
     }
 
     public void ClearEventItem() => _instance = new EventItem();
@@ -27,9 +30,9 @@ namespace Cedar_Grove {
 
     public void SaveEventItem() {
       if (Id.IsNullOrEmpty()) {
-        _ = SqlHelpers.Insert(SqlStatements.SQL_INSERT_EVENT.FormatWith(Title.FixSqlString(), Description.FixSqlString(), EventDate.ConvertSqlDateTime()));
+        _ = SqlHelpers.Insert(SqlStatements.SQL_INSERT_EVENT.FormatWith(Title.FixSqlString(), Description.FixSqlString(), EventDate.ConvertSqlDateTime(), EventEnd.ConvertSqlDateTime()));
       } else {
-        _ = SqlHelpers.Update(SqlStatements.SQL_UPDATE_EVENT.FormatWith(Title.FixSqlString(), Description.FixSqlString(), EventDate.ConvertSqlDateTime(), Id));
+        _ = SqlHelpers.Update(SqlStatements.SQL_UPDATE_EVENT.FormatWith(Title.FixSqlString(), Description.FixSqlString(), EventDate.ConvertSqlDateTime(), EventEnd.ConvertSqlDateTime(), Id));
       }
     }
   }

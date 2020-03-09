@@ -13,8 +13,9 @@ namespace Cedar_Grove.admin {
       SessionInfo.CurrentPage = PageNames.PageAdmin;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
-      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/default.aspx");
+      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
       PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
+      ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Event Admin", NavigateUrl = "~/admin/events" });
     }
 
     protected void EventsList_DeleteCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) {
@@ -41,6 +42,7 @@ namespace Cedar_Grove.admin {
         SessionInfo.CurrentEvent.Title = values["Title"].ToString();
         SessionInfo.CurrentEvent.Description = values["Description"].ToString();
         SessionInfo.CurrentEvent.EventDate = values["EventDate"].ToString().GetAsDate();
+        SessionInfo.CurrentEvent.EventEnd = values["EventEnd"].ToString().GetAsDate();
         SessionInfo.CurrentEvent.SaveEventItem();
 
         MessageDisplay.Text = "Event Updated";
@@ -62,6 +64,7 @@ namespace Cedar_Grove.admin {
         SessionInfo.CurrentEvent.Title = values["Title"].ToString();
         SessionInfo.CurrentEvent.Description = values["Description"].ToString();
         SessionInfo.CurrentEvent.EventDate = values["EventDate"].ToString().GetAsDate();
+        SessionInfo.CurrentEvent.EventEnd = values["EventEnd"].ToString().GetAsDate();
         SessionInfo.CurrentEvent.SaveEventItem();
 
         MessageDisplay.Text = "Event Added";

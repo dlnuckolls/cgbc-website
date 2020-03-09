@@ -14,8 +14,9 @@ namespace Cedar_Grove.admin {
       SessionInfo.CurrentPage = PageNames.PageAdmin;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
-      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/default.aspx");
+      if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
       PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
+      ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Image Galleries Admin", NavigateUrl = "~/admin/photos" });
     }
 
     protected void gImageGallery_NeedDataSource(object sender, Telerik.Web.UI.GridNeedDataSourceEventArgs e) {
@@ -30,7 +31,16 @@ namespace Cedar_Grove.admin {
 
         SessionInfo.CurrentGalleryImage.Title = values["Title"].ToString();
         SessionInfo.CurrentGalleryImage.Description = values["Description"].ToString();
-        SessionInfo.CurrentGalleryImage.SetPageLocationById(((RadComboBox)((GridDataItem)e.Item).FindControl("ddlPageLocation")).SelectedValue.ToString());
+        SessionInfo.CurrentGalleryImage.SetPageLocationById(values["PageLocation"].ToString());
+        var fileUpload = (RadAsyncUpload)((GridEditableItem)e.Item).FindControl("AsyncUpload1");
+        if (!fileUpload.IsNullOrEmpty() && fileUpload.UploadedFiles.Count == 1) {
+          UploadedFile file = fileUpload.UploadedFiles[0];
+          var imageName = (SessionInfo.CurrentGalleryImage.ImageUrl.IsNullOrEmpty()) ?
+            "{0}{1}".FormatWith(Guid.NewGuid().ToString(), file.GetExtension()) :
+            "{0}{1}".FormatWith(StripFileUrl(SessionInfo.CurrentGalleryImage.ImageUrl), file.GetExtension());
+          SessionInfo.CurrentGalleryImage.ImageUrl = "/images/gallery/{0}".FormatWith(imageName);
+          file.SaveAs("{0}/{1}".FormatWith(Server.MapPath("~/images/gallery"), imageName), true);
+        }
         SessionInfo.CurrentGalleryImage.SaveGalleryImage();
 
         MessageDisplay.Text = "Gallery Image Updated";
@@ -47,11 +57,19 @@ namespace Cedar_Grove.admin {
         Hashtable values = new Hashtable();
         var editableItem = ((GridEditableItem)e.Item);
         editableItem.ExtractValues(values);
-
-        SessionInfo.CurrentGalleryImage.Title = values["Title"].ToString();
-        SessionInfo.CurrentGalleryImage.Description = values["Description"].ToString();
-        SessionInfo.CurrentGalleryImage.SetPageLocationById(((RadComboBox)((GridDataItem)e.Item).FindControl("ddlPageLocation")).SelectedValue.ToString());
-        SessionInfo.CurrentGalleryImage.SaveGalleryImage();
+        var fileUpload = (RadAsyncUpload)((GridEditableItem)e.Item).FindControl("AsyncUpload1");
+        if (!fileUpload.IsNullOrEmpty() && fileUpload.UploadedFiles.Count > 0) {
+          foreach (UploadedFile file in fileUpload.UploadedFiles) {
+            SessionInfo.CurrentGalleryImage.ClearGalleryImage();
+            SessionInfo.CurrentGalleryImage.Title = values["Title"].ToString();
+            SessionInfo.CurrentGalleryImage.Description = values["Description"].ToString();
+            SessionInfo.CurrentGalleryImage.SetPageLocationById(values["PageLocation"].ToString());
+            var imageName = "{0}{1}".FormatWith(Guid.NewGuid().ToString(), file.GetExtension());
+            SessionInfo.CurrentGalleryImage.ImageUrl = "/images/gallery/{0}".FormatWith(imageName);
+            file.SaveAs("{0}/{1}".FormatWith(Server.MapPath("~/images/gallery"), imageName), true);
+            SessionInfo.CurrentGalleryImage.SaveGalleryImage();
+          }
+        }
 
         MessageDisplay.Text = "Gallery Image Added";
         MessageDisplay.CssClass = "successMessageDisplay";
@@ -75,36 +93,26 @@ namespace Cedar_Grove.admin {
       }
     }
 
-    protected void AsyncUpload1_FileUploaded(object sender, FileUploadedEventArgs e) {
-      var fileUpload = (RadAsyncUpload)sender;
-      if (fileUpload.UploadedFiles.Count > 0) {
-        UploadedFile file = fileUpload.UploadedFiles[0];
-        var imageName = "{0}{1}".FormatWith(Guid.NewGuid().ToString(), file.GetExtension());
-        SessionInfo.CurrentGalleryImage.ImageUrl = "/images/gallery/{0}".FormatWith(imageName);
-        file.SaveAs("{0}/{1}".FormatWith(Server.MapPath("~/images/gallery"), imageName), true);
-      }
+    private string StripFileUrl(string inStr) {
+      var fileNameStr = inStr.Replace("/images/gallery/", "");
+      return fileNameStr.Substring(0, fileNameStr.LastIndexOf("."));
     }
 
+    //protected void AsyncUpload1_FileUploaded(object sender, FileUploadedEventArgs e) {
+    //  var fileUpload = (RadAsyncUpload)sender;
+    //  if (fileUpload.UploadedFiles.Count > 0) {
+    //    UploadedFile file = fileUpload.UploadedFiles[0];
+    //    var imageName = "{0}{1}".FormatWith(Guid.NewGuid().ToString(), file.GetExtension());
+    //    SessionInfo.CurrentGalleryImage.ImageUrl = "/images/gallery/{0}".FormatWith(imageName);
+    //    file.SaveAs("{0}/{1}".FormatWith(Server.MapPath("~/images/gallery"), imageName), true);
+    //  }
+    //}
+
     protected void gImageGallery_ItemDataBound(object sender, GridItemEventArgs e) {
-      GridDataItem item = e.Item as GridDataItem;
-      if (e.Item.IsInEditMode) {
-        if (item != null && item.ItemIndex >= 0) {
-          SessionInfo.CurrentGalleryImage.LoadGalleryImage(((Guid)item.GetDataKeyValue("Id")).ToString());
-          var ddlBox = ((RadComboBox)item.FindControl("ddlPageLocation"));
-          ddlBox.DataSourceID = "ObjectDataSource1";
-          ddlBox.DataTextField = "Description";
-          ddlBox.DataValueField = "PageLocation";
-          ddlBox.DataBind();
-          ddlBox.FindItemByValue(SessionInfo.CurrentGalleryImage.PageLocation.TextValue().ToLower()).Selected = true; ;
-        } else { SessionInfo.CurrentGalleryImage.ClearGalleryImage(); }
-      } else {
-        if (item != null) {
-          var p = (Guid)item.GetDataKeyValue("Id");
-          SessionInfo.CurrentGalleryImage.LoadGalleryImage(p.ToString());
-          ((RadLabel)item.FindControl("RadLabel3")).Text = SqlHelpers.SelectScalar(
-            SqlStatements.SQL_GET_PAGE_LOCATION_NAME_FOR_IMAGES.FormatWith(SessionInfo.CurrentGalleryImage.PageLocation.TextValue())).ToString();
-        }
-      }
+      if (e.Item is GridEditableItem && e.Item.IsInEditMode) 
+        if (e.Item is GridEditFormInsertItem || e.Item is GridDataInsertItem) {
+          ((Image)((GridEditableItem)e.Item).FindControl("Image1")).Visible = false;
+        } 
     }
   }
 }

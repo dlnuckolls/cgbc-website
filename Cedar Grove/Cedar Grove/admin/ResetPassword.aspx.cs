@@ -32,7 +32,7 @@ namespace Cedar_Grove {
         if (!NewPassword.Text.Trim().IsNullOrEmpty()) {
           SessionInfo.CurrentUser.SetUserPassword(SessionInfo.CurrentUser.Id, NewPassword.Text.Trim());
         }
-        locationRedirect = "default.aspx";
+        locationRedirect = "~/admin/dashboard";
       } catch (Exception ex) {
         SessionInfo.Settings.LogError("User: Password Update Failed", ex);
       }

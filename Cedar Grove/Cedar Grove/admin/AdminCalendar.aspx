@@ -63,10 +63,13 @@
                 <ResourceStyles>
                   <telerik:ResourceStyleMapping Type="Ministry" Key="1" ApplyCssClass="mensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="2" ApplyCssClass="womensMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="8" ApplyCssClass="womensMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="9" ApplyCssClass="womensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="3" ApplyCssClass="youthMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="4" ApplyCssClass="childrensMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="5" ApplyCssClass="outreachMinistry" />
                   <telerik:ResourceStyleMapping Type="Ministry" Key="6" ApplyCssClass="generalMinistry" />
+                  <telerik:ResourceStyleMapping Type="Ministry" Key="7" ApplyCssClass="missionsMinistry" />
                 </ResourceStyles>
                 <TimelineView UserSelectable="False"></TimelineView>
                 <AgendaView UserSelectable="True"></AgendaView>
@@ -96,7 +99,7 @@
               <asp:SqlDataSource ID="ChurchScheduleSource" runat="server" ConnectionString='<%$ ConnectionStrings:CedarGrove %>'
                 SelectCommand="SELECT [Id], [Subject], [Description], [Start], [End], [MinistryId], [RecurrenceRule], [RecurrenceParentId], [Annotations] FROM dbo.[Appointments];"
                 UpdateCommand="UPDATE [dbo].[Appointments] SET [Subject] = @Subject, [Start] = @Start, [End] = @End, [MinistryId] = @MinistryId, [RecurrenceRule] = @RecurrenceRule, [RecurrenceParentID] = @RecurrenceParentID, [Annotations] = @Annotations, [Description] = @Description WHERE [Id] = @Id;"
-                InsertCommand="INSERT INTO [Appointments] ([Subject], [Start], [End], [MinistryId], [RecurrenceRule], [RecurrenceParentId], [Annotations], [Description]) VALUES (@Subject, @Start, @End, @MinistryId, @RecurrenceRule, @RecurrenceParentID, @Annotations, @Description)"
+                InsertCommand="INSERT INTO [Appointments] ([Subject], [Start], [End], [MinistryId], [RecurrenceRule], [RecurrenceParentId], [Annotations], [Description]) VALUES (@Subject, @Start, @End, ISNULL(@MinistryId,6), @RecurrenceRule, @RecurrenceParentID, @Annotations, @Description)"
                 DeleteCommand="DELETE FROM [Appointments] WHERE [Id] = @Id">
                 <DeleteParameters>
                   <asp:Parameter Name="Id" Type="Int32"></asp:Parameter>
