@@ -39,7 +39,7 @@ namespace Cedar_Grove {
 
     // Gallery Management
     public const string SQL_GET_PAGE_GALLERY_BY_LOCATION = "SELECT [ImageUrl], [Description], [Title] FROM GalleryImages WHERE [PageLocation] = '{0}';";
-    public const string SQL_GET_PAGE_LOCATION_FOR_IMAGES = "SELECT [Id] PageLocation,[Description] FROM [dbo].[PageLocations];";
+    public const string SQL_GET_PAGE_LOCATION_FOR_IMAGES = "SELECT [Id] PageLocation,[Description] FROM [dbo].[PageLocations] WHERE [HasGallery] = 1;";
     public const string SQL_GET_PAGE_LOCATION_NAME_FOR_IMAGES = "SELECT [Description] FROM [dbo].[PageLocations] WHERE Id = '{0}';";
     public const string SQL_GET_PAGE_GALLERY_IMAGES = "SELECT [Id], [PageLocation], [ImageUrl], [Description], [Title], [Active], [Created] FROM GalleryImages;";
     public const string SQL_GET_PAGE_GALLERY_BY_ID = "SELECT [Id], [PageLocation], [ImageUrl], [Description], [Title], [Active], [Created] FROM GalleryImages WHERE [Id] = '{0}';";

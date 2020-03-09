@@ -22,11 +22,11 @@
       <MasterTableView AutoGenerateColumns="False" EditMode="InPlace" DataKeyNames="Id" GridLines="None"
         ClientDataKeyNames="Id" CommandItemDisplay="TopAndBottom" InsertItemPageIndexAction="ShowItemOnFirstPage">
         <Columns>
+          <telerik:GridEditCommandColumn UniqueName="EditCommandColumn" ItemStyle-Width="32px" EditText="Edit" HeaderText="Edit" />
           <telerik:GridBoundColumn ShowFilterIcon="False" DataField="DisplayName" AllowFiltering="False" HeaderText="Display Name" ItemStyle-Width="175px" />
           <telerik:GridBoundColumn ShowFilterIcon="false" DataField="UserName" AllowFiltering="False" HeaderText="Email Address" ItemStyle-Width="175px" />
           <telerik:GridButtonColumn ShowFilterIcon="false" HeaderText="User Password" ButtonType="LinkButton" Text="Reset&nbsp;Password" CommandName="ResetPassword" ShowInEditForm="False" ItemStyle-Width="150px" />
           <telerik:GridBoundColumn ShowFilterIcon="false" DataField="Notes" AllowFiltering="False" HeaderText="Notes" />
-          <telerik:GridEditCommandColumn UniqueName="EditCommandColumn" ItemStyle-Width="32px" EditText="Edit" HeaderText="Edit" />
           <telerik:GridButtonColumn ConfirmText="Delete this entry?" ConfirmDialogType="RadWindow" ConfirmTitle="Delete" ButtonType="FontIconButton" HeaderText="Delete"
             CommandName="Delete" ItemStyle-Width="30px" />
         </Columns>
