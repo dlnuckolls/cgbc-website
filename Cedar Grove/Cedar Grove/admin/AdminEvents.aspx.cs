@@ -62,6 +62,7 @@ namespace Cedar_Grove.admin {
         Hashtable values = new Hashtable();
         editableItem.ExtractValues(values);
 
+        SessionInfo.CurrentEvent.ClearEventItem();
         SessionInfo.CurrentEvent.Title = values["Title"].ToString();
         SessionInfo.CurrentEvent.Description = values["Description"].ToString();
         SessionInfo.CurrentEvent.EventDate = values["EventDate"].ToString().GetAsDate();
