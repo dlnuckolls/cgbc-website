@@ -42,7 +42,8 @@ namespace Cedar_Grove.admin {
         SessionInfo.CurrentEvent.Title = values["Title"].ToString();
         SessionInfo.CurrentEvent.Description = values["Description"].ToString();
         SessionInfo.CurrentEvent.EventDate = values["EventDate"].ToString().GetAsDate();
-        SessionInfo.CurrentEvent.EventEnd = values["EventEnd"].ToString().GetAsDate();
+        SessionInfo.CurrentEvent.EventEnd = (!values["EventEnd"].IsNullOrEmpty() && 
+          values["EventEnd"].ToString().GetAsDate() >= values["EventDate"].ToString().GetAsDate()) ? values["EventEnd"].ToString().GetAsDate() : values["EventDate"].ToString().GetAsDate();
         SessionInfo.CurrentEvent.SaveEventItem();
 
         MessageDisplay.Text = "Event Updated";
@@ -64,7 +65,8 @@ namespace Cedar_Grove.admin {
         SessionInfo.CurrentEvent.Title = values["Title"].ToString();
         SessionInfo.CurrentEvent.Description = values["Description"].ToString();
         SessionInfo.CurrentEvent.EventDate = values["EventDate"].ToString().GetAsDate();
-        SessionInfo.CurrentEvent.EventEnd = values["EventEnd"].ToString().GetAsDate();
+        SessionInfo.CurrentEvent.EventEnd = (!values["EventEnd"].IsNullOrEmpty() &&
+          values["EventEnd"].ToString().GetAsDate() >= values["EventDate"].ToString().GetAsDate()) ? values["EventEnd"].ToString().GetAsDate() : values["EventDate"].ToString().GetAsDate();
         SessionInfo.CurrentEvent.SaveEventItem();
 
         MessageDisplay.Text = "Event Added";
