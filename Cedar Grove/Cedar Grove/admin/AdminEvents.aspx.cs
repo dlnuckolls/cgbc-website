@@ -56,7 +56,7 @@ namespace Cedar_Grove.admin {
 
     protected void EventsList_InsertCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) {
       try {
-        var clientId = (Guid)((GridDataItem)e.Item).GetDataKeyValue("Id");
+        //var clientId = (Guid)((GridDataItem)e.Item).GetDataKeyValue("Id");
         var editableItem = ((GridEditableItem)e.Item);
         Hashtable values = new Hashtable();
         editableItem.ExtractValues(values);
