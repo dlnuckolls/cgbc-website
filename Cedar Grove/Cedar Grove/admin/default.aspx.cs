@@ -32,5 +32,7 @@ namespace Cedar_Grove.admin {
     protected void SermonAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/sermons"); }
 
     protected void StaffAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/staff"); }
+
+    protected void TrainingAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/training"); }
   }
 }

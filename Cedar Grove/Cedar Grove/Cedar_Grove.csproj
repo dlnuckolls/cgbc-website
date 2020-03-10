@@ -190,6 +190,7 @@
     <Content Include="images\menutiles\alarm.png" />
     <Content Include="images\menutiles\audio.png" />
     <Content Include="images\menutiles\calendar.png" />
+    <Content Include="images\menutiles\classroom.png" />
     <Content Include="images\menutiles\internet.png" />
     <Content Include="images\menutiles\name_tag.png" />
     <Content Include="images\menutiles\pages.png" />
