@@ -605,6 +605,21 @@ BEGIN
   COMMIT TRANSACTION Version1_20
 END
 
+SELECT @majorVersion = 1, @minorVersion = 21;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_21
+    CREATE TABLE dbo.TrainingVideos (
+	    [Id]           INT              NOT NULL IDENTITY(1,1),
+	    [Title]        VARCHAR(100)     NOT NULL,
+	    [Description]  VARCHAR(1000)        NULL,
+	    [VideoUrl]     VARCHAR(256)     NOT NULL
+    ) ON [PRIMARY];
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_21
+END
+
 /* 
 
 D378CB45-7391-44FA-9603-1428AED3208D

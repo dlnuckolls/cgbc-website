@@ -41,6 +41,7 @@ namespace Cedar_Grove {
     [TextValue("Church By-Laws")] Constitution,
     [TextValue("Child Protection")] ChildProtection,
     [TextValue("Missions")] Missions,
+    [TextValue("Training")] Training,
   }
 
   [CustomEnum(true)]
@@ -56,6 +57,7 @@ namespace Cedar_Grove {
     [TextValue("F8409812-85FA-45A7-83F6-2A902BF64DF0")] SermonHeader,
     [TextValue("C49B5CC7-D290-4192-97BB-B5C443BBC71E")] StaffHeader,
     [TextValue("60D63750-0123-4F48-B775-8E698F5A45EF")] UsersHeader,
+    [TextValue("69CA95DB-30CB-4B8C-A4EA-42DF50331BD3")] TrainingHeader,
     //Ministries
     [TextValue("8F9B4D10-6294-45AC-9692-9A29335F1661")] MensPage,
     [TextValue("D9E75614-BEA8-472D-9A42-E37CAEAA7506")] WomensPage,
