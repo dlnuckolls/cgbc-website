@@ -64,5 +64,25 @@ namespace Cedar_Grove.admin {
         ctr++;
       }
     }
+
+    protected void ChurchCalendar_FormCreated(object sender, SchedulerFormCreatedEventArgs e) {
+      if ((e.Container.Mode == SchedulerFormMode.AdvancedEdit) || (e.Container.Mode == SchedulerFormMode.AdvancedInsert)) {
+        RadTimePicker startTime = e.Container.FindControl("StartTime") as RadTimePicker;
+        startTime.TimeView.StartTime = new TimeSpan(0, 0, 0);
+        startTime.TimeView.Interval = new TimeSpan(0, 30, 0);
+        startTime.TimeView.EndTime = new TimeSpan(23, 30, 0);
+        startTime.TimeView.Columns = 4;
+        //startTime.TimeView.DataList.DataSource = null;
+        //startTime.DataBind();
+
+        RadTimePicker endTime = e.Container.FindControl("EndTime") as RadTimePicker;
+        endTime.TimeView.StartTime = new TimeSpan(0, 0, 0);
+        endTime.TimeView.Interval = new TimeSpan(0, 30, 0);
+        endTime.TimeView.EndTime = new TimeSpan(23, 30, 0);
+        endTime.TimeView.Columns = 4;
+        //endTime.TimeView.DataList.DataSource = null;
+        //endTime.DataBind();
+      }
+    }
   }
 }

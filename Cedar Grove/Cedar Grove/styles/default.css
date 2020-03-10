@@ -33,6 +33,10 @@
     font-size: .5em;
   }
 
+  #wrapper .jumbotron img {
+    max-width: 100%;
+  }
+
 .MyLabel {
   display: block;
   width: 150px;
@@ -259,6 +263,11 @@ html body form .RadInput .MyFocusedTextBox {
     font-size: 1.2em;
     line-height: 1.25em;
   }
+
+  .listViewItemPopup p > img {
+    max-width: 100%;
+  }
+
   .listViewItemPopup .listViewItemReadmore {
     position: absolute;
     bottom: 1px;
@@ -287,10 +296,14 @@ html body form .RadInput .MyFocusedTextBox {
     line-height: 1.25em;
   }
 
-  .listViewItem h4 > img {
-    width: 40px;
-    float: left;
-    padding-right: 5px;
+    .listViewItem h4 > img {
+      width: 40px;
+      float: left;
+      padding-right: 5px;
+    }
+
+  .listViewItem p > img {
+    max-width: 100%;
   }
 
   .listViewItem .listViewItemReadmore {
@@ -349,35 +362,35 @@ html body form .RadInput .MyFocusedTextBox {
     margin-top: 20px;
   }
 
-#wrapper  .breadcrumb {
+#wrapper .breadcrumb {
   height: 40px;
-  background: transparent url(Images/bg.png) repeat-x 0 0;
+  /*background: transparent url(Images/bg.png) repeat-x 0 0;*/
   clear: both;
 }
 
-  #wrapper  .breadcrumb h3 {
+  #wrapper .breadcrumb h3 {
     font: 24px Georgia, Arial, "sans-serif";
     clear: left;
     margin: 20px 0 0 148px;
     color: #000;
   }
 
-/** Customize the site map (bread crumb) */
-#wrapper  .breadcrumb .RadSiteMap {
-  border-left: 140px solid #ffa800;
-}
-
-#wrapper  .breadcrumb ul.rsmFlow {
-  padding-bottom: 0;
-}
-
-#wrapper  .breadcrumb .rsmOneLevel li.rsmItem,
-#wrapper  .breadcrumb .rsmOneLevel .rsmItem a.rsmLink {
-  color: #333;
-}
-
-  #wrapper  .breadcrumb .rsmOneLevel .rsmItem a.rsmLink:hover {
-    color: #555;
-    text-decoration: underline;
-    background: none;
+  /** Customize the site map (bread crumb) */
+  #wrapper .breadcrumb .RadSiteMap {
+    border-left: 140px solid #ffa800;
   }
+
+  #wrapper .breadcrumb ul.rsmFlow {
+    padding-bottom: 0;
+  }
+
+  #wrapper .breadcrumb .rsmOneLevel li.rsmItem,
+  #wrapper .breadcrumb .rsmOneLevel .rsmItem a.rsmLink {
+    color: #333;
+  }
+
+    #wrapper .breadcrumb .rsmOneLevel .rsmItem a.rsmLink:hover {
+      color: #555;
+      text-decoration: underline;
+      background: none;
+    }

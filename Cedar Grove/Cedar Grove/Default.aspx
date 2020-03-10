@@ -20,7 +20,9 @@
       <telerik:LayoutRow>
         <Columns>
           <telerik:LayoutColumn HiddenMd="true" HiddenSm="true" HiddenXs="true">
-            <asp:Literal ID="EventHeader" runat="server"></asp:Literal>
+            <div class="contentBlock">
+              <asp:Literal ID="EventHeader" runat="server"></asp:Literal>
+            </div>
           </telerik:LayoutColumn>
         </Columns>
       </telerik:LayoutRow>

@@ -10,6 +10,8 @@ namespace Cedar_Grove.admin {
     protected void Page_Load(object sender, EventArgs e) {
       SessionInfo.CurrentPage = PageNames.Admin;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
+      AdminHomeTop.Text = SessionInfo.PageContent(PageContentBlocks.AdminHomeTop);
+      AdminHomeToolHeader.Text = SessionInfo.PageContent(PageContentBlocks.AdminHomeToolHeader);
       if (!SessionInfo.IsAuthenticated) Response.Redirect("~/login");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/");
       if (!SessionInfo.CurrentUser.IsSuperAdmin) {

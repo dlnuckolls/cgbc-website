@@ -244,6 +244,10 @@ h6 {
   margin: 20px auto;
 }
 
+#wrapper .contentBlock img {
+  max-width: 100%;
+}
+
 .RadTile {
   background-color: lightblue;
   border-radius: 10px;
@@ -261,6 +265,7 @@ h6 {
   border-image: url(/images/border.jpg) 25 25 25 25 repeat;
   padding: 20px;
   background-color: mintcream;
+  border-radius: 10px;
 }
 
   .pageContentBlocks2 a {
