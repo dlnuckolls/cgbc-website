@@ -24,16 +24,16 @@
       <div style="height: 40px; width: 95%; clear: both; margin: auto;">
         <div style="float: left; width: 60%;">
           <telerik:RadAutoCompleteBox runat="server" ID="PageLocations" RenderMode="Auto" Width="100%" EmptyMessage="Select a Location" AllowCustomEntry="false"
-            DataTextField="Description" DataValueField="Id" Skin="Silk" DataSourceID="ObjectDataSource1" ZIndex="10000" IsCaseSensitive="False" HighlightFirstMatch="True" MinFilterLength="1"
-            OnTextChanged="PageLocations_TextChanged" Label="Select Page Block to Edit" TextSettings-SelectionMode="Single" InputType="Text" AutoPostBack="true" />
+            DataTextField="Description" DataValueField="Id" Skin="Silk" ZIndex="10000" IsCaseSensitive="False" HighlightFirstMatch="True" MinFilterLength="1"
+            OnTextChanged="PageLocations_TextChanged" Label="Select Page Block to Edit" TextSettings-SelectionMode="Single" InputType="Text" AutoPostBack="true" TabIndex="0" />
         </div>
         <div style="float: right; text-align: right;">
-          <telerik:RadButton ID="SavePage" runat="server" Skin="Silk" RenderMode="Auto" Text="Save Changes" OnClick="SavePage_Click" CssClass="css3Simple" />
+          <telerik:RadButton ID="SavePage" runat="server" Skin="Silk" RenderMode="Auto" Text="Save Changes" OnClick="SavePage_Click" CssClass="css3Simple" TabIndex="2" />
         </div>
       </div>
       <div class="adminTiles">
         <telerik:RadEditor RenderMode="Lightweight" runat="server" ID="PageDescription" SkinID="DefaultSetOfTools"
-          Height="675px" Skin="Silk" Width="100%" EditModes="Design,Html">
+          Height="675px" Skin="Silk" Width="100%" EditModes="Design,Html" TabIndex="1">
           <Tools>
             <telerik:EditorToolGroup Tag="MainToolbar">
               <telerik:EditorTool Name="FindAndReplace"></telerik:EditorTool>

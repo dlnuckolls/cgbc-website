@@ -570,6 +570,17 @@ BEGIN
   COMMIT TRANSACTION Version1_18
 END
 
+SELECT @majorVersion = 1, @minorVersion = 19;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_19
+    ALTER TABLE [dbo].[PageLocations] ADD
+      [AdminOnly]   BIT NOT NULL DEFAULT 1;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_19
+END
+
 /* 
 
 D378CB45-7391-44FA-9603-1428AED3208D

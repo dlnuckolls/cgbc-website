@@ -9,7 +9,7 @@
     <Rows>
       <telerik:LayoutRow>
         <Columns>
-          <telerik:LayoutColumn Span="6" SpanMd="12" SpanSm="12" SpanXs="12">
+          <telerik:LayoutColumn Span="8" SpanMd="12" SpanSm="12" SpanXs="12">
             <div class="pageContentBlocks">
               <asp:Literal ID="AboutPageContentBlock" runat="server" />
             </div>
@@ -31,7 +31,7 @@
               </ItemTemplate>
             </telerik:RadListView>
           </telerik:LayoutColumn>
-          <telerik:LayoutColumn Span="6" SpanMd="12" SpanSm="12" SpanXs="12">
+          <telerik:LayoutColumn Span="4" SpanMd="12" SpanSm="12" SpanXs="12">
             <div class="pageContentBlocks">
               <asp:Literal ID="ContactPageContentBlock" runat="server" />
             </div>

@@ -70,23 +70,6 @@ namespace Cedar_Grove {
       SqlHelpers.Insert(SqlStatements.SQL_LOG_EXCEPTION.FormatWith(DateTime.Now.ConvertSqlDateTime(), module.FixSqlString(), error.FixSqlString(), string.Empty));
     }
 
-    //public void SaveAdminUserDetails() {
-    //  try {
-    //    if(Id.IsNullOrEmpty()) {
-    //      // Create New User
-    //      Id = SqlHelpers.InsertScalar(SqlStatements.SQL_CREATE_ADMIN_USER_DETAILS.FormatWith(DisplayName.FixSqlString(),
-    //        UserName.FixSqlString(), Notes.FixSqlString(250), (SuperAdmin) ? "1" : "0"));
-    //    } else {
-    //      // Update User
-    //      SqlHelpers.Update(SqlStatements.SQL_UPDATE_ADMIN_USER_DETAILS.FormatWith(DisplayName.FixSqlString(),
-    //        UserName.FixSqlString(), Notes.FixSqlString(250), (SuperAdmin) ? "1" : "0", Id));
-    //    }
-    //  } catch(Exception ex) {
-    //    LogError("SystemUser: Save Admin User method", ex);
-    //    throw new ApplicationException("Record not Saved");
-    //  }
-    //}
-
     public void SaveUserDetails() {
       try {
         if (Id.IsNullOrEmpty()) {

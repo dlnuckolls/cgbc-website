@@ -12,6 +12,9 @@ namespace Cedar_Grove.admin {
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       if (!SessionInfo.IsAuthenticated) Response.Redirect("~/login");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/");
+      if (!SessionInfo.CurrentUser.IsSuperAdmin) {
+        UserAdmin.Visible = false;
+      }
     }
 
     protected void ImageAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/photos"); }

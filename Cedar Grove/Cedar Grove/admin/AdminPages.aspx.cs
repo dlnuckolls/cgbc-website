@@ -16,11 +16,12 @@ namespace Cedar_Grove.admin {
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
       PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
       ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Page Admin", NavigateUrl = "~/admin/pages" });
+      PageLocations.DataSource = SqlDatasets.GetAllPageLocations(SessionInfo.CurrentUser.IsSuperAdmin);
     }
 
     protected void SavePage_Click(object sender, EventArgs e) {
       try {
-        var pageTable = (SqlDatasets.GetAllPageLocations()).Select("Description = '{0}'".FormatWith(PageLocations.Text));
+        var pageTable = (SqlDatasets.GetAllPageLocations(SessionInfo.CurrentUser.IsSuperAdmin)).Select("Description = '{0}'".FormatWith(PageLocations.Text));
         SqlHelpers.Update(SqlStatements.SQL_SAVE_PAGE_CONTENTS.FormatWith(PageDescription.Content.FixSqlString(), pageTable[0][0]));
         MessageDisplay.Text = "Page Area was Updated";
         MessageDisplay.CssClass = "successMessageDisplay";
@@ -35,7 +36,7 @@ namespace Cedar_Grove.admin {
 
     protected void PageLocations_TextChanged(object sender, AutoCompleteTextEventArgs e) {
       var searchCriteria = e.Text;
-      var pageTable = (SqlDatasets.GetAllPageLocations()).Select("Description = '{0}'".FormatWith(searchCriteria));
+      var pageTable = (SqlDatasets.GetAllPageLocations(SessionInfo.CurrentUser.IsSuperAdmin)).Select("Description = '{0}'".FormatWith(searchCriteria));
       if (pageTable.Length != 0)
         PageDescription.Content = SqlHelpers.SelectScalar(SqlStatements.SQL_GET_PAGE_CONTENTS.FormatWith(pageTable[0][0])).ToString();
       else
