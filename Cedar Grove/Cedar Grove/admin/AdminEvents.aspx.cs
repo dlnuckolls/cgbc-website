@@ -14,7 +14,7 @@ namespace Cedar_Grove.admin {
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
-      PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
+      PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.EventHeader);
       ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Event Admin", NavigateUrl = "~/admin/events" });
     }
 
