@@ -50,7 +50,7 @@
               <telerik:EditorTool Name="Bold"></telerik:EditorTool>
               <telerik:EditorTool Name="Italic"></telerik:EditorTool>
               <telerik:EditorTool Name="Underline"></telerik:EditorTool>
-              <telerik:EditorTool Name="AlignmentSelector" />
+              <telerik:EditorTool Name="JustifyFull" />
               <telerik:EditorSeparator></telerik:EditorSeparator>
               <telerik:EditorSplitButton Name="ForeColor"></telerik:EditorSplitButton>
               <telerik:EditorSplitButton Name="BackColor"></telerik:EditorSplitButton>

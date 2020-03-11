@@ -35,8 +35,8 @@ namespace Cedar_Grove.pages {
         Subject = ContactSubject.Text.Trim(),
         Body = ContactMessage.Text.Trim()
       };
-      //msg.To.Add(new MailAddress("contactus@usfarmexchange.com", "USFarmExchange Contact Service"));
-      //SessionInfo.SendContactEmail(ref msg);
+      msg.To.Add(new MailAddress("office@cedargrovebaptist.church", "Cedar Grove Baptist Church"));
+      SessionInfo.SendContactEmail(ref msg);
     }
 
     protected void StaffCards_NeedDataSource(object sender, RadListViewNeedDataSourceEventArgs e) { ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_GET_ALL_STAFF_MEMBERS); }
