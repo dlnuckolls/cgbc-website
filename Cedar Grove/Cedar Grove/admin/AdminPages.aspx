@@ -50,6 +50,7 @@
               <telerik:EditorTool Name="Bold"></telerik:EditorTool>
               <telerik:EditorTool Name="Italic"></telerik:EditorTool>
               <telerik:EditorTool Name="Underline"></telerik:EditorTool>
+              <telerik:EditorTool Name="AlignmentSelector" />
               <telerik:EditorSeparator></telerik:EditorSeparator>
               <telerik:EditorSplitButton Name="ForeColor"></telerik:EditorSplitButton>
               <telerik:EditorSplitButton Name="BackColor"></telerik:EditorSplitButton>
@@ -58,6 +59,9 @@
               <telerik:EditorDropDown Name="RealFontSize"></telerik:EditorDropDown>
               <telerik:EditorSeparator></telerik:EditorSeparator>
               <telerik:EditorTool Name="ImageManager" Text="Image Manager"></telerik:EditorTool>
+              <telerik:EditorTool Name="InsertHorizontalRule" />
+              <telerik:EditorTool Name="InsertImage" />
+              <telerik:EditorTool Name="InsertTable" />
               <telerik:EditorTool Name="StripAll" />
               <telerik:EditorTool Name="StripSpan" />
               <telerik:EditorTool Name="StripWord" />
@@ -70,7 +74,7 @@
           <ImageManager ViewPaths="~/images/useruploads/pages"
             UploadPaths="~/images/useruploads/pages"
             DeletePaths="~/images/useruploads/pages"
-            EnableAsyncUpload="true" MaxUploadFileSize="2000" />
+            EnableAsyncUpload="true" />
           <Modules>
             <telerik:EditorModule Name="RadEditorStatistics" Visible="true" Enabled="true" />
             <telerik:EditorModule Name="RadEditorDomInspector" Visible="false" Enabled="true" />
