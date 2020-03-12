@@ -33,6 +33,6 @@ namespace Cedar_Grove.admin {
 
     protected void StaffAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/staff"); }
 
-    protected void TrainingAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/admin/training"); }
+    protected void TrainingAdmin_Click(object sender, EventArgs e) { Response.Redirect("~/training"); }
   }
 }
