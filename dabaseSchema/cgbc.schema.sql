@@ -570,6 +570,56 @@ BEGIN
   COMMIT TRANSACTION Version1_18
 END
 
+SELECT @majorVersion = 1, @minorVersion = 19;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_19
+    ALTER TABLE [dbo].[PageLocations] ADD
+      [AdminOnly]   BIT NOT NULL DEFAULT 1;
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_19
+END
+
+SELECT @majorVersion = 1, @minorVersion = 20;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_20
+    INSERT INTO [dbo].[PageLocations] (Id, [Description], [CanAdmin], [HasGallery], [AdminOnly])
+    VALUES ('3AB7B9CE-A432-47ED-B441-597097AE2313', 'Calendar Header Page', 0, 0, 1),
+           ('FDD565B5-54FE-4A9E-9486-8E9ED1770E4B', 'Event Header Page'   , 0, 0, 1),
+           ('E0A66F2B-9965-4064-9F76-604D08CDE4F8', 'Gallery Header Page' , 0, 0, 1),
+           ('F8409812-85FA-45A7-83F6-2A902BF64DF0', 'Sermon Header Page'  , 0, 0, 1),
+           ('C49B5CC7-D290-4192-97BB-B5C443BBC71E', 'Staff Header Page'   , 0, 0, 1),
+           ('60D63750-0123-4F48-B775-8E698F5A45EF', 'Users Header Page'   , 0, 0, 1);
+
+    INSERT INTO [dbo].[PageContent] (PageLocation, [Description])
+    VALUES ('3AB7B9CE-A432-47ED-B441-597097AE2313', 'Calendar Header Page'),
+           ('FDD565B5-54FE-4A9E-9486-8E9ED1770E4B', 'Event Header Page'   ),
+           ('E0A66F2B-9965-4064-9F76-604D08CDE4F8', 'Gallery Header Page' ),
+           ('F8409812-85FA-45A7-83F6-2A902BF64DF0', 'Sermon Header Page'  ),
+           ('C49B5CC7-D290-4192-97BB-B5C443BBC71E', 'Staff Header Page'   ),
+           ('60D63750-0123-4F48-B775-8E698F5A45EF', 'Users Header Page'   );
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_20
+END
+
+SELECT @majorVersion = 1, @minorVersion = 21;
+IF NOT EXISTS(SELECT * FROM SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version1_21
+    CREATE TABLE dbo.TrainingVideos (
+	    [Id]           INT              NOT NULL IDENTITY(1,1),
+	    [Title]        VARCHAR(100)     NOT NULL,
+	    [Description]  VARCHAR(1000)        NULL,
+	    [VideoUrl]     VARCHAR(256)     NOT NULL
+    ) ON [PRIMARY];
+
+    INSERT INTO SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version1_21
+END
+
 /* 
 
 D378CB45-7391-44FA-9603-1428AED3208D

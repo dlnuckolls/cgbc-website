@@ -15,7 +15,7 @@ namespace Cedar_Grove.admin {
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
-      PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
+      PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.StaffHeader);
       ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Staff Admin", NavigateUrl = "~/admin/staff" });
     }
 

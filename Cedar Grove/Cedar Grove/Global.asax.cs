@@ -42,7 +42,7 @@ namespace Cedar_Grove {
       routes.MapPageRoute("AdminSermons", "admin/sermons", "~/admin/AdminSermons.aspx");
       routes.MapPageRoute("AdminStaff", "admin/staff", "~/admin/AdminStaff.aspx");
       routes.MapPageRoute("AdminUsers", "admin/users", "~/admin/AdminUsers.aspx");
-
+      routes.MapPageRoute("AdminTraining", "training", "~/admin/Classroom.aspx");
     }
 
     protected void Session_Start(object sender, EventArgs e) { }

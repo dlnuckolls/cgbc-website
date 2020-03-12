@@ -116,9 +116,11 @@
     <Content Include="admin\AdminSermons.aspx" />
     <Content Include="admin\AdminStaff.aspx" />
     <Content Include="admin\AdminUsers.aspx" />
+    <Content Include="admin\Classroom.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\ForgotPassword.aspx" />
     <Content Include="admin\Login.aspx" />
+    <Content Include="admin\Logout.aspx" />
     <Content Include="admin\ResetPassword.aspx" />
     <Content Include="App_Data\RadCaptcha\0.wav" />
     <Content Include="App_Data\RadCaptcha\1.wav" />
@@ -188,6 +190,7 @@
     <Content Include="images\menutiles\alarm.png" />
     <Content Include="images\menutiles\audio.png" />
     <Content Include="images\menutiles\calendar.png" />
+    <Content Include="images\menutiles\classroom.png" />
     <Content Include="images\menutiles\internet.png" />
     <Content Include="images\menutiles\name_tag.png" />
     <Content Include="images\menutiles\pages.png" />
@@ -273,6 +276,13 @@
     <Compile Include="admin\AdminUsers.aspx.designer.cs">
       <DependentUpon>AdminUsers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Classroom.aspx.cs">
+      <DependentUpon>Classroom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Classroom.aspx.designer.cs">
+      <DependentUpon>Classroom.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,6 +310,13 @@
     </Compile>
     <Compile Include="admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>

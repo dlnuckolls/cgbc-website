@@ -54,7 +54,7 @@
                 OnAppointmentDataBound="ChurchCalendar_AppointmentDataBound" OnClientAppointmentDoubleClick="hideTooltip" OnClientAppointmentContextMenu="hideTooltip"
                 OnClientAppointmentClick="OnClientAppointmentClick" HoursPanelTimeFormat="hh:mm" EditFormTimeFormat="hh:mm" AdvancedForm-TimeFormat="hh:mm" AllowDelete="false" AllowEdit="false" AllowInsert="false"
                 ExportSettings-FileName="CedarGroveBaptist_Calendar" Height="800px" Localization-AdvancedDescription="Notes" Localization-AdvancedSubject="Ministry" MonthView-VisibleAppointmentsPerDay="6"
-                EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" TimeZonesEnabled="False" TimeZoneID="UTC" RowHeight="28px" ShowFooter="False" OverflowBehavior="Expand">
+                EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" TimeZonesEnabled="False" TimeZoneID="US Eastern Standard Time" RowHeight="28px" ShowFooter="False" OverflowBehavior="Expand">
                 <ResourceTypes>
                   <telerik:ResourceType KeyField="Id" Name="Ministry" TextField="Title" ForeignKeyField="MinistryId" DataSourceID="MinistryDataSource"></telerik:ResourceType>
                 </ResourceTypes>

@@ -21,6 +21,14 @@
     border-radius: 10px;
   }
 
+.rsAdvContentWrapper .RadPicker {
+  width: auto !important;
+}
+
+.rsAdvContentWrapper .RadDropDownList_WebBlue {
+  width: 175px !important;
+}
+
 .RadScheduler_Silk .rsMonthView .rsTodayCell {
   background-color: aliceblue !important;
   color: #000;

@@ -32,7 +32,8 @@ namespace Cedar_Grove {
     public const string SQL_READ_EXCEPTIONS = "SELECT * FROM dbo.SystemExceptions ORDER BY ExceptionTimeStamp DESC;";
 
     // Page Content Blocks
-    public const string SQL_GET_PAGE_LOCATIONS = "SELECT [Id],[Description] FROM [dbo].[PageLocations];";
+    public const string SQL_GET_PAGE_LOCATIONS = "SELECT [Id],[Description] FROM [dbo].[PageLocations] WHERE [AdminOnly] = 0;";
+    public const string SQL_GET_ALL_PAGE_LOCATIONS = "SELECT [Id],[Description] FROM [dbo].[PageLocations];";
     public const string SQL_GET_PAGE_CONTENTS = "SELECT ISNULL([Description],'') [Description] FROM [dbo].[PageContent] WHERE [PageLocation] = '{0}';";
     public const string SQL_GET_PAGE_CONTENT_FOR_DISPLAY = "SELECT ISNULL(a.[Description],'') [Description] FROM [dbo].[PageContent] a WHERE a.[PageLocation] = '{0}';";
     public const string SQL_SAVE_PAGE_CONTENTS = "UPDATE [dbo].[PageContent] SET [Description] = '{0}' WHERE [PageLocation] = '{1}';";
@@ -48,7 +49,7 @@ namespace Cedar_Grove {
     public const string SQL_DELETE_PAGE_GALLERY_IMAGE = "DELETE dbo.GalleryImages WHERE [Id] = '{0}';";
 
     // Events Management
-    public const string SQL_READ_EVENTS = "SELECT [Id], [Title], [Description], CONVERT(VARCHAR, [EventDate], 107) [EventDate], CONVERT(VARCHAR, [EventEnd], 107) [EventEnd] FROM dbo.UpcomingEvents WHERE [EventEnd] <= GETDATE() ORDER BY [EventDate] DESC;";
+    public const string SQL_READ_EVENTS = "SELECT [Id], [Title], [Description], CONVERT(VARCHAR, [EventDate], 107) [EventDate], CONVERT(VARCHAR, [EventEnd], 107) [EventEnd] FROM dbo.UpcomingEvents WHERE [EventEnd] > GETDATE() ORDER BY [EventDate] DESC;";
     public const string SQL_GET_EVENT_BY_ID = "SELECT [Id],[Title],[Description],[EventDate],[EventEnd] FROM [dbo].[UpcomingEvents] WHERE [Id] = '{0}';";
     public const string SQL_INSERT_EVENT = "INSERT INTO [dbo].[UpcomingEvents] ([Title],[Description],[EventDate],[EventEnd]) VALUES ('{0}', '{1}', {2}, {3});";
     public const string SQL_UPDATE_EVENT = "UPDATE [dbo].[UpcomingEvents] SET [Title] = '{0}', [Description] = '{1}', [EventDate] = {2}, [EventEnd] = {3} WHERE [Id] = '{4}';";

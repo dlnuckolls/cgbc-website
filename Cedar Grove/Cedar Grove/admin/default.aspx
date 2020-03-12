@@ -36,6 +36,9 @@
               <telerik:RadIconTile ID="StaffAdmin" runat="server" ImageUrl="~/images/menutiles/name_tag.png" AutoPostBack="true" OnClick="StaffAdmin_Click">
                 <Title Text="Staff"></Title>
               </telerik:RadIconTile>
+              <telerik:RadIconTile ID="TrainingAdmin" runat="server" ImageUrl="~/images/menutiles/classroom.png" AutoPostBack="true" OnClick="TrainingAdmin_Click">
+                <Title Text="Training"></Title>
+              </telerik:RadIconTile>
             </div>
           </telerik:LayoutColumn>
           <telerik:LayoutColumn Span="1" HiddenMd="true" />

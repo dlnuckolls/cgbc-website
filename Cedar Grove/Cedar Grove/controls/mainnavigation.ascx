@@ -37,7 +37,7 @@
         <telerik:RadMenuItem Text="About Us" NavigateUrl="~/aboutus" />
       </Items>
     </telerik:RadMenuItem>
-    <telerik:RadMenuItem IsSeparator="true" />
+    <telerik:RadMenuItem IsSeparator="true"  />
     <telerik:RadMenuItem Text="Admin" NavigateUrl="~/admin/dashboard" />
   </Items>
 </telerik:RadMenu>

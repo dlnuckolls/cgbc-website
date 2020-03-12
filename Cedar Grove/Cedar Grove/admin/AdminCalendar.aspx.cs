@@ -16,7 +16,7 @@ namespace Cedar_Grove.admin {
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
-      PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.CalendarPage);
+      PageContentBlock.Text = SessionInfo.PageContent(PageContentBlocks.CalendarHeader);
       ChurchCalendar.SelectedDate = DateTime.Now;
       SelectionButtons = SelectionButtons ?? new List<RadButton>();
       LoadMinistryButtons();
@@ -62,6 +62,26 @@ namespace Cedar_Grove.admin {
       foreach (RadButton b in ToggleButtons.Controls) {
         FilterAppointment(e.Appointment, b, ctr);
         ctr++;
+      }
+    }
+
+    protected void ChurchCalendar_FormCreated(object sender, SchedulerFormCreatedEventArgs e) {
+      if ((e.Container.Mode == SchedulerFormMode.AdvancedEdit) || (e.Container.Mode == SchedulerFormMode.AdvancedInsert)) {
+        RadTimePicker startTime = e.Container.FindControl("StartTime") as RadTimePicker;
+        startTime.TimeView.StartTime = new TimeSpan(0, 0, 0);
+        startTime.TimeView.Interval = new TimeSpan(0, 30, 0);
+        startTime.TimeView.EndTime = new TimeSpan(23, 45, 0);
+        startTime.TimeView.Columns = 6;
+        startTime.TimeView.DataList.DataSource = null;
+        startTime.DataBind();
+
+        RadTimePicker endTime = e.Container.FindControl("EndTime") as RadTimePicker;
+        endTime.TimeView.StartTime = new TimeSpan(0, 0, 0);
+        endTime.TimeView.Interval = new TimeSpan(0, 30, 0);
+        endTime.TimeView.EndTime = new TimeSpan(23, 45, 0);
+        endTime.TimeView.Columns = 6;
+        endTime.TimeView.DataList.DataSource = null;
+        endTime.DataBind();
       }
     }
   }

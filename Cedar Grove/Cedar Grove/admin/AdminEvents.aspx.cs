@@ -14,7 +14,7 @@ namespace Cedar_Grove.admin {
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       if (!SessionInfo.IsAuthenticated) Response.Redirect("/");
       if (!SessionInfo.IsAdmin) Response.Redirect("~/admin/dashboard");
-      PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.PageAdminHeader);
+      PageAdminHeader.Text = SessionInfo.PageContent(PageContentBlocks.EventHeader);
       ((AdminMasterPage)this.Master).DataBindBreadCrumbSiteMap(new RadMenuItem() { Text = "Event Admin", NavigateUrl = "~/admin/events" });
     }
 
@@ -42,7 +42,8 @@ namespace Cedar_Grove.admin {
         SessionInfo.CurrentEvent.Title = values["Title"].ToString();
         SessionInfo.CurrentEvent.Description = values["Description"].ToString();
         SessionInfo.CurrentEvent.EventDate = values["EventDate"].ToString().GetAsDate();
-        SessionInfo.CurrentEvent.EventEnd = values["EventEnd"].ToString().GetAsDate();
+        SessionInfo.CurrentEvent.EventEnd = (!values["EventEnd"].IsNullOrEmpty() && 
+          values["EventEnd"].ToString().GetAsDate() >= values["EventDate"].ToString().GetAsDate()) ? values["EventEnd"].ToString().GetAsDate() : values["EventDate"].ToString().GetAsDate();
         SessionInfo.CurrentEvent.SaveEventItem();
 
         MessageDisplay.Text = "Event Updated";
@@ -56,15 +57,17 @@ namespace Cedar_Grove.admin {
 
     protected void EventsList_InsertCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e) {
       try {
-        var clientId = (Guid)((GridDataItem)e.Item).GetDataKeyValue("Id");
+        //var clientId = (Guid)((GridDataItem)e.Item).GetDataKeyValue("Id");
         var editableItem = ((GridEditableItem)e.Item);
         Hashtable values = new Hashtable();
         editableItem.ExtractValues(values);
 
+        SessionInfo.CurrentEvent.ClearEventItem();
         SessionInfo.CurrentEvent.Title = values["Title"].ToString();
         SessionInfo.CurrentEvent.Description = values["Description"].ToString();
         SessionInfo.CurrentEvent.EventDate = values["EventDate"].ToString().GetAsDate();
-        SessionInfo.CurrentEvent.EventEnd = values["EventEnd"].ToString().GetAsDate();
+        SessionInfo.CurrentEvent.EventEnd = (!values["EventEnd"].IsNullOrEmpty() &&
+          values["EventEnd"].ToString().GetAsDate() >= values["EventDate"].ToString().GetAsDate()) ? values["EventEnd"].ToString().GetAsDate() : values["EventDate"].ToString().GetAsDate();
         SessionInfo.CurrentEvent.SaveEventItem();
 
         MessageDisplay.Text = "Event Added";
