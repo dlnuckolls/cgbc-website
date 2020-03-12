@@ -40,7 +40,7 @@
       DataKeyField="Id" DataStartField="Start" DataEndField="End" DataSubjectField="Subject" DataDescriptionField="Description" OnAppointmentDataBound="ChurchCalendar_AppointmentDataBound"
       HoursPanelTimeFormat="h:mm tt" AdvancedForm-TimeFormat="h:mm tt" ExportSettings-FileName="CedarGroveBaptist_Calendar" Height="800px" OnFormCreated="ChurchCalendar_FormCreated"
       Localization-AdvancedDescription="Description" Localization-AdvancedSubject="Title" OnClientAppointmentDoubleClick="hideTooltip" OnClientAppointmentContextMenu="hideTooltip"
-      OnClientAppointmentClick="OnClientAppointmentClick" EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" TimeZonesEnabled="False" TimeZoneID="UTC" RowHeight="32px"
+      OnClientAppointmentClick="OnClientAppointmentClick" EnableCustomAttributeEditing="True" SelectedDate="2020-01-01" TimeZonesEnabled="False" TimeZoneID="US Eastern Standard Time" RowHeight="32px"
       DisplayRecurrenceActionDialogOnMove="True" DataRecurrenceField="RecurrenceRule" DataRecurrenceParentKeyField="RecurrenceParentID" StartInsertingInAdvancedForm="true"
       DayStartTime="00:00:00" DayEndTime="00:00:00" WorkDayStartTime="00:00:00" WorkDayEndTime="00:00:00" ShowFooter="False">
       <ResourceTypes>
