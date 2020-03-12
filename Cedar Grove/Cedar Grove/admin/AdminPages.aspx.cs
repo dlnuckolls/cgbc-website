@@ -21,7 +21,7 @@ namespace Cedar_Grove.admin {
 
     protected void SavePage_Click(object sender, EventArgs e) {
       try {
-        var pageTable = (SqlDatasets.GetAllPageLocations(SessionInfo.CurrentUser.IsSuperAdmin)).Select("Description = '{0}'".FormatWith(PageLocations.Text));
+        var pageTable = (SqlDatasets.GetAllPageLocations(SessionInfo.CurrentUser.IsSuperAdmin)).Select("Description = '{0}'".FormatWith(PageLocations.Text.FixSqlString()));
         SqlHelpers.Update(SqlStatements.SQL_SAVE_PAGE_CONTENTS.FormatWith(PageDescription.Content.FixSqlString(), pageTable[0][0]));
         MessageDisplay.Text = "Page Area was Updated";
         MessageDisplay.CssClass = "successMessageDisplay";
@@ -35,7 +35,7 @@ namespace Cedar_Grove.admin {
     }
 
     protected void PageLocations_TextChanged(object sender, AutoCompleteTextEventArgs e) {
-      var searchCriteria = e.Text;
+      var searchCriteria = e.Text.FixSqlString();
       var pageTable = (SqlDatasets.GetAllPageLocations(SessionInfo.CurrentUser.IsSuperAdmin)).Select("Description = '{0}'".FormatWith(searchCriteria));
       if (pageTable.Length != 0)
         PageDescription.Content = SqlHelpers.SelectScalar(SqlStatements.SQL_GET_PAGE_CONTENTS.FormatWith(pageTable[0][0])).ToString();
