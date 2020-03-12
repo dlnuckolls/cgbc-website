@@ -123,17 +123,17 @@
         </div>
       </ContentTemplate>
     </telerik:RadWindow>
-  </telerik:RadAjaxPanel>
-  <script type="text/javascript">
-    function GetRadWindow() {
-      var oWindow = null;
-      if (window.radWindow) oWindow = window.radWindow;
-      else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
-      return oWindow;
-    }
+    <script type="text/javascript">
+      function GetRadWindow() {
+        var oWindow = null;
+        if (window.radWindow) oWindow = window.radWindow;
+        else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
+        return oWindow;
+      }
 
-    function Close() {
-      GetRadWindow().close();
-    }
-  </script>
+      function Close() {
+        GetRadWindow().close();
+      }
+    </script>
+  </telerik:RadAjaxPanel>
 </asp:Content>
