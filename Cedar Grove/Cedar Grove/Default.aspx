@@ -54,15 +54,19 @@
                   <Columns>
                     <telerik:GridTemplateColumn ShowFilterIcon="False" AllowFiltering="False" HeaderText="This Week at CGBC" AllowSorting="true" UniqueName="ComingEvents" HeaderStyle-CssClass="messageEventHeader">
                       <ItemTemplate>
-                        <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Subject") %>'></telerik:RadLabel>
+                        <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Subject") %>' />
                         <hr />
-                        <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Eval("Start", "{0:d}") %>' />
-                        <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Eval("Start", "{0:h:mm tt}") %>' />
-                        -
-                    <telerik:RadLabel ID="RadLabel4" runat="server" Text='<%# Eval("End", "{0:h:mm tt}") %>' />
+                        <span style="font-size: .8em;">
+                          <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Eval("Start", "{0:d}") %>' />
+                          <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Eval("Start", "{0:h:mm tt}") %>' />
+                          -
+                          <telerik:RadLabel ID="RadLabel4" runat="server" Text='<%# Eval("End", "{0:h:mm tt}") %>' />
+                        </span>
                         <hr />
-                        Description:
-                    <asp:Literal ID="EventLiteral1" runat="server" Text='<%# Bind("Description") %>' />
+                        <span style="font-size: .8em;">
+                          Description:
+                          <asp:Literal ID="EventLiteral1" runat="server" Text='<%# Bind("Description") %>' />
+                        </span>
                       </ItemTemplate>
                     </telerik:GridTemplateColumn>
                   </Columns>
