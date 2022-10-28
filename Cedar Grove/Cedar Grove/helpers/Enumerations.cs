@@ -80,6 +80,7 @@ namespace Cedar_Grove {
     [TextValue("CBB3ED8F-F5BF-4661-9693-7AD387050793")] HomeEventTitlePageBody,
     [TextValue("D378CB45-7391-44FA-9603-1428AED3208D")] ChildProtectionPageHeader,
     [TextValue("8CCA9FAE-E135-4DA4-8268-F53C53D967BC")] ChildProtectionPageBody,
+    [TextValue("9BD845FF-1979-4432-8B7D-7EFC9FFF8F4C")] Dashboard,
   }
 
   [CustomEnum(true)]

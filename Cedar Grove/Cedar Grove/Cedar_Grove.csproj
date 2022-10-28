@@ -67,6 +67,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.ReportViewer.Html5.WebForms, Version=16.1.22.622, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
     <Reference Include="Telerik.Web.Design, Version=2022.2.622.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCAJAX\2022.2.622.45\Telerik.Web.Design.dll</HintPath>
@@ -206,21 +207,6 @@
     <Content Include="images\Thumbnails\Penguins.jpg" />
     <Content Include="images\Thumbnails\Tulips.jpg" />
     <Content Include="images\Tulips.jpg" />
-    <Content Include="pages\AboutUs.aspx" />
-    <Content Include="pages\ByLaws.aspx" />
-    <Content Include="pages\Calendar.aspx" />
-    <Content Include="pages\ChildProtection.aspx" />
-    <Content Include="pages\ChildrensMinistry.aspx" />
-    <Content Include="pages\ContactUs.aspx" />
-    <Content Include="pages\EmbraceGrace.aspx" />
-    <Content Include="pages\EmbraceLife.aspx" />
-    <Content Include="pages\MensMinistry.aspx" />
-    <Content Include="pages\Missions.aspx" />
-    <Content Include="pages\OutreachMinistry.aspx" />
-    <Content Include="pages\Sermons.aspx" />
-    <Content Include="pages\WhatWeBelieve.aspx" />
-    <Content Include="pages\WomensMinistry.aspx" />
-    <Content Include="pages\YouthMinistry.aspx" />
     <Content Include="scripts\scripts.js" />
     <Content Include="styles\base.css" />
     <Content Include="styles\calendar.css" />
@@ -403,117 +389,12 @@
     <Compile Include="objectclass\MinistryBackground.cs" />
     <Compile Include="objectclass\SermonItem.cs" />
     <Compile Include="objectclass\StaffMember.cs" />
-    <Compile Include="pages\AboutUs.aspx.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\AboutUs.aspx.designer.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\ByLaws.aspx.cs">
-      <DependentUpon>ByLaws.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\ByLaws.aspx.designer.cs">
-      <DependentUpon>ByLaws.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\Calendar.aspx.cs">
-      <DependentUpon>Calendar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\Calendar.aspx.designer.cs">
-      <DependentUpon>Calendar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\ChildProtection.aspx.cs">
-      <DependentUpon>ChildProtection.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\ChildProtection.aspx.designer.cs">
-      <DependentUpon>ChildProtection.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\ChildrensMinistry.aspx.cs">
-      <DependentUpon>ChildrensMinistry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\ChildrensMinistry.aspx.designer.cs">
-      <DependentUpon>ChildrensMinistry.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\ContactUs.aspx.cs">
-      <DependentUpon>ContactUs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\ContactUs.aspx.designer.cs">
-      <DependentUpon>ContactUs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\EmbraceGrace.aspx.cs">
-      <DependentUpon>EmbraceGrace.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\EmbraceGrace.aspx.designer.cs">
-      <DependentUpon>EmbraceGrace.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\EmbraceLife.aspx.cs">
-      <DependentUpon>EmbraceLife.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\EmbraceLife.aspx.designer.cs">
-      <DependentUpon>EmbraceLife.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\MensMinistry.aspx.cs">
-      <DependentUpon>MensMinistry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\MensMinistry.aspx.designer.cs">
-      <DependentUpon>MensMinistry.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\Missions.aspx.cs">
-      <DependentUpon>Missions.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\Missions.aspx.designer.cs">
-      <DependentUpon>Missions.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\OutreachMinistry.aspx.cs">
-      <DependentUpon>OutreachMinistry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\OutreachMinistry.aspx.designer.cs">
-      <DependentUpon>OutreachMinistry.aspx</DependentUpon>
-    </Compile>
     <Compile Include="pages\PagesMasterPage.Master.cs">
       <DependentUpon>PagesMasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\PagesMasterPage.Master.designer.cs">
       <DependentUpon>PagesMasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="pages\Sermons.aspx.cs">
-      <DependentUpon>Sermons.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\Sermons.aspx.designer.cs">
-      <DependentUpon>Sermons.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\WhatWeBelieve.aspx.cs">
-      <DependentUpon>WhatWeBelieve.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\WhatWeBelieve.aspx.designer.cs">
-      <DependentUpon>WhatWeBelieve.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\WomensMinistry.aspx.cs">
-      <DependentUpon>WomensMinistry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\WomensMinistry.aspx.designer.cs">
-      <DependentUpon>WomensMinistry.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\YouthMinistry.aspx.cs">
-      <DependentUpon>YouthMinistry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\YouthMinistry.aspx.designer.cs">
-      <DependentUpon>YouthMinistry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -530,7 +411,6 @@
     <Content Include="web.config" />
     <Content Include="admin\AdminMasterPage.Master" />
     <Content Include="pages\PagesMasterPage.Master" />
-    <Content Include="podcast\uploads\.gitignore" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -562,7 +442,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

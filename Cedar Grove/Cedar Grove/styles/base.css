@@ -114,7 +114,15 @@ h6 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: midnightblue !important;
   margin: auto;
-  padding: 15px 0px 5px 5px;
+  padding: 5px 0px 5px 5px;
+}
+
+.pageHeaderTitle h4 {
+  font-size: .75em !important;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: midnightblue !important;
+  margin: auto;
+  padding: 2px 0px 5px 5px;
 }
 
 .pageHeaderTitle img {

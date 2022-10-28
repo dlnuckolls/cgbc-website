@@ -12,24 +12,6 @@ namespace Cedar_Grove {
     protected void Application_Start(object sender, EventArgs e) { RegisterRoutes(RouteTable.Routes); }
 
     static void RegisterRoutes(RouteCollection routes) {
-      // Normal Pages
-      routes.MapPageRoute("AboutUsPage", "aboutus", "~/pages/AboutUs.aspx");
-      routes.MapPageRoute("ByLawsPage", "bylaws", "~/pages/ByLaws.aspx");
-      routes.MapPageRoute("CalendarPage", "calendar", "~/pages/Calendar.aspx");
-      routes.MapPageRoute("ChildProtectionPage", "childprotection", "~/pages/ChildProtection.aspx");
-      routes.MapPageRoute("ChildrensMinistryPage", "childrens", "~/pages/ChildrensMinistry.aspx");
-      routes.MapPageRoute("ContactUsPage", "contactus", "~/pages/ContactUs.aspx");
-      routes.MapPageRoute("MensMinistryPage", "mens", "~/pages/MensMinistry.aspx");
-      routes.MapPageRoute("MissionsPage", "missions", "~/pages/Missions.aspx");
-      routes.MapPageRoute("OutreachMinistryPage", "outreach", "~/pages/OutreachMinistry.aspx");
-      routes.MapPageRoute("SermonsPage", "sermons", "~/pages/Sermons.aspx");
-      routes.MapPageRoute("WhatWeBelievePage", "whatwebelieve", "~/pages/WhatWeBelieve.aspx");
-      routes.MapPageRoute("WomensMinistryPage", "womens", "~/pages/WomensMinistry.aspx");
-      routes.MapPageRoute("EmbraceGracePage", "embracegrace", "~/pages/EmbraceGrace.aspx");
-      routes.MapPageRoute("EmbraceLifePage", "embracelife", "~/pages/EmbraceLife.aspx");
-      routes.MapPageRoute("YouthMinistryPage", "youth", "~/pages/YouthMinistry.aspx");
-      // Feeds
-      routes.MapPageRoute("SermonRssFeed", "rssfeed", "~/feeds/Rss.aspx");
       // Admin Pages
       routes.MapPageRoute("AdminDashboard", "admin/dashboard", "~/admin/default.aspx");
       routes.MapPageRoute("AdminLogin", "login", "~/admin/Login.aspx");
