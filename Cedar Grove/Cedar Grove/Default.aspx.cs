@@ -12,7 +12,6 @@ namespace Cedar_Grove {
     protected void Page_Load(object sender, EventArgs e) {
       SessionInfo.CurrentPage = PageNames.Home;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
-      HomeTop.Text = SessionInfo.PageContent(PageContentBlocks.Dashboard);
     }
   }
 }
