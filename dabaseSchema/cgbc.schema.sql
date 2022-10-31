@@ -620,10 +620,80 @@ BEGIN
   COMMIT TRANSACTION Version1_21
 END
 
-/* 
+SELECT @majorVersion = 2, @minorVersion = 0;
+IF NOT EXISTS(SELECT * FROM dbo.SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version2_0
+    CREATE TABLE dbo.MemberMessages (
+	    [Id]           INT              NOT NULL IDENTITY(1,1),
+	    [Title]        VARCHAR(100)     NOT NULL,
+	    [Description]  VARCHAR(8000)        NULL,
+	    [Expiry]       DATETIME             NULL
+    ) ON [PRIMARY];
 
-D378CB45-7391-44FA-9603-1428AED3208D
-8CCA9FAE-E135-4DA4-8268-F53C53D967BC
+    INSERT INTO dbo.SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version2_0
+END
+
+SELECT @majorVersion = 2, @minorVersion = 1;
+IF NOT EXISTS(SELECT * FROM dbo.SchemaVersion WHERE (MajorVersion = @majorVersion) AND (MinorVersion = @minorVersion))
+BEGIN
+  BEGIN TRANSACTION Version2_1
+    CREATE TABLE dbo.ChurchMembers (
+      [Id]           UNIQUEIDENTIFIER NOT NULL,
+      [FirstName]    VARCHAR(100)     NOT NULL, 
+      [LastName]     VARCHAR(100)     NOT NULL, 
+      [Title]        UNIQUEIDENTIFIER NOT NULL,
+      [Bio]          VARCHAR(200)         NULL,
+      [ImageUrl]     VARCHAR(256)         NULL,
+      CONSTRAINT [PK_ChurchMembers] PRIMARY KEY CLUSTERED (
+        [Id] ASC
+      ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE dbo.ChurchMembers ADD CONSTRAINT [DF_ChurchMembers_Id]  DEFAULT (NEWID()) FOR [Id];
+
+    CREATE TABLE dbo.ChurchMemberRoles (
+      [Id]           UNIQUEIDENTIFIER NOT NULL,
+      [Title]        VARCHAR(100)     NOT NULL, 
+      [Description]  VARCHAR(200)         NULL,
+      [Staff]        BIT              NOT NULL,
+      CONSTRAINT [PK_ChurchMemberRoles] PRIMARY KEY CLUSTERED (
+        [Id] ASC
+      ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE dbo.ChurchMemberRoles ADD 
+	  CONSTRAINT [DF_ChurchMemberRoles_Id] DEFAULT (NEWID()) FOR [Id],
+	  CONSTRAINT [DF_ChurchMemberRoles_Staff] DEFAULT 1 FOR [Staff];
+
+    INSERT INTO dbo.ChurchMemberRoles (Title, Description, Staff) VALUES ('Pastor','Lead Pastor / Church Elder', 1);
+    INSERT INTO dbo.ChurchMemberRoles (Title, Description, Staff) VALUES ('Elder','Church Elder', 1);
+    INSERT INTO dbo.ChurchMemberRoles (Title, Description, Staff) VALUES ('Head Deacon','Head Deacon', 1);
+    INSERT INTO dbo.ChurchMemberRoles (Title, Description, Staff) VALUES ('Deacon','Deacon', 1);
+    INSERT INTO dbo.ChurchMemberRoles (Title, Description, Staff) VALUES ('Leadership','Other leadership positions', 1);
+    INSERT INTO dbo.ChurchMemberRoles (Title, Description, Staff) VALUES ('Member','Member', 0);
+
+    CREATE TABLE dbo.ChurchMemberAddress (
+      [Id]           UNIQUEIDENTIFIER NOT NULL,
+      [Address1]     VARCHAR(200)     NOT NULL, 
+      [Address2]     VARCHAR(200)         NULL, 
+      [City]         VARCHAR(200)         NULL,
+      [State]        INT              NOT NULL,
+      [ZipCode]      INT                  NULL,
+      [ZipExt]       INT                  NULL,
+      CONSTRAINT [PK_ChurchMemberAddress] PRIMARY KEY CLUSTERED (
+        [Id] ASC
+      ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY];
+
+    ALTER TABLE dbo.ChurchMemberAddress ADD  CONSTRAINT [DF_ChurchMemberAddress_Id]  DEFAULT (NEWID()) FOR [Id];
+
+    INSERT INTO dbo.SchemaVersion values (newid(), @majorVersion, @minorVersion, getutcdate());
+  COMMIT TRANSACTION Version2_1
+END
+
+/* 
 
   Use this model to create database changes
   Just change NEWVERSION to the next number in the sequence

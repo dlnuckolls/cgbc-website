@@ -4,26 +4,25 @@ using System.Linq;
 using System.Web;
 
 namespace Cedar_Grove.objectclass {
-  public class StaffMember {
-    public string Id { get; set; }
-    public string Name { get; set; }
-    public string Title { get; set; }
-    public string Bio { get; set; }
-    public string ImageUrl { get; set; }
-    public string EmailAddress { get; set; }
-    public int DisplayOrder { get; set; }
+  public class ChurchMember {
+    public string Id;
+    public string FirstName;
+    public string LastName;
+    public string DisplayName;
+    public string Title;
+    public string Bio;
+    public string ImageUrl;
+    public string EmailAddress;
 
-    public StaffMember() { }
+    public ChurchMember() { }
 
-    public StaffMember(string id) {
+    public ChurchMember(string id) {
       var dataRow = SqlHelpers.Select(SqlStatements.SQL_GET_STAFF_MEMBER_BY_ID.FormatWith(id)).Rows[0];
       Id = dataRow["Id"].ToString();
       Name = dataRow["Name"].ToString();
       Title = dataRow["Title"].ToString();
       Bio = dataRow["Bio"].ToString();
       ImageUrl = dataRow["ImageUrl"].ToString();
-      EmailAddress = dataRow["EmailAddress"].ToString();
-      DisplayOrder = dataRow["DisplayOrder"].ToString().GetInt32();
     }
 
     public void SaveStaffMember() {

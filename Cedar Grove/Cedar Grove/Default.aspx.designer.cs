@@ -49,13 +49,22 @@ namespace Cedar_Grove {
     protected global::Telerik.Web.UI.RadPageLayout RadPageLayout2;
 
     /// <summary>
-    /// UpcomingEvents control.
+    /// MemberMessages control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadListView UpcomingEvents;
+    protected global::Telerik.Web.UI.RadListView MemberMessages;
+
+    /// <summary>
+    /// MemberList control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadListView MemberList;
 
     /// <summary>
     /// EventsList control.
@@ -76,31 +85,22 @@ namespace Cedar_Grove {
     protected global::Telerik.Web.UI.RadWindow modalPopup;
 
     /// <summary>
-    /// EventTitle control.
+    /// MessageTitle control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadLabel EventTitle;
+    protected global::Telerik.Web.UI.RadLabel MessageTitle;
 
     /// <summary>
-    /// EventDate control.
+    /// MessageDescription control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::Telerik.Web.UI.RadLabel EventDate;
-
-    /// <summary>
-    /// EventDescription control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal EventDescription;
+    protected global::System.Web.UI.WebControls.Literal MessageDescription;
 
     /// <summary>
     /// btnClose control.

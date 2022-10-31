@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Cedar_Grove {
+﻿namespace Cedar_Grove {
   public static class SqlStatements {
     private const string USER = "a7107c8f-ff15-4d5a-bba1-6db286fcef0a";
     private const string ADMIN = "b6522703-8844-4cff-8fc1-916ba90f515b";
@@ -47,6 +42,14 @@ namespace Cedar_Grove {
     public const string SQL_INSERT_PAGE_GALLERY_IMAGE = "INSERT INTO dbo.GalleryImages ([PageLocation], [ImageUrl], [Description], [Title], [Active], [Created]) VALUES ('{0}', '{1}', '{2}', '{3}', 1, GETDATE());";
     public const string SQL_UPDATE_PAGE_GALLERY_IMAGE = "UPDATE dbo.GalleryImages SET [PageLocation] = '{0}', [ImageUrl] = '{1}', [Description] = '{2}', [Title] = '{3}' WHERE [Id] = '{4}';";
     public const string SQL_DELETE_PAGE_GALLERY_IMAGE = "DELETE dbo.GalleryImages WHERE [Id] = '{0}';";
+
+    public const string SQL_READ_MEMBER_MESSAGES = "SELECT [Id], [Title], [Description], CONVERT(VARCHAR, [Expiry], 107) [Expiry] FROM dbo.MemberMessages WHERE ([Expiry] > GETDATE()) OR [Expiry] IS NULL ORDER BY [Expiry] DESC;";
+    public const string SQL_GET_MEMBER_MESSAGES_BY_ID = "SELECT [Id],[Title],[Description], CONVERT(VARCHAR, [Expiry], 107) [Expiry] FROM dbo.MemberMessages WHERE [Id] = '{0}';";
+    public const string SQL_INSERT_MEMBER_MESSAGES = "INSERT INTO [dbo].[MemberMessages] ([Title],[Description],[Expiry]) VALUES ('{0}', '{1}', {2});";
+    public const string SQL_UPDATE_MEMBER_MESSAGES = "UPDATE [dbo].[MemberMessages] SET [Title] = '{0}', [Description] = '{1}', [Expiry] = {2} WHERE [Id] = '{3}';";
+    public const string SQL_DELETE_MEMBER_MESSAGES = "UPDATE [dbo].[MemberMessages] SET [Expiry] = '2000-01-01' WHERE [Id] = '{0}';";
+
+    public const string SQL_READ_CHURCH_MEMBERS = "SELECT cm.Id, cm.FirstName, cm.LastName, cm.FirstName + ' ' + cm.LastName AS DisplayName, cmr.Title, cm.Bio, cm.ImageUrl FROM dbo.ChurchMembers cm INNER JOIN dbo.ChurchMemberRoles cmr ON cmr.Id = cm.Title ORDER BY cmr.DisplayOrder, cm.LastName";
 
     // Events Management
     public const string SQL_READ_EVENTS = "SELECT [Id], [Title], [Description], CONVERT(VARCHAR, [EventDate], 107) [EventDate], CONVERT(VARCHAR, [EventEnd], 107) [EventEnd] FROM dbo.UpcomingEvents WHERE [EventEnd] > GETDATE() ORDER BY [EventDate] DESC;";

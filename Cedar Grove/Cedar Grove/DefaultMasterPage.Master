@@ -52,7 +52,6 @@
                 <%--Sidebar Left--%>
                 <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
                 </telerik:LayoutColumn>
-
                 <%--Content--%>
                 <telerik:CompositeLayoutColumn Span="10" SpanMd="12" SpanSm="12" SpanXs="12">
                   <Content>
