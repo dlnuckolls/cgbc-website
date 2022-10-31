@@ -1,4 +1,4 @@
-﻿a:A:A
+a:A:A
 b:P:P
 c:K:K
 d:T:T
@@ -2220,7 +2220,7 @@ bahut:PHT:PHT
 baies:PS:PS
 bains:PNS:PNS
 balai:PL:PL
-balle:PL:PL 
+balle:PL:PL
 banal:PNL:PNL
 banco:PNK:PNK
 bancs:PNKS:PNKS
@@ -2796,7 +2796,7 @@ dadas:TTS:TTS
 dague:TK:TK
 daims:TMS:TMS
 dalla:TL:TL
-dalle:TL:TL 
+dalle:TL:TL
 dallé:TL:TL
 damer:TMR:TMR
 dames:TMS:TMS
@@ -3629,7 +3629,7 @@ haler:HLR:HLR
 hâler:LR:LR
 hâles:LS:LS
 hâlés:LS:LS
-halle:HL:HL 
+halle:HL:HL
 halls:HLS:HLS
 halos:HLS:HLS
 halte:HLT:HLT
@@ -4090,7 +4090,7 @@ maire:MR:MR
 major:MJR:MHR
 mâles:MLS:MLS
 malin:MLN:MLN
-malle:ML:ML 
+malle:ML:ML
 malus:MLS:MLS
 maman:MMN:MMN
 manda:MNT:MNT
@@ -4701,7 +4701,7 @@ piler:PLR:PLR
 piles:PLS:PLS
 pilés:PLS:PLS
 pilez:PLS:PLS
-pilla:PL:PL 
+pilla:PL:PL
 pille:PL:PL
 pillé:PL:PL
 pilon:PLN:PLN
@@ -5205,7 +5205,7 @@ salin:SLN:SLN
 salir:SLR:SLR
 salis:SLS:SLS
 salit:SLT:SLT
-salle:SL:SL 
+salle:SL:SL
 salon:SLN:SLN
 salua:SL:SL
 salue:SL:SL
@@ -5855,7 +5855,7 @@ vieux:FKS:FKS
 vigie:FJ:FK
 vigne:FN:FKN
 viles:FLS:FLS
-villa:FL:FL 
+villa:FL:FL
 ville:FL:FL
 viner:FNR:FNR
 vingt:FNKT:FNKT
@@ -6623,7 +6623,7 @@ bahuts:PHTS:PHTS
 baigna:PN:PKN
 baigne:PN:PKN
 baigné:PN:PKN
-bâilla:PL:PL 
+bâilla:PL:PL
 bâille:PL:PL
 bâillé:PL:PL
 baiser:PSR:PSR
@@ -7029,7 +7029,7 @@ bridge:PRJ:PRJ
 brigua:PRK:PRK
 brigue:PRK:PRK
 brigué:PRK:PRK
-brilla:PRL:PRL 
+brilla:PRL:PRL
 brille:PRL:PRL
 brillé:PRL:PRL
 brimée:PRM:PRM
@@ -7169,7 +7169,7 @@ cahote:KHT:KHT
 cahoté:KHT:KHT
 cahots:KHTS:KHTS
 cahute:KHT:KHT
-cailla:KL:KL 
+cailla:KL:KL
 caille:KL:KL
 caillé:KL:KL
 caisse:KS:KS
@@ -9917,7 +9917,7 @@ griffé:KRF:KRF
 griffu:KRF:KRF
 grigou:KRK:KRK
 grigri:KRKR:KRKR
-grilla:KRL:KRL 
+grilla:KRL:KRL
 grille:KRL:KRL
 grillé:KRL:KRL
 grimée:KRM:KRM
@@ -12507,7 +12507,7 @@ raidis:RTS:RTS
 raidit:RTT:RTT
 raient:RNT:RNT
 raiera:RR:RR
-railla:RL:RL 
+railla:RL:RL
 raille:RL:RL
 raillé:RL:RL
 rainer:RNR:RNR
@@ -13607,7 +13607,7 @@ stages:STJS:STKS
 stagna:STN:STKN
 stagne:STN:STKN
 stagné:STN:STKN
-stalle:STL:STL 
+stalle:STL:STL
 stance:STNS:STNS
 stands:STNT:STNT
 statif:STTF:STTF
@@ -13737,7 +13737,7 @@ tâchez:TXS:TKS
 tacite:TST:TST
 taďgas:TKS:TKS
 taenia:TN:TN
-tailla:TL:TL 
+tailla:TL:TL
 taille:TL:TL
 taillé:TL:TL
 tairai:TR:TR
@@ -14307,7 +14307,7 @@ vécues:FKS:FKS
 végéta:FKT:FKT
 végété:FKT:FKT
 végète:FKT:FKT
-veilla:FL:FL 
+veilla:FL:FL
 veille:FL:FL
 veillé:FL:FL
 veinée:FN:FN
@@ -14573,7 +14573,7 @@ voyiez:FS:FS
 voyons:FNS:FNS
 voyous:FS:FS
 vraies:FRS:FRS
-vrilla:FRL:FRL 
+vrilla:FRL:FRL
 vrille:FRL:FRL
 vrillé:FRL:FRL
 vulves:FLFS:FLFS
@@ -17876,7 +17876,7 @@ dauphin:TFN:TFN
 daurade:TRT:TRT
 débâcle:TPKL:TPKL
 déballa:TPL:TPL
-déballe:TPL:TPL 
+déballe:TPL:TPL
 déballé:TPL:TPL
 débanda:TPNT:TPNT
 débande:TPNT:TPNT
@@ -19122,7 +19122,7 @@ effrité:AFRT:AFRT
 effrois:AFR:AFRS
 égaient:KNT:KNT
 égaiera:KR:KR
-égailla:KL:KL 
+égailla:KL:KL
 égaille:KL:KL
 égaillé:KL:KL
 égalais:KL:KLS
@@ -19251,7 +19251,7 @@ ellipse:ALPS:ALPS
 émaciée:MS:MS
 émacier:MS:MXR
 émaciés:MSS:MSS
-émailla:ML:ML 
+émailla:ML:ML
 émaille:ML:ML
 émaillé:ML:ML
 émanait:MNT:MNT
@@ -20062,7 +20062,7 @@ eunuque:ANK:ANK
 évasion:FSN:FXN
 évasive:FSF:FSF
 évêchés:FXS:FKS
-éveilla:FL:FL 
+éveilla:FL:FL
 éveille:FL:FL
 éveillé:FL:FL
 éventée:FNT:FNT
@@ -20757,7 +20757,7 @@ fouette:FT:FT
 fouetté:FT:FT
 fougère:FKR:FKR
 fougues:FKS:FKS
-fouilla:FL:FL 
+fouilla:FL:FL
 fouille:FL:FL
 fouillé:FL:FL
 fouiner:FNR:FNR
@@ -20962,7 +20962,7 @@ fuselée:FSL:FSL
 fuseler:FSLR:FSLR
 fuselés:FSLS:FSLS
 fusible:FSPL:FSPL
-fusilla:FSL:FSL 
+fusilla:FSL:FSL
 fusille:FSL:FSL
 fusillé:FSL:FSL
 fusions:FSNS:FXNS
@@ -21516,7 +21516,7 @@ gymnase:KMNS:JMNS
 gymnote:KMNT:JMNT
 gypaète:KPT:JPT
 habiles:HPLS:HPLS
-habilla:HPL:HPL 
+habilla:HPL:HPL
 habille:HPL:HPL
 habillé:HPL:HPL
 habitat:HPTT:HPTT
@@ -23364,7 +23364,7 @@ mouette:MT:MT
 moufles:MFLS:MFLS
 mouflon:MFLN:MFLN
 moufter:MFTR:MFTR
-mouilla:ML:ML 
+mouilla:ML:ML
 mouille:ML:ML
 mouillé:ML:ML
 moulage:MLJ:MLK
@@ -23916,7 +23916,7 @@ orphéon:ARFN:ARFN
 orteils:ARTL:ARTL
 ortolan:ARTL:ARTL
 osaient:ASNT:ASNT
-oscilla:ASL:ASL 
+oscilla:ASL:ASL
 oscille:ASL:ASL
 oscillé:ASL:ASL
 oseille:ASL:ASL
@@ -24437,7 +24437,7 @@ pestiez:PSTS:PSTS
 pestons:PSTN:PSTN
 pétales:PTLS:PTLS
 pétards:PTRT:PTRT
-pétilla:PTL:PTL 
+pétilla:PTL:PTL
 pétille:PTL:PTL
 pétillé:PTL:PTL
 pétiole:PTL:PTL
@@ -26381,7 +26381,7 @@ rougets:RKTS:RKTS
 rougeur:RJR:RKR
 rougies:RJS:RKS
 rougira:RJR:RKR
-rouilla:RL:RL 
+rouilla:RL:RL
 rouille:RL:RL
 rouillé:RL:RL
 roulade:RLT:RLT
@@ -28110,7 +28110,7 @@ vacciné:FXN:FXN
 vaccins:FXNS:FXNS
 vachère:FKR:FKR
 vachers:FXRS:FKRS
-vacilla:FSL:FSL 
+vacilla:FSL:FSL
 vacille:FSL:FSL
 vacillé:FSL:FSL
 vacuité:FKT:FKT
@@ -29162,7 +29162,7 @@ aigrirai:AKRR:AKRR
 aigriras:AKRR:AKRR
 aigrirez:AKRR:AKRR
 aigrisse:AKRS:AKRS
-aiguilla:AKL:AKL 
+aiguilla:AKL:AKL
 aiguille:AKL:AKL
 aiguillé:AKL:AKL
 aiguisée:AKS:AKS
@@ -30963,7 +30963,7 @@ brossiez:PRSS:PRSS
 brossons:PRSN:PRSN
 brouette:PRT:PRT
 brouhaha:PRHH:PRHH
-brouilla:PRL:PRL 
+brouilla:PRL:PRL
 brouille:PRL:PRL
 brouillé:PRL:PRL
 broutais:PRT:PRTS
@@ -31704,7 +31704,7 @@ cirerons:SRRN:SRRN
 cireront:SRRN:SRRN
 cireuses:SRSS:SRSS
 cirrhose:SRS:SRS
-cisailla:SSL:SSL 
+cisailla:SSL:SSL
 cisaille:SSL:SSL
 cisaillé:SSL:SSL
 ciselais:SSL:SSLS
@@ -33872,7 +33872,7 @@ déracina:TRSN:TRSN
 déracine:TRSN:TRSN
 déraciné:TRSN:TRSN
 déraidir:TRTR:TRTR
-dérailla:TRL:TRL 
+dérailla:TRL:TRL
 déraille:TRL:TRL
 déraillé:TRL:TRL
 déraison:TRSN:TRSN
@@ -34049,7 +34049,7 @@ détacher:TTXR:TTKR
 détaches:TTXS:TTKS
 détachés:TTKS:TTKS
 détachez:TTXS:TTKS
-détailla:TTL:TTL 
+détailla:TTL:TTL
 détaille:TTL:TTL
 détaillé:TTL:TTL
 détartra:TTRT:TTRT
@@ -38127,7 +38127,7 @@ grosseur:KRSR:KRSR
 grossier:KRS:KRSR
 grossies:KRSS:KRSS
 grossira:KRSR:KRSR
-grouilla:KRL:KRL 
+grouilla:KRL:KRL
 grouille:KRL:KRL
 grouillé:KRL:KRL
 groupage:KRPJ:KRPK
@@ -38147,7 +38147,7 @@ guenille:KNL:KNL
 guépards:KPRT:KPRT
 guêpiers:KPRS:KPRS
 guéridon:KRTN:KRTN
-guérilla:KRL:KRL 
+guérilla:KRL:KRL
 guérirai:KRR:KRR
 guériras:KRRS:KRRS
 guérirez:KRRS:KRRS
@@ -40014,7 +40014,7 @@ manucure:MNKR:MNKR
 manuelle:MNL:MNL
 maoďstes:MSTS:MSTS
 maquette:MKT:MKT
-maquilla:MKL:MKL 
+maquilla:MKL:MKL
 maquille:MKL:MKL
 maquillé:MKL:MKL
 marabout:MRPT:MRPT
@@ -44772,7 +44772,7 @@ rêvassez:RFSS:RFSS
 revaudra:RFTR:RFTR
 revêches:RFXS:RFKS
 revécues:RFKS:RFKS
-réveilla:RFL:RFL 
+réveilla:RFL:RFL
 réveille:RFL:RFL
 réveillé:RFL:RFL
 révélais:RFL:RFLS
@@ -44884,7 +44884,7 @@ révulser:RFLS:RFLS
 révulsés:RFLS:RFLS
 révulsif:RFLS:RFLS
 rewriter:RRTR:RRTR
-rhabilla:RPL:RPL 
+rhabilla:RPL:RPL
 rhabille:RPL:RPL
 rhabillé:RPL:RPL
 rhéostat:RSTT:RSTT
@@ -45311,7 +45311,7 @@ sauteras:STRS:STRS
 sauterez:STRS:STRS
 sauterie:STR:STR
 sauteurs:STRS:STRS
-sautilla:STL:STL 
+sautilla:STL:STL
 sautille:STL:STL
 sautillé:STL:STL
 sautions:SXNS:SXNS
@@ -46518,7 +46518,7 @@ temporel:TMPR:TMPR
 tenables:TNPL:TNPL
 ténacité:TNST:TNST
 tenaient:TNNT:TNNT
-tenailla:TNL:TNL 
+tenailla:TNL:TNL
 tenaille:TNL:TNL
 tenaillé:TNL:TNL
 tenantes:TNNT:TNNT
@@ -49591,7 +49591,7 @@ badminton:PTMN:PTMN
 bafouerai:PFR:PFR
 bafoueras:PFRS:PFRS
 bafouerez:PFRS:PFRS
-bafouilla:PFL:PFL 
+bafouilla:PFL:PFL
 bafouille:PFL:PFL
 bafouillé:PFL:PFL
 bafouions:PFNS:PFNS
@@ -52552,7 +52552,7 @@ déballait:TPLT:TPLT
 déballant:TPLN:TPLN
 déballées:TPLS:TPLS
 déballent:TPLN:TPLN
-déballera:TPLR:TPL 
+déballera:TPLR:TPL
 déballiez:TPLS:TPLS
 déballons:TPLN:TPLN
 débandade:TPNT:TPNT
@@ -53782,7 +53782,7 @@ déposséda:TPST:TPST
 dépossédé:TPST:TPST
 dépossède:TPST:TPST
 dépotoirs:TPTR:TPTR
-dépouilla:TPL:TPL 
+dépouilla:TPL:TPL
 dépouille:TPL:TPL
 dépouillé:TPL:TPL
 dépourvue:TPRF:TPRF
@@ -67013,7 +67013,7 @@ sombrions:SMPR:SMPR
 sommaient:SMNT:SMNT
 sommaires:SMRS:SMRS
 sommation:SMXN:SMXN
-sommeilla:SML:SML 
+sommeilla:SML:SML
 sommeille:SML:SML
 sommeillé:SML:SML
 sommelier:SML:SMLR
@@ -89932,7 +89932,7 @@ vernissiez:FRNS:FRNS
 vernissons:FRNS:FRNS
 véroniques:FRNK:FRNK
 verroterie:FRTR:FRTR
-verrouilla:FRL:FRL 
+verrouilla:FRL:FRL
 verrouille:FRL:FRL
 verrouillé:FRL:FRL
 versatiles:FRST:FRST

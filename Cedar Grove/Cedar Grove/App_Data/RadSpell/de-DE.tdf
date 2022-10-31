@@ -1,4 +1,4 @@
-﻿a:A:A
+a:A:A
 l:L:L
 m:M:M
 s:S:S
@@ -125,7 +125,7 @@ Na:N:N
 Nb:NP:NP
 Nd:NT:NT
 Ni:N:N
-NJ:NJ:N 
+NJ:NJ:N
 nm:NM:NM
 No:N:N
 Np:NP:NP
@@ -688,7 +688,7 @@ Akts:AKTS:AKTS
 akut:AKT:AKT
 Alex:ALKS:ALKS
 Alge:ALJ:ALK
-alle:AL:AL 
+alle:AL:AL
 allg:ALK:ALK
 Alls:ALS:ALS
 also:ALS:ALS
@@ -2943,8 +2943,8 @@ Fahrt:FRT:FRT
 fährt:FRT:FRT
 falbe:FLP:FLP
 Falke:FLK:FLK
-falle:FL:FL 
-Falle:FL:FL 
+falle:FL:FL
+Falle:FL:FL
 Fälle:FL:FL
 falls:FLS:FLS
 fällt:FLT:FLT
@@ -3131,7 +3131,7 @@ gafft:KFT:KFT
 Gagen:KJN:KKN
 gähne:KN:KN
 gähnt:KNT:KNT
-Galle:KL:KL 
+Galle:KL:KL
 Gämse:KMS:KMS
 Gänge:KNJ:KNK
 Gangs:KNKS:KNKS
@@ -3311,7 +3311,7 @@ häkle:KL:KL
 hakte:HKT:HKT
 halbe:HLP:HLP
 Halde:HLT:HLT
-Halle:HL:HL 
+Halle:HL:HL
 hallo:HL:HL
 Hallo:HL:HL
 hallt:HLT:HLT
@@ -5356,7 +5356,7 @@ Video:FT:FT
 viele:FL:FL
 viert:FRT:FRT
 Vikar:FKR:FKR
-Villa:FL:FL 
+Villa:FL:FL
 Viola:FL:FL
 Viper:FPR:FPR
 Viren:FRN:FRN
@@ -5401,7 +5401,7 @@ währt:RT:RT
 Waise:AS:FS
 Walde:ALT:FLT
 Wales:ALS:FLS
-walle:AL:FL 
+walle:AL:FL
 Wälle:L:L
 Walls:ALS:FLS
 wallt:ALT:FLT
@@ -6737,7 +6737,7 @@ Dozent:TSNT:TSNT
 Drache:TRX:TRK
 Dragee:TRJ:TRK
 Drähte:TRT:TRT
-dralle:TRL:TRL 
+dralle:TRL:TRL
 Dramas:TRMS:TRMS
 Dramen:TRMN:TRMN
 dränge:TRNJ:TRNK
@@ -8617,8 +8617,8 @@ Kragen:KRJN:KRKN
 Krägen:KRJN:KRKN
 krähen:KRN:KRN
 Krakau:KRK:KRK
-kralle:KRL:KRL 
-Kralle:KRL:KRL 
+kralle:KRL:KRL
+Kralle:KRL:KRL
 kramen:KRMN:KRMN
 Kramer:KRMR:KRMR
 Krämer:KRMR:KRMR
@@ -9780,7 +9780,7 @@ Quader:KTR:KTR
 Quäker:KKR:KKR
 quälen:KLN:KLN
 Quäler:KLR:KLR
-Qualle:KL:KL 
+Qualle:KL:KL
 qualmt:KLMT:KLMT
 quälst:KLST:KLST
 quälte:KLT:KLT
@@ -14544,7 +14544,7 @@ geendet:JNTT:KNTT
 geerbte:JRPT:KRPT
 geerdet:JRTT:KRTT
 Gefährt:JFRT:KFRT
-gefalle:JFL:KFL 
+gefalle:JFL:KFL
 Gefälle:JFL:KFL
 gefällt:JFLT:KFLT
 gefärbt:JFRP:KFRP
@@ -15089,7 +15089,7 @@ goldnen:KLTN:KLTN
 Gomulka:KMLK:KMLK
 Gönnern:KNRN:KNRN
 Gönners:KNRS:KNRS
-Gorilla:KRL:KRL 
+Gorilla:KRL:KRL
 gossest:KSST:KSST
 gotisch:KTX:KTX
 Göttern:KTRN:KTRN
@@ -16044,7 +16044,7 @@ koppele:KPL:KPL
 koppeln:KPLN:KPLN
 koppelt:KPLT:KPLT
 Koppler:KPLR:KPLR
-Koralle:KRL:KRL 
+Koralle:KRL:KRL
 Kordeln:KRTL:KRTL
 Korinth:KRN0:KRNT
 Korkens:KRKN:KRKN
@@ -16648,7 +16648,7 @@ Messina:MSN:MSN
 Messing:MSNK:MSNK
 Messort:MSRT:MSRT
 Messung:MSNK:MSNK
-Metalle:MTL:MTL 
+Metalle:MTL:MTL
 Metalls:MTLS:MTLS
 Meteore:MTR:MTR
 Meteors:MTRS:MTRS
@@ -17912,7 +17912,7 @@ schalen:XLN:XLN
 Schalen:XLN:XLN
 schälen:XLN:SLN
 schaler:XLR:XLR
-schalle:XL:XL 
+schalle:XL:XL
 Schälle:XL:SL
 Schalls:XLS:XLS
 schallt:XLT:XLT
@@ -26515,7 +26515,7 @@ kratztet:KRTS:KRTS
 kraulten:KRLT:KRLT
 kraultet:KRLT:KRLT
 Kräutern:KRTR:KRTR
-Krawalle:KRL:KRL 
+Krawalle:KRL:KRL
 Krawalls:KRLS:KRLS
 Krawatte:KRT:KRT
 Kreation:KRXN:KRXN
@@ -28838,7 +28838,7 @@ schmutze:XMTS:SMTS
 schmutzt:XMTS:SMTS
 Schnabel:XNPL:SNPL
 Schnäbel:XNPL:SNPL
-schnalle:XNL:SNL 
+schnalle:XNL:SNL
 schnallt:XNLT:SNLT
 schnalze:XNLS:SNLS
 schnalzt:XNLS:SNLS
