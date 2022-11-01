@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace Cedar_Grove.objectclass {
   public class ChurchMember {
@@ -12,7 +9,8 @@ namespace Cedar_Grove.objectclass {
     public string Title;
     public string Bio;
     public string ImageUrl;
-    public string EmailAddress;
+    public List<EmailAddress> EmailAddresses;
+    public List<Address> Addresses;
 
     public ChurchMember() { }
 

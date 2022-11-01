@@ -393,6 +393,8 @@
     <Compile Include="DefaultMasterPage.Master.designer.cs">
       <DependentUpon>DefaultMasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="objectclass\EmailAddress.cs" />
+    <Compile Include="objectclass\Address.cs" />
     <Compile Include="objectclass\MessageItem.cs" />
     <Compile Include="objectclass\EventItem.cs" />
     <Compile Include="objectclass\GalleryImage.cs" />

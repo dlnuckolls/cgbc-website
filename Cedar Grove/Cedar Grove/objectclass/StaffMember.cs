@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Cedar_Grove.objectclass {
+﻿namespace Cedar_Grove.objectclass {
   public class StaffMember {
     public string Id { get; set; }
     public string Name { get; set; }
