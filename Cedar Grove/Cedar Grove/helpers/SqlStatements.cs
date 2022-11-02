@@ -49,7 +49,10 @@
     public const string SQL_UPDATE_MEMBER_MESSAGES = "UPDATE [dbo].[MemberMessages] SET [Title] = '{0}', [Description] = '{1}', [Expiry] = {2} WHERE [Id] = '{3}';";
     public const string SQL_DELETE_MEMBER_MESSAGES = "UPDATE [dbo].[MemberMessages] SET [Expiry] = '2000-01-01' WHERE [Id] = '{0}';";
 
-    public const string SQL_READ_CHURCH_MEMBERS = "SELECT cm.Id, cm.FirstName, cm.LastName, cm.FirstName + ' ' + cm.LastName AS DisplayName, cmr.Title, cm.Bio, cm.ImageUrl FROM dbo.ChurchMembers cm INNER JOIN dbo.ChurchMemberRoles cmr ON cmr.Id = cm.Title ORDER BY cmr.DisplayOrder, cm.LastName";
+    public const string SQL_READ_CHURCH_MEMBERS = "SELECT CONVERT(VARCHAR(50),cm.Id) 'Id', cm.FirstName, cm.LastName, cm.FirstName + ' ' + cm.LastName AS DisplayName, cmr.Title, cm.Bio, cm.ImageUrl FROM dbo.ChurchMembers cm INNER JOIN dbo.ChurchMemberRoles cmr ON cmr.Id = cm.Title ORDER BY cmr.DisplayOrder, cm.LastName";
+    public const string SQL_READ_CHURCH_MEMBER_ADDRESSES = "SELECT CONVERT(VARCHAR(50),cma.Id) 'Id', cma.Address1, cma.Address2, cma.City, cma.[State] 'StateId', s.[State], s.Abbreviation, cma.ZipCode, cma.ZipExt, cma.[Primary] FROM dbo.ChurchMemberAddress cma INNER JOIN dbo.ChurchMemberAddress_XRef cmax ON cmax.AddressId = cma.Id INNER JOIN dbo.States s ON cma.[State] = s.Id WHERE cmax.MemberId = '{0}' ORDER BY cma.Address1";
+    public const string SQL_READ_CHURCH_MEMBER_EMAILS = "SELECT CONVERT(VARCHAR(50),cme.Id) 'Id', cme.Email, cme.Display, cme.[Primary] FROM dbo.ChurchMemberEmail cme INNER JOIN dbo.ChurchMemberEmail_XRef cmax ON cmax.EmailId = cme.Id WHERE cmax.MemberId = '{0}' ORDER BY cme.Display";
+    public const string SQL_READ_CHURCH_MEMBER_PHONES = "SELECT CONVERT(VARCHAR(50),cmp.Id) 'Id', cmp.Phone, cmp.[Primary] FROM dbo.ChurchMemberPhone cmp INNER JOIN dbo.ChurchMemberPhone_XRef cmax ON cmax.PhoneId = cmp.Id WHERE cmax.MemberId = '{0}'";
 
     // Events Management
     public const string SQL_READ_EVENTS = "SELECT [Id], [Title], [Description], CONVERT(VARCHAR, [EventDate], 107) [EventDate], CONVERT(VARCHAR, [EventEnd], 107) [EventEnd] FROM dbo.UpcomingEvents WHERE [EventEnd] > GETDATE() ORDER BY [EventDate] DESC;";

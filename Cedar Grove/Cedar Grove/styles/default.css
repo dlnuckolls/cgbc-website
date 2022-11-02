@@ -362,16 +362,19 @@ html body form .RadInput .MyFocusedTextBox {
   position: relative;
 }
 
-  .memberListViewItem h4 {
-    font-weight: bold;
-    font-size: 1.2em;
-    line-height: 1.25em;
+  .memberListViewItem img {
+    width: 100%;
+    border-radius: 10px;
   }
 
-  .memberListViewItem h4 > img {
-    width: 40px;
-    float: left;
-    padding-right: 5px;
+  .memberListViewItem h4 {
+    font-weight: bold;
+    font-size: 1.2em !important;
+    line-height: 1.2em !important;
+    margin-block-start: .25em !important;
+    margin-block-end: .25em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
   }
 
 .podcastListViewItem {

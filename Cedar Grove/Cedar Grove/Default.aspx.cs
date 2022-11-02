@@ -24,7 +24,7 @@ namespace Cedar_Grove {
     }
 
     protected void MemberList_NeedDataSource(object sender, RadListViewNeedDataSourceEventArgs e) {
-      ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_READ_CHURCH_MEMBERS);
+      ((RadListView)sender).DataSource = SqlHelpers.GetMembers();
     }
   }
 }

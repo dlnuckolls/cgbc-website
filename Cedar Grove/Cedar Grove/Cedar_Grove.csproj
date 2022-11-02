@@ -399,6 +399,7 @@
     <Compile Include="objectclass\EventItem.cs" />
     <Compile Include="objectclass\GalleryImage.cs" />
     <Compile Include="objectclass\MinistryBackground.cs" />
+    <Compile Include="objectclass\Phone.cs" />
     <Compile Include="objectclass\SermonItem.cs" />
     <Compile Include="objectclass\ChurchMember.cs" />
     <Compile Include="objectclass\StaffMember.cs" />
@@ -455,7 +456,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -59,17 +59,28 @@
                           </LayoutTemplate>
                           <ItemTemplate>
                             <div class="memberListViewItem">
-                              <h4>
-                                <img id="Image1" runat="server" src='<%# Bind("ImageUrl") %>' alt="Unavailable" />
-                                  <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("DisplayName") %>' />
-                              </h4>
-                              <p>
-                                <em>
-                                  <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("Title") %>' />
-                                </em>
-                                <br />
-                                <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Bind("EmailAddress") %>' />
-                              </p>
+                              <telerik:RadPageLayout runat="server">
+                                <Rows>
+                                  <telerik:LayoutRow>
+                                    <Columns>
+                                      <telerik:LayoutColumn Span="4">
+                                        <img id="Image1" runat="server" src='<%# Bind("ImageUrl") %>' alt="Unavailable" />
+                                      </telerik:LayoutColumn>
+                                      <telerik:LayoutColumn Span="8">
+                                        <h4>
+                                          <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("DisplayName") %>' />
+                                        </h4>
+                                          <em>
+                                            <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("Title") %>' />
+                                          </em>
+                                          <br />
+                                          Address Goes Here
+                                <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Bind("PrimaryAddress") %>' />
+                                      </telerik:LayoutColumn>
+                                    </Columns>
+                                  </telerik:LayoutRow>
+                                </Rows>
+                              </telerik:RadPageLayout>
                             </div>
                           </ItemTemplate>
                         </telerik:RadListView>

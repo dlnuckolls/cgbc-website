@@ -70,9 +70,9 @@ namespace Cedar_Grove {
     /// <param name="len"></param>
     /// <returns></returns>
     public static string FixShortSqlString(this string p, int len) {
-      if (p.IsNullOrEmpty()) return string.Empty;
+      if(p.IsNullOrEmpty()) return string.Empty;
       p = p.Replace("'", "''");
-      if (p.Length > len) p = p.Substring(p.Length - len, len);
+      if(p.Length > len) p = p.Substring(p.Length - len, len);
       return p;
     }
     /// <summary>
@@ -108,6 +108,15 @@ namespace Cedar_Grove {
     }
     #endregion
     #region Change datatypes
+    public static string DisplayPhone(this string p) {
+      if(p.IsNullOrEmpty())
+        return string.Empty;
+      if(p.Length == 10) {
+        p = "({0}) {1}-{2}".FormatWith(p.Substring(0, 3), p.Substring(3, 3), p.Substring(6));
+        return p;
+      } else
+        return p;
+    }
     ///<summary>
     /// Converts an alphanumeric string into a numeric string using 
     /// numbers for any letters in the string.
@@ -277,7 +286,7 @@ namespace Cedar_Grove {
       string value;
       try {
         var customEnumAttribute = (CustomEnumAttribute)myEnum.GetType().GetCustomAttributes(typeof(CustomEnumAttribute), false).FirstOrDefault();
-        if (customEnumAttribute == null || customEnumAttribute.IsCustomEnum == false) { throw new Exception(); }
+        if(customEnumAttribute == null || customEnumAttribute.IsCustomEnum == false) { throw new Exception(); }
         var textValueAttribute = (TextValueAttribute)myEnum.GetType().GetMember(myEnum.ToString()).Single().GetCustomAttributes(typeof(TextValueAttribute), false).FirstOrDefault();
         value = textValueAttribute != null ? textValueAttribute.Value : myEnum.ToString();
       } catch { value = myEnum.ToString(); }
@@ -339,7 +348,11 @@ namespace Cedar_Grove {
     ///   <c>true</c> if [is null or empty] [the specified o]; otherwise, <c>false</c>.
     /// </returns>
     public static bool IsNullOrEmpty(this object o) { return (o == null); }
-
+    /// <summary>
+    /// Determine if string is a valid email address
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
     public static bool IsValidEmail(this string s) {
       var validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
       var validTest = new Regex(validEmailPattern, RegexOptions.IgnoreCase);

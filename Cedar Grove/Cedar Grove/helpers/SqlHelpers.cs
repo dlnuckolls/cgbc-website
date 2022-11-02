@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cedar_Grove.objectclass;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -8,6 +9,74 @@ namespace Cedar_Grove {
   public static class SqlHelpers {
 
     private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["CedarGrove"].ToString();
+
+    public static List<ChurchMember> GetMembers() {
+      var rtn = new List<ChurchMember>();
+      var members = GetDataReader(SqlStatements.SQL_READ_CHURCH_MEMBERS);
+      while(members.Read()) {
+        rtn.Add(new ChurchMember() {
+          Id = SafeGet<string>(members, "id"),
+          FirstName = SafeGet<string>(members, "FirstName"),
+          LastName = SafeGet<string>(members, "LastName"),
+          DisplayName = SafeGet<string>(members, "DisplayName"),
+          Title = SafeGet<string>(members, "Title"),
+          Bio = SafeGet<string>(members, "Bio"),
+          ImageUrl = SafeGet<string>(members, "ImageUrl") ?? "https://via.placeholder.com/250",
+          Addresses = GetMemberAddresses(SafeGet<string>(members, "Id")),
+          EmailAddresses = GetMemberEmailAddresses(SafeGet<string>(members, "Id")),
+          Phones = GetMemberPhones(SafeGet<string>(members, "Id")),
+        });
+      }
+      members.Close();
+      return rtn;
+    }
+    private static List<Address> GetMemberAddresses(string id) {
+      var rtn = new List<Address>();
+      var addresses = GetDataReader(SqlStatements.SQL_READ_CHURCH_MEMBER_ADDRESSES.FormatWith(id));
+      while(addresses.Read()) {
+        rtn.Add(new Address() {
+          Id = SafeGet<string>(addresses, "id"),
+          Address1 = SafeGet<string>(addresses, "Address1"),
+          Address2 = SafeGet<string>(addresses, "Address2"),
+          City = SafeGet<string>(addresses, "City"),
+          PostalCode = SafeGet<string>(addresses, "PostalCode"),
+          PostalExtension = SafeGet<string>(addresses, "PostalExt"),
+          StateId = SafeGet<int>(addresses, "StateId"),
+          State = SafeGet<string>(addresses, "State"),
+          StateAbbreviation = SafeGet<string>(addresses, "Abbreviation"),
+          Primary = SafeGet<bool>(addresses, "Primary")
+        });
+      }
+      addresses.Close();
+      return rtn;
+    }
+    private static List<EmailAddress> GetMemberEmailAddresses(string id) {
+      var rtn = new List<EmailAddress>();
+      var addresses = GetDataReader(SqlStatements.SQL_READ_CHURCH_MEMBER_EMAILS.FormatWith(id));
+      while(addresses.Read()) {
+        rtn.Add(new EmailAddress() {
+          Id = SafeGet<string>(addresses, "id"),
+          Email = SafeGet<string>(addresses, "Email"),
+          Display=SafeGet<string>(addresses, "Display"),
+          Primary = SafeGet<bool>(addresses, "Primary")
+        });
+      }
+      addresses.Close();
+      return rtn;
+    }
+    private static List<Phone> GetMemberPhones(string id) {
+      var rtn = new List<Phone>();
+      var addresses = GetDataReader(SqlStatements.SQL_READ_CHURCH_MEMBER_PHONES.FormatWith(id));
+      while(addresses.Read()) {
+        rtn.Add(new Phone() {
+          Id = SafeGet<string>(addresses, "id"),
+          PhoneNumber = SafeGet<string>(addresses, "Phone").DisplayPhone(),
+          Primary = SafeGet<bool>(addresses, "Primary")
+        });
+      }
+      addresses.Close();
+      return rtn;
+    }
 
     #region SELECT
     /// <summary>
@@ -112,7 +181,7 @@ namespace Cedar_Grove {
 
     #endregion DELETE
 
-    #region Connection
+    #region Get Data
     /// <summary>
     /// Retrieve data table from current environment database. 
     /// </summary>
@@ -124,11 +193,27 @@ namespace Cedar_Grove {
         var selectCommand = new SqlCommand { Connection = conn, CommandText = query, CommandType = CommandType.Text, };
         conn.Open();
         using(var reader = selectCommand.ExecuteReader()) { result.Load(reader); }
+        conn.Close();
       }
 
       return result;
     }
-    #endregion Connection
 
+    private static SqlDataReader GetDataReader(string query) {
+      SqlDataReader rtn;
+      var conn = new SqlConnection(ConnectionString);
+      var selectCommand = new SqlCommand { Connection = conn, CommandText = query, CommandType = CommandType.Text, };
+      conn.Open();
+      rtn = selectCommand.ExecuteReader(CommandBehavior.CloseConnection);
+
+      return rtn;
+    }
+
+    private static T SafeGet<T>(this SqlDataReader reader, string nameOfColumn) {
+      var indexOfColumn = reader.GetOrdinal(nameOfColumn);
+      return reader.IsDBNull(indexOfColumn) ? default(T) : reader.GetFieldValue<T>(indexOfColumn);
+    }
+
+    #endregion 
   }
 }
