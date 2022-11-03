@@ -16,15 +16,23 @@
                 <Rows>
                   <telerik:LayoutRow>
                     <Columns>
-                      <telerik:LayoutColumn Span="7" SpanMd="9" SpanSm="12" HiddenXs="true">
+                      <telerik:LayoutColumn Span="3" SpanMd="3" SpanSm="12" HiddenXs="true">
                         <div class="messageEventHeader">Quick Messages</div>
-                        <telerik:RadListView runat="server" ID="MemberMessages" AllowPaging="true" PageSize="6" Skin="Silk" OnNeedDataSource="MemberMessages_NeedDataSource">
+                        <telerik:RadListView runat="server" ID="MemberMessages" AllowPaging="true" PageSize="2" Skin="Silk" OnNeedDataSource="MemberMessages_NeedDataSource">
                           <LayoutTemplate>
                             <div class="RadListView RadListViewFloated RadListView_<%# Container.Skin %>">
                               <div class="rlvFloated rlvAutoScroll">
                                 <div id="itemPlaceholder" runat="server">
                                 </div>
                               </div>
+                              <telerik:RadDataPager RenderMode="Lightweight" ID="RadDataPager1" runat="server" PagedControlID="MemberMessages"
+                                PageSize="2">
+                                <Fields>
+                                  <telerik:RadDataPagerButtonField FieldType="FirstPrev"></telerik:RadDataPagerButtonField>
+                                  <telerik:RadDataPagerButtonField FieldType="Numeric"></telerik:RadDataPagerButtonField>
+                                  <telerik:RadDataPagerButtonField FieldType="NextLast"></telerik:RadDataPagerButtonField>
+                                </Fields>
+                              </telerik:RadDataPager>
                             </div>
                           </LayoutTemplate>
                           <ItemTemplate>
@@ -46,15 +54,23 @@
                           </ItemTemplate>
                         </telerik:RadListView>
                       </telerik:LayoutColumn>
-                      <telerik:LayoutColumn Span="5" SpanMd="3" SpanSm="12" SpanXs="12">
+                      <telerik:LayoutColumn Span="9" SpanMd="9" SpanSm="12" SpanXs="12">
                         <div class="messageEventHeader">Members</div>
-                        <telerik:RadListView runat="server" ID="MemberList" AllowPaging="true" PageSize="4" Skin="Silk" OnNeedDataSource="MemberList_NeedDataSource">
+                        <telerik:RadListView runat="server" ID="MemberList" AllowPaging="true" PageSize="8" Skin="Silk" OnNeedDataSource="MemberList_NeedDataSource">
                           <LayoutTemplate>
                             <div class="RadListView RadListViewFloated RadListView_<%# Container.Skin %>">
                               <div class="rlvFloated rlvAutoScroll">
                                 <div id="itemPlaceholder" runat="server">
                                 </div>
                               </div>
+                              <telerik:RadDataPager RenderMode="Lightweight" ID="RadDataPager1" runat="server" PagedControlID="MemberList"
+                                PageSize="8">
+                                <Fields>
+                                  <telerik:RadDataPagerButtonField FieldType="FirstPrev"></telerik:RadDataPagerButtonField>
+                                  <telerik:RadDataPagerButtonField FieldType="Numeric"></telerik:RadDataPagerButtonField>
+                                  <telerik:RadDataPagerButtonField FieldType="NextLast"></telerik:RadDataPagerButtonField>
+                                </Fields>
+                              </telerik:RadDataPager>
                             </div>
                           </LayoutTemplate>
                           <ItemTemplate>
@@ -70,12 +86,12 @@
                                         <h4>
                                           <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("DisplayName") %>' />
                                         </h4>
-                                          <em>
-                                            <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("Title") %>' />
-                                          </em>
-                                          <br />
-                                          Address Goes Here
-                                <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Bind("PrimaryAddress") %>' />
+                                        <em>
+                                          <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("Title") %>' />
+                                        </em>
+                                        <br />
+                                        <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Bind("PrimaryAddress.Address1") %>' /><br />
+                                        <telerik:RadLabel ID="RadLabel5" runat="server" Text='<%# Bind("PrimaryAddress.City") %>' />,&nbsp;<telerik:RadLabel ID="RadLabel6" runat="server" Text='<%# Bind("PrimaryAddress.StateAbbreviation") %>' />&nbsp;&nbsp;<telerik:RadLabel ID="RadLabel7" runat="server" Text='<%# Bind("PrimaryAddress.PostalCodeFormatted") %>' />
                                       </telerik:LayoutColumn>
                                     </Columns>
                                   </telerik:LayoutRow>

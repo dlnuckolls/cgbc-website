@@ -50,18 +50,18 @@
             <telerik:LayoutRow>
               <Columns>
                 <%--Sidebar Left--%>
-                <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
-                </telerik:LayoutColumn>
+<%--                <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
+                </telerik:LayoutColumn>--%>
                 <%--Content--%>
-                <telerik:CompositeLayoutColumn Span="10" SpanMd="12" SpanSm="12" SpanXs="12">
+                <telerik:CompositeLayoutColumn Span="12" SpanMd="12" SpanSm="12" SpanXs="12">
                   <Content>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                   </Content>
                 </telerik:CompositeLayoutColumn>
                 <%--Sidebar Right--%>
-                <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
-                </telerik:LayoutColumn>
+<%--                <telerik:LayoutColumn Span="1" HiddenMd="true" HiddenSm="true" HiddenXs="true">
+                </telerik:LayoutColumn>--%>
               </Columns>
             </telerik:LayoutRow>
           </Rows>

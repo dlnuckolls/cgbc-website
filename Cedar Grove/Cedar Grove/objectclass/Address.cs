@@ -9,6 +9,7 @@
     public string StateAbbreviation { get; set; }
     public string PostalCode { get; set; }
     public string PostalExtension { get; set; }
+    public string PostalCodeFormatted => "{0}{1}".FormatWith(PostalCode, (!PostalExtension.IsNullOrEmpty()) ? "-{0}".FormatWith(PostalExtension) : string.Empty);
     public bool Primary { get; set; }
   }
 }

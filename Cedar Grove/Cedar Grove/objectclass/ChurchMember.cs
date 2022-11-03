@@ -11,11 +11,11 @@ namespace Cedar_Grove.objectclass {
     public string Bio { get; set; }
     public string ImageUrl { get; set; }
     public List<Address> Addresses { get; set; }
-    public Address PrimaryAddress => Addresses.FirstOrDefault(a => a.Primary == true);
+    public Address PrimaryAddress => Addresses.FirstOrDefault(a => a.Primary == true) ?? new Address();
     public List<EmailAddress> EmailAddresses { get; set; }
-    public EmailAddress PrimaryEmail => EmailAddresses.FirstOrDefault(e => e.Primary == true);
+    public EmailAddress PrimaryEmail => EmailAddresses.FirstOrDefault(e => e.Primary == true) ?? new EmailAddress();
     public List<Phone> Phones { get; set; }
-    public Phone PrimaryPhone => Phones.FirstOrDefault(p => p.Primary == true);
+    public Phone PrimaryPhone => Phones.FirstOrDefault(p => p.Primary == true) ?? new Phone();
 
     public ChurchMember() { }
 
