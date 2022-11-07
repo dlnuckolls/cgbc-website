@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cedar_Grove.objectclass;
+using System;
+using System.Linq;
 using System.Web.UI;
 using Telerik.Web.UI;
 
@@ -25,6 +27,31 @@ namespace Cedar_Grove {
 
     protected void MemberList_NeedDataSource(object sender, RadListViewNeedDataSourceEventArgs e) {
       ((RadListView)sender).DataSource = SqlHelpers.GetMembers();
+    }
+
+    protected void RadImageButton1_Click(object sender, EventArgs e) {
+      var id = ((RadButton)sender).CommandArgument;
+      if(id != "0") {
+        var member = SqlHelpers.GetMembers().FirstOrDefault(m => m.Id == id);
+        FirstName.Text = member.FirstName;
+        LastName.Text = member.LastName;
+        Address.Text = member.PrimaryAddress.Address1;
+        City.Text = member.PrimaryAddress.City;
+        PostalCode.Text = member.PrimaryAddress.PostalCode;
+      } else {
+        var member = new ChurchMember();
+        FirstName.Text = member.FirstName;
+        LastName.Text = member.LastName;
+        Address.Text = member.PrimaryAddress.Address1;
+        City.Text = member.PrimaryAddress.City;
+        PostalCode.Text = member.PrimaryAddress.PostalCode;
+      }
+      string script = "function f(){$find(\"" + modalPopup2.ClientID + "\").show(); Sys.Application.remove_load(f);}Sys.Application.add_load(f);";
+      ScriptManager.RegisterStartupScript(Page, Page.GetType(), "key", script, true);
+    }
+
+    protected void RadButton1_Click(object sender, EventArgs e) {
+
     }
   }
 }

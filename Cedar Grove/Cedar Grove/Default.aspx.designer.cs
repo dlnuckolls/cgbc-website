@@ -58,6 +58,24 @@ namespace Cedar_Grove {
     protected global::Telerik.Web.UI.RadListView MemberMessages;
 
     /// <summary>
+    /// RadDataPager1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadDataPager RadDataPager1;
+
+    /// <summary>
+    /// RadImageButton1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadButton RadImageButton1;
+
+    /// <summary>
     /// MemberList control.
     /// </summary>
     /// <remarks>
@@ -65,15 +83,6 @@ namespace Cedar_Grove {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadListView MemberList;
-
-    /// <summary>
-    /// EventsList control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::Telerik.Web.UI.RadGrid EventsList;
 
     /// <summary>
     /// modalPopup control.
@@ -110,5 +119,77 @@ namespace Cedar_Grove {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadButton btnClose;
+
+    /// <summary>
+    /// modalPopup2 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadWindow modalPopup2;
+
+    /// <summary>
+    /// FirstName control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadTextBox FirstName;
+
+    /// <summary>
+    /// LastName control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadTextBox LastName;
+
+    /// <summary>
+    /// Address control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadTextBox Address;
+
+    /// <summary>
+    /// City control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadTextBox City;
+
+    /// <summary>
+    /// PostalCode control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadTextBox PostalCode;
+
+    /// <summary>
+    /// RadButton1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadButton RadButton1;
+
+    /// <summary>
+    /// RadButton2 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadButton RadButton2;
   }
 }

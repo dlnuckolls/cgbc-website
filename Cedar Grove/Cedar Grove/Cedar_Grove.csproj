@@ -181,9 +181,14 @@
     <Content Include="Global.asax" />
     <Content Include="images\alarm.png" />
     <Content Include="images\border.jpg" />
+    <Content Include="images\cancel.png" />
     <Content Include="images\cgbc-banner.JPG" />
     <Content Include="images\Chrysanthemum.jpg" />
+    <Content Include="images\contacts.png" />
     <Content Include="images\Desert.jpg" />
+    <Content Include="images\edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\facebook.png" />
     <Content Include="images\gallery\10552649_894989603869133_7924941354887018607_n.jpg" />
     <Content Include="images\gallery\10906051_894989503869143_7005374842670952177_n.jpg" />
@@ -207,6 +212,7 @@
     <Content Include="images\menutiles\quotes.png" />
     <Content Include="images\menutiles\users.png" />
     <Content Include="images\Penguins.jpg" />
+    <Content Include="images\save_close.png" />
     <Content Include="images\Thumbnails\Chrysanthemum.jpg" />
     <Content Include="images\Thumbnails\Desert.jpg" />
     <Content Include="images\Thumbnails\Hydrangeas.jpg" />
@@ -456,7 +462,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

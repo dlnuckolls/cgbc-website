@@ -56,6 +56,30 @@
                       </telerik:LayoutColumn>
                       <telerik:LayoutColumn Span="9" SpanMd="9" SpanSm="12" SpanXs="12">
                         <div class="messageEventHeader">Members</div>
+                        <telerik:RadPageLayout runat="server">
+                          <Rows>
+                            <telerik:LayoutRow>
+                              <Columns>
+                                <telerik:LayoutColumn Span="4">
+                                  <telerik:RadDataPager RenderMode="Lightweight" ID="RadDataPager1" runat="server" PagedControlID="MemberList"
+                                    PageSize="8">
+                                    <Fields>
+                                      <telerik:RadDataPagerButtonField FieldType="FirstPrev"></telerik:RadDataPagerButtonField>
+                                      <telerik:RadDataPagerButtonField FieldType="Numeric"></telerik:RadDataPagerButtonField>
+                                      <telerik:RadDataPagerButtonField FieldType="NextLast"></telerik:RadDataPagerButtonField>
+                                    </Fields>
+                                  </telerik:RadDataPager>
+                                </telerik:LayoutColumn>
+                                <telerik:LayoutColumn Span="4">
+                                </telerik:LayoutColumn>
+                                <telerik:LayoutColumn Span="4">
+                                  <telerik:RadButton ID="RadImageButton1" runat="server" Text="Add New" CssClass="menubuttons" OnClick="RadImageButton1_Click" CommandArgument='0'>
+                                  </telerik:RadButton>
+                                </telerik:LayoutColumn>
+                              </Columns>
+                            </telerik:LayoutRow>
+                          </Rows>
+                        </telerik:RadPageLayout>
                         <telerik:RadListView runat="server" ID="MemberList" AllowPaging="true" PageSize="8" Skin="Silk" OnNeedDataSource="MemberList_NeedDataSource">
                           <LayoutTemplate>
                             <div class="RadListView RadListViewFloated RadListView_<%# Container.Skin %>">
@@ -63,14 +87,6 @@
                                 <div id="itemPlaceholder" runat="server">
                                 </div>
                               </div>
-                              <telerik:RadDataPager RenderMode="Lightweight" ID="RadDataPager1" runat="server" PagedControlID="MemberList"
-                                PageSize="8">
-                                <Fields>
-                                  <telerik:RadDataPagerButtonField FieldType="FirstPrev"></telerik:RadDataPagerButtonField>
-                                  <telerik:RadDataPagerButtonField FieldType="Numeric"></telerik:RadDataPagerButtonField>
-                                  <telerik:RadDataPagerButtonField FieldType="NextLast"></telerik:RadDataPagerButtonField>
-                                </Fields>
-                              </telerik:RadDataPager>
                             </div>
                           </LayoutTemplate>
                           <ItemTemplate>
@@ -90,45 +106,29 @@
                                           <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Bind("Title") %>' />
                                         </em>
                                         <br />
-                                        <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Bind("PrimaryAddress.Address1") %>' /><br />
-                                        <telerik:RadLabel ID="RadLabel5" runat="server" Text='<%# Bind("PrimaryAddress.City") %>' />,&nbsp;<telerik:RadLabel ID="RadLabel6" runat="server" Text='<%# Bind("PrimaryAddress.StateAbbreviation") %>' />&nbsp;&nbsp;<telerik:RadLabel ID="RadLabel7" runat="server" Text='<%# Bind("PrimaryAddress.PostalCodeFormatted") %>' />
+                                        <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Bind("PrimaryAddress.Address1") %>' />
+                                        <br />
+                                        <div class="address">
+                                          <telerik:RadLabel ID="RadLabel5" runat="server" Text='<%# Bind("PrimaryAddress.City") %>' />
+                                          ,&nbsp;<telerik:RadLabel ID="RadLabel6" runat="server" Text='<%# Bind("PrimaryAddress.StateAbbreviation") %>' />
+                                          &nbsp;&nbsp;<telerik:RadLabel ID="RadLabel7" runat="server" Text='<%# Bind("PrimaryAddress.PostalCodeFormatted") %>' />
+                                        </div>
+                                        <div class="phone">
+                                          <telerik:RadLabel ID="RadLabel4" runat="server" Text='<%# Bind("PrimaryPhone.PhoneNumber") %>' />
+                                        </div>
                                       </telerik:LayoutColumn>
                                     </Columns>
                                   </telerik:LayoutRow>
                                 </Rows>
                               </telerik:RadPageLayout>
+                              <div class="editSave">
+                                <telerik:RadButton ID="RadImageButton1" runat="server" Width="35px" Height="35px" OnClick="RadImageButton1_Click" CommandArgument='<%# Bind("Id") %>'>
+                                  <Image ImageUrl="images/edit.png"></Image>
+                                </telerik:RadButton>
+                              </div>
                             </div>
                           </ItemTemplate>
                         </telerik:RadListView>
-                        <style>
-                          .RadGrid {
-                            border-radius: 10px;
-                            overflow: hidden;
-                          }
-                        </style>
-                        <telerik:RadGrid Skin="WebBlue" RenderMode="Auto" runat="server" ID="EventsList" Width="100%" PagerStyle-AlwaysVisible="false"
-                          HorizontalAlign="Left" AutoGenerateColumns="False" CellPadding="0" BorderWidth="0px" BorderStyle="None" MasterTableView-CellPadding="0" MasterTableView-CellSpacing="0"
-                          MasterTableView-GridLines="None" GroupingSettings-CaseSensitive="false" ShowHeader="true">
-                          <MasterTableView AutoGenerateColumns="False" DataKeyNames="Id" GridLines="None"
-                            ClientDataKeyNames="Id" CommandItemDisplay="None" InsertItemPageIndexAction="ShowItemOnFirstPage" AllowNaturalSort="False" ShowHeadersWhenNoRecords="true">
-                            <CommandItemSettings ShowAddNewRecordButton="False" ShowRefreshButton="False"></CommandItemSettings>
-                            <Columns>
-                              <telerik:GridTemplateColumn ShowFilterIcon="False" AllowFiltering="False" HeaderText="This Week at CGBC" AllowSorting="true" UniqueName="ComingEvents" HeaderStyle-CssClass="messageEventHeader">
-                                <ItemTemplate>
-                                  <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("Subject") %>'></telerik:RadLabel>
-                                  <hr />
-                                  <telerik:RadLabel ID="RadLabel2" runat="server" Text='<%# Eval("Start", "{0:d}") %>' />
-                                  <telerik:RadLabel ID="RadLabel3" runat="server" Text='<%# Eval("Start", "{0:h:mm tt}") %>' />
-                                  -
-                    <telerik:RadLabel ID="RadLabel4" runat="server" Text='<%# Eval("End", "{0:h:mm tt}") %>' />
-                                  <hr />
-                                  Description:
-                    <asp:Literal ID="EventLiteral1" runat="server" Text='<%# Bind("Description") %>' />
-                                </ItemTemplate>
-                              </telerik:GridTemplateColumn>
-                            </Columns>
-                          </MasterTableView>
-                        </telerik:RadGrid>
                       </telerik:LayoutColumn>
                     </Columns>
                   </telerik:LayoutRow>
@@ -146,6 +146,61 @@
                     </p>
                     <div class="listViewItemReadmore">
                       <telerik:RadButton RenderMode="Lightweight" ID="btnClose" runat="server" Primary="true" Text="Close" OnClientClick="Close();return false;" />
+                    </div>
+                  </div>
+                </ContentTemplate>
+              </telerik:RadWindow>
+              <telerik:RadWindow RenderMode="Lightweight" ID="modalPopup2" runat="server" Width="900px" Height="500px" CenterIfModal="true" AutoSize="false" Title="Member Details"
+                Modal="true" OffsetElementID="main" Skin="Outlook" Style="z-index: 100001;" VisibleOnPageLoad="false" IconUrl="/images/contacts.png" VisibleStatusbar="false" Behaviors="Close">
+                <ContentTemplate>
+                  <div class="listViewItemPopup">
+                    <h4>Member Details</h4>
+                    <telerik:RadPageLayout runat="server" Width="840px">
+                      <Rows>
+                        <telerik:LayoutRow>
+                          <Columns>
+                            <telerik:LayoutColumn Span="2" CssClass="title">
+                              Name
+                            </telerik:LayoutColumn>
+                            <telerik:LayoutColumn Span="5">
+                              <telerik:RadTextBox ID="FirstName" runat="server" Width="100%" EmptyMessage="First Name"></telerik:RadTextBox>
+                            </telerik:LayoutColumn>
+                            <telerik:LayoutColumn Span="5">
+                              <telerik:RadTextBox ID="LastName" runat="server" Width="100%" EmptyMessage="Last Name"></telerik:RadTextBox>
+                            </telerik:LayoutColumn>
+                          </Columns>
+                        </telerik:LayoutRow>
+                        <telerik:LayoutRow>
+                          <Columns>
+                            <telerik:LayoutColumn Span="2" CssClass="title">
+                              Address
+                            </telerik:LayoutColumn>
+                            <telerik:LayoutColumn Span="10">
+                              <telerik:RadTextBox ID="Address" runat="server" Width="100%" EmptyMessage="Address"></telerik:RadTextBox>
+                            </telerik:LayoutColumn>
+                          </Columns>
+                        </telerik:LayoutRow>
+                        <telerik:LayoutRow>
+                          <Columns>
+                            <telerik:LayoutColumn Span="2" CssClass="title">
+                              City, State, Zip
+                            </telerik:LayoutColumn>
+                            <telerik:LayoutColumn Span="7">
+                              <telerik:RadTextBox ID="City" runat="server" Width="100%" EmptyMessage="City"></telerik:RadTextBox>
+                            </telerik:LayoutColumn>
+                            <telerik:LayoutColumn Span="1">
+                              
+                            </telerik:LayoutColumn>
+                            <telerik:LayoutColumn Span="2">
+                              <telerik:RadTextBox ID="PostalCode" runat="server" Width="100%" EmptyMessage="Zip"></telerik:RadTextBox>
+                            </telerik:LayoutColumn>
+                          </Columns>
+                        </telerik:LayoutRow>
+                      </Rows>
+                    </telerik:RadPageLayout>
+                    <div class="listViewItemReadmore">
+                      <telerik:RadButton RenderMode="Lightweight" ID="RadButton1" runat="server" Primary="true" Text="Save" OnClick="RadButton1_Click" />
+                      &nbsp;&nbsp;&nbsp;<telerik:RadButton RenderMode="Lightweight" ID="RadButton2" runat="server" Primary="true" Text="Cancel" OnClientClick="Close();return false;" />
                     </div>
                   </div>
                 </ContentTemplate>

@@ -17,7 +17,11 @@ namespace Cedar_Grove.objectclass {
     public List<Phone> Phones { get; set; }
     public Phone PrimaryPhone => Phones.FirstOrDefault(p => p.Primary == true) ?? new Phone();
 
-    public ChurchMember() { }
+    public ChurchMember() {
+      Addresses = new List<Address>();
+      EmailAddresses = new List<EmailAddress>();
+      Phones = new List<Phone>();
+    }
 
     public void SaveChurchMember() {
       //if(Id.IsNullOrEmpty()) {
