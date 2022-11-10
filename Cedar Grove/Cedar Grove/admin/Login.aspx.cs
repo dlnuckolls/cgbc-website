@@ -7,7 +7,7 @@ namespace Cedar_Grove {
       SessionInfo.CurrentPage = PageNames.Login;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
       lErrorMessage.Text = string.Empty;
-      if (SessionInfo.IsAuthenticated) Response.Redirect("~/admin/dashboard");
+      if (SessionInfo.IsAuthenticated) Response.Redirect("~/");
     }
 
     protected void SubmitLogin_OnClick(object sender, EventArgs e) {
@@ -15,7 +15,7 @@ namespace Cedar_Grove {
       try {
         SessionInfo.CurrentUser.AuthenticateUser(userName.Text.Trim(), password.Text.Trim().EncryptString());
         if (!SessionInfo.IsAuthenticated) { lErrorMessage.Text = "Username or password do not match"; SessionInfo.Settings.LogError("Login: Login Failed", "Invalid credentials"); return; }
-        locationRedirect = (SessionInfo.CurrentUser.UserPassReset) ? "~/reset" : "~/admin/dashboard";
+        locationRedirect = (SessionInfo.CurrentUser.UserPassReset) ? "~/reset" : "~/";
       } catch (Exception ex) {
         lErrorMessage.Text = "Login failed; please verify your username and password";
         SessionInfo.Settings.LogError("Login: Login Failed", ex);

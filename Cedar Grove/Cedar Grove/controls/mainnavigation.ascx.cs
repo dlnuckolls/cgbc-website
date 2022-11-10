@@ -12,7 +12,7 @@ namespace Cedar_Grove {
     }
 
     protected void Page_Load(object sender, EventArgs e) {
-      if (SessionInfo.IsAuthenticated && !RadMenu1.Items.FindItemByText("Admin").IsNullOrEmpty()) {
+      if (SessionInfo.IsAuthenticated && SessionInfo.CurrentUser.IsSuperAdmin && !RadMenu1.Items.FindItemByText("Admin").IsNullOrEmpty()) {
         RadMenu1.Items.FindItemByText("Admin").Text = "Dashboard";
         RadMenu1.Items.Add(new RadMenuItem() { IsSeparator = true });
         RadMenu1.Items.Add(new RadMenuItem("Logout", "~/admin/Logout.aspx"));

@@ -9,6 +9,7 @@ namespace Cedar_Grove {
     protected void Page_Load(object sender, EventArgs e) {
       SessionInfo.CurrentPage = PageNames.Home;
       TitleTag.Text = SessionInfo.DisplayCurrentPage;
+      if(!SessionInfo.IsAuthenticated) Response.Redirect("~/login");
     }
 
     protected void MemberMessages_NeedDataSource(object sender, RadListViewNeedDataSourceEventArgs e) { ((RadListView)sender).DataSource = SqlHelpers.Select(SqlStatements.SQL_READ_MEMBER_MESSAGES); }

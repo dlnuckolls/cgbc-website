@@ -7,9 +7,11 @@ namespace Cedar_Grove {
     protected void Application_Start(object sender, EventArgs e) { RegisterRoutes(RouteTable.Routes); }
 
     static void RegisterRoutes(RouteCollection routes) {
+      routes.MapPageRoute("Login", "login", "~/admin/Login.aspx");
+
       // Admin Pages
       routes.MapPageRoute("AdminDashboard", "admin/dashboard", "~/admin/default.aspx");
-      routes.MapPageRoute("AdminLogin", "login", "~/admin/Login.aspx");
+      //routes.MapPageRoute("AdminLogin", "login", "~/admin/Login.aspx");
       routes.MapPageRoute("AdminForgot", "forgot", "~/admin/ForgotPassword.aspx");
       routes.MapPageRoute("AdminReset", "reset", "~/admin/ResetPassword.aspx");
       routes.MapPageRoute("AdminPages", "admin/pages", "~/admin/AdminPages.aspx");

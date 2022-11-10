@@ -28,20 +28,20 @@ namespace Cedar_Grove {
     #region Email Settings
     private SmtpClient SetMailServerSettings() {
       var smtp = new SmtpClient {
-        Port = 2525,
-        EnableSsl = false,
-        Host = "mail.smtp2go.com"
+        Port = 587,
+        EnableSsl = true,
+        Host = "smtp.gmail.com"
       };
       if (Settings.RequireAuth) {
         smtp.UseDefaultCredentials = false;
-        smtp.Credentials = new NetworkCredential("noreply@cedargrovebaptist.church", "Tcp9v7YzmGWxZgrp");
+        smtp.Credentials = new NetworkCredential("general@cedargrovebaptist.church", "lwpnkiwndjznzidg");
       }
       return smtp;
     }
 
     public void SendResetEmail(SystemUser user, string tempPassword) {
       var mail = new MailMessage {
-        From = new MailAddress("noreply@cedargrovebaptist.church", "CGBC Website"),
+        From = new MailAddress("general@cedargrovebaptist.church", "CGBC Website"),
         IsBodyHtml = true,
         Subject = "Password Reset Confirmation",
         Body = "Your new password has been set to: {0}<br /><br />Please login to change your password to something you can remember.<br /><br />Thanks,<br />{1}".FormatWith(tempPassword, Settings.FromUsername)

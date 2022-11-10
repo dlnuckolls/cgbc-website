@@ -21,18 +21,17 @@
                         <telerik:RadListView runat="server" ID="MemberMessages" AllowPaging="true" PageSize="2" Skin="Silk" OnNeedDataSource="MemberMessages_NeedDataSource">
                           <LayoutTemplate>
                             <div class="RadListView RadListViewFloated RadListView_<%# Container.Skin %>">
+                              <telerik:RadDataPager RenderMode="Lightweight" ID="MessagePager" runat="server" PagedControlID="MemberMessages"
+                                PageSize="2">
+                                <Fields>
+                                  <telerik:RadDataPagerButtonField FieldType="FirstPrev"></telerik:RadDataPagerButtonField>
+                                  <telerik:RadDataPagerButtonField FieldType="NextLast"></telerik:RadDataPagerButtonField>
+                                </Fields>
+                              </telerik:RadDataPager>
                               <div class="rlvFloated rlvAutoScroll">
                                 <div id="itemPlaceholder" runat="server">
                                 </div>
                               </div>
-                              <telerik:RadDataPager RenderMode="Lightweight" ID="RadDataPager1" runat="server" PagedControlID="MemberMessages"
-                                PageSize="2">
-                                <Fields>
-                                  <telerik:RadDataPagerButtonField FieldType="FirstPrev"></telerik:RadDataPagerButtonField>
-                                  <telerik:RadDataPagerButtonField FieldType="Numeric"></telerik:RadDataPagerButtonField>
-                                  <telerik:RadDataPagerButtonField FieldType="NextLast"></telerik:RadDataPagerButtonField>
-                                </Fields>
-                              </telerik:RadDataPager>
                             </div>
                           </LayoutTemplate>
                           <ItemTemplate>
@@ -154,7 +153,6 @@
                 Modal="true" OffsetElementID="main" Skin="Outlook" Style="z-index: 100001;" VisibleOnPageLoad="false" IconUrl="/images/contacts.png" VisibleStatusbar="false" Behaviors="Close">
                 <ContentTemplate>
                   <div class="listViewItemPopup">
-                    <h4>Member Details</h4>
                     <telerik:RadPageLayout runat="server" Width="840px">
                       <Rows>
                         <telerik:LayoutRow>
