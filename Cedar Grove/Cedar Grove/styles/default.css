@@ -362,7 +362,7 @@ html body form .RadInput .MyFocusedTextBox {
 
 .memberListHeader {
   width: 98%;
-  clear:both;
+  clear: both;
 }
 
   .memberListHeader .pager {
@@ -375,56 +375,126 @@ html body form .RadInput .MyFocusedTextBox {
     float: right;
   }
 
-  .menubuttons {
-margin: 5px;
-  }
-
-.memberListViewItem {
-  width: 48%;
-  border: solid 1px darkgray !important;
-  border-radius: 10px !important;
-  padding: 5px;
-  /*  height: 400px;*/
-  float: left;
+.menubuttons {
   margin: 5px;
-  overflow-y: hidden;
-  position: relative;
 }
 
-  .memberListViewItem img {
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  .memberListViewItem h4 {
-    font-weight: bold;
-    font-size: 1.2em !important;
-    line-height: 1.2em !important;
-    margin-block-start: .25em !important;
-    margin-block-end: .25em !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
-  }
-
-  .memberListViewItem .address {
-    width: 60%;
-    float: left;
-    font-size: .9em !important;
-    line-height: .9em !important;
-  }
-
-  .memberListViewItem .phone {
-    width: 35%;
-    float: right;
-  }
-
-  .memberListViewItem .editSave {
-    position: absolute;
-    bottom: 1px;
-    left: 0px;
+@media only screen and (max-width: 849px) {
+  .memberListViewItem {
     width: 98%;
-    text-align: right;
+    border: solid 1px darkgray !important;
+    border-radius: 10px !important;
+    padding: 5px;
+    /*  height: 400px;*/
+    float: left;
+    margin: 5px;
+    overflow-y: hidden;
+    position: relative;
   }
+
+    .memberListViewItem img {
+      width: 98%;
+      border-radius: 10px;
+    }
+
+    .memberListViewItem h4 {
+      font-weight: bold;
+      font-size: 1em !important;
+      line-height: 1em !important;
+      margin-block-start: .1em !important;
+      margin-block-end: .1em !important;
+      margin-inline-start: 0px !important;
+      margin-inline-end: 0px !important;
+    }
+
+    .memberListViewItem .address {
+      width: 98%;
+      float: left;
+      font-size: .8em !important;
+      line-height: .8em !important;
+    }
+
+    .memberListViewItem .phone {
+      width: 98%;
+      float: right;
+      font-size: .8em !important;
+      line-height: .8em !important;
+    }
+
+    .memberListViewItem .relations {
+      width: 98%;
+      float: left;
+      font-size: .8em !important;
+      line-height: .8em !important;
+    }
+
+    .memberListViewItem .editSave {
+      display: none;
+      position: absolute;
+      bottom: 1px;
+      left: 0px;
+      width: 98%;
+      text-align: right;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+  .memberListViewItem {
+    width: 46%;
+    border: solid 1px darkgray !important;
+    border-radius: 10px !important;
+    padding: 5px;
+    /*  height: 400px;*/
+    float: left;
+    margin: 5px;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+    .memberListViewItem img {
+      width: 98%;
+      border-radius: 10px;
+    }
+
+    .memberListViewItem h4 {
+      font-weight: bold;
+      font-size: 1.2em !important;
+      line-height: 1.2em !important;
+      margin-block-start: .25em !important;
+      margin-block-end: .25em !important;
+      margin-inline-start: 0px !important;
+      margin-inline-end: 0px !important;
+    }
+
+    .memberListViewItem .address {
+      width: 60%;
+      float: left;
+      font-size: .9em !important;
+      line-height: .9em !important;
+    }
+
+    .memberListViewItem .phone {
+      width: 35%;
+      float: right;
+      font-size: .9em !important;
+      line-height: .9em !important;
+    }
+
+    .memberListViewItem .relations {
+      width: 98%;
+      float: left;
+      font-size: .9em !important;
+      line-height: .9em !important;
+    }
+
+    .memberListViewItem .editSave {
+      position: absolute;
+      bottom: 1px;
+      left: 0px;
+      width: 98%;
+      text-align: right;
+    }
+}
 
 .podcastListViewItem {
   width: 350px;

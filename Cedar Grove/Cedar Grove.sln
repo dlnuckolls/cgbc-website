@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cedar_Grove", "Cedar Grove\Cedar_Grove.csproj", "{F49636F3-4809-4EDD-90A8-43A250B7A755}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemberLoader", "..\MemberLoader\MemberLoader.csproj", "{A48E468F-408F-414A-9C43-9F2F726014E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F49636F3-4809-4EDD-90A8-43A250B7A755}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F49636F3-4809-4EDD-90A8-43A250B7A755}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F49636F3-4809-4EDD-90A8-43A250B7A755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A48E468F-408F-414A-9C43-9F2F726014E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A48E468F-408F-414A-9C43-9F2F726014E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A48E468F-408F-414A-9C43-9F2F726014E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A48E468F-408F-414A-9C43-9F2F726014E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

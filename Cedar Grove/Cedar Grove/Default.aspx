@@ -6,7 +6,7 @@
   <asp:Literal ID="TitleTag" runat="server"></asp:Literal>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <telerik:RadPageLayout runat="server" ID="RadPageLayout1">
+  <telerik:RadPageLayout runat="server" ID="RadPageLayout1" >
     <Rows>
       <telerik:LayoutRow>
         <Columns>
@@ -16,7 +16,7 @@
                 <Rows>
                   <telerik:LayoutRow>
                     <Columns>
-                      <telerik:LayoutColumn Span="3" SpanMd="3" SpanSm="12" HiddenXs="true">
+                      <telerik:LayoutColumn Span="3" SpanMd="3" HiddenSm="true">
                         <div class="messageEventHeader">Quick Messages</div>
                         <telerik:RadListView runat="server" ID="MemberMessages" AllowPaging="true" PageSize="2" Skin="Silk" OnNeedDataSource="MemberMessages_NeedDataSource">
                           <LayoutTemplate>
@@ -53,13 +53,13 @@
                           </ItemTemplate>
                         </telerik:RadListView>
                       </telerik:LayoutColumn>
-                      <telerik:LayoutColumn Span="9" SpanMd="9" SpanSm="12" SpanXs="12">
+                      <telerik:LayoutColumn Span="9" SpanMd="9" SpanSm="12">
                         <div class="messageEventHeader">Members</div>
                         <telerik:RadPageLayout runat="server">
                           <Rows>
                             <telerik:LayoutRow>
                               <Columns>
-                                <telerik:LayoutColumn Span="4">
+                                <telerik:LayoutColumn Span="8" SpanMd="12">
                                   <telerik:RadDataPager RenderMode="Lightweight" ID="RadDataPager1" runat="server" PagedControlID="MemberList"
                                     PageSize="8">
                                     <Fields>
@@ -69,9 +69,7 @@
                                     </Fields>
                                   </telerik:RadDataPager>
                                 </telerik:LayoutColumn>
-                                <telerik:LayoutColumn Span="4">
-                                </telerik:LayoutColumn>
-                                <telerik:LayoutColumn Span="4">
+                                <telerik:LayoutColumn Span="4" HiddenMd="true">
                                   <telerik:RadButton ID="RadImageButton1" runat="server" Text="Add New" CssClass="menubuttons" OnClick="RadImageButton1_Click" CommandArgument='0'>
                                   </telerik:RadButton>
                                 </telerik:LayoutColumn>
@@ -79,7 +77,7 @@
                             </telerik:LayoutRow>
                           </Rows>
                         </telerik:RadPageLayout>
-                        <telerik:RadListView runat="server" ID="MemberList" AllowPaging="true" PageSize="8" Skin="Silk" OnNeedDataSource="MemberList_NeedDataSource">
+                        <telerik:RadListView runat="server" ID="MemberList" AllowPaging="true" PageSize="8" Skin="Silk" OnNeedDataSource="MemberList_NeedDataSource" OnItemDataBound="MemberList_ItemDataBound">
                           <LayoutTemplate>
                             <div class="RadListView RadListViewFloated RadListView_<%# Container.Skin %>">
                               <div class="rlvFloated rlvAutoScroll">
@@ -90,14 +88,18 @@
                           </LayoutTemplate>
                           <ItemTemplate>
                             <div class="memberListViewItem">
+<telerik:RadCard ID="RadCard1" runat="server">
+  <telerik:CardHeaderComponent runat="server" ID="CardHeader"></telerik:CardHeaderComponent>
+  <telerik:CardTitleComponent runat="server" ID="CardTitle"></telerik:CardTitleComponent>
+</telerik:RadCard>
                               <telerik:RadPageLayout runat="server">
                                 <Rows>
                                   <telerik:LayoutRow>
                                     <Columns>
-                                      <telerik:LayoutColumn Span="4">
+                                      <telerik:LayoutColumn Span="4" SpanSm="1">
                                         <img id="Image1" runat="server" src='<%# Bind("ImageUrl") %>' alt="Unavailable" />
                                       </telerik:LayoutColumn>
-                                      <telerik:LayoutColumn Span="8">
+                                      <telerik:LayoutColumn Span="8" SpanSm="11">
                                         <h4>
                                           <telerik:RadLabel ID="RadLabel1" runat="server" Text='<%# Bind("DisplayName") %>' />
                                         </h4>
@@ -114,6 +116,9 @@
                                         </div>
                                         <div class="phone">
                                           <telerik:RadLabel ID="RadLabel4" runat="server" Text='<%# Bind("PrimaryPhone.PhoneNumber") %>' />
+                                        </div>
+                                        <div class="relations">
+                                          
                                         </div>
                                       </telerik:LayoutColumn>
                                     </Columns>

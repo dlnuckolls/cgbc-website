@@ -54,6 +54,13 @@ namespace Cedar_Grove {
     protected void RadButton1_Click(object sender, EventArgs e) {
 
     }
+
+    protected void MemberList_ItemDataBound(object sender, RadListViewItemEventArgs e) {
+      var card = (RadCard)e.Item.FindControl("RadCard1");
+      var x = ((ChurchMember)((RadListViewDataItem)e.Item).DataItem);
+      var title = (CardHeaderComponent)card.FindControl("CardHeader");
+      title.Content = x.DisplayName;
+    }
   }
 }
 
